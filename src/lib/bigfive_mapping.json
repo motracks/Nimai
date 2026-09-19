@@ -1,0 +1,46 @@
+{
+  "instrument": "Big Five Personality (IPIP-50)",
+  "note": "Bands are heuristic tertiles on the 1-5 scale, not population-normed percentiles. Fine for a reflective tool; revisit once you have cohort data to set real thresholds.",
+  "dimensions": {
+    "EXT": {
+      "label": "Extraversion",
+      "bands": [
+        { "range": [1.0, 2.5], "label": "Reserved", "description": "Draws energy from solitude or small groups; tends to observe before engaging, and doesn't need to be the center of attention." },
+        { "range": [2.51, 3.5], "label": "Situationally social", "description": "Comfortable in company but doesn't need it constantly; energy shifts with context and mood." },
+        { "range": [3.51, 5.0], "label": "Outgoing", "description": "Energized by people and activity; starts conversations easily and is comfortable being noticed." }
+      ]
+    },
+    "AGR": {
+      "label": "Agreeableness",
+      "bands": [
+        { "range": [1.0, 2.5], "label": "Direct", "description": "Prioritizes honesty and personal judgment over smoothing things over; comfortable with friction if it serves the truth." },
+        { "range": [2.51, 3.5], "label": "Selectively warm", "description": "Cooperative with people who've earned trust, more guarded with those who haven't." },
+        { "range": [3.51, 5.0], "label": "Warm", "description": "Quick to sympathize and accommodate others; tends to put relationships and harmony first." }
+      ]
+    },
+    "CON": {
+      "label": "Conscientiousness",
+      "bands": [
+        { "range": [1.0, 2.5], "label": "Spontaneous", "description": "Prefers flexibility over fixed plans; can let structure slide when something more interesting comes up." },
+        { "range": [2.51, 3.5], "label": "Adaptive planner", "description": "Organized when it matters, relaxed about the rest." },
+        { "range": [3.51, 5.0], "label": "Structured", "description": "Reliable, detail-oriented, and driven by follow-through; discomfort with loose ends." }
+      ]
+    },
+    "NEU": {
+      "label": "Emotional Reactivity",
+      "bands": [
+        { "range": [1.0, 2.5], "label": "Steady", "description": "Generally even-keeled; stress doesn't easily throw off mood or focus." },
+        { "range": [2.51, 3.5], "label": "Responsive", "description": "Feels things fairly intensely but recovers with some space or time." },
+        { "range": [3.51, 5.0], "label": "Sensitive", "description": "Feels emotional shifts strongly and quickly; benefits from deliberate regulation practices." }
+      ]
+    },
+    "OPN": {
+      "label": "Openness",
+      "bands": [
+        { "range": [1.0, 2.5], "label": "Practical", "description": "Prefers the concrete and proven over the abstract or experimental; values what's tested and useful." },
+        { "range": [2.51, 3.5], "label": "Curious within limits", "description": "Open to new ideas selectively, especially when they connect to existing interests." },
+        { "range": [3.51, 5.0], "label": "Imaginative", "description": "Drawn to ideas, patterns, and novelty; enjoys abstract or unconventional thinking." }
+      ]
+    }
+  }
+}
