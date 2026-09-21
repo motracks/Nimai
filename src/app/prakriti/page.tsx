@@ -1,0 +1,108 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { createClient } from "@/lib/supabase/client";
+import { scorePrakriti } from "@/lib/scoring";
+import prakriti from "@/lib/prakriti.json";
+
+function shuffled<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+export default function PrakritiPage() {
+  const router = useRouter();
+  const supabase = createClient();
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [status, setStatus] = useState<"idle" | "saving" | "error">("idle");
+
+  // Shuffle each item's option order once per page load so dosha isn't
+  // inferable from a consistent position across items. Done client-side only
+  // (not in useMemo, which also runs during SSR) so the server-rendered order
+  // and the client's random shuffle never disagree and trigger a hydration
+  // mismatch — items render in their natural JSON order until this runs.
+  const [shuffledItems, setShuffledItems] = useState(prakriti.items);
+
+  useEffect(() => {
+    setShuffledItems(prakriti.items.map((item) => ({ ...item, options: shuffled(item.options) })));
+  }, []);
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => {
+      if (!data.user) router.push("/login");
+    });
+  }, [router, supabase]);
+
+  const allAnswered = prakriti.items.every((item) => answers[item.id] != null);
+
+  async function submit() {
+    setStatus("saving");
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) {
+      router.push("/login");
+      return;
+    }
+
+    const { scores, pattern } = scorePrakriti(answers);
+
+    const { error } = await supabase.from("prakriti_results").upsert({
+      user_id: user.id,
+      answers,
+      scores,
+      pattern,
+    });
+
+    if (error) {
+      console.error(error);
+      setStatus("error");
+      return;
+    }
+
+    router.push("/results");
+  }
+
+  return (
+    <main className="vn-page" style={{ maxWidth: "42rem" }}>
+      <p className="vn-eyebrow">Prakriti</p>
+      <h1 className="vn-heading">Vata · Pitta · Kapha</h1>
+      <div className="flex flex-col gap-6">
+        {shuffledItems.map((item) => (
+          <fieldset key={item.id} className="flex flex-col gap-2">
+            <legend className="text-sm font-medium" style={{ color: "var(--ink)" }}>
+              {item.text}
+            </legend>
+            <div className="flex flex-col gap-1">
+              {item.options.map((opt) => (
+                <label
+                  key={opt.text}
+                  className="flex items-center gap-2 text-sm"
+                  style={{ color: "var(--ink-mid)" }}
+                >
+                  <input
+                    type="radio"
+                    name={item.id}
+                    checked={answers[item.id] === opt.text}
+                    onChange={() => setAnswers((a) => ({ ...a, [item.id]: opt.text }))}
+                  />
+                  {opt.text}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        ))}
+      </div>
+
+      <button disabled={!allAnswered || status === "saving"} onClick={submit} className="vn-btn mt-8">
+        {status === "saving" ? "Saving…" : "Submit"}
+      </button>
+      {status === "error" && <p className="vn-error mt-2">Save failed. Try again.</p>}
+    </main>
+  );
+}

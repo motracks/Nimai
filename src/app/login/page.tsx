@@ -1,43 +1,67 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
 export default function LoginPage() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
+  const [password, setPassword] = useState("");
+  const [mode, setMode] = useState<"signin" | "signup">("signin");
+  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  async function sendMagicLink(e: React.FormEvent) {
+  async function submit(e: React.FormEvent) {
     e.preventDefault();
+    setStatus("loading");
     const supabase = createClient();
-    const { error } = await supabase.auth.signInWithOtp({
-      email,
-      options: { emailRedirectTo: `${window.location.origin}/auth/callback` },
-    });
-    setStatus(error ? "error" : "sent");
+
+    const { error } =
+      mode === "signin"
+        ? await supabase.auth.signInWithPassword({ email, password })
+        : await supabase.auth.signUp({ email, password });
+
+    if (error) {
+      setStatus("error");
+      setErrorMsg(error.message);
+      return;
+    }
+
+    router.push("/bigfive");
   }
 
   return (
-    <main className="mx-auto max-w-sm p-8">
-      <h1 className="mb-4 text-xl font-semibold">Sign in</h1>
-      {status === "sent" ? (
-        <p>Check your email for a sign-in link.</p>
-      ) : (
-        <form onSubmit={sendMagicLink} className="flex flex-col gap-3">
-          <input
-            type="email"
-            required
-            placeholder="you@example.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="rounded border px-3 py-2"
-          />
-          <button type="submit" className="rounded bg-black px-3 py-2 text-white">
-            Send magic link
-          </button>
-          {status === "error" && <p className="text-red-600">Something went wrong. Try again.</p>}
-        </form>
-      )}
+    <main className="vn-page" style={{ maxWidth: "24rem" }}>
+      <p className="vn-eyebrow">Verdic Nimai</p>
+      <h1 className="vn-heading">{mode === "signin" ? "Sign in" : "Create an account"}</h1>
+      <form onSubmit={submit} className="flex flex-col gap-3">
+        <input
+          type="email"
+          required
+          placeholder="you@example.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          required
+          minLength={6}
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit" disabled={status === "loading"} className="vn-btn">
+          {status === "loading" ? "…" : mode === "signin" ? "Sign in" : "Sign up"}
+        </button>
+        {status === "error" && <p className="vn-error">{errorMsg}</p>}
+      </form>
+      <button
+        onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
+        className="vn-link mt-4 text-sm"
+      >
+        {mode === "signin" ? "Need an account? Sign up" : "Already have an account? Sign in"}
+      </button>
     </main>
   );
 }

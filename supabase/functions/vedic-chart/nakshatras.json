@@ -1,0 +1,32 @@
+{
+  "note": "Standard, non-copyrighted astronomical/astrological reference. Each nakshatra spans exactly 13°20' (360/27) of sidereal longitude, starting at 0° Aries. Index = floor(moon_sidereal_longitude / 13.3333). Pada = floor((moon_sidereal_longitude mod 13.3333) / 3.3333) + 1.",
+  "nakshatras": [
+    { "index": 0, "name": "Ashwini", "start_deg": 0.0 },
+    { "index": 1, "name": "Bharani", "start_deg": 13.333 },
+    { "index": 2, "name": "Krittika", "start_deg": 26.667 },
+    { "index": 3, "name": "Rohini", "start_deg": 40.0 },
+    { "index": 4, "name": "Mrigashira", "start_deg": 53.333 },
+    { "index": 5, "name": "Ardra", "start_deg": 66.667 },
+    { "index": 6, "name": "Punarvasu", "start_deg": 80.0 },
+    { "index": 7, "name": "Pushya", "start_deg": 93.333 },
+    { "index": 8, "name": "Ashlesha", "start_deg": 106.667 },
+    { "index": 9, "name": "Magha", "start_deg": 120.0 },
+    { "index": 10, "name": "Purva Phalguni", "start_deg": 133.333 },
+    { "index": 11, "name": "Uttara Phalguni", "start_deg": 146.667 },
+    { "index": 12, "name": "Hasta", "start_deg": 160.0 },
+    { "index": 13, "name": "Chitra", "start_deg": 173.333 },
+    { "index": 14, "name": "Swati", "start_deg": 186.667 },
+    { "index": 15, "name": "Vishakha", "start_deg": 200.0 },
+    { "index": 16, "name": "Anuradha", "start_deg": 213.333 },
+    { "index": 17, "name": "Jyeshtha", "start_deg": 226.667 },
+    { "index": 18, "name": "Mula", "start_deg": 240.0 },
+    { "index": 19, "name": "Purva Ashadha", "start_deg": 253.333 },
+    { "index": 20, "name": "Uttara Ashadha", "start_deg": 266.667 },
+    { "index": 21, "name": "Shravana", "start_deg": 280.0 },
+    { "index": 22, "name": "Dhanishta", "start_deg": 293.333 },
+    { "index": 23, "name": "Shatabhisha", "start_deg": 306.667 },
+    { "index": 24, "name": "Purva Bhadrapada", "start_deg": 320.0 },
+    { "index": 25, "name": "Uttara Bhadrapada", "start_deg": 333.333 },
+    { "index": 26, "name": "Revati", "start_deg": 346.667 }
+  ]
+}

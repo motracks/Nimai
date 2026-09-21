@@ -1,0 +1,52 @@
+{
+  "instrument": "Experiences in Close Relationships - Revised (ECR-R)",
+  "source": "Fraley, R.C., Waller, N.G., & Brennan, K.A. (2000). An item response theory analysis of self-report measures of adult attachment. Journal of Personality and Social Psychology, 78, 350-365. Standard open academic instrument.",
+  "response_scale": {
+    "type": "likert_6",
+    "labels": ["Strongly Disagree", "Disagree", "Slightly Disagree", "Slightly Agree", "Agree", "Strongly Agree"],
+    "values": [1, 2, 3, 4, 5, 6]
+  },
+  "dimensions": {
+    "ANX": "Attachment Anxiety - fear of abandonment / need for reassurance",
+    "AVD": "Attachment Avoidance - discomfort with closeness / dependence"
+  },
+  "items": [
+    { "id": "EC01", "text": "I'm afraid that I will lose my partner's love.", "dimension": "ANX", "reverse": false },
+    { "id": "EC02", "text": "I often worry that my partner will not want to stay with me.", "dimension": "ANX", "reverse": false },
+    { "id": "EC03", "text": "I often worry that my partner doesn't really love me.", "dimension": "ANX", "reverse": false },
+    { "id": "EC04", "text": "I worry that romantic partners won't care about me as much as I care about them.", "dimension": "ANX", "reverse": false },
+    { "id": "EC05", "text": "I often wish that my partner's feelings for me were as strong as my feelings for him or her.", "dimension": "ANX", "reverse": false },
+    { "id": "EC06", "text": "I worry a lot about my relationships.", "dimension": "ANX", "reverse": false },
+    { "id": "EC07", "text": "When my partner is out of sight, I worry that he or she might become interested in someone else.", "dimension": "ANX", "reverse": false },
+    { "id": "EC08", "text": "When I show my feelings for romantic partners, I'm afraid they will not feel the same about me.", "dimension": "ANX", "reverse": false },
+    { "id": "EC09", "text": "I rarely worry about my partner leaving me.", "dimension": "ANX", "reverse": true },
+    { "id": "EC10", "text": "My romantic partner makes me doubt myself.", "dimension": "ANX", "reverse": false },
+    { "id": "EC11", "text": "I do not often worry about being abandoned.", "dimension": "ANX", "reverse": true },
+    { "id": "EC12", "text": "I find that my partner(s) don't want to get as close as I would like.", "dimension": "ANX", "reverse": false },
+    { "id": "EC13", "text": "Sometimes romantic partners change their feelings about me for no apparent reason.", "dimension": "ANX", "reverse": false },
+    { "id": "EC14", "text": "My desire to be very close sometimes scares people away.", "dimension": "ANX", "reverse": false },
+    { "id": "EC15", "text": "I'm afraid that once a romantic partner gets to know me, he or she won't like who I really am.", "dimension": "ANX", "reverse": false },
+    { "id": "EC16", "text": "It makes me mad that I don't get the affection and support I need from my partner.", "dimension": "ANX", "reverse": false },
+    { "id": "EC17", "text": "I worry that I won't measure up to other people.", "dimension": "ANX", "reverse": false },
+    { "id": "EC18", "text": "My partner only seems to notice me when I'm angry.", "dimension": "ANX", "reverse": false },
+    { "id": "EC19", "text": "I prefer not to show a partner how I feel deep down.", "dimension": "AVD", "reverse": false },
+    { "id": "EC20", "text": "I feel comfortable sharing my private thoughts and feelings with my partner.", "dimension": "AVD", "reverse": true },
+    { "id": "EC21", "text": "I find it difficult to allow myself to depend on romantic partners.", "dimension": "AVD", "reverse": false },
+    { "id": "EC22", "text": "I am very comfortable being close to romantic partners.", "dimension": "AVD", "reverse": true },
+    { "id": "EC23", "text": "I don't feel comfortable opening up to romantic partners.", "dimension": "AVD", "reverse": false },
+    { "id": "EC24", "text": "I prefer not to be too close to romantic partners.", "dimension": "AVD", "reverse": false },
+    { "id": "EC25", "text": "I get uncomfortable when a romantic partner wants to be very close.", "dimension": "AVD", "reverse": false },
+    { "id": "EC26", "text": "I find it relatively easy to get close to my partner.", "dimension": "AVD", "reverse": true },
+    { "id": "EC27", "text": "It's not difficult for me to get close to my partner.", "dimension": "AVD", "reverse": true },
+    { "id": "EC28", "text": "I usually discuss my problems and concerns with my partner.", "dimension": "AVD", "reverse": true },
+    { "id": "EC29", "text": "It helps to turn to my romantic partner in times of need.", "dimension": "AVD", "reverse": true },
+    { "id": "EC30", "text": "I tell my partner just about everything.", "dimension": "AVD", "reverse": true },
+    { "id": "EC31", "text": "I talk things over with my partner.", "dimension": "AVD", "reverse": true },
+    { "id": "EC32", "text": "I am nervous when partners get too close to me.", "dimension": "AVD", "reverse": false },
+    { "id": "EC33", "text": "I feel comfortable depending on romantic partners.", "dimension": "AVD", "reverse": true },
+    { "id": "EC34", "text": "I find it easy to depend on romantic partners.", "dimension": "AVD", "reverse": true },
+    { "id": "EC35", "text": "It's easy for me to be affectionate with my partner.", "dimension": "AVD", "reverse": true },
+    { "id": "EC36", "text": "My partner really understands me and my needs.", "dimension": "AVD", "reverse": true }
+  ],
+  "scoring_notes": "18 items per dimension. Reverse items: value = (7 - answered). Average per dimension gives a 1-6 score (no neutral midpoint, forced-choice). Attachment style categories are then derived by crossing the two dimensions: low ANX + low AVD = secure; high ANX + low AVD = anxious-preoccupied; low ANX + high AVD = dismissive-avoidant; high ANX + high AVD = fearful-avoidant. Cutoff is 4.0, the proportional equivalent of the original 1-7 scale's midpoint convention."
+}

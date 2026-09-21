@@ -2,9 +2,9 @@
   "instrument": "Big Five Personality (IPIP-50)",
   "source": "International Personality Item Pool — IPIP Five-Factor Markers (Goldberg, 1992). Public domain, ipip.ori.org.",
   "response_scale": {
-    "type": "likert_5",
-    "labels": ["Very Inaccurate", "Moderately Inaccurate", "Neither Accurate nor Inaccurate", "Moderately Accurate", "Very Accurate"],
-    "values": [1, 2, 3, 4, 5]
+    "type": "likert_6",
+    "labels": ["Very Inaccurate", "Moderately Inaccurate", "Slightly Inaccurate", "Slightly Accurate", "Moderately Accurate", "Very Accurate"],
+    "values": [1, 2, 3, 4, 5, 6]
   },
   "dimensions": {
     "EXT": "Extraversion",
@@ -65,5 +65,5 @@
     { "id": "BF49", "text": "Often feel blue.", "dimension": "NEU", "reverse": false },
     { "id": "BF50", "text": "Am full of ideas.", "dimension": "OPN", "reverse": false }
   ],
-  "scoring_notes": "Per dimension: sum non-reverse items as answered (1-5), reverse items as (6 - answered value). Average across the 10 items in each dimension to get a 1-5 dimension score. NEU is scored so higher = more emotionally reactive/anxious; some apps invert it to present as 'Emotional Stability' instead — decide once and keep consistent in the mapping table."
+  "scoring_notes": "Per dimension: sum non-reverse items as answered (1-6), reverse items as (7 - answered value). Average across the 10 items in each dimension to get a 1-6 dimension score (no neutral midpoint, forced-choice). NEU is scored so higher = more emotionally reactive/anxious; some apps invert it to present as 'Emotional Stability' instead — decide once and keep consistent in the mapping table."
 }

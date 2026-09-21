@@ -1,0 +1,35 @@
+{
+  "instrument": "Guna Self-Assessment (Sattva / Rajas / Tamas)",
+  "note": "Raw per-guna bands are on the 1-6 item-average scale (no neutral midpoint, forced-choice), proportionally rescaled from the original 1-7 convention. Dominance patterns use the percentage-of-total conversion from guna.json's scoring_notes (the three percentages sum to 100) and are what the synthesis prompt should actually use, since gunas are inherently relative to each other, not absolute.",
+  "dimensions": {
+    "SAT": {
+      "label": "Sattva",
+      "bands": [
+        { "range": [1.0, 3.0], "label": "Low clarity", "description": "Discipline, contentment, and mental steadiness aren't currently strong pulls; more pulled by activity or inertia than by calm focus." },
+        { "range": [3.01, 4.5], "label": "Moderate clarity", "description": "Some steadiness and discipline present, alongside other pulls; clarity comes and goes with circumstance." },
+        { "range": [4.51, 6.0], "label": "High clarity", "description": "Strong pull toward discipline, truthfulness, and equanimity; generally composed and content." }
+      ]
+    },
+    "RAJ": {
+      "label": "Rajas",
+      "bands": [
+        { "range": [1.0, 3.0], "label": "Low drive-restlessness", "description": "Not particularly driven by desire or restless activity; comfortable with stillness and enough." },
+        { "range": [3.01, 4.5], "label": "Moderate drive", "description": "Some ambition and restlessness, balanced by other tendencies." },
+        { "range": [4.51, 6.0], "label": "High drive-restlessness", "description": "Strong pull toward striving, desire, and constant activity; rarely fully satisfied or still." }
+      ]
+    },
+    "TAM": {
+      "label": "Tamas",
+      "bands": [
+        { "range": [1.0, 3.0], "label": "Low inertia", "description": "Not much pull toward procrastination, confusion, or heaviness; generally alert and engaged." },
+        { "range": [3.01, 4.5], "label": "Moderate inertia", "description": "Some heaviness or avoidance shows up periodically, alongside more active or clear states." },
+        { "range": [4.51, 6.0], "label": "High inertia", "description": "Strong pull toward confusion, low motivation, or resistance to change; effortful to get moving or think clearly." }
+      ]
+    }
+  },
+  "dominance_patterns": [
+    { "condition": "one guna >= 45%", "label": "{guna}-dominant", "description": "One mode clearly leads and colors most of how this person operates day to day." },
+    { "condition": "two gunas each 30-45%, third below 25%", "label": "{guna_a}-{guna_b} blend", "description": "Alternates between two modes depending on context, with the third rarely showing up." },
+    { "condition": "all three within 10 points of 33%", "label": "Balanced / fluid", "description": "No single mode dominates; likely shifts noticeably with circumstances, sleep, stress, and company." }
+  ]
+}

@@ -3,15 +3,15 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
-import { scoreBigFive } from "@/lib/scoring";
-import bigfive from "@/lib/bigfive.json";
+import { scoreGuna } from "@/lib/scoring";
+import guna from "@/lib/guna.json";
 import ScaleQuestionCard from "@/components/ScaleQuestionCard";
 
-const steps = bigfive.response_scale.values.length;
-const labelLow = bigfive.response_scale.labels[0];
-const labelHigh = bigfive.response_scale.labels[bigfive.response_scale.labels.length - 1];
+const steps = guna.response_scale.values.length;
+const labelLow = guna.response_scale.labels[0];
+const labelHigh = guna.response_scale.labels[guna.response_scale.labels.length - 1];
 
-export default function BigFivePage() {
+export default function GunaPage() {
   const router = useRouter();
   const supabase = createClient();
   const [answers, setAnswers] = useState<Record<string, number>>({});
@@ -24,7 +24,7 @@ export default function BigFivePage() {
     });
   }, [router, supabase]);
 
-  const item = bigfive.items[current];
+  const item = guna.items[current];
   const sliderValue = answers[item.id] != null ? answers[item.id] - 1 : null;
 
   async function submit(finalAnswers: Record<string, number>) {
@@ -37,13 +37,13 @@ export default function BigFivePage() {
       return;
     }
 
-    const { scores, labels } = scoreBigFive(finalAnswers);
+    const { scores, pattern } = scoreGuna(finalAnswers);
 
-    const { error } = await supabase.from("bigfive_results").upsert({
+    const { error } = await supabase.from("guna_results").upsert({
       user_id: user.id,
       answers: finalAnswers,
       scores,
-      labels,
+      pattern,
     });
 
     if (error) {
@@ -56,7 +56,7 @@ export default function BigFivePage() {
   }
 
   function handleNext() {
-    if (current < bigfive.items.length - 1) {
+    if (current < guna.items.length - 1) {
       setCurrent((c) => c + 1);
     } else {
       submit(answers);
@@ -65,13 +65,13 @@ export default function BigFivePage() {
 
   return (
     <main className="vn-page" style={{ maxWidth: "42rem" }}>
-      <p className="vn-eyebrow">Personality</p>
-      <h1 className="vn-heading mb-8">Big Five</h1>
+      <p className="vn-eyebrow">Guna</p>
+      <h1 className="vn-heading mb-8">Sattva · Rajas · Tamas</h1>
 
       <ScaleQuestionCard
-        tag="Big Five"
+        tag="Guna"
         index={current}
-        total={bigfive.items.length}
+        total={guna.items.length}
         question={item.text}
         labelLow={labelLow}
         labelHigh={labelHigh}
@@ -79,7 +79,7 @@ export default function BigFivePage() {
         value={sliderValue}
         onChange={(v) => setAnswers((a) => ({ ...a, [item.id]: v + 1 }))}
         onNext={handleNext}
-        isLast={current === bigfive.items.length - 1}
+        isLast={current === guna.items.length - 1}
       />
 
       {status === "saving" && (

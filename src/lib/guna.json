@@ -1,0 +1,53 @@
+{
+  "instrument": "Guna Self-Assessment (Sattva / Rajas / Tamas)",
+  "source": "Original items, not a reproduction of any copyrighted scale. Written against the trait taxonomy documented in Bhagavad-Gita chapters 14, 17 & 18 and summarized in Dasa, D.G. (1999), 'The Vedic Personality Inventory,' Bhaktivedanta College — the same primary description the published VPI (Wolf, 1999) was itself built from. Traits covered: Sattva (cleanliness, truthfulness, gravity, dutifulness, detachment, discipline, mental equilibrium, contentment, sense control, determination); Rajas (intense activity, desire for sense gratification, dissatisfaction, envy, materialistic mentality); Tamas (mental imbalance, anger, ignorance, arrogance, depression, laziness, procrastination, helplessness).",
+  "response_scale": {
+    "type": "likert_6",
+    "labels": ["Strongly Disagree", "Disagree", "Slightly Disagree", "Slightly Agree", "Agree", "Strongly Agree"],
+    "values": [1, 2, 3, 4, 5, 6]
+  },
+  "dimensions": {
+    "SAT": "Sattva - clarity, discipline, equanimity",
+    "RAJ": "Rajas - drive, restlessness, desire",
+    "TAM": "Tamas - inertia, confusion, resistance"
+  },
+  "items": [
+    { "id": "G01", "text": "I keep my surroundings and habits clean and orderly.", "dimension": "SAT", "reverse": false },
+    { "id": "G02", "text": "I find it easy to speak the truth, even when it's uncomfortable.", "dimension": "SAT", "reverse": false },
+    { "id": "G03", "text": "I take my duties and responsibilities seriously.", "dimension": "SAT", "reverse": false },
+    { "id": "G04", "text": "I stay calm and steady in success or failure.", "dimension": "SAT", "reverse": false },
+    { "id": "G05", "text": "I can let go of things I want, without resentment, when it's right to do so.", "dimension": "SAT", "reverse": false },
+    { "id": "G06", "text": "I keep a disciplined daily routine.", "dimension": "SAT", "reverse": false },
+    { "id": "G07", "text": "I feel generally content with my life as it is.", "dimension": "SAT", "reverse": false },
+    { "id": "G08", "text": "I can resist impulses that I know aren't good for me.", "dimension": "SAT", "reverse": false },
+    { "id": "G09", "text": "Once I decide something is right, I follow through with determination.", "dimension": "SAT", "reverse": false },
+    { "id": "G10", "text": "I think clearly and see situations for what they are, without much distortion.", "dimension": "SAT", "reverse": false },
+    { "id": "G11", "text": "I naturally treat people with respect, regardless of their status.", "dimension": "SAT", "reverse": false },
+    { "id": "G12", "text": "I feel a quiet sense of inner balance most days.", "dimension": "SAT", "reverse": false },
+    { "id": "G13", "text": "I'm often driven by a strong desire to get more out of life.", "dimension": "RAJ", "reverse": false },
+    { "id": "G14", "text": "I find it hard to sit still or slow down.", "dimension": "RAJ", "reverse": false },
+    { "id": "G15", "text": "I care a lot about seeking pleasure and enjoyable experiences.", "dimension": "RAJ", "reverse": false },
+    { "id": "G16", "text": "I'm rarely satisfied with what I currently have or have achieved.", "dimension": "RAJ", "reverse": false },
+    { "id": "G17", "text": "I notice envy when others have something I want.", "dimension": "RAJ", "reverse": false },
+    { "id": "G18", "text": "Material success and status matter a great deal to me.", "dimension": "RAJ", "reverse": false },
+    { "id": "G19", "text": "I'm often preoccupied with my next goal rather than the present moment.", "dimension": "RAJ", "reverse": false },
+    { "id": "G20", "text": "I get restless if I'm not actively working toward something.", "dimension": "RAJ", "reverse": false },
+    { "id": "G21", "text": "I have little patience for slowing down to reflect on spiritual or inner matters.", "dimension": "RAJ", "reverse": false },
+    { "id": "G22", "text": "I push myself hard, even at the cost of rest or wellbeing.", "dimension": "RAJ", "reverse": false },
+    { "id": "G23", "text": "My mood rises and falls a lot with how things are going for me.", "dimension": "RAJ", "reverse": false },
+    { "id": "G24", "text": "I feel a persistent restlessness underneath, even in calm moments.", "dimension": "RAJ", "reverse": false },
+    { "id": "G25", "text": "My mind often feels foggy, confused, or hard to focus.", "dimension": "TAM", "reverse": false },
+    { "id": "G26", "text": "I get angry more easily than I'd like to admit.", "dimension": "TAM", "reverse": false },
+    { "id": "G27", "text": "I procrastinate on things I know I should be doing.", "dimension": "TAM", "reverse": false },
+    { "id": "G28", "text": "I often feel low, heavy, or without much motivation.", "dimension": "TAM", "reverse": false },
+    { "id": "G29", "text": "I feel helpless to change my situation, even when I'd like to.", "dimension": "TAM", "reverse": false },
+    { "id": "G30", "text": "I tend to overestimate myself or dismiss others' views without good reason.", "dimension": "TAM", "reverse": false },
+    { "id": "G31", "text": "I sleep excessively or feel drowsy during the day.", "dimension": "TAM", "reverse": false },
+    { "id": "G32", "text": "I avoid facing problems rather than working through them.", "dimension": "TAM", "reverse": false },
+    { "id": "G33", "text": "I feel stuck in old habits, even ones that don't serve me.", "dimension": "TAM", "reverse": false },
+    { "id": "G34", "text": "I lose track of what's really going on around me.", "dimension": "TAM", "reverse": false },
+    { "id": "G35", "text": "I let carelessness or laziness get in the way of my responsibilities.", "dimension": "TAM", "reverse": false },
+    { "id": "G36", "text": "I feel a general sense of dullness or lack of clarity about my life direction.", "dimension": "TAM", "reverse": false }
+  ],
+  "scoring_notes": "12 items per guna, no reverse-scored items (matches the original VPI design, which found each guna reliably separable without reverse items). Score = sum of the 12 items / 12 (1-6 range, no neutral midpoint) per guna. Convert to a percentage-of-total for display: guna% = (guna_score / (sattva_score + rajas_score + tamas_score)) * 100, so the three percentages sum to 100 — this is the standard VPI reporting convention."
+}
