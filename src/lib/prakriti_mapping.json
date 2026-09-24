@@ -1,6 +1,6 @@
 {
-  "instrument": "Prakriti Self-Assessment (Vata / Pitta / Kapha)",
-  "note": "Percentages are share of the 24 items (see prakriti.json scoring_notes). Dual-dosha combinations are the norm, not the exception — the synthesis prompt should default to checking for a blend before declaring a single dominant type.",
+  "instrument": "Prakriti Parikshan (Vata / Pitta / Kapha), 40-item Govardhan School of Yoga workbook",
+  "note": "Percentages are each dosha's points out of 80 (see prakriti.json scoring_notes: 2 pts per single tick, 1 pt each for a double tick). Dual-dosha combinations are the norm, not the exception — the synthesis prompt should default to checking for a blend before declaring a single dominant type. A separate short-term Vikriti check (prakriti.json vikriti_check) should be read alongside this result but scored and reported separately, never merged into these percentages.",
   "dimensions": {
     "VAT": {
       "label": "Vata",

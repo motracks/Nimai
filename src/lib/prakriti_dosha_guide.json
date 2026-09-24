@@ -1,0 +1,103 @@
+{
+  "source": "Verbatim tables from the 'Prakriti Parikshan' Ayurvedic Constitution Self-Assessment workbook (Govardhan School of Yoga, Yoga Teacher Training), pages 9-11. Reference content for teaching/synthesis use alongside prakriti.json — not itself a scored instrument.",
+  "display_rules": "Right place, right time: none of this content belongs during the 40-item questionnaire itself (the PDF withholds it — dosha labels are hidden from the test-taker, per prakriti.json response_scale note). Each block below carries a 'show_when' field naming the exact moment it should surface. Do not show a dosha's full guide block, or a dual/Sama writeup, until that dosha or combination is the person's computed result — showing all three (or all four combinations) at once defeats the 'right dosha' half of right-place-right-time.",
+  "doshas": {
+    "VAT": {
+      "show_when": "prakriti_results.pattern includes Vata as dominant or secondary (i.e. VAT is one of the 1-2 named doshas in the classification, not merely present at low %). Never shown for a person whose result has no Vata component.",
+      "label": "Vata",
+      "element": "Air and Space",
+      "principle": "The principle of movement. It governs breath, circulation, nerve impulses, elimination, speech and thought.",
+      "qualities_guna": "Dry (ruksha), light (laghu), cold (sheeta), rough (khara), subtle (sukshma), mobile (chala)",
+      "main_seat": "Colon and pelvis; also bones, joints, skin, ears and nervous system",
+      "in_balance": "Creative, quick, enthusiastic, adaptable, light on their feet, inspiring communicators",
+      "out_of_balance": "Anxiety, insomnia, constipation, dryness, joint pain, scattered attention, fatigue, feeling ungrounded",
+      "increased_by": "Cold, wind, dry weather; travel; irregular meals and sleep; overstimulation; fasting. Vata time: 2-6 a.m. and p.m. Life stage: later years. Season: monsoon onset and early winter",
+      "asana": "Slow, grounding, warming. Standing poses, forward folds, hip openers, long holds with support. Keep flows gentle and repetitive. Long Shavasana, well covered",
+      "pranayama": "Nadi Shodhana, slow Ujjayi, Bhramari. Long exhalations. Use fast techniques (Kapalabhati, Bhastrika) sparingly",
+      "meditation": "Body-anchored practices: body scan, Yoga Nidra, mantra japa. A fixed time and seat every day matters more than duration",
+      "teaching_this_student": "Give clear structure and predictable sequences. Offer props for stability. Watch for hypermobile joints being pushed to end range. Keep the room warm and cues calm"
+    },
+    "PIT": {
+      "show_when": "prakriti_results.pattern includes Pitta as dominant or secondary. Never shown for a person whose result has no Pitta component.",
+      "label": "Pitta",
+      "element": "Fire and Water",
+      "principle": "The principle of transformation. It governs digestion, metabolism, body heat, vision, intelligence and discernment.",
+      "qualities_guna": "Hot (ushna), sharp (tikshna), liquid (drava), slightly oily (snigdha), light (laghu), spreading (sara)",
+      "main_seat": "Small intestine and navel region; also stomach, blood, sweat, eyes and skin",
+      "in_balance": "Focused, intelligent, courageous, articulate, natural leaders, strong digestion and warmth",
+      "out_of_balance": "Anger, criticism, perfectionism, acidity, inflammation, rashes, burnout, competitiveness",
+      "increased_by": "Heat, sun, spicy, sour or fried food, alcohol, skipped meals, deadlines and competition. Pitta time: 10 a.m.-2 p.m. and 10 p.m.-2 a.m. Life stage: adulthood. Season: late summer and autumn (Sharad)",
+      "asana": "Cooling and non-competitive. Forward folds, twists, gentle backbends, Chandra Namaskar. Practise at 70-80% of capacity. Avoid hot rooms and peak-pose chasing",
+      "pranayama": "Sheetali, Sheetkari, Chandra Bhedana, Nadi Shodhana. Cooling, soft breath. Avoid excess Bhastrika, especially in summer",
+      "meditation": "Heart-centred practices: Maitri (loving-kindness), gratitude, open-awareness. Surrender over achievement",
+      "teaching_this_student": "Cue effortlessness and ease. Discourage comparison. Invite curiosity instead of goals. They will want the 'correct' alignment, so offer it, then teach them to soften"
+    },
+    "KAP": {
+      "show_when": "prakriti_results.pattern includes Kapha as dominant or secondary. Never shown for a person whose result has no Kapha component.",
+      "label": "Kapha",
+      "element": "Earth and Water",
+      "principle": "The principle of structure and cohesion. It governs stability, lubrication, immunity, strength and endurance.",
+      "qualities_guna": "Heavy (guru), cold (sheeta), slow (manda), oily (snigdha), smooth (shlakshna), stable (sthira), soft (mridu), dense (sandra)",
+      "main_seat": "Chest and lungs; also throat, head, stomach, joints and fatty tissue",
+      "in_balance": "Calm, loving, patient, loyal, strong, steady, excellent memory, great endurance",
+      "out_of_balance": "Lethargy, oversleeping, weight gain, congestion, possessiveness, resistance to change, low mood",
+      "increased_by": "Cold and damp weather, heavy or sweet food, daytime sleep, inactivity. Kapha time: 6-10 a.m. and p.m. Life stage: childhood. Season: late winter and spring (Vasanta)",
+      "asana": "Energising, warming and dynamic. Surya Namaskar at pace, standing poses, backbends, inversions, twists. Short holds, more repetitions. Practise early morning",
+      "pranayama": "Kapalabhati, Bhastrika, Surya Bhedana, strong Ujjayi. Stimulating, heating breath",
+      "meditation": "Active or eyes-open practices: Trataka, walking meditation, chanting. Keep the spine upright to prevent drowsiness",
+      "teaching_this_student": "Challenge them kindly, they can do more than they think. Keep energy and pace up. Short Shavasana. Give them a reason to show up: they thrive on routine once it is set"
+    }
+  },
+  "dual_and_balanced_constitutions": {
+    "VAT_PIT": {
+      "show_when": "prakriti_results.pattern is exactly the Vata-Pitta dual type (dvandvaja). Shown instead of, not in addition to, the single-dosha combination write-ups for a different pairing.",
+      "label": "Vata-Pitta",
+      "description": "Quick, intense and creative, but prone to burnout. Both doshas are light and mobile, so grounding is the shared need. Balance the practice by season: cooling in summer, warming in winter."
+    },
+    "PIT_KAP": {
+      "show_when": "prakriti_results.pattern is exactly the Pitta-Kapha dual type (dvandvaja).",
+      "label": "Pitta-Kapha",
+      "description": "Strong, stable and driven: the most robust physical constitution. Can become stubborn or overly controlling. Needs lightness and variety without overheating."
+    },
+    "VAT_KAP": {
+      "show_when": "prakriti_results.pattern is exactly the Vata-Kapha dual type (dvandvaja).",
+      "label": "Vata-Kapha",
+      "description": "Opposites in movement but both cold. Sensitive and gentle, with inconsistent energy. Warmth is the common need: warming food, heat-building practice and regular rhythm."
+    },
+    "SAMA": {
+      "show_when": "prakriti_results.pattern is Sama/Tridoshaja (all three percentages within 10 points per prakriti.json scoring_notes). Genuinely rare — pair with the re-check prompt from scoring_notes rather than presenting it as a routine result.",
+      "label": "Sama (Tridoshaja)",
+      "description": "Described as the best constitution: resilient, adaptable and balanced. Genuinely rare. A questionnaire that produces this result more often means the person answered from the middle than that they are truly Sama. Practice follows the season and the current Vikriti."
+    }
+  },
+  "teacher_trainee_reflection_questions": {
+    "show_when": "Only in the yoga-teacher-training context, after the person has both a Prakriti result and a completed Vikriti check (question 4 references Vikriti directly). Not shown to a general/non-YTT user of prakriti.json.",
+    "questions": [
+      "Where does my Prakriti show up most clearly in my own practice?",
+      "Which dosha type would find my teaching style hardest? What would I change for them?",
+      "Which questions did I struggle to answer, and why?",
+      "Based on my Vikriti, one change to my daily practice this month:"
+    ]
+  },
+  "know_the_limits": {
+    "show_when": "Always alongside any Prakriti or Vikriti result — this is a standing disclaimer, not tied to a specific dosha outcome.",
+    "points": [
+      "It is a self-report screen, not a diagnosis. Classical assessment (Dashavidha Pariksha) includes pulse (nadi), tongue, eyes and physical examination by a trained physician.",
+      "Current state leaks into answers. Someone anxious and sleepless this year will score more Vata than they are. Age, season and illness all shift results.",
+      "Stay within your scope. As a yoga teacher you can use Prakriti to adapt practice, pace, pranayama and meditation. Diet prescriptions, herbs and treatment of disease belong to a qualified Ayurvedic doctor (BAMS). Refer when symptoms are persistent.",
+      "Never use it to label or limit a student. 'You are Kapha, so you cannot do fast flows' is a misuse. Prakriti describes tendencies, not destiny."
+    ]
+  },
+  "standardised_tools_note": {
+    "show_when": "Optional footnote alongside any result, or in an About/methodology page — not tied to a specific dosha outcome.",
+    "text": "For clinical or research work, the Central Council for Research in Ayurvedic Sciences (CCRAS), Ministry of Ayush, has developed and validated the CCRAS Prakriti Assessment Scale, available to trained Ayurveda professionals through the AYUR Prakriti Web Portal. The Ministry of Ayush also offers a public Prakriti questionnaire at prakriti.ayush.gov.in. This workbook is an educational tool for yoga teacher training and is independent of those scales."
+  },
+  "classical_references": {
+    "show_when": "Optional footnote/appendix, same placement as standardised_tools_note — not tied to a specific dosha outcome.",
+    "sources": [
+      "Charaka Samhita, Vimana Sthana 8 (description of the seven Prakritis and the qualities of each dosha)",
+      "Sushruta Samhita, Sharira Sthana 4",
+      "Ashtanga Hridaya, Sharira Sthana 3"
+    ]
+  }
+}

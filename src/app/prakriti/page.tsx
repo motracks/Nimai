@@ -15,10 +15,14 @@ function shuffled<T>(arr: T[]): T[] {
   return a;
 }
 
+type Dimension = "VAT" | "PIT" | "KAP";
+
 export default function PrakritiPage() {
   const router = useRouter();
   const supabase = createClient();
-  const [answers, setAnswers] = useState<Record<string, string>>({});
+  // Each item maps to 1-2 ticked dimensions, matching the workbook's "tick one,
+  // or two sparingly if equally true" rule (prakriti.json response_scale).
+  const [answers, setAnswers] = useState<Record<string, Dimension[]>>({});
   const [status, setStatus] = useState<"idle" | "saving" | "error">("idle");
 
   // Shuffle each item's option order once per page load so dosha isn't
@@ -38,7 +42,20 @@ export default function PrakritiPage() {
     });
   }, [router, supabase]);
 
-  const allAnswered = prakriti.items.every((item) => answers[item.id] != null);
+  const allAnswered = prakriti.items.every((item) => (answers[item.id]?.length ?? 0) > 0);
+
+  function toggleOption(itemId: string, dim: Dimension) {
+    setAnswers((a) => {
+      const current = a[itemId] ?? [];
+      if (current.includes(dim)) {
+        return { ...a, [itemId]: current.filter((d) => d !== dim) };
+      }
+      // Cap at 2 ticks per item — "if two options fit you equally, tick both.
+      // Do this sparingly" (prakriti.json response_scale), not tick-everything.
+      if (current.length >= 2) return a;
+      return { ...a, [itemId]: [...current, dim] };
+    });
+  }
 
   async function submit() {
     setStatus("saving");
@@ -86,10 +103,10 @@ export default function PrakritiPage() {
                   style={{ color: "var(--ink-mid)" }}
                 >
                   <input
-                    type="radio"
+                    type="checkbox"
                     name={item.id}
-                    checked={answers[item.id] === opt.text}
-                    onChange={() => setAnswers((a) => ({ ...a, [item.id]: opt.text }))}
+                    checked={(answers[item.id] ?? []).includes(opt.dimension as Dimension)}
+                    onChange={() => toggleOption(item.id, opt.dimension as Dimension)}
                   />
                   {opt.text}
                 </label>

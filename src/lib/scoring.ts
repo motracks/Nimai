@@ -5,6 +5,8 @@ import ecrrMapping from "./ecrr_mapping.json";
 import guna from "./guna.json";
 import prakriti from "./prakriti.json";
 
+const prakritiVikriti = prakriti.vikriti_check;
+
 type Dimension = "EXT" | "AGR" | "CON" | "NEU" | "OPN";
 
 export function scoreBigFive(answers: Record<string, number>) {
@@ -124,41 +126,59 @@ type PrakritiDimension = "VAT" | "PIT" | "KAP";
 
 const prakritiLabel: Record<PrakritiDimension, string> = { VAT: "Vata", PIT: "Pitta", KAP: "Kapha" };
 
-export function scorePrakriti(answers: Record<string, string>) {
-  const counts: Record<PrakritiDimension, number> = { VAT: 0, PIT: 0, KAP: 0 };
-  let total = 0;
+const PRAKRITI_MAX_POINTS = 80; // 40 items x 2 points, per prakriti.json scoring_notes
+
+// answers[item.id] is 1 or 2 dimension codes (ticked options). One tick = 2
+// points to that dosha; two ticks (allowed sparingly) = 1 point each, matching
+// "One ticked box = 2 points. Two ticked boxes on the same question = 1 point each."
+export function scorePrakriti(answers: Record<string, PrakritiDimension[]>) {
+  const points: Record<PrakritiDimension, number> = { VAT: 0, PIT: 0, KAP: 0 };
 
   for (const item of prakriti.items) {
-    const chosenText = answers[item.id];
-    if (chosenText == null) continue;
-    const option = item.options.find((o) => o.text === chosenText);
-    if (!option) continue;
-    counts[option.dimension as PrakritiDimension] += 1;
-    total += 1;
+    const chosen = answers[item.id];
+    if (!chosen || chosen.length === 0) continue;
+    const weight = chosen.length === 1 ? 2 : 1;
+    for (const dim of chosen) {
+      points[dim] += weight;
+    }
   }
 
   const scores: Record<PrakritiDimension, number> = { VAT: 0, PIT: 0, KAP: 0 };
-  for (const dim of Object.keys(counts) as PrakritiDimension[]) {
-    scores[dim] = total > 0 ? Math.round((counts[dim] / total) * 10000) / 100 : 0;
+  for (const dim of Object.keys(points) as PrakritiDimension[]) {
+    scores[dim] = Math.round((points[dim] / PRAKRITI_MAX_POINTS) * 10000) / 100;
   }
 
   const sortedDims = (Object.keys(scores) as PrakritiDimension[]).sort((a, b) => scores[b] - scores[a]);
-  const [first, second, third] = sortedDims;
+  const [first, second] = sortedDims;
 
+  // Classification order from the workbook: stop at the first rule that applies.
   let pattern: string;
-  if (scores[first] >= 50 && scores[second] < 30 && scores[third] < 30) {
+  if (sortedDims.every((d) => Math.abs(scores[d] - scores[first]) <= 10)) {
+    pattern = "Sama (Tridoshaja)";
+  } else if (scores[first] - scores[second] >= 15) {
     pattern = `${prakritiLabel[first]}-dominant`;
-  } else if (
-    scores[first] >= 30 &&
-    scores[second] >= 30 &&
-    scores[first] - scores[second] <= 15
-  ) {
-    pattern = `${prakritiLabel[first]}-${prakritiLabel[second]} (dual)`;
-  } else if (sortedDims.every((d) => Math.abs(scores[d] - 33.33) <= 10)) {
-    pattern = "Tridoshic";
   } else {
-    pattern = `${prakritiLabel[first]}-leaning`;
+    pattern = `${prakritiLabel[first]}-${prakritiLabel[second]} (dual)`;
   }
 
   return { scores, pattern };
+}
+
+type VikritiDimension = "VAT" | "PIT" | "KAP";
+
+// Vikriti is a separate 6-item current-state check (prakriti.vikriti_check),
+// scored independently — count of ticks per column, out of 6 each. Never
+// merged into scorePrakriti's percentages.
+export function scoreVikriti(answers: Record<string, VikritiDimension[]>) {
+  const ticks: Record<VikritiDimension, number> = { VAT: 0, PIT: 0, KAP: 0 };
+
+  for (const item of prakritiVikriti.items) {
+    const chosen = answers[item.id];
+    if (!chosen) continue;
+    for (const dim of chosen) {
+      ticks[dim as VikritiDimension] += 1;
+    }
+  }
+
+  return { scores: ticks };
 }
