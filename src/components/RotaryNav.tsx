@@ -268,7 +268,7 @@ export default function RotaryNav({ items }: { items: DialItem[] }) {
                 }
               }}
             >
-              <rect x={x - 58} y={y - 26} width={116} height={54} fill="transparent" />
+              <rect x={x - 64} y={y - 34} width={128} height={78} fill="transparent" />
               <text
                 x={x}
                 y={y}
