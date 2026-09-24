@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 interface DialItem {
   key: string;
@@ -39,10 +39,13 @@ function fade(d: number) {
 
 export default function RotaryNav({ items }: { items: DialItem[] }) {
   const router = useRouter();
+  const pathname = usePathname();
   const n = items.length;
   const STEP = 360 / n;
 
-  const [rot, setRot] = useState(-Math.floor(n / 2) * STEP);
+  const activeIndex = items.findIndex((item) => item.href === pathname);
+  const initialIndex = activeIndex >= 0 ? activeIndex : Math.floor(n / 2);
+  const [rot, setRot] = useState(-initialIndex * STEP);
   const rotRef = useRef(rot);
   const raf = useRef<number | null>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -56,6 +59,17 @@ export default function RotaryNav({ items }: { items: DialItem[] }) {
     },
     [],
   );
+
+  useEffect(() => {
+    if (activeIndex < 0) return;
+    const liveIndexNow = Math.round(-rotRef.current / STEP);
+    const currentNow = mod(liveIndexNow, n);
+    if (currentNow === activeIndex) return;
+    let delta = mod(activeIndex - currentNow, n);
+    if (delta > n / 2) delta -= n;
+    animateTo(-(liveIndexNow + delta) * STEP);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   function stopAnimation() {
     if (raf.current !== null) cancelAnimationFrame(raf.current);
