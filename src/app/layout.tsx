@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import AccountMenuServer from "@/components/AccountMenuServer";
 
 export const metadata: Metadata = {
   title: "Verdic Nimai",
@@ -12,6 +13,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col" style={{ paddingBottom: "14rem" }}>
         {children}
+        <AccountMenuServer />
         <NavBar />
       </body>
     </html>
