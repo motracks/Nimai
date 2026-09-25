@@ -94,7 +94,7 @@ export default function LikertAssessment({ instrument, data, eyebrow, heading, t
     try {
       localStorage.removeItem(draftKey(instrument));
     } catch {}
-    router.push(`/#result-${instrument}`);
+    router.push(`/results/${instrument}`);
   }
 
   const item = data.items[current];

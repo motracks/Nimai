@@ -85,7 +85,7 @@ export default function TickAssessment({ instrument, items, minTicks, maxTicks, 
       setStatus("error");
       return;
     }
-    router.push(`/#result-${instrument}`);
+    router.push(`/results/${instrument}`);
   }
 
   return (
