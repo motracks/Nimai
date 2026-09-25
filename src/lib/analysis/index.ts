@@ -130,7 +130,14 @@ function analyseBigFive(scored: ScoredResult): Omit<Analysis, "instrument" | "pr
     .filter((c) => Object.entries(c.when).every(([d, lvl]) => levels[d] === lvl))
     .map((c) => c.text);
 
-  const sections: AnalysisSection[] = [];
+  const sections: AnalysisSection[] = [
+    {
+      title: "Your most distinctive traits",
+      paragraphs: distinctive
+        .slice(0, 2)
+        .map((d) => bigfiveContent.dimensions[d as keyof typeof bigfiveContent.dimensions].about),
+    },
+  ];
   if (strengths.length) sections.push({ title: "Strengths", items: strengths });
   if (watch.length) sections.push({ title: "Worth watching", items: watch });
   if (flexible.length) sections.push({ title: "Where you flex", items: flexible });
@@ -146,6 +153,14 @@ function analyseBigFive(scored: ScoredResult): Omit<Analysis, "instrument" | "pr
   };
 }
 
+function strategyNotes(scored: ScoredResult): string[] {
+  const cutoff = ecrrMapping.rules.cutoff;
+  const notes: string[] = [];
+  if (scored.raw.ANX > cutoff) notes.push(ecrrContent.dimension_notes.ANX_high);
+  if (scored.raw.AVD > cutoff) notes.push(ecrrContent.dimension_notes.AVD_high);
+  return notes.length ? notes : [ecrrContent.dimension_notes.both_low];
+}
+
 function analyseEcrr(scored: ScoredResult): Omit<Analysis, "instrument" | "progression"> {
   const label = scored.classification.label!;
   const content = ecrrContent.patterns[label as keyof typeof ecrrContent.patterns];
@@ -157,7 +172,9 @@ function analyseEcrr(scored: ScoredResult): Omit<Analysis, "instrument" | "progr
         (d) => `${dimensionName("ecrr", d)}: ${scored.classification.dimensionLabels![d]} (${scored.raw[d]} on 1-6)`,
       ),
     },
+    { title: "Why it works this way", paragraphs: strategyNotes(scored) },
     { title: "Ways to grow", items: content.growth },
+    { title: "It can change", paragraphs: [ecrrContent.can_change] },
   ];
 
   const caveats = qualityCaveats(scored).filter((c) => c !== FLAG_TEXT.near_boundary);
@@ -193,7 +210,8 @@ function analyseGuna(scored: ScoredResult): Omit<Analysis, "instrument" | "progr
         (d) => `${dimensionName("guna", d)}: ${Math.round(shares[d])}% · ${scored.classification.dimensionLabels![d]}`,
       ),
     },
-    { title: "What supports you now", items: lead.supports },
+    { title: "What supports you now", items: [...lead.supports, lead.food] },
+    { title: "From the Bhagavad Gita", items: lead.gita },
   ];
   if (first !== "TAM" && scored.norm.TAM > scored.norm.SAT) {
     sections.splice(2, 0, { title: "Worth attention", paragraphs: [gunaContent.sattva_below_tamas] });

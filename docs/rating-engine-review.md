@@ -335,6 +335,24 @@ Open:
    so the profile shows chart facts only.
 4. Optional: an LLM-written narrative on top of `buildSynthesisInput()`.
 
+## 6b. Content sources
+
+Each content file carries a `sources` block with its basis and review status.
+
+| Test | Basis | Inspiration / further reading | What's been done | Needs the book |
+|---|---|---|---|---|
+| Big Five | b5-result-text (MIT), itself reproducing John A. Johnson's IPIP-NEO report | Nettle, *Personality* | Trait overviews rewritten from the base text; costs-and-benefits framing throughout | Check framing against Nettle |
+| Attachment | Research model | Mikulincer & Shaver, *Attachment in Adulthood*; practical tips from Levine & Heller, *Attached* (not its fixed types) | Added hyperactivating/deactivating explanation and "it can change" (earned security) | Check wording against both |
+| Guna | Bhagavad Gita 14, 17 | Easwaran's translation; Frawley, *Ayurveda and the Mind* | Own paraphrase with verse numbers (14.6-8, 14.11-13, 17.8-10); dosha-through-guna reading in the profile | Check paraphrases against Easwaran, dosha-guna text against Frawley |
+| Prakriti / Vikriti | Govardhan workbook (unchanged) | Svoboda, *Prakriti*; Lad, *Science of Self-Healing* | Sources recorded only | Extend from the books |
+| Nakshatras | Standard facts: deity, symbol, ruler, gana | Harness, *The Nakshatras*; *Brihat Jataka* | 27 draft entries, `reviewed: false`, shown only when the Moon's nakshatra is certain | Check every entry against *Brihat Jataka* and Harness |
+
+Nothing in these files is copied from a copyrighted book: the books couldn't be
+accessed from the build environment, so the content reflects their widely
+published concepts. archive.org (for the public-domain *Brihat Jataka* and old
+Gita translations) is blocked by the environment's network policy; allowing it
+would let the classical texts be checked directly.
+
 ## 7. Roadblocks and things to do differently
 
 1. **Deploy order matters.** Apply the migration and set

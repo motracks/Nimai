@@ -1,41 +1,145 @@
 {
   "note": "Interpretive content for the Big Five analysis. Levels come from the bands in bigfive_mapping.json: low = first band, mid = second, high = third. Combinations fire when every listed dimension is at the listed level.",
+  "sources": {
+    "base_text": "Rewritten from the English domain texts in b5-result-text (MIT, github.com/Alheimsins/b5-result-text), which reproduce John A. Johnson's IPIP-NEO narrative report. Not copied: every sentence here is reworded, softened, and put in the second person.",
+    "inspiration": "Daniel Nettle, Personality: What Makes You the Way You Are (Oxford, 2007): the framing that every trait has costs and benefits and no level is simply better.",
+    "status": "Drafted without access to Nettle's text; the costs-and-benefits framing reflects the general research literature. Check against the book before launch."
+  },
   "dimensions": {
     "EXT": {
-      "high": { "strength": "You bring energy into a room and find it easy to connect, start things and rally people.", "watch": "Constant input can crowd out reflection; some quiet time helps you hear yourself." },
-      "mid": { "note": "You move between company and solitude as the situation asks, without a strong pull either way." },
-      "low": { "strength": "You listen well, think before you speak and are comfortable in your own company.", "watch": "Staying in the background can mean your ideas go unheard; choose a few moments to speak first." }
+      "high": {
+        "strength": "You bring energy into a room and find it easy to connect, start things and rally people.",
+        "watch": "Constant input can crowd out reflection; some quiet time helps you hear yourself."
+      },
+      "mid": {
+        "note": "You move between company and solitude as the situation asks, without a strong pull either way."
+      },
+      "low": {
+        "strength": "You listen well, think before you speak and are comfortable in your own company.",
+        "watch": "Staying in the background can mean your ideas go unheard; choose a few moments to speak first."
+      },
+      "about": "Extraversion is about how much you are drawn to people, activity and excitement. Higher scorers get energy from company and tend to say yes to new experiences; lower scorers need less stimulation and recharge alone. Being reserved isn't the same as being shy or unfriendly: it's a lower need for stimulation. Both ends have advantages: extraverts build wide networks and enjoy more upbeat moods, while introverts avoid many risks and are better at focused, solitary work."
     },
     "AGR": {
-      "high": { "strength": "People feel cared for around you; you smooth tension and notice who is left out.", "watch": "Putting others first can turn into saying yes when you mean no." },
-      "mid": { "note": "You are warm with people you trust and more guarded with those you don't yet know." },
-      "low": { "strength": "You say what you think and hold your ground, which is valuable when honesty matters.", "watch": "Directness can land harder than you intend; a word of warmth first often helps it be heard." }
+      "high": {
+        "strength": "People feel cared for around you; you smooth tension and notice who is left out.",
+        "watch": "Putting others first can turn into saying yes when you mean no."
+      },
+      "mid": {
+        "note": "You are warm with people you trust and more guarded with those you don't yet know."
+      },
+      "low": {
+        "strength": "You say what you think and hold your ground, which is valuable when honesty matters.",
+        "watch": "Directness can land harder than you intend; a word of warmth first often helps it be heard."
+      },
+      "about": "Agreeableness is about how much you orient toward others' needs and toward getting along. Higher scorers are considerate, generous and trusting, and are usually well liked. Lower scorers put their own judgement first and are more sceptical of others' motives, which helps where tough, objective decisions are needed. Neither end is better; they suit different situations."
     },
     "CON": {
-      "high": { "strength": "You are reliable, organised and finish what you start.", "watch": "High standards can become rigidity or self-criticism when things don't go to plan." },
-      "mid": { "note": "You bring structure where it matters and stay relaxed about the rest." },
-      "low": { "strength": "You are flexible and spontaneous, and adapt quickly when plans change.", "watch": "Important but dull tasks can slip; a small routine for the essentials frees you for the rest." }
+      "high": {
+        "strength": "You are reliable, organised and finish what you start.",
+        "watch": "High standards can become rigidity or self-criticism when things don't go to plan."
+      },
+      "mid": {
+        "note": "You bring structure where it matters and stay relaxed about the rest."
+      },
+      "low": {
+        "strength": "You are flexible and spontaneous, and adapt quickly when plans change.",
+        "watch": "Important but dull tasks can slip; a small routine for the essentials frees you for the rest."
+      },
+      "about": "Conscientiousness is about planning, self-control and follow-through. Higher scorers set goals and pursue them persistently, which brings reliability and achievement, though it can tip into perfectionism or overwork. Lower scorers are more spontaneous and live more in the moment, which makes them flexible and fun but can let long-term plans slip."
     },
     "NEU": {
-      "high": { "strength": "You feel things deeply, which makes you perceptive about moods and risks.", "watch": "Stress hits quickly and can linger; regular regulation practices (breath, movement, sleep) make a real difference." },
-      "mid": { "note": "You feel stress clearly but usually recover with some time or space." },
-      "low": { "strength": "You stay even under pressure and recover quickly from setbacks.", "watch": "Calm can hide real problems from you or from others; check in on what you actually feel." }
+      "high": {
+        "strength": "You feel things deeply, which makes you perceptive about moods and risks.",
+        "watch": "Stress hits quickly and can linger; regular regulation practices (breath, movement, sleep) make a real difference."
+      },
+      "mid": {
+        "note": "You feel stress clearly but usually recover with some time or space."
+      },
+      "low": {
+        "strength": "You stay even under pressure and recover quickly from setbacks.",
+        "watch": "Calm can hide real problems from you or from others; check in on what you actually feel."
+      },
+      "about": "Emotional reactivity (called neuroticism in research) is about how strongly and how long you feel negative emotions such as worry, anger or sadness. Higher scorers react quickly and intensely, which makes them alert to risk and often perceptive about feelings, but stress can linger and cloud thinking. Lower scorers stay calm under pressure but may miss warning signs. This trait responds well to practice: breathwork, movement, sleep and reflection all lower reactivity over time."
     },
     "OPN": {
-      "high": { "strength": "You are curious and imaginative, and enjoy new ideas, art and abstract thinking.", "watch": "Chasing the next idea can leave earlier ones unfinished." },
-      "mid": { "note": "You are open to new ideas when they connect to what already matters to you." },
-      "low": { "strength": "You are practical and grounded, and trust what has been tested.", "watch": "Unfamiliar approaches may get dismissed before they've had a fair look." }
+      "high": {
+        "strength": "You are curious and imaginative, and enjoy new ideas, art and abstract thinking.",
+        "watch": "Chasing the next idea can leave earlier ones unfinished."
+      },
+      "mid": {
+        "note": "You are open to new ideas when they connect to what already matters to you."
+      },
+      "low": {
+        "strength": "You are practical and grounded, and trust what has been tested.",
+        "watch": "Unfamiliar approaches may get dismissed before they've had a fair look."
+      },
+      "about": "Openness is about curiosity, imagination and appetite for new ideas, art and experiences. Higher scorers think in symbols and abstractions and like to question convention. Lower scorers prefer the concrete, familiar and proven. Openness is often presented as the more mature style, but both are useful: open thinking suits creative and academic work, while practical thinking does better in many hands-on and service roles."
     }
   },
   "combinations": [
-    { "when": { "CON": "high", "NEU": "high" }, "text": "Driven and conscientious, with a strong inner critic: high standards can turn into worry about falling short. Progress you can see (lists, small wins) quiets the critic." },
-    { "when": { "CON": "high", "NEU": "low" }, "text": "Steady and reliable under pressure. Others likely lean on you when things get busy, so watch that you don't carry everyone's load." },
-    { "when": { "EXT": "high", "AGR": "high" }, "text": "Warm and sociable: people tend to feel welcome around you, and you are often the one who brings a group together." },
-    { "when": { "EXT": "low", "NEU": "high" }, "text": "You tend to process stress inwardly. Quiet time helps, and so does telling one trusted person what's going on before it builds up." },
-    { "when": { "EXT": "high", "NEU": "high" }, "text": "Expressive and responsive: your moods show quickly and ripple through your social world. Naming the feeling out loud often helps it pass." },
-    { "when": { "OPN": "high", "CON": "low" }, "text": "Full of ideas, less drawn to the routine of finishing them. A simple structure for follow-through multiplies what you create." },
-    { "when": { "OPN": "high", "CON": "high" }, "text": "You combine imagination with follow-through, a mix that suits building new things from idea to finished work." },
-    { "when": { "AGR": "low", "CON": "high" }, "text": "Direct and demanding, of yourself and of others. Effective, though your edge may land harder than you mean it to." },
-    { "when": { "AGR": "high", "NEU": "high" }, "text": "Very attuned to others' feelings, and inclined to take them on as your own. Clear boundaries protect that sensitivity." }
+    {
+      "when": {
+        "CON": "high",
+        "NEU": "high"
+      },
+      "text": "Driven and conscientious, with a strong inner critic: high standards can turn into worry about falling short. Progress you can see (lists, small wins) quiets the critic."
+    },
+    {
+      "when": {
+        "CON": "high",
+        "NEU": "low"
+      },
+      "text": "Steady and reliable under pressure. Others likely lean on you when things get busy, so watch that you don't carry everyone's load."
+    },
+    {
+      "when": {
+        "EXT": "high",
+        "AGR": "high"
+      },
+      "text": "Warm and sociable: people tend to feel welcome around you, and you are often the one who brings a group together."
+    },
+    {
+      "when": {
+        "EXT": "low",
+        "NEU": "high"
+      },
+      "text": "You tend to process stress inwardly. Quiet time helps, and so does telling one trusted person what's going on before it builds up."
+    },
+    {
+      "when": {
+        "EXT": "high",
+        "NEU": "high"
+      },
+      "text": "Expressive and responsive: your moods show quickly and ripple through your social world. Naming the feeling out loud often helps it pass."
+    },
+    {
+      "when": {
+        "OPN": "high",
+        "CON": "low"
+      },
+      "text": "Full of ideas, less drawn to the routine of finishing them. A simple structure for follow-through multiplies what you create."
+    },
+    {
+      "when": {
+        "OPN": "high",
+        "CON": "high"
+      },
+      "text": "You combine imagination with follow-through, a mix that suits building new things from idea to finished work."
+    },
+    {
+      "when": {
+        "AGR": "low",
+        "CON": "high"
+      },
+      "text": "Direct and demanding, of yourself and of others. Effective, though your edge may land harder than you mean it to."
+    },
+    {
+      "when": {
+        "AGR": "high",
+        "NEU": "high"
+      },
+      "text": "Very attuned to others' feelings, and inclined to take them on as your own. Clear boundaries protect that sensitivity."
+    }
   ]
 }

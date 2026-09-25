@@ -6,7 +6,9 @@ import prakriti from "./prakriti.json";
 import resonances from "./analysis/resonances.json";
 import { analyse } from "./analysis";
 import { buildHistories, type ResultRow } from "./results";
-import { buildProfile, buildSynthesisInput, findResonances } from "./profile";
+import { buildProfile, buildSynthesisInput, findResonances, nakshatraMeaning } from "./profile";
+import guna_ from "./analysis/guna.json";
+import chartNakshatras from "../../supabase/functions/vedic-chart/nakshatras.json";
 import { INSTRUMENTS, type InstrumentKey } from "./instruments";
 
 type Item = { id: string; dimension: string; reverse?: boolean };
@@ -51,7 +53,14 @@ describe("per-test analysis", () => {
   it("ECR-R explains the pattern and offers growth steps", () => {
     const a = analyse(person.ecrr!)!;
     expect(a.headline).toBe("Anxious-preoccupied");
-    expect(a.sections.map((s) => s.title)).toEqual(["In practice", "Your two dimensions", "Ways to grow"]);
+    expect(a.sections.map((s) => s.title)).toEqual([
+      "In practice",
+      "Your two dimensions",
+      "Why it works this way",
+      "Ways to grow",
+      "It can change",
+    ]);
+    expect(a.sections[2].paragraphs?.[0]).toMatch(/hyperactivating/);
   });
 
   it("Guna reports the leading guna and progression since baseline", () => {
@@ -104,9 +113,26 @@ describe("combined profile", () => {
     const p = buildProfile(person, { moon_nakshatra: { name: "Rohini", pada: 2 }, moon_reliable: true, chandra_lagna: { sign: "Taurus" } }, Date.parse("2026-09-26"));
     expect(p.missing).toEqual([]);
     expect(p.sections.map((s) => s.title)).toEqual(["Your nature", "Right now", "In relationships"]);
-    expect(p.sections[0].items).toEqual(["Moon nakshatra: Rohini, pada 2", "Chandra Lagna: Taurus"]);
+    expect(p.sections[0].items?.slice(0, 2)).toEqual(["Moon nakshatra: Rohini, pada 2", "Chandra Lagna: Taurus"]);
+    expect(p.sections[0].items?.[2]).toMatch(/^Rohini: ruled by Moon, deity Prajapati/);
+    // Vata constitution read through Tamas
+    expect(p.sections[1].paragraphs).toContain(guna_.with_dosha.VAT.TAM);
     expect(p.progression.map((x) => x.key)).toEqual(["guna"]);
     expect(p.practice?.items?.[0]).toMatch(/^Asana to settle the Vata that is raised now/);
+  });
+
+  it("doesn't interpret an uncertain Moon nakshatra", () => {
+    const p = buildProfile(person, {
+      moon_nakshatra: { name: "Rohini", pada: 4 },
+      moon_reliable: false,
+      moon_range: { signs: ["Taurus"], nakshatras: ["Rohini", "Mrigashira"] },
+      chandra_lagna: { sign: "Taurus" },
+    });
+    expect(p.sections[0].items).toEqual(["Moon nakshatra: Rohini or Mrigashira (birth time unknown)", "Chandra Lagna: Taurus"]);
+  });
+
+  it("has nakshatra content for every nakshatra the chart can return", () => {
+    for (const n of chartNakshatras.nakshatras) expect(nakshatraMeaning(n.name)).not.toBeNull();
   });
 
   it("works with a single test and lists the rest as missing", () => {

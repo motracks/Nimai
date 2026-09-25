@@ -1,0 +1,200 @@
+{
+  "note": "Moon nakshatra content for the Vedic chart section of the profile. Deity, symbol, ruling planet (Vimshottari order) and gana are standard reference facts. 'tendency' is written as a tendency, never a prediction.",
+  "sources": {
+    "tone": "Dennis Harness, The Nakshatras: The Lunar Mansions of Vedic Astrology (1999): psychological, non-fatalistic tone.",
+    "traditional": "Varahamihira, Brihat Jataka: results of the Moon in each nakshatra (public-domain English translations from 1885-1919 on archive.org).",
+    "status": "DRAFT. Written without access to either book (archive.org is blocked from the build environment). Check every entry against the Brihat Jataka and Harness before launch."
+  },
+  "reviewed": false,
+  "nakshatras": {
+    "Ashwini": {
+      "ruler": "Ketu",
+      "deity": "the Ashvins, healers of the gods",
+      "symbol": "a horse's head",
+      "gana": "Deva",
+      "tendency": "You tend to move quickly and like to start things. There is a healing, helping streak in you and an impatience with waiting."
+    },
+    "Bharani": {
+      "ruler": "Venus",
+      "deity": "Yama, lord of restraint and death",
+      "symbol": "the womb",
+      "gana": "Manushya",
+      "tendency": "You tend to carry things through to the end and can hold intensity that others avoid. Learning when to restrain yourself and when to let go is a lifelong theme."
+    },
+    "Krittika": {
+      "ruler": "Sun",
+      "deity": "Agni, the fire",
+      "symbol": "a razor or flame",
+      "gana": "Rakshasa",
+      "tendency": "You tend to be sharp, honest and purifying: you cut through what's false. Your fire can nourish or burn, depending on how you direct it."
+    },
+    "Rohini": {
+      "ruler": "Moon",
+      "deity": "Prajapati, the creator",
+      "symbol": "an ox cart",
+      "gana": "Manushya",
+      "tendency": "You tend to be drawn to beauty, comfort and growth, and to make things flourish. Watch for holding on to what you love too tightly."
+    },
+    "Mrigashira": {
+      "ruler": "Mars",
+      "deity": "Soma, the moon's nectar",
+      "symbol": "a deer's head",
+      "gana": "Deva",
+      "tendency": "You tend to be curious and searching, always looking for the next thing to understand. Your gentleness pairs with restlessness."
+    },
+    "Ardra": {
+      "ruler": "Rahu",
+      "deity": "Rudra, the storm",
+      "symbol": "a teardrop",
+      "gana": "Manushya",
+      "tendency": "You tend to feel deeply and grow through upheaval. Storms in your life often clear the way for something new."
+    },
+    "Punarvasu": {
+      "ruler": "Jupiter",
+      "deity": "Aditi, the boundless mother",
+      "symbol": "a quiver of arrows",
+      "gana": "Deva",
+      "tendency": "You tend to return, renew and begin again after setbacks. You are generous and at home with simplicity."
+    },
+    "Pushya": {
+      "ruler": "Saturn",
+      "deity": "Brihaspati, teacher of the gods",
+      "symbol": "a cow's udder",
+      "gana": "Deva",
+      "tendency": "You tend to nourish and support others, and to feel most yourself when you're caring and being useful. Traditionally one of the most auspicious stars."
+    },
+    "Ashlesha": {
+      "ruler": "Mercury",
+      "deity": "the Nagas, serpent beings",
+      "symbol": "a coiled serpent",
+      "gana": "Rakshasa",
+      "tendency": "You tend to be perceptive and intuitive, and you see beneath the surface. Your insight is strong; use it to understand people, not to hold on to them."
+    },
+    "Magha": {
+      "ruler": "Ketu",
+      "deity": "the Pitris, the ancestors",
+      "symbol": "a royal throne",
+      "gana": "Rakshasa",
+      "tendency": "You tend to feel connected to family, lineage and tradition, and carry a natural dignity. Respect matters to you."
+    },
+    "Purva Phalguni": {
+      "ruler": "Venus",
+      "deity": "Bhaga, god of delight",
+      "symbol": "the front legs of a bed",
+      "gana": "Manushya",
+      "tendency": "You tend to enjoy pleasure, creativity and rest, and bring warmth and charm to relationships. Balancing enjoyment with effort is the theme."
+    },
+    "Uttara Phalguni": {
+      "ruler": "Sun",
+      "deity": "Aryaman, god of contracts and friendship",
+      "symbol": "the back legs of a bed",
+      "gana": "Manushya",
+      "tendency": "You tend to be dependable and generous, and you keep your commitments. Partnership and helping others succeed are your strengths."
+    },
+    "Hasta": {
+      "ruler": "Moon",
+      "deity": "Savitar, the sun's creative power",
+      "symbol": "an open hand",
+      "gana": "Deva",
+      "tendency": "You tend to be skilful and practical, good with your hands and with details. You also have a light, humorous side."
+    },
+    "Chitra": {
+      "ruler": "Mars",
+      "deity": "Tvashtar, the divine craftsman",
+      "symbol": "a bright jewel",
+      "gana": "Rakshasa",
+      "tendency": "You tend to create and design, and to care about beauty and form. You like to make things that are striking and well made."
+    },
+    "Swati": {
+      "ruler": "Rahu",
+      "deity": "Vayu, the wind",
+      "symbol": "a young shoot swaying in the wind",
+      "gana": "Deva",
+      "tendency": "You tend to value independence and move with change without breaking. Your flexibility is a strength; steady roots let you use it."
+    },
+    "Vishakha": {
+      "ruler": "Jupiter",
+      "deity": "Indra and Agni together",
+      "symbol": "a triumphal arch",
+      "gana": "Rakshasa",
+      "tendency": "You tend to be goal-focused and determined, and you pursue what you want with single-minded effort. Patience is the lesson."
+    },
+    "Anuradha": {
+      "ruler": "Saturn",
+      "deity": "Mitra, god of friendship",
+      "symbol": "a lotus",
+      "gana": "Deva",
+      "tendency": "You tend to build deep, loyal friendships and to cooperate well. You can flourish in difficult conditions, like a lotus in mud."
+    },
+    "Jyeshtha": {
+      "ruler": "Mercury",
+      "deity": "Indra, king of the gods",
+      "symbol": "a circular earring",
+      "gana": "Rakshasa",
+      "tendency": "You tend to take responsibility and protect those around you. Seniority and authority come to you, and with them the need for humility."
+    },
+    "Mula": {
+      "ruler": "Ketu",
+      "deity": "Nirriti, goddess of dissolution",
+      "symbol": "tied roots",
+      "gana": "Rakshasa",
+      "tendency": "You tend to go to the root of things and want the real truth. Sometimes that means pulling up what no longer serves."
+    },
+    "Purva Ashadha": {
+      "ruler": "Venus",
+      "deity": "Apas, the waters",
+      "symbol": "a winnowing fan",
+      "gana": "Manushya",
+      "tendency": "You tend to be persuasive and full of conviction, and you don't give up easily. Your confidence can inspire others."
+    },
+    "Uttara Ashadha": {
+      "ruler": "Sun",
+      "deity": "the Vishvadevas, the universal gods",
+      "symbol": "an elephant's tusk",
+      "gana": "Manushya",
+      "tendency": "You tend to value integrity and lasting achievement over quick wins. Once you commit, you see it through."
+    },
+    "Shravana": {
+      "ruler": "Moon",
+      "deity": "Vishnu, the preserver",
+      "symbol": "an ear",
+      "gana": "Deva",
+      "tendency": "You tend to listen and learn deeply, and you understand through hearing. You connect people and ideas."
+    },
+    "Dhanishta": {
+      "ruler": "Mars",
+      "deity": "the eight Vasus, gods of abundance",
+      "symbol": "a drum",
+      "gana": "Rakshasa",
+      "tendency": "You tend to have a sense of rhythm and timing, in music, work or life, and to attract abundance. You work well in groups."
+    },
+    "Shatabhisha": {
+      "ruler": "Rahu",
+      "deity": "Varuna, lord of cosmic waters",
+      "symbol": "an empty circle",
+      "gana": "Rakshasa",
+      "tendency": "You tend to be independent and private, and drawn to healing and hidden knowledge. Solitude helps you see clearly."
+    },
+    "Purva Bhadrapada": {
+      "ruler": "Jupiter",
+      "deity": "Aja Ekapada, the one-footed goat",
+      "symbol": "a sword",
+      "gana": "Manushya",
+      "tendency": "You tend to be intense and idealistic, and ready to sacrifice for what you believe in. Your passion is transformative when grounded."
+    },
+    "Uttara Bhadrapada": {
+      "ruler": "Saturn",
+      "deity": "Ahir Budhnya, serpent of the deep",
+      "symbol": "the back legs of a funeral cot",
+      "gana": "Manushya",
+      "tendency": "You tend to be deep, calm and self-controlled, with a wisdom that grows over time. Still waters run deep in you."
+    },
+    "Revati": {
+      "ruler": "Mercury",
+      "deity": "Pushan, guardian of travellers",
+      "symbol": "a fish",
+      "gana": "Deva",
+      "tendency": "You tend to nourish and guide others, especially on journeys and transitions. There is a gentle, compassionate completeness about you."
+    }
+  }
+}

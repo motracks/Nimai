@@ -6,6 +6,7 @@ import { INSTRUMENTS, INSTRUMENT_KEYS, type InstrumentKey } from "./instruments"
 import { dimensionName, type InstrumentHistory } from "./results";
 import type { ScoredResult } from "./scoring";
 import doshaGuide from "./prakriti_dosha_guide.json";
+import nakshatraContent from "./analysis/nakshatras.json";
 
 // The combined profile: every framework read in its own terms, then placed in
 // dialogue. Deterministic and rule-based like the per-test analyses; the
@@ -76,6 +77,12 @@ export function findResonances(h: Histories): Finding[] {
   return out;
 }
 
+export function nakshatraMeaning(name: string): string | null {
+  const n = nakshatraContent.nakshatras[name as keyof typeof nakshatraContent.nakshatras];
+  if (!n) return null;
+  return `${name}: ruled by ${n.ruler}, deity ${n.deity}, symbol ${n.symbol}. ${n.tendency}`;
+}
+
 function vedicLines(chart: VedicChart | null): string[] {
   if (!chart?.moon_nakshatra) return [];
   const lines = [
@@ -85,6 +92,12 @@ function vedicLines(chart: VedicChart | null): string[] {
   ];
   if (chart.ascendant_reliable && chart.ascendant) lines.push(`Ascendant: ${chart.ascendant.sign}`);
   else if (chart.chandra_lagna) lines.push(`Chandra Lagna: ${chart.chandra_lagna.sign}`);
+  // Only interpret the nakshatra when it's certain; with an unknown birth time
+  // the Moon may sit in either of two.
+  if (chart.moon_reliable !== false) {
+    const meaning = nakshatraMeaning(chart.moon_nakshatra.name);
+    if (meaning) lines.push(meaning);
+  }
   return lines;
 }
 
@@ -148,6 +161,8 @@ export function buildProfile(h: Histories, vedic: VedicChart | null, now = Date.
 
   const current: string[] = [];
   if (analyses.guna) current.push(`Guna: ${analyses.guna.headline}. ${gunaLead(h)}`);
+  const doshaThroughGuna = gunaDoshaLine(h);
+  if (doshaThroughGuna) current.push(doshaThroughGuna);
   if (analyses.vikriti) {
     const rel = analyses.vikriti.sections.find((s) => s.title === "Compared with your Prakriti")?.paragraphs?.[0];
     current.push(`Vikriti: ${analyses.vikriti.headline}.${rel ? ` ${rel}` : ""}`);
@@ -178,6 +193,18 @@ export function buildProfile(h: Histories, vedic: VedicChart | null, now = Date.
     practice: practiceNow(h),
     analyses,
   };
+}
+
+// Leading Prakriti dosha read through the leading guna (after Frawley).
+function gunaDoshaLine(h: Histories): string | null {
+  const prakriti = latestScored(h, "prakriti");
+  const guna = latestScored(h, "guna");
+  if (!prakriti?.shares || !guna?.shares || prakriti.classification.key === "sama") return null;
+  const dosha = (Object.keys(prakriti.shares) as Dosha[]).sort((a, b) => prakriti.shares![b] - prakriti.shares![a])[0];
+  const lead = (Object.keys(guna.shares) as ("SAT" | "RAJ" | "TAM")[]).sort(
+    (a, b) => guna.shares![b] - guna.shares![a],
+  )[0];
+  return gunaContent.with_dosha[dosha][lead];
 }
 
 function gunaLead(h: Histories): string {
