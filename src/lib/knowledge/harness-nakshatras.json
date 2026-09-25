@@ -1,0 +1,696 @@
+{
+  "source": {
+    "id": "harness1999",
+    "author": "Dennis M. Harness",
+    "title": "The Nakshatras: The Lunar Mansions of Vedic Astrology",
+    "publisher": "Lotus Press",
+    "year": 1999,
+    "kind": "practitioner"
+  },
+  "method": "Facts read from each chapter's 'at a Glance' table and narrative (printed pages given). 'moon_traits' paraphrase the book's 'Moon in …' list; 'moon_shadow' paraphrases its cautions. Deliberately excluded: timing predictions (ages, dashas), marriage predictions, health conditions, appearance judgements, and famous-people examples. null means the value was not legible in the scanned copy, not that the book lacks it.",
+  "entries": {
+    "Ashwini": {
+      "pages": "3–6",
+      "range": "0°00'–13°20' Aries",
+      "symbol": "A horse's head",
+      "ruler": "Ketu",
+      "gana": "Deva",
+      "motivation": "Dharma",
+      "animal": "Male horse",
+      "qualities": [
+        "Rajas",
+        "Rajas",
+        "Rajas"
+      ],
+      "deity": "The Ashwini Kumaras (also Shiva, Surya)",
+      "shakti": {
+        "name": "shidhra vyapani",
+        "power": "to heal quickly and reach things"
+      },
+      "moon_traits": [
+        "bright, quick mind",
+        "an optimistic mood that gives others hope",
+        "a healing, nurturing streak",
+        "love of music and the arts",
+        "love of travel",
+        "drawn to spiritual life",
+        "sincere love of family"
+      ],
+      "moon_shadow": null
+    },
+    "Bharani": {
+      "pages": "7–10",
+      "range": "13°20'–26°40' Aries",
+      "symbol": "The yoni; a clay vessel",
+      "ruler": "Venus",
+      "gana": "Manushya",
+      "motivation": "Artha",
+      "animal": "Male elephant",
+      "qualities": [
+        "Rajas",
+        "Rajas",
+        "Tamas"
+      ],
+      "deity": "Yama",
+      "shakti": {
+        "name": "apabharani",
+        "power": "to cleanse and remove impurities"
+      },
+      "moon_traits": [
+        "charismatic",
+        "leadership that shines in public",
+        "clever and dutiful in work",
+        "interest in hidden or occult subjects"
+      ],
+      "moon_shadow": "restlessness, impatience, and a tendency to carry things to extremes"
+    },
+    "Krittika": {
+      "pages": "11–14",
+      "range": "26°40' Aries–10°00' Taurus",
+      "symbol": "A flame or razor",
+      "ruler": "Sun",
+      "gana": "Rakshasa",
+      "motivation": "Kama",
+      "animal": "Female sheep",
+      "qualities": [
+        "Rajas",
+        "Rajas",
+        "Sattwa"
+      ],
+      "deity": "Agni",
+      "shakti": {
+        "name": "dahana",
+        "power": "to burn and purify"
+      },
+      "moon_traits": [
+        "a peaceful nature and a good advisor",
+        "strong sense of purpose, determined",
+        "intelligent but with a restless mind",
+        "gifts in the fine arts"
+      ],
+      "moon_shadow": "combative at times"
+    },
+    "Rohini": {
+      "pages": "15–18",
+      "range": "10°00'–23°20' Taurus",
+      "symbol": "An ox-cart or chariot, a temple, a banyan tree",
+      "ruler": "Moon",
+      "gana": "Manushya",
+      "motivation": "Moksha",
+      "animal": "Male serpent",
+      "qualities": [
+        "Rajas",
+        "Tamas",
+        "Rajas"
+      ],
+      "deity": "Brahma / Prajapati",
+      "shakti": {
+        "name": "rohana",
+        "power": "growth"
+      },
+      "moon_traits": [
+        "a balanced mind",
+        "gifts in music, dance and drama",
+        "work that reaches the public"
+      ],
+      "moon_shadow": "indecisive at times"
+    },
+    "Mrigashira": {
+      "pages": "19–22",
+      "range": "23°20' Taurus–6°40' Gemini",
+      "symbol": "An antelope's head",
+      "ruler": "Mars",
+      "gana": "Deva",
+      "motivation": "Moksha",
+      "animal": "Female serpent",
+      "qualities": [
+        "Rajas",
+        "Tamas",
+        "Tamas"
+      ],
+      "deity": "Soma",
+      "shakti": {
+        "name": "prinana",
+        "power": "to give fulfillment"
+      },
+      "moon_traits": [
+        "intelligent, with writing skill",
+        "sensitive and gentle, sometimes timid",
+        "an interest in politics"
+      ],
+      "moon_shadow": null
+    },
+    "Ardra": {
+      "pages": "23–26",
+      "range": "6°40'–20°00' Gemini",
+      "symbol": "A human head; a teardrop",
+      "ruler": "Rahu",
+      "gana": "Manushya",
+      "motivation": "Kama",
+      "animal": "Female dog",
+      "qualities": [
+        "Rajas",
+        "Tamas",
+        "Sattwa"
+      ],
+      "deity": "Rudra, lord of storms",
+      "shakti": {
+        "name": "yatna",
+        "power": "effort"
+      },
+      "moon_traits": [
+        "a thirst for knowledge, curious",
+        "a strong communicator and speaker"
+      ],
+      "moon_shadow": null
+    },
+    "Punarvasu": {
+      "pages": "27–30",
+      "range": "20°00' Gemini–3°20' Cancer",
+      "symbol": "A bow and quiver of arrows",
+      "ruler": "Jupiter",
+      "gana": "Deva",
+      "motivation": "Artha",
+      "animal": "Female cat",
+      "qualities": [
+        "Rajas",
+        "Sattwa",
+        "Rajas"
+      ],
+      "deity": "Aditi",
+      "shakti": {
+        "name": "vasutva prapana",
+        "power": "to gain wealth or substance"
+      },
+      "moon_traits": [
+        "happy, friendly and easily contented",
+        "good speech, self-controlled",
+        "religiously inclined, content with a simple life",
+        "writing skill"
+      ],
+      "moon_shadow": "fickle or indecisive at times"
+    },
+    "Pushya": {
+      "pages": "31–34",
+      "range": "3°20'–16°40' Cancer",
+      "symbol": "The udder of a cow; a flower, circle and arrow",
+      "ruler": "Saturn",
+      "gana": "Deva",
+      "motivation": "Dharma",
+      "animal": "Male sheep (ram)",
+      "qualities": null,
+      "deity": "Brihaspati",
+      "shakti": {
+        "name": "brahmavarchasa",
+        "power": "to create spiritual energy"
+      },
+      "moon_traits": [
+        "learned, with a composed mind",
+        "virtuous and well liked",
+        "political interests"
+      ],
+      "moon_shadow": null
+    },
+    "Ashlesha": {
+      "pages": "35–38",
+      "range": "16°40'–30°00' Cancer",
+      "symbol": "A coiled serpent",
+      "ruler": "Mercury",
+      "gana": "Rakshasa",
+      "motivation": "Dharma",
+      "animal": "Male cat",
+      "qualities": [
+        "Rajas",
+        "Sattwa",
+        "Sattwa"
+      ],
+      "deity": "The Nagas",
+      "shakti": {
+        "name": "visasleshana",
+        "power": "to inflict with venom"
+      },
+      "moon_traits": [
+        "leadership",
+        "a mystical, intuitive nature",
+        "writing and speaking gifts",
+        "poetic and learned",
+        "research and organising skill"
+      ],
+      "moon_shadow": "may struggle with sincerity and trust"
+    },
+    "Magha": {
+      "pages": "39–42",
+      "range": "0°00'–13°20' Leo",
+      "symbol": "A palanquin (royal seat)",
+      "ruler": "Ketu",
+      "gana": null,
+      "motivation": "Artha",
+      "animal": null,
+      "qualities": null,
+      "deity": "The Pitris (ancestors)",
+      "shakti": {
+        "name": "tyage kshepani",
+        "power": "to leave the body"
+      },
+      "moon_traits": [
+        "honoured by learned people",
+        "devotion to the divine and to ancestors",
+        "drawn to meaningful mystical work",
+        "enterprising, enjoys life, charitable"
+      ],
+      "moon_shadow": "hot-tempered; may become attached to material prosperity"
+    },
+    "Purva Phalguni": {
+      "pages": "43–46",
+      "range": "13°20'–26°40' Leo",
+      "symbol": "A swinging hammock; the Shiva lingam",
+      "ruler": "Venus",
+      "gana": null,
+      "motivation": "Kama",
+      "animal": "Female rat",
+      "qualities": null,
+      "deity": "Bhaga",
+      "shakti": {
+        "name": "prajanana",
+        "power": "creative procreation"
+      },
+      "moon_traits": [
+        "creative intelligence, love of drama",
+        "leadership, often self-employed",
+        "love of travel, a wanderer",
+        "sweet speech and generosity",
+        "a mystical nature, teaching skill"
+      ],
+      "moon_shadow": "a restless mind and strong sensuality"
+    },
+    "Uttara Phalguni": {
+      "pages": "47–50",
+      "range": "26°40' Leo–10°00' Virgo",
+      "symbol": "A bed or the legs of a cot",
+      "ruler": "Sun",
+      "gana": "Manushya",
+      "motivation": "Moksha",
+      "animal": "Male cow (bull)",
+      "qualities": [
+        "Tamas",
+        "Rajas",
+        "Sattwa"
+      ],
+      "deity": "Aryaman, god of patronage",
+      "shakti": {
+        "name": "chayani",
+        "power": "to give prosperity"
+      },
+      "moon_traits": [
+        "well liked and stable",
+        "an inventive mind",
+        "happy and friendly",
+        "tactful, independent, clean-hearted"
+      ],
+      "moon_shadow": null
+    },
+    "Hasta": {
+      "pages": "51–54",
+      "range": "10°00'–23°20' Virgo",
+      "symbol": "The palm of the hand",
+      "ruler": "Moon",
+      "gana": "Deva",
+      "motivation": "Moksha",
+      "animal": "Female buffalo",
+      "qualities": [
+        "Tamas",
+        "Tamas",
+        "Rajas"
+      ],
+      "deity": "Savitar",
+      "shakti": {
+        "name": "hasta sthapaniya agama",
+        "power": "to manifest what we seek and place it in our hands"
+      },
+      "moon_traits": [
+        "creative, industrious and practical",
+        "makes friends quickly yet stays unattached"
+      ],
+      "moon_shadow": "moody, with many ups and downs"
+    },
+    "Chitra": {
+      "pages": "55–58",
+      "range": "23°20' Virgo–6°40' Libra",
+      "symbol": "A pearl or bright jewel",
+      "ruler": "Mars",
+      "gana": "Rakshasa",
+      "motivation": "Kama",
+      "animal": "Female tiger",
+      "qualities": [
+        "Tamas",
+        "Tamas",
+        "Tamas"
+      ],
+      "deity": "Tvashtar, the celestial architect",
+      "shakti": {
+        "name": "punya cayani",
+        "power": "to accumulate merit"
+      },
+      "moon_traits": [
+        "artistic",
+        "strong passions",
+        "stands out in a crowd",
+        "intuitive, even prophetic"
+      ],
+      "moon_shadow": null
+    },
+    "Swati": {
+      "pages": "59–62",
+      "range": "6°40'–20°00' Libra",
+      "symbol": "Coral",
+      "ruler": "Rahu",
+      "gana": "Deva",
+      "motivation": "Artha",
+      "animal": "Male buffalo",
+      "qualities": [
+        "Tamas",
+        "Tamas",
+        "Sattwa"
+      ],
+      "deity": "Vayu (also Saraswati)",
+      "shakti": {
+        "name": "pradhvamsa",
+        "power": "to scatter like the wind"
+      },
+      "moon_traits": [
+        "righteous, compassionate and truthful",
+        "clever speech, a generous nature",
+        "independent",
+        "humanitarian and charitable"
+      ],
+      "moon_shadow": "adamant and hot-tempered at times"
+    },
+    "Vishakha": {
+      "pages": "63–66",
+      "range": "20°00' Libra–3°20' Scorpio",
+      "symbol": "An archway; a potter's wheel",
+      "ruler": "Jupiter",
+      "gana": "Rakshasa",
+      "motivation": "Dharma",
+      "animal": "Male tiger",
+      "qualities": [
+        "Tamas",
+        "Sattwa",
+        "Rajas"
+      ],
+      "deity": "Indra and Agni",
+      "shakti": {
+        "name": "vyapani",
+        "power": "to achieve many and various fruits"
+      },
+      "moon_traits": [
+        "intelligence of a high order",
+        "speaks convincingly, writes well",
+        "draws people, leads",
+        "sees all religions as one, truthful",
+        "humanitarian"
+      ],
+      "moon_shadow": null
+    },
+    "Anuradha": {
+      "pages": "67–70",
+      "range": "3°20'–16°40' Scorpio",
+      "symbol": "A lotus",
+      "ruler": "Saturn",
+      "gana": "Deva",
+      "motivation": "Dharma",
+      "animal": "Female deer or hare",
+      "qualities": null,
+      "deity": "Mitra (also Radha)",
+      "shakti": {
+        "name": "radhana",
+        "power": "worship"
+      },
+      "moon_traits": [
+        "wise, truthful and kind-hearted",
+        "charismatic, hard-working and brave",
+        "handles difficult situations",
+        "keeps going whatever happens"
+      ],
+      "moon_shadow": null
+    },
+    "Jyeshtha": {
+      "pages": "71–74",
+      "range": "16°40'–30°00' Scorpio",
+      "symbol": "An earring; an umbrella",
+      "ruler": "Mercury",
+      "gana": "Rakshasa",
+      "motivation": "Artha",
+      "animal": "Male deer or hare",
+      "qualities": [
+        "Tamas",
+        "Sattwa",
+        "Sattwa"
+      ],
+      "deity": "Indra",
+      "shakti": {
+        "name": "arohana",
+        "power": "to rise and conquer"
+      },
+      "moon_traits": [
+        "virtuous",
+        "musical gifts",
+        "good stamina"
+      ],
+      "moon_shadow": "irritable and obstinate at times"
+    },
+    "Mula": {
+      "pages": "75–78",
+      "range": "0°00'–13°20' Sagittarius",
+      "symbol": "A tied bunch of roots",
+      "ruler": "Ketu",
+      "gana": "Rakshasa",
+      "motivation": "Kama",
+      "animal": "Male dog",
+      "qualities": [
+        "Sattwa",
+        "Rajas",
+        "Rajas"
+      ],
+      "deity": "Nirriti",
+      "shakti": {
+        "name": "barhana",
+        "power": "to break things apart"
+      },
+      "moon_traits": [
+        "peace-loving, gives spiritual advice",
+        "a good speaker",
+        "generous with friends",
+        "a soft, charitable disposition"
+      ],
+      "moon_shadow": "proud, with a fixed mind"
+    },
+    "Purva Ashadha": {
+      "pages": "79–82",
+      "range": "13°20'–26°40' Sagittarius",
+      "symbol": "A fan; a winnowing basket",
+      "ruler": "Venus",
+      "gana": "Manushya",
+      "motivation": "Moksha",
+      "animal": "Male monkey",
+      "qualities": [
+        "Sattwa",
+        "Rajas",
+        "Tamas"
+      ],
+      "deity": "Apas (also Varuna)",
+      "shakti": {
+        "name": "varchograhana",
+        "power": "invigoration"
+      },
+      "moon_traits": [
+        "a charismatic leader",
+        "intelligent and a good communicator",
+        "philosophical, with writing skill",
+        "strong attachment to certain friends"
+      ],
+      "moon_shadow": "obstinate, persuasive to the point of being domineering"
+    },
+    "Uttara Ashadha": {
+      "pages": "83–86",
+      "range": "26°40' Sagittarius–10°00' Capricorn",
+      "symbol": "An elephant's tusk; the planks of a bed",
+      "ruler": "Sun",
+      "gana": "Manushya",
+      "motivation": "Moksha",
+      "animal": "Male mongoose",
+      "qualities": [
+        "Sattwa",
+        "Rajas",
+        "Sattwa"
+      ],
+      "deity": "The Vishvadevas",
+      "shakti": {
+        "name": "apradhrisya",
+        "power": "to grant an unchallengeable victory"
+      },
+      "moon_traits": [
+        "virtuous, intelligent and charitable",
+        "well liked, many friends",
+        "charming and refined",
+        "pure-hearted and grateful",
+        "leadership"
+      ],
+      "moon_shadow": null
+    },
+    "Shravana": {
+      "pages": "87–90",
+      "range": "10°00'–23°20' Capricorn",
+      "symbol": "An ear; three footprints",
+      "ruler": "Moon",
+      "gana": "Deva",
+      "motivation": "Artha",
+      "animal": "Female monkey",
+      "qualities": [
+        "Sattwa",
+        "Tamas",
+        "Rajas"
+      ],
+      "deity": "Vishnu (also Saraswati)",
+      "shakti": {
+        "name": "samhanana",
+        "power": "to connect"
+      },
+      "moon_traits": [
+        "intelligent, good speech",
+        "creative, drawn to the arts",
+        "charitable, a good host, principled",
+        "a perfectionist"
+      ],
+      "moon_shadow": "can become overly zealous"
+    },
+    "Dhanishtha": {
+      "pages": "91–94",
+      "range": "23°20' Capricorn–6°40' Aquarius",
+      "symbol": "A musical drum",
+      "ruler": "Mars",
+      "gana": "Rakshasa",
+      "motivation": "Dharma",
+      "animal": "Female lion",
+      "qualities": [
+        "Sattwa",
+        "Tamas",
+        "Tamas"
+      ],
+      "deity": "The eight Vasus",
+      "shakti": {
+        "name": "khyapayitri",
+        "power": "to give abundance and fame"
+      },
+      "moon_traits": [
+        "generous and charitable",
+        "fond of music and poetry, mystical"
+      ],
+      "moon_shadow": "daring and rash; hard to convince"
+    },
+    "Shatabhisha": {
+      "pages": "95–98",
+      "range": "6°40'–20°00' Aquarius",
+      "symbol": "An empty circle; a hundred physicians",
+      "ruler": "Rahu",
+      "gana": "Rakshasa",
+      "motivation": "Dharma",
+      "animal": "Female horse",
+      "qualities": [
+        "Sattwa",
+        "Tamas",
+        "Sattwa"
+      ],
+      "deity": "Varuna",
+      "shakti": {
+        "name": "bheshaja",
+        "power": "healing"
+      },
+      "moon_traits": [
+        "truthful, principled and charitable",
+        "writing skill, excellent memory",
+        "interest in astrology and psychology",
+        "independent and artistic"
+      ],
+      "moon_shadow": "bold to the point of being opinionated"
+    },
+    "Purva Bhadrapada": {
+      "pages": "99–102",
+      "range": "20°00' Aquarius–3°20' Pisces",
+      "symbol": "A sword; two legs of a bed; a two-faced man",
+      "ruler": "Jupiter",
+      "gana": "Manushya",
+      "motivation": "Artha",
+      "animal": "Male lion",
+      "qualities": [
+        "Sattwa",
+        "Sattwa",
+        "Rajas"
+      ],
+      "deity": "Aja Ekapada",
+      "shakti": {
+        "name": "yajamana udyamana",
+        "power": "to raise a spiritual person up in life"
+      },
+      "moon_traits": [
+        "spiritual depth, teaching skill",
+        "intuitive gifts",
+        "clever in getting things done",
+        "scholarly, a writer"
+      ],
+      "moon_shadow": "cynical, with a sharp wit"
+    },
+    "Uttara Bhadrapada": {
+      "pages": "103–106",
+      "range": "3°20'–16°40' Pisces",
+      "symbol": "Two legs of a bed; twins",
+      "ruler": "Saturn",
+      "gana": "Manushya",
+      "motivation": "Kama",
+      "animal": "Female cow",
+      "qualities": [
+        "Sattwa",
+        "Sattwa",
+        "Tamas"
+      ],
+      "deity": "Ahirbudhnya (also Lakshmi)",
+      "shakti": {
+        "name": "varshodyamana",
+        "power": "to bring the cosmic rain"
+      },
+      "moon_traits": [
+        "virtuous, good-hearted and service-oriented",
+        "clever in speech, happy and wise",
+        "keeps anger in check",
+        "enjoys children"
+      ],
+      "moon_shadow": null
+    },
+    "Revati": {
+      "pages": "107–110",
+      "range": "16°40'–30°00' Pisces",
+      "symbol": "A drum; a fish",
+      "ruler": "Mercury",
+      "gana": "Deva",
+      "motivation": "Moksha",
+      "animal": "Female elephant",
+      "qualities": [
+        "Sattwa",
+        "Sattwa",
+        "Sattwa"
+      ],
+      "deity": "Pushan, the nurturer",
+      "shakti": {
+        "name": "kshiradyapani",
+        "power": "nourishment"
+      },
+      "moon_traits": [
+        "independent, ambitious and well liked",
+        "interest in ancient cultures, wisdom",
+        "drawn to religion and mysticism",
+        "loves animals, courageous"
+      ],
+      "moon_shadow": null
+    }
+  }
+}

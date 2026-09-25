@@ -1,0 +1,63 @@
+{
+  "note": "Every source the app's interpretive content draws on. 'kind': classical (primary text), research (peer-reviewed or academic synthesis), practitioner (experienced teacher's book), workbook (course material). Books themselves are never stored in the repo.",
+  "sources": {
+    "harness1999": {
+      "author": "Dennis M. Harness",
+      "title": "The Nakshatras: The Lunar Mansions of Vedic Astrology",
+      "year": 1999,
+      "kind": "practitioner",
+      "status": "read in full"
+    },
+    "nettle2007": {
+      "author": "Daniel Nettle",
+      "title": "Personality: What Makes You the Way You Are",
+      "publisher": "Oxford University Press",
+      "year": 2007,
+      "kind": "research",
+      "status": "received, not yet processed"
+    },
+    "levineheller2010": {
+      "author": "Amir Levine & Rachel Heller",
+      "title": "Attached",
+      "year": 2010,
+      "kind": "practitioner",
+      "status": "received, not yet processed"
+    },
+    "mikulincershaver2016": {
+      "author": "Mario Mikulincer & Phillip R. Shaver",
+      "title": "Attachment in Adulthood (2nd ed.)",
+      "publisher": "Guilford",
+      "year": 2016,
+      "kind": "research",
+      "status": "partial copy only (to ch. 2) — full text needed"
+    },
+    "easwaran2007": {
+      "author": "Eknath Easwaran (trans.)",
+      "title": "The Bhagavad Gita",
+      "publisher": "Nilgiri Press",
+      "year": 2007,
+      "kind": "classical",
+      "status": "received, not yet processed"
+    },
+    "frawley1996": {
+      "author": "David Frawley",
+      "title": "Ayurveda and the Mind",
+      "publisher": "Lotus Press",
+      "year": 1996,
+      "kind": "practitioner",
+      "status": "partial copy only (to p. 93) — full text needed"
+    },
+    "svoboda": {
+      "author": "Robert Svoboda",
+      "title": "Prakriti: Your Ayurvedic Constitution (rev. 2nd ed.)",
+      "kind": "practitioner",
+      "status": "received, not yet processed"
+    },
+    "govardhan": {
+      "author": "Govardhan School of Yoga",
+      "title": "Prakriti Parikshan workbook (YTT)",
+      "kind": "workbook",
+      "status": "basis of prakriti.json and prakriti_dosha_guide.json"
+    }
+  }
+}

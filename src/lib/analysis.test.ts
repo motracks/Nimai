@@ -9,6 +9,9 @@ import { buildHistories, type ResultRow } from "./results";
 import { buildProfile, buildSynthesisInput, findResonances, nakshatraMeaning } from "./profile";
 import guna_ from "./analysis/guna.json";
 import chartNakshatras from "../../supabase/functions/vedic-chart/nakshatras.json";
+import nakshatraContent from "./analysis/nakshatras.json";
+import harnessKb from "./knowledge/harness-nakshatras.json";
+import sourceRegistry from "./knowledge/sources.json";
 import { INSTRUMENTS, type InstrumentKey } from "./instruments";
 
 type Item = { id: string; dimension: string; reverse?: boolean };
@@ -114,7 +117,7 @@ describe("combined profile", () => {
     expect(p.missing).toEqual([]);
     expect(p.sections.map((s) => s.title)).toEqual(["Your nature", "Right now", "In relationships"]);
     expect(p.sections[0].items?.slice(0, 2)).toEqual(["Moon nakshatra: Rohini, pada 2", "Chandra Lagna: Taurus"]);
-    expect(p.sections[0].items?.[2]).toMatch(/^Rohini: ruled by Moon, deity Prajapati/);
+    expect(p.sections[0].items?.[2]).toMatch(/^Rohini: ruled by Moon, deity Brahma \/ Prajapati, symbol .*power growth\./);
     // Vata constitution read through Tamas
     expect(p.sections[1].paragraphs).toContain(guna_.with_dosha.VAT.TAM);
     expect(p.progression.map((x) => x.key)).toEqual(["guna"]);
@@ -133,6 +136,24 @@ describe("combined profile", () => {
 
   it("has nakshatra content for every nakshatra the chart can return", () => {
     for (const n of chartNakshatras.nakshatras) expect(nakshatraMeaning(n.name)).not.toBeNull();
+  });
+
+  it("cites a known source, with pages, for every nakshatra", () => {
+    const known = Object.keys(sourceRegistry.sources);
+    for (const [name, n] of Object.entries(nakshatraContent.nakshatras)) {
+      expect(n.sources.length, name).toBeGreaterThan(0);
+      for (const src of n.sources) {
+        expect(known, name).toContain(src.id);
+        expect(src.pages, name).toMatch(/\d/);
+      }
+    }
+    // App content uses the chart's spelling; the knowledge file keeps the book's.
+    const chartNames = chartNakshatras.nakshatras.map((n) => n.name).sort();
+    expect(Object.keys(nakshatraContent.nakshatras).sort()).toEqual(chartNames);
+    const bookNames = Object.entries(nakshatraContent.nakshatras)
+      .map(([name, n]) => ("source_spelling" in n ? (n.source_spelling as string) : name))
+      .sort();
+    expect(Object.keys(harnessKb.entries).sort()).toEqual(bookNames);
   });
 
   it("works with a single test and lists the rest as missing", () => {
