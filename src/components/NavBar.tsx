@@ -8,7 +8,9 @@ export default async function NavBar() {
     key: i.key,
     label: i.label,
     fullLabel: i.fullLabel,
-    href: i.testHref,
+    // A completed, current result opens its own fixed page. Not taken yet,
+    // or due for a retake, opens the questionnaire.
+    href: i.complete && !i.retakeDue ? `/results/${i.key}` : i.testHref,
     complete: i.complete,
   }));
 

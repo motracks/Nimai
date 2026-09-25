@@ -26,6 +26,26 @@ const GRAHAS = [
   { name: "Rahu", ipl: Constants.SE_TRUE_NODE },
 ] as const;
 
+// Fetch the WASM binary explicitly rather than letting the library resolve
+// it relative to import.meta.url — that path resolution breaks once Deno
+// Edge Runtime relocates npm: packages into its own bundler cache. Cached per
+// worker so warm requests don't download it again; a failed fetch is retried
+// on the next request.
+let wasmBytesPromise: Promise<Uint8Array> | null = null;
+
+function getWasmBytes(): Promise<Uint8Array> {
+  wasmBytesPromise ??= fetch(
+    "https://cdn.jsdelivr.net/npm/@fusionstrings/swiss-eph@0.1.1/wasm/swiss_eph.wasm",
+  ).then(async (res) => {
+    if (!res.ok) throw new Error(`Failed to fetch swiss-eph WASM: ${res.status}`);
+    return new Uint8Array(await res.arrayBuffer());
+  });
+  wasmBytesPromise.catch(() => {
+    wasmBytesPromise = null;
+  });
+  return wasmBytesPromise;
+}
+
 interface RequestBody {
   birth_date: string; // "YYYY-MM-DD"
   birth_time: string | null; // "HH:MM", null when unknown
@@ -73,7 +93,7 @@ async function resolveTimezone(lat: number, lng: number, dateStr: string): Promi
   // to resolve the correct historical zone/DST rule for that date.
   const refTimestamp = Math.floor(new Date(`${dateStr}T12:00:00Z`).getTime() / 1000);
 
-  const url = new URL("http://api.timezonedb.com/v2.1/get-time-zone");
+  const url = new URL("https://api.timezonedb.com/v2.1/get-time-zone");
   url.searchParams.set("key", TIMEZONEDB_API_KEY);
   url.searchParams.set("format", "json");
   url.searchParams.set("by", "position");
@@ -102,11 +122,14 @@ function signAndDegree(siderealLongitude: number) {
   };
 }
 
+const NAKSHATRA_SPAN = 360 / 27;
+const PADA_SPAN = NAKSHATRA_SPAN / 4;
+
 function nakshatraAndPada(moonSiderealLongitude: number) {
   const norm = ((moonSiderealLongitude % 360) + 360) % 360;
-  const nakshatraIndex = Math.floor(norm / 13.3333);
-  const withinNakshatra = norm - nakshatraIndex * 13.3333;
-  const pada = Math.floor(withinNakshatra / 3.3333) + 1;
+  const nakshatraIndex = Math.min(26, Math.floor(norm / NAKSHATRA_SPAN));
+  const withinNakshatra = norm - nakshatraIndex * NAKSHATRA_SPAN;
+  const pada = Math.min(4, Math.floor(withinNakshatra / PADA_SPAN) + 1);
   return {
     name: nakshatras.nakshatras[nakshatraIndex].name,
     pada,
@@ -142,33 +165,30 @@ Deno.serve(async (req) => {
     const localDecimalHour = hour + minute / 60;
     const utDecimalHour = localDecimalHour - tz.offsetHours;
 
-    // Fetch the WASM binary explicitly rather than letting the library resolve
-    // it relative to import.meta.url — that path resolution breaks once Deno
-    // Edge Runtime relocates npm: packages into its own bundler cache.
-    const wasmRes = await fetch(
-      "https://cdn.jsdelivr.net/npm/@fusionstrings/swiss-eph@0.1.1/wasm/swiss_eph.wasm",
-    );
-    if (!wasmRes.ok) throw new Error(`Failed to fetch swiss-eph WASM: ${wasmRes.status}`);
-    const wasmBytes = new Uint8Array(await wasmRes.arrayBuffer());
-
-    const swe = await load({ wasmSource: wasmBytes });
+    const swe = await load({ wasmSource: await getWasmBytes() });
     swe.swe_set_sid_mode(Constants.SE_SIDM_LAHIRI, 0, 0);
 
     const jdUt = swe.swe_julday(year, month, day, utDecimalHour, Constants.SE_GREG_CAL);
 
     const iflag = Constants.SEFLG_MOSEPH | Constants.SEFLG_SIDEREAL | Constants.SEFLG_SPEED;
 
-    const planets = GRAHAS.map(({ name, ipl }) => {
-      const { xx, returnCode, error } = swe.swe_calc_ut(jdUt, ipl, iflag);
+    const longitudeAt = (jd: number, name: string, ipl: number) => {
+      const { xx, returnCode, error } = swe.swe_calc_ut(jd, ipl, iflag);
       if (returnCode < 0) throw new Error(`swe_calc_ut failed for ${name}: ${error}`);
-      const { sign, degree_in_sign } = signAndDegree(xx[0]);
-      const { name: nakName, pada } = nakshatraAndPada(xx[0]);
-      return { name, sign, degree_in_sign, nakshatra: nakName, pada };
+      return xx[0] as number;
+    };
+
+    let rahuLongitude = 0;
+    const planets = GRAHAS.map(({ name, ipl }) => {
+      const longitude = longitudeAt(jdUt, name, ipl);
+      if (name === "Rahu") rahuLongitude = longitude;
+      const { sign, degree_in_sign } = signAndDegree(longitude);
+      const { name: nakName, pada } = nakshatraAndPada(longitude);
+      return { name: name as string, sign, degree_in_sign, nakshatra: nakName, pada };
     });
 
-    // Ketu is always exactly opposite Rahu.
-    const rahu = planets.find((p) => p.name === "Rahu")!;
-    const ketuLongitude = (ZODIAC_SIGNS.indexOf(rahu.sign) * 30 + rahu.degree_in_sign + 180) % 360;
+    // Ketu is always exactly opposite Rahu (from the unrounded longitude).
+    const ketuLongitude = (rahuLongitude + 180) % 360;
     const ketuSignDeg = signAndDegree(ketuLongitude);
     const ketuNak = nakshatraAndPada(ketuLongitude);
     planets.push({
@@ -180,7 +200,26 @@ Deno.serve(async (req) => {
     });
 
     const moon = planets.find((p) => p.name === "Moon")!;
-    const moonSignIndex = ZODIAC_SIGNS.indexOf(moon.sign);
+
+    // The Moon moves ~13 degrees a day, about one nakshatra. Without a birth
+    // time the noon position is only a guess, so check the whole local day and
+    // report every sign and nakshatra the Moon passes through.
+    let moonReliable = true;
+    let moonRange: { signs: string[]; nakshatras: string[] } | null = null;
+    if (!ascendantReliable) {
+      const dayStartUt = 0 - tz.offsetHours;
+      const signs = new Set<string>();
+      const naks = new Set<string>();
+      for (let h = 0; h <= 24; h += 1) {
+        const hour = Math.min(h, 23 + 59 / 60);
+        const jd = swe.swe_julday(year, month, day, dayStartUt + hour, Constants.SE_GREG_CAL);
+        const lon = longitudeAt(jd, "Moon", Constants.SE_MOON);
+        signs.add(signAndDegree(lon).sign);
+        naks.add(nakshatraAndPada(lon).name);
+      }
+      moonReliable = signs.size === 1 && naks.size === 1;
+      moonRange = { signs: [...signs], nakshatras: [...naks] };
+    }
 
     let ascendant = null;
     let houses = null;
@@ -219,6 +258,9 @@ Deno.serve(async (req) => {
         houses,
         chandra_lagna: chandraLagna,
         moon_nakshatra: moonNakshatra,
+        moon_reliable: moonReliable,
+        moon_range: moonRange,
+        engine: { ephemeris: "moshier", ayanamsa: "lahiri", house_system: "whole_sign", version: "2" },
         resolved_location: location.formatted,
         resolved_timezone: tz.timezone,
       }),

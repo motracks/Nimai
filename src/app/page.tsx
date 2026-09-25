@@ -1,5 +1,17 @@
 import Link from "next/link";
+import { createClient } from "@/lib/supabase/server";
 import { getInstrumentStatuses } from "@/lib/progress";
+import { INSTRUMENTS, type InstrumentKey } from "@/lib/instruments";
+import { InstrumentResultCard, VedicChartCard } from "@/components/ResultCards";
+import { KIND_TEXT, buildHistories, vikritiVsPrakriti, type ResultRow } from "@/lib/results";
+
+const ORDER: { key: InstrumentKey; title: string }[] = [
+  { key: "bigfive", title: "Personality" },
+  { key: "ecrr", title: "Attachment" },
+  { key: "guna", title: "Guna" },
+  { key: "prakriti", title: "Prakriti" },
+  { key: "vikriti", title: "Vikriti" },
+];
 
 export default async function Home() {
   const { user, instruments } = await getInstrumentStatuses();
@@ -44,7 +56,9 @@ export default async function Home() {
         {instruments.map((i) => (
           <Link
             key={i.key}
-            href={user && i.complete ? "/results" : i.testHref}
+            // A completed, current result opens its own page. Not taken yet,
+            // or due for a retake, opens the questionnaire.
+            href={user && i.complete && !i.retakeDue ? `/results/${i.key}` : i.testHref}
             className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-lg border px-4 py-3 no-underline transition-colors"
             style={{
               borderColor: i.complete ? "var(--gold)" : "var(--ink-faint)",
@@ -55,7 +69,7 @@ export default async function Home() {
               <span style={{ color: "var(--ink)" }}>{i.label}</span>
               {i.complete && (
                 <span className="shrink-0 text-xs" style={{ color: "var(--green-text)" }}>
-                  Complete
+                  {i.retakeDue ? "Retake due" : "Complete"}
                 </span>
               )}
             </span>
@@ -69,20 +83,103 @@ export default async function Home() {
         ))}
       </div>
 
-      {user ? (
-        completeCount > 0 && (
-          <Link
-            href="/results"
-            className="vn-btn inline-block no-underline"
-          >
-            View your results
-          </Link>
-        )
-      ) : (
+      {!user && (
         <Link href="/login" className="vn-btn inline-block no-underline">
           Sign in to begin
         </Link>
       )}
+
+      {user && completeCount > 0 && <ResultsOverview />}
     </main>
+  );
+}
+
+// A quick, scrollable overview of everything completed so far, right on the
+// home page. Each card here is the same content as that test's own page at
+// /results/[instrument] — this is the "see everything at once" view, that
+// page is the "fixed, single-test" view.
+async function ResultsOverview() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return null;
+
+  // RLS scopes both queries to the signed-in user.
+  const [results, vedic] = await Promise.all([
+    supabase
+      .from("assessment_results")
+      .select("id, instrument, instrument_version, scoring_version, answers, result, source, completed_at")
+      .order("completed_at", { ascending: true }),
+    supabase.from("vedic_charts").select("*").maybeSingle(),
+  ]);
+
+  const histories = buildHistories((results.data ?? []) as ResultRow[]);
+  const prakritiLatest = histories.prakriti?.latest.scored ?? null;
+
+  return (
+    <div className="mt-4 flex flex-col gap-4">
+      <div className="flex items-center justify-between">
+        <h2 className="serif text-2xl" style={{ color: "var(--ink)" }}>
+          Your results
+        </h2>
+        <Link href="/profile" className="text-sm" style={{ color: "var(--green-text)" }}>
+          Combined profile →
+        </Link>
+      </div>
+
+      {results.error && <p className="vn-error">{results.error.message}</p>}
+
+      {ORDER.map(({ key, title }) => (
+        <section key={key} id={`result-${key}`} className="vn-card scroll-mt-6">
+          <div className="mb-1 flex items-baseline justify-between gap-2">
+            <h3 className="serif text-lg" style={{ color: "var(--ink)" }}>
+              {title}
+            </h3>
+            {histories[key] && (
+              <Link href={`/results/${key}`} className="text-xs" style={{ color: "var(--green-text)" }}>
+                Full page →
+              </Link>
+            )}
+          </div>
+          <p className="mb-3 text-xs" style={{ color: "var(--ink-faint)" }}>
+            {KIND_TEXT[INSTRUMENTS[key].kind]}
+          </p>
+          {histories[key] ? (
+            <InstrumentResultCard
+              history={histories[key]!}
+              prakritiLatest={prakritiLatest}
+              extra={
+                key === "vikriti" && histories.vikriti?.latest.scored
+                  ? vikritiVsPrakriti(histories.vikriti.latest.scored, prakritiLatest)
+                  : null
+              }
+            />
+          ) : (
+            <p className="text-sm" style={{ color: "var(--ink-dim)" }}>
+              Not taken yet.{" "}
+              <Link href={INSTRUMENTS[key].testHref} style={{ color: "var(--green-text)" }}>
+                Take it
+              </Link>
+            </p>
+          )}
+        </section>
+      ))}
+
+      <section id="result-vedic" className="vn-cosmic scroll-mt-6">
+        <div className="mb-3 flex items-baseline justify-between gap-2">
+          <h3 className="serif text-lg" style={{ color: "var(--gold-bright)" }}>
+            Vedic chart
+          </h3>
+          {vedic.data && (
+            <Link href="/results/vedic" className="text-xs" style={{ color: "var(--gold-bright)" }}>
+              Full page →
+            </Link>
+          )}
+        </div>
+        {vedic.error && <p className="vn-error">{vedic.error.message}</p>}
+        <VedicChartCard vedic={vedic.data} />
+      </section>
+    </div>
   );
 }

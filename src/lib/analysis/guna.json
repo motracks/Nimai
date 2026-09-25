@@ -1,0 +1,69 @@
+{
+  "note": "Interpretive content for the Guna analysis, drawing on Bhagavad-Gita chapters 14, 17 and 18. 'leads' applies to the guna with the largest share.",
+  "sources": {
+    "source": "Bhagavad Gita ch. 14 (the three gunas and how each binds), 17 (food, worship, austerity and giving by guna) and 18 (knowledge, action and happiness by guna). Eknath Easwaran's translation (Nilgiri Press) is the recommended reading edition. Verse references below are to the standard chapter.verse numbering; the wording here is our own paraphrase, not a quotation from any translation.",
+    "dosha_link": "David Frawley, Ayurveda and the Mind (Lotus Press, 1996): the idea of reading each dosha through the three gunas (sattvic, rajasic and tamasic expressions of Vata, Pitta and Kapha). The descriptions in with_dosha are our own wording of that idea.",
+    "status": "Written without the books at hand. Check the paraphrases against Easwaran and the dosha-guna descriptions against Frawley before launch."
+  },
+  "gunas": {
+    "SAT": {
+      "leads": "Clarity, contentment and steadiness colour most of your days. You tend to see situations as they are and act from a settled place.",
+      "supports": [
+        "Protect what feeds it: a regular routine, fresh and simple food, time in nature, study and service.",
+        "Keep it light. The Gita notes that even sattva binds, through attachment to happiness and knowledge (14.6). Let calm be a ground to act from, not a state to guard."
+      ],
+      "gita": [
+        "14.6: Sattva is pure and illuminating, and binds through attachment to happiness and knowledge.",
+        "14.11: When the light of understanding shines through every gate of the body, sattva is growing."
+      ],
+      "food": "17.8: Food that is fresh, wholesome, nourishing and pleasant supports sattva, and with it health, strength and contentment."
+    },
+    "RAJ": {
+      "leads": "Drive and desire move you: you want more, reach for the next goal and find stillness hard. That energy gets things done and can also leave you restless and rarely satisfied.",
+      "supports": [
+        "Channel the drive rather than fight it: work done as an offering (karma yoga) keeps the energy and loosens the grip of results.",
+        "Set fixed times for rest and fewer inputs in the evening, so the mind can come down.",
+        "Notice the pattern of 'more, next, faster' and pause before the next goal."
+      ],
+      "gita": [
+        "14.7: Rajas is born of craving and attachment, and binds through attachment to action.",
+        "14.12: Greed, constant activity, restlessness and longing arise when rajas grows."
+      ],
+      "food": "17.9: Food that is very bitter, sour, salty, hot, pungent or dry stirs rajas and, the Gita says, brings discomfort and unrest. Easing off stimulants and very spicy food helps."
+    },
+    "TAM": {
+      "leads": "Heaviness, low energy or mental fog are showing up strongly right now. That's a state, not a verdict on who you are, and it tends to lift with the right rhythm.",
+      "supports": [
+        "Movement first, insight second: tamas lifts through activity (rajas) on the way to clarity (sattva).",
+        "A morning routine, getting outside, lighter meals and one small task finished each day all help.",
+        "Be kind about it. Harsh self-judgement adds weight; steady small steps remove it."
+      ],
+      "gita": [
+        "14.8: Tamas is born of ignorance and deludes, binding through heedlessness, sloth and sleep.",
+        "14.13: Darkness, inertia, carelessness and confusion arise when tamas grows."
+      ],
+      "food": "17.10: Food that is stale, overcooked, leftover or impure feeds tamas. Fresh, light, freshly cooked meals are one of the simplest ways to lift heaviness."
+    }
+  },
+  "with_dosha": {
+    "note": "Your leading dosha (Prakriti) read through your leading guna. Each dosha has a clear (sattvic), agitated (rajasic) and dulled (tamasic) expression.",
+    "VAT": {
+      "SAT": "Your Vata shows its clear side: creative, adaptable, quick to understand and lively in spirit.",
+      "RAJ": "Your Vata is in its agitated form: restless, overstimulated and scattered, starting more than you finish, with worry never far away. Grounding routine and fewer inputs help most.",
+      "TAM": "Your Vata is in its dulled form: fear, withdrawal and exhaustion after too much movement. Warmth, rest and a gentle, regular rhythm come first."
+    },
+    "PIT": {
+      "SAT": "Your Pitta shows its clear side: sharp insight, warmth, courage and a strong sense of what's right.",
+      "RAJ": "Your Pitta is in its agitated form: driven, competitive and quick to anger or criticise. Cooling practice, and practising at less than full effort, help most.",
+      "TAM": "Your Pitta is in its dulled form: resentment, bitterness or burnout after pushing too hard. Rest and letting go of the scorecard come first."
+    },
+    "KAP": {
+      "SAT": "Your Kapha shows its clear side: calm, loyal, patient and deeply caring, a steady presence for others.",
+      "RAJ": "Your Kapha is in its agitated form: holding on too tightly to people, comfort or possessions. Generosity and variety loosen the grip.",
+      "TAM": "Your Kapha is in its dulled form: heavy, sluggish and stuck, resistant to change. Movement, early rising and lighter food help most."
+    }
+  },
+  "sattva_below_tamas": "Tamas currently outweighs Sattva. Traditionally that's the first thing to work on: small, regular acts of order and care build clarity faster than big resolutions.",
+  "sattva_rising": "Sattva has risen since your baseline, the direction practice aims for.",
+  "tamas_rising": "Tamas has risen since your baseline. Look at sleep, routine and what has changed in your circumstances."
+}
