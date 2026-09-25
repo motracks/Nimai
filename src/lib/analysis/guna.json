@@ -2,8 +2,9 @@
   "note": "Interpretive content for the Guna analysis, drawing on Bhagavad-Gita chapters 14, 17 and 18. 'leads' applies to the guna with the largest share.",
   "sources": {
     "source": "Bhagavad Gita ch. 14 (the three gunas and how each binds), 17 (food, worship, austerity and giving by guna) and 18 (knowledge, action and happiness by guna). Eknath Easwaran's translation (Nilgiri Press) is the recommended reading edition. Verse references below are to the standard chapter.verse numbering; the wording here is our own paraphrase, not a quotation from any translation.",
-    "dosha_link": "David Frawley, Ayurveda and the Mind (Lotus Press, 1996): the idea of reading each dosha through the three gunas (sattvic, rajasic and tamasic expressions of Vata, Pitta and Kapha). The descriptions in with_dosha are our own wording of that idea.",
-    "status": "Written without the books at hand. Check the paraphrases against Easwaran and the dosha-guna descriptions against Frawley before launch."
+    "dosha_link": "Correction: David Frawley's Ayurveda and the Mind, read in full, keeps the gunas and the doshas as two separate frameworks with two separate self-tests. It does not cross them into a dosha-by-guna matrix. The 'with_dosha' text below is Nimai's own synthesis (not Frawley's), reasoning by analogy from Frawley's dosha psychology (pp. 12-14: each dosha's core emotional disturbance under Vata/Pitta/Kapha) and his guna mental-types descriptions. Treat with_dosha as an editorial framework, not a cited claim, until it is checked by a teacher of both systems.",
+    "status": "Gita paraphrase still needs checking against the Easwaran translation (received, not yet processed). Frawley content above is now sourced with page citations.",
+    "mental_types_and_stages": "David Frawley, Ayurveda and the Mind (Lotus Press, 1996), pp. 34-41: the Sattvic/Rajasic/Tamasic 'mental types' descriptions and the three-stage model of moving Tamas -> Rajas -> Sattva. Read in full; see src/lib/knowledge/frawley-mind.json."
   },
   "gunas": {
     "SAT": {
@@ -16,7 +17,8 @@
         "14.6: Sattva is pure and illuminating, and binds through attachment to happiness and knowledge.",
         "14.11: When the light of understanding shines through every gate of the body, sattva is growing."
       ],
-      "food": "17.8: Food that is fresh, wholesome, nourishing and pleasant supports sattva, and with it health, strength and contentment."
+      "food": "17.8: Food that is fresh, wholesome, nourishing and pleasant supports sattva, and with it health, strength and contentment.",
+      "mental_type": "Sattvic people have a harmonious, adaptable nature and take responsibility for their own wellbeing. They see even hardship as something to learn from, rather than something to suppress. (Frawley, p.34)"
     },
     "RAJ": {
       "leads": "Drive and desire move you: you want more, reach for the next goal and find stillness hard. That energy gets things done and can also leave you restless and rarely satisfied.",
@@ -29,7 +31,8 @@
         "14.7: Rajas is born of craving and attachment, and binds through attachment to action.",
         "14.12: Greed, constant activity, restlessness and longing arise when rajas grows."
       ],
-      "food": "17.9: Food that is very bitter, sour, salty, hot, pungent or dry stirs rajas and, the Gita says, brings discomfort and unrest. Easing off stimulants and very spicy food helps."
+      "food": "17.9: Food that is very bitter, sour, salty, hot, pungent or dry stirs rajas and, the Gita says, brings discomfort and unrest. Easing off stimulants and very spicy food helps.",
+      "mental_type": "Rajasic people have good energy but burn themselves out through excess activity. The mind is rarely at peace, and there's a pull to control outcomes and blame others when things go wrong. (Frawley, p.34)"
     },
     "TAM": {
       "leads": "Heaviness, low energy or mental fog are showing up strongly right now. That's a state, not a verdict on who you are, and it tends to lift with the right rhythm.",
@@ -42,7 +45,8 @@
         "14.8: Tamas is born of ignorance and deludes, binding through heedlessness, sloth and sleep.",
         "14.13: Darkness, inertia, carelessness and confusion arise when tamas grows."
       ],
-      "food": "17.10: Food that is stale, overcooked, leftover or impure feeds tamas. Fresh, light, freshly cooked meals are one of the simplest ways to lift heaviness."
+      "food": "17.10: Food that is stale, overcooked, leftover or impure feeds tamas. Fresh, light, freshly cooked meals are one of the simplest ways to lift heaviness.",
+      "mental_type": "Tamasic people carry deep, stagnant blockages. Rather than seek help, there's a pull to let others or circumstance take over, instead of taking responsibility. (Frawley, p.35)"
     }
   },
   "with_dosha": {
@@ -65,5 +69,11 @@
   },
   "sattva_below_tamas": "Tamas currently outweighs Sattva. Traditionally that's the first thing to work on: small, regular acts of order and care build clarity faster than big resolutions.",
   "sattva_rising": "Sattva has risen since your baseline, the direction practice aims for.",
-  "tamas_rising": "Tamas has risen since your baseline. Look at sleep, routine and what has changed in your circumstances."
+  "tamas_rising": "Tamas has risen since your baseline. Look at sleep, routine and what has changed in your circumstances.",
+  "three_stages": {
+    "note": "Ayurvedic psychology's model for moving between the gunas (Frawley, pp. 39-41). Everyone has all three qualities and moves between them day to day; this names which stage fits right now, not a fixed type.",
+    "tamas_to_rajas": "Breaking up Tamas needs 'fire': waking up, acting, breaking an old pattern. This is the stage for outer action, not quiet reflection.",
+    "rajas_to_sattva": "Calming Rajas needs 'space': letting go of personal striving and outcome, moving from self-motivated action toward service.",
+    "sattva_deepening": "Perfecting Sattva moves from service toward meditation: developing universal love and peace rather than seeking more."
+  }
 }

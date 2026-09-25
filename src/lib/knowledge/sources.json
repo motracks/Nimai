@@ -23,14 +23,6 @@
       "kind": "practitioner",
       "status": "received, not yet processed"
     },
-    "mikulincershaver2016": {
-      "author": "Mario Mikulincer & Phillip R. Shaver",
-      "title": "Attachment in Adulthood (2nd ed.)",
-      "publisher": "Guilford",
-      "year": 2016,
-      "kind": "research",
-      "status": "partial copy only (to ch. 2) — full text needed"
-    },
     "easwaran2007": {
       "author": "Eknath Easwaran (trans.)",
       "title": "The Bhagavad Gita",
@@ -45,7 +37,7 @@
       "publisher": "Lotus Press",
       "year": 1996,
       "kind": "practitioner",
-      "status": "partial copy only (to p. 93) — full text needed"
+      "status": "read in full"
     },
     "svoboda": {
       "author": "Robert Svoboda",
@@ -58,6 +50,14 @@
       "title": "Prakriti Parikshan workbook (YTT)",
       "kind": "workbook",
       "status": "basis of prakriti.json and prakriti_dosha_guide.json"
+    },
+    "mikulincershaver2016": {
+      "author": "Mario Mikulincer & Phillip R. Shaver",
+      "title": "Attachment in Adulthood (2nd ed.)",
+      "publisher": "Guilford",
+      "year": 2016,
+      "kind": "research",
+      "status": "read in full"
     }
   }
 }

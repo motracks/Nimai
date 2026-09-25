@@ -1,9 +1,9 @@
 {
   "note": "Interpretive content for the attachment analysis, keyed by the pattern labels in ecrr_mapping.json combined_patterns.",
   "sources": {
-    "accuracy": "Mario Mikulincer & Phillip R. Shaver, Attachment in Adulthood (2nd ed., Guilford, 2016): the two-dimension model (anxiety and avoidance as continuous scores), the idea of hyperactivating (anxious) and deactivating (avoidant) strategies, and evidence that attachment can change through secure relationships and practice.",
+    "accuracy": "Mario Mikulincer & Phillip R. Shaver, Attachment in Adulthood (2nd ed., Guilford, 2016). Read in full (705 pages); see src/lib/knowledge/mikulincer-shaver.json. The two-dimension model, hyperactivating/deactivating strategies (pp. 19-20) and earned security (p. 520) are paraphrased from the book, cited by page.",
     "practical_tips": "Amir Levine & Rachel Heller, Attached (2010): practical relationship tips (e.g. effective communication of needs). Its fixed-type framing and its harsher treatment of avoidance are deliberately not used.",
-    "status": "Drafted from these works' widely published concepts, without the books at hand. Check wording against the books before launch."
+    "status": "Verified against the full text."
   },
   "patterns": {
     "Secure": {
@@ -40,10 +40,10 @@
     }
   },
   "dimension_notes": {
-    "ANX_high": "When closeness feels uncertain, your attachment system turns up the volume: you watch for signs of distance, seek contact, and find it hard to settle until you feel reassured. Researchers call these hyperactivating strategies. They are an understandable way of trying to keep someone close, not a flaw.",
-    "AVD_high": "When closeness or dependence starts to feel too much, your attachment system turns the volume down: you rely on yourself, keep feelings private and create some distance. Researchers call these deactivating strategies. They often began as a sensible way of coping when leaning on others didn't feel safe.",
+    "ANX_high": "When closeness feels uncertain, your attachment system turns up the volume: you watch for signs of distance, seek contact, and find it hard to settle until you feel reassured. This is what researchers call a hyperactivating strategy — the 'fight' response to a partner who has sometimes been unavailable, so persistence has sometimes paid off (Mikulincer & Shaver, pp. 19-20). It's an understandable way of trying to keep someone close, not a flaw.",
+    "AVD_high": "When closeness or dependence starts to feel like too much, your attachment system turns the volume down: you rely on yourself, keep feelings private and create some distance. Researchers call this a deactivating strategy — the 'flight' response that tends to develop when closeness or need wasn't welcomed (Mikulincer & Shaver, pp. 19-20). It often began as a sensible way of coping when leaning on others didn't feel safe.",
     "both_low": "Neither strategy dominates for you: you can reach for closeness when you need it and give space when others need it, without much alarm either way."
   },
-  "can_change": "Attachment isn't fixed. Scores move with new relationships, life events and deliberate practice, and people who start out insecure often become more secure over time (researchers call this earned security). Your baseline and retakes will show your own direction.",
+  "can_change": "Attachment isn't fixed. The authors describe 'earned security' (p. 520): adults who grew up insecure can become secure, and researchers caution against treating anxious or avoidant patterns as simply flaws — both are adaptive responses to the care a person actually received, not something wrong with them. Your baseline and retakes will show your own direction.",
   "near_boundary": "Your scores sit close to the line between patterns, so the neighbouring pattern ({runner_up}) may describe parts of your experience too."
 }

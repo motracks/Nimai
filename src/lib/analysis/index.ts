@@ -202,15 +202,20 @@ function analyseGuna(scored: ScoredResult): Omit<Analysis, "instrument" | "progr
   const lead = gunaContent.gunas[first];
   const shares = scored.shares!;
 
+  const stage =
+    first === "TAM" ? gunaContent.three_stages.tamas_to_rajas
+    : first === "RAJ" ? gunaContent.three_stages.rajas_to_sattva
+    : gunaContent.three_stages.sattva_deepening;
+
   const sections: AnalysisSection[] = [
-    { title: `${dimensionName("guna", first)} leads`, paragraphs: [lead.leads] },
+    { title: `${dimensionName("guna", first)} leads`, paragraphs: [lead.leads, lead.mental_type] },
     {
       title: "The three together",
       items: (["SAT", "RAJ", "TAM"] as const).map(
         (d) => `${dimensionName("guna", d)}: ${Math.round(shares[d])}% · ${scored.classification.dimensionLabels![d]}`,
       ),
     },
-    { title: "What supports you now", items: [...lead.supports, lead.food] },
+    { title: "What supports you now", items: [...lead.supports, lead.food, stage] },
     { title: "From the Bhagavad Gita", items: lead.gita },
   ];
   if (first !== "TAM" && scored.norm.TAM > scored.norm.SAT) {

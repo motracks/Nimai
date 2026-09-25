@@ -8,10 +8,13 @@ import { analyse } from "./analysis";
 import { buildHistories, type ResultRow } from "./results";
 import { buildProfile, buildSynthesisInput, findResonances, nakshatraMeaning } from "./profile";
 import guna_ from "./analysis/guna.json";
+const gunaContent = guna_;
 import chartNakshatras from "../../supabase/functions/vedic-chart/nakshatras.json";
 import nakshatraContent from "./analysis/nakshatras.json";
 import harnessKb from "./knowledge/harness-nakshatras.json";
 import sourceRegistry from "./knowledge/sources.json";
+import mikulincerKb from "./knowledge/mikulincer-shaver.json";
+import frawleyKb from "./knowledge/frawley-mind.json";
 import { INSTRUMENTS, type InstrumentKey } from "./instruments";
 
 type Item = { id: string; dimension: string; reverse?: boolean };
@@ -72,6 +75,20 @@ describe("per-test analysis", () => {
     expect(a.sections[0].title).toBe("Tamas leads");
     expect(a.progression).toMatch(/Sattva \+20.*Tamas −20/);
     expect(a.progression).toMatch(/Sattva has risen/);
+  });
+
+  it("Guna's leading section cites the sourced mental-type description", () => {
+    const a = analyse(person.guna!)!;
+    expect(a.sections[0].paragraphs).toEqual([gunaContent.gunas.TAM.leads, gunaContent.gunas.TAM.mental_type]);
+    expect(a.sections[2].items).toContain(gunaContent.three_stages.tamas_to_rajas);
+  });
+
+  it("attachment growth notes cite Mikulincer & Shaver by page", () => {
+    const a = analyse(person.ecrr!)!;
+    const why = a.sections.find((s) => s.title === "Why it works this way");
+    expect(why?.paragraphs?.[0]).toMatch(/pp\. 19-20/);
+    const changes = a.sections.find((s) => s.title === "It can change");
+    expect(changes?.paragraphs?.[0]).toMatch(/p\. 520/);
   });
 
   it("Prakriti shows only the named dosha's guide, plus the limits", () => {
@@ -176,6 +193,22 @@ describe("combined profile", () => {
         expect(Object.keys(INSTRUMENTS)).toContain(side.instrument);
       }
       expect(["high", "low"]).toContain(r.other.expect);
+    }
+  });
+});
+
+describe("sourced content stays honest", () => {
+  it("guna's dosha_link source note discloses that with_dosha is Nimai's synthesis, not Frawley's", () => {
+    expect(gunaContent.sources.dosha_link).toMatch(/Correction/);
+    expect(gunaContent.sources.dosha_link).toMatch(/own synthesis/);
+  });
+
+  it("every knowledge-file claim carries a page reference", () => {
+    for (const file of [harnessKb, mikulincerKb, frawleyKb]) {
+      const claims = "claims" in file ? file.claims : Object.values(file.entries);
+      for (const c of claims as { pages?: string }[]) {
+        expect(c.pages, JSON.stringify(c).slice(0, 60)).toMatch(/\d/);
+      }
     }
   });
 });
