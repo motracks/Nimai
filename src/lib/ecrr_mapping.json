@@ -11,7 +11,7 @@
             2.75
           ],
           "label": "Secure in the bond",
-          "description": "Generally trusts a partner's care without needing frequent reassurance; doesn't dwell on fears of abandonment."
+          "description": "You generally trust a partner's care without needing frequent reassurance, and you don't dwell on fears of abandonment."
         },
         {
           "range": [
@@ -19,7 +19,7 @@
             4.25
           ],
           "label": "Occasionally reassurance-seeking",
-          "description": "Mostly settled, but can spiral into worry about a partner's feelings under stress or ambiguity."
+          "description": "You're mostly settled, but under stress or ambiguity you can spiral into worry about a partner's feelings."
         },
         {
           "range": [
@@ -27,7 +27,7 @@
             6.0
           ],
           "label": "High need for reassurance",
-          "description": "Frequently worries about a partner's love or commitment; closeness can come with real anxiety about losing it."
+          "description": "You often worry about a partner's love or commitment, and closeness can come with real anxiety about losing it."
         }
       ]
     },
@@ -40,7 +40,7 @@
             2.75
           ],
           "label": "Comfortable with closeness",
-          "description": "At ease sharing feelings and depending on a partner; doesn't need much distance to feel safe."
+          "description": "You're at ease sharing feelings and depending on a partner, and you don't need much distance to feel safe."
         },
         {
           "range": [
@@ -48,7 +48,7 @@
             4.25
           ],
           "label": "Selective about closeness",
-          "description": "Opens up with the right person and pace, but has real limits on how much dependence feels comfortable."
+          "description": "You open up with the right person and at the right pace, but there are real limits to how much dependence feels comfortable."
         },
         {
           "range": [
@@ -56,7 +56,7 @@
             6.0
           ],
           "label": "Prefers independence",
-          "description": "Closeness and dependence feel uncomfortable; tends to self-rely and keep some emotional distance even in committed relationships."
+          "description": "Closeness and dependence feel uncomfortable. You tend to rely on yourself and keep some emotional distance, even in committed relationships."
         }
       ]
     }
@@ -65,22 +65,22 @@
     {
       "condition": "ANX low, AVD low",
       "label": "Secure",
-      "description": "Comfortable with both closeness and independence; trusts relationships without excessive worry or need for distance."
+      "description": "You're comfortable with both closeness and independence, and you trust relationships without excessive worry or a need for distance."
     },
     {
       "condition": "ANX high, AVD low",
       "label": "Anxious-preoccupied",
-      "description": "Deeply values closeness but often worries about whether it's reciprocated or at risk."
+      "description": "You deeply value closeness but often worry about whether it's returned or at risk."
     },
     {
       "condition": "ANX low, AVD high",
       "label": "Dismissive-avoidant",
-      "description": "Values independence and self-sufficiency; closeness isn't feared exactly, just not prioritized or needed."
+      "description": "You value independence and self-sufficiency. You don't fear closeness exactly; you just don't prioritise or need it."
     },
     {
       "condition": "ANX high, AVD high",
       "label": "Fearful-avoidant",
-      "description": "Wants closeness but distrusts it — pulled between wanting connection and protecting against getting hurt by it."
+      "description": "You want closeness but distrust it, pulled between wanting connection and protecting yourself from getting hurt by it."
     }
   ],
   "rules": {

@@ -5,41 +5,146 @@
     "EXT": {
       "label": "Extraversion",
       "bands": [
-        { "range": [1.0, 2.88], "label": "Reserved", "description": "Draws energy from solitude or small groups; tends to observe before engaging, and doesn't need to be the center of attention." },
-        { "range": [2.89, 4.12], "label": "Situationally social", "description": "Comfortable in company but doesn't need it constantly; energy shifts with context and mood." },
-        { "range": [4.13, 6.0], "label": "Outgoing", "description": "Energized by people and activity; starts conversations easily and is comfortable being noticed." }
+        {
+          "range": [
+            1.0,
+            2.88
+          ],
+          "label": "Reserved",
+          "description": "You draw energy from solitude or small groups. You tend to observe before engaging, and you don't need to be the centre of attention."
+        },
+        {
+          "range": [
+            2.89,
+            4.12
+          ],
+          "label": "Situationally social",
+          "description": "You're comfortable in company but don't need it constantly; your energy shifts with context and mood."
+        },
+        {
+          "range": [
+            4.13,
+            6.0
+          ],
+          "label": "Outgoing",
+          "description": "You're energised by people and activity. You start conversations easily and are comfortable being noticed."
+        }
       ]
     },
     "AGR": {
       "label": "Agreeableness",
       "bands": [
-        { "range": [1.0, 2.88], "label": "Direct", "description": "Prioritizes honesty and personal judgment over smoothing things over; comfortable with friction if it serves the truth." },
-        { "range": [2.89, 4.12], "label": "Selectively warm", "description": "Cooperative with people who've earned trust, more guarded with those who haven't." },
-        { "range": [4.13, 6.0], "label": "Warm", "description": "Quick to sympathize and accommodate others; tends to put relationships and harmony first." }
+        {
+          "range": [
+            1.0,
+            2.88
+          ],
+          "label": "Direct",
+          "description": "You put honesty and your own judgement ahead of smoothing things over, and you're comfortable with friction if it serves the truth."
+        },
+        {
+          "range": [
+            2.89,
+            4.12
+          ],
+          "label": "Selectively warm",
+          "description": "You're cooperative with people who've earned your trust, and more guarded with those who haven't."
+        },
+        {
+          "range": [
+            4.13,
+            6.0
+          ],
+          "label": "Warm",
+          "description": "You're quick to sympathise with and accommodate others, and you tend to put relationships and harmony first."
+        }
       ]
     },
     "CON": {
       "label": "Conscientiousness",
       "bands": [
-        { "range": [1.0, 2.88], "label": "Spontaneous", "description": "Prefers flexibility over fixed plans; can let structure slide when something more interesting comes up." },
-        { "range": [2.89, 4.12], "label": "Adaptive planner", "description": "Organized when it matters, relaxed about the rest." },
-        { "range": [4.13, 6.0], "label": "Structured", "description": "Reliable, detail-oriented, and driven by follow-through; discomfort with loose ends." }
+        {
+          "range": [
+            1.0,
+            2.88
+          ],
+          "label": "Spontaneous",
+          "description": "You prefer flexibility to fixed plans, and you can let structure slide when something more interesting comes up."
+        },
+        {
+          "range": [
+            2.89,
+            4.12
+          ],
+          "label": "Adaptive planner",
+          "description": "You're organised when it matters and relaxed about the rest."
+        },
+        {
+          "range": [
+            4.13,
+            6.0
+          ],
+          "label": "Structured",
+          "description": "You're reliable, detail-oriented and driven to follow through; loose ends bother you."
+        }
       ]
     },
     "NEU": {
       "label": "Emotional Reactivity",
       "bands": [
-        { "range": [1.0, 2.88], "label": "Steady", "description": "Generally even-keeled; stress doesn't easily throw off mood or focus." },
-        { "range": [2.89, 4.12], "label": "Responsive", "description": "Feels things fairly intensely but recovers with some space or time." },
-        { "range": [4.13, 6.0], "label": "Sensitive", "description": "Feels emotional shifts strongly and quickly; benefits from deliberate regulation practices." }
+        {
+          "range": [
+            1.0,
+            2.88
+          ],
+          "label": "Steady",
+          "description": "You're generally even-keeled; stress doesn't easily throw off your mood or focus."
+        },
+        {
+          "range": [
+            2.89,
+            4.12
+          ],
+          "label": "Responsive",
+          "description": "You feel things fairly intensely, but you recover with some space or time."
+        },
+        {
+          "range": [
+            4.13,
+            6.0
+          ],
+          "label": "Sensitive",
+          "description": "You feel emotional shifts strongly and quickly, and deliberate regulation practices help you."
+        }
       ]
     },
     "OPN": {
       "label": "Openness",
       "bands": [
-        { "range": [1.0, 2.88], "label": "Practical", "description": "Prefers the concrete and proven over the abstract or experimental; values what's tested and useful." },
-        { "range": [2.89, 4.12], "label": "Curious within limits", "description": "Open to new ideas selectively, especially when they connect to existing interests." },
-        { "range": [4.13, 6.0], "label": "Imaginative", "description": "Drawn to ideas, patterns, and novelty; enjoys abstract or unconventional thinking." }
+        {
+          "range": [
+            1.0,
+            2.88
+          ],
+          "label": "Practical",
+          "description": "You prefer the concrete and proven to the abstract or experimental, and you value what's tested and useful."
+        },
+        {
+          "range": [
+            2.89,
+            4.12
+          ],
+          "label": "Curious within limits",
+          "description": "You're open to new ideas selectively, especially when they connect to interests you already have."
+        },
+        {
+          "range": [
+            4.13,
+            6.0
+          ],
+          "label": "Imaginative",
+          "description": "You're drawn to ideas, patterns and novelty, and you enjoy abstract or unconventional thinking."
+        }
       ]
     }
   }

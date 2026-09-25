@@ -11,7 +11,7 @@
             3.0
           ],
           "label": "Low clarity",
-          "description": "Discipline, contentment, and mental steadiness aren't currently strong pulls; more pulled by activity or inertia than by calm focus."
+          "description": "Discipline, contentment and mental steadiness aren't strong pulls for you right now; activity or inertia pull on you more than calm focus."
         },
         {
           "range": [
@@ -19,7 +19,7 @@
             4.5
           ],
           "label": "Moderate clarity",
-          "description": "Some steadiness and discipline present, alongside other pulls; clarity comes and goes with circumstance."
+          "description": "You have some steadiness and discipline alongside other pulls; your clarity comes and goes with circumstance."
         },
         {
           "range": [
@@ -27,7 +27,7 @@
             6.0
           ],
           "label": "High clarity",
-          "description": "Strong pull toward discipline, truthfulness, and equanimity; generally composed and content."
+          "description": "You feel a strong pull toward discipline, truthfulness and equanimity, and you're generally composed and content."
         }
       ]
     },
@@ -40,7 +40,7 @@
             3.0
           ],
           "label": "Low drive-restlessness",
-          "description": "Not particularly driven by desire or restless activity; comfortable with stillness and enough."
+          "description": "You're not particularly driven by desire or restless activity; you're comfortable with stillness and with enough."
         },
         {
           "range": [
@@ -48,7 +48,7 @@
             4.5
           ],
           "label": "Moderate drive",
-          "description": "Some ambition and restlessness, balanced by other tendencies."
+          "description": "You have some ambition and restlessness, balanced by other tendencies."
         },
         {
           "range": [
@@ -56,7 +56,7 @@
             6.0
           ],
           "label": "High drive-restlessness",
-          "description": "Strong pull toward striving, desire, and constant activity; rarely fully satisfied or still."
+          "description": "You feel a strong pull toward striving, desire and constant activity, and you're rarely fully satisfied or still."
         }
       ]
     },
@@ -69,7 +69,7 @@
             3.0
           ],
           "label": "Low inertia",
-          "description": "Not much pull toward procrastination, confusion, or heaviness; generally alert and engaged."
+          "description": "You feel little pull toward procrastination, confusion or heaviness; you're generally alert and engaged."
         },
         {
           "range": [
@@ -77,7 +77,7 @@
             4.5
           ],
           "label": "Moderate inertia",
-          "description": "Some heaviness or avoidance shows up periodically, alongside more active or clear states."
+          "description": "Some heaviness or avoidance shows up for you now and then, alongside more active or clear states."
         },
         {
           "range": [
@@ -85,7 +85,7 @@
             6.0
           ],
           "label": "High inertia",
-          "description": "Strong pull toward confusion, low motivation, or resistance to change; effortful to get moving or think clearly."
+          "description": "You feel a strong pull toward confusion, low motivation or resistance to change; getting moving or thinking clearly takes effort."
         }
       ]
     }
@@ -95,25 +95,25 @@
       "key": "dominant",
       "condition": "top guna >= 45% AND leads the second by >= 10 points",
       "label": "{guna}-dominant",
-      "description": "One mode clearly leads and colors most of how this person operates day to day."
+      "description": "One mode clearly leads and colours most of how you operate day to day."
     },
     {
       "key": "blend",
       "condition": "top two gunas each >= 30%, third below 25%",
       "label": "{guna_a}-{guna_b} blend",
-      "description": "Alternates between two modes depending on context, with the third rarely showing up."
+      "description": "You alternate between two modes depending on context, and the third rarely shows up."
     },
     {
       "key": "balanced",
       "condition": "all three within 10 points of 33.3%",
       "label": "Balanced / fluid",
-      "description": "No single mode dominates; likely shifts noticeably with circumstances, sleep, stress, and company."
+      "description": "No single mode dominates; you likely shift noticeably with circumstances, sleep, stress and company."
     },
     {
       "key": "leaning",
       "condition": "otherwise",
       "label": "{guna}-leaning",
-      "description": "One mode leads, but not strongly enough to call it dominant, and the other two are not clearly split. The leading mode is the one to watch for; the others still show up regularly."
+      "description": "One mode leads for you, but not strongly enough to call it dominant, and the other two aren't clearly split. Watch for the leading mode; the others still show up regularly."
     }
   ],
   "rules": {
