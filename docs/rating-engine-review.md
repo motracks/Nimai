@@ -225,19 +225,19 @@ Add `vitest` and golden-vector tests per instrument:
 - Edge function: 3–4 known charts compared against a reference such as Jagannatha Hora or
   astro-seek, plus a test at 359.9999°.
 
-### 4.6 Merging into one profile: what "added value" requires
+### 4.6 Merging into one profile
 
-The four questionnaires overlap in what they measure. The merge only adds value
-if it shows where they **agree** and where they **disagree**, and doesn't just
-list them.
+**Decision: the frameworks have equal standing.** This is a Vedic app. Guna and
+Prakriti are not "lenses" that decorate the Big Five; each framework describes
+the person in its own terms, and none of them overrides another. The merge adds
+value by putting them in dialogue:
 
-1. **Normalise first.** Put every dimension on 0–100 (`norm_scores`) and give
-   each classification a `margin`. Only then compare instruments.
-2. **Weight by evidence.** Big Five and ECR-R are validated instruments. Guna and
-   Prakriti are good lenses but unvalidated. In the synthesis, the validated
-   scores anchor the claims, and the Vedic and Ayurvedic frames explain them.
-   They never override them.
-3. **Name the expected overlaps up front** and look for agreement:
+1. **Normalise first.** Every dimension is stored on 0-100 (`norm`), with a
+   `margin` for the classification. Guna and Prakriti also keep their relative
+   `shares`, because in those traditions the balance between the three is the
+   point.
+2. **Read each result in its own frame first,** then look across frameworks.
+3. **Name the expected resonances up front:**
    - Tamas ↔ high NEU and low CON
    - Sattva ↔ high CON and low NEU
    - Rajas ↔ high EXT and NEU
@@ -246,31 +246,104 @@ list them.
    - Kapha ↔ low NEU and high AGR
    - ECR-R Anxiety ↔ NEU
 
-   Where they agree, state the insight with confidence. Where they disagree,
-   that's the interesting part ("constitutionally Kapha, but currently Vata
-   Vikriti and high NEU → the current state differs from the baseline").
-4. **Show confidence.** Low margin, quality flags, or an unknown birth time
-   mean hedged wording, or leaving the claim out.
-5. **Build the synthesis input from `current_results`,** as a single versioned
-   JSON document. Store the synthesis output with the `result_id`s it used, so
-   it's clear what it was based on and it can be regenerated when a scoring
-   version changes.
-6. **Measure the added value once data exists** (about 100 users is enough to
-   start). All of these need the raw answers, which are already stored:
-   - Cronbach's α per scale.
-   - Correlations between the matched constructs above. For example, if Guna
-     Tamas doesn't correlate with NEU at all, either the items or the concept
-     mapping is off.
-   - Test–retest, which needs append-only history.
-   - A simple in-app "does this feel accurate?" rating per section.
+   Where they resonate, say so with confidence. Where they don't, that is
+   information too: e.g. "constitutionally Kapha, currently Vata Vikriti and
+   high NEU" means the current state has moved away from the nature.
+4. **Confidence comes from data quality,** not from which framework it is: a
+   low margin, a quality flag, or an unknown birth time mean hedged wording,
+   whichever instrument it came from.
+5. **Respect what each instrument is for** (`kind` in `src/lib/instruments.ts`):
 
-## 5. Suggested order of work
+   | Instrument | Kind | What a retake means | Suggested retake |
+   |---|---|---|---|
+   | Prakriti | constitution | Consistency check. The nature doesn't change, so a different result means re-check, not growth | yearly |
+   | Vikriti | state | The main progression tracker for the Ayurvedic side, read against Prakriti | every 4 weeks |
+   | Guna | state | Shifts with sadhana; rising Sattva is the traditional aim | monthly |
+   | Big Five, ECR-R | trait | Slow change over months | every 6 months |
 
-1. Commit the schema and add versioning, with no behaviour change.
-2. Add the test harness with golden vectors that pin *today's* behaviour.
-3. Fix findings 1–4 and 13, bumping the scoring version, and update the tests.
-4. Move scoring to the server, switch to the unified `assessment_results`, and
-   backfill with the re-score diff.
-5. Build the Vikriti page and a richer results page with scores, descriptions
-   and margins.
-6. Build the merge/synthesis on top of `current_results`.
+6. **Build the synthesis from `current_assessment_results` plus
+   `baseline_assessment_results`,** as one versioned JSON input. Store the
+   output with the result ids it used.
+7. **Measure every instrument the same way once data exists** (about 100
+   users): internal consistency (Cronbach's α) per scale, test–retest, and the
+   resonances above. Prakriti's stability across retakes is itself a check the
+   tradition predicts, which makes it a good way to show the instrument works.
+
+## 5. Baseline and progression (implemented)
+
+- Every completion is a new row in `assessment_results`; nothing is
+  overwritten. The first row per instrument is the **baseline**.
+- All existing results are copied in once as `source = 'legacy_backfill'`, so
+  early results become the baseline. The legacy tables are left untouched.
+- On read, rows on the current item set are **re-scored with the current
+  rules**, so the change between baseline and latest reflects the person, not a
+  rule change. Rows on an older item set keep their stored result and are shown
+  as "not comparable":
+  - `prakriti24`: the earlier 24-item Prakriti (answers were option text).
+  - `ipip50-scale-unverified`: Big Five rows from before 2026-09-24 without a
+    single 6 in them; they may come from the 1-5 scale used until 2026-09-21.
+- The results page shows the latest result, the baseline, the change per
+  dimension (under 5 points is shown as "steady"), a consistency note for
+  Prakriti, Vikriti read against Prakriti, and a "Retake due" marker on the
+  home page once the suggested interval has passed.
+
+## 6. Status
+
+Done on this branch:
+
+- Scoring engine rewrite (`src/lib/scoring.ts`): one result format for every
+  instrument, thresholds read from the mapping files, answer validation,
+  quality flags.
+- Logic fixes: findings 1-5 (Guna floor and lead rule, "leaning" defined, ECR-R
+  cutoff 3.5, Prakriti mapping rewritten), plus the band gap.
+- Server-side scoring (`src/app/actions/assessments.ts`). The browser sends
+  answers only.
+- Append-only `assessment_results` table with backfill, and the
+  `current_`/`baseline_assessment_results` views
+  (`supabase/migrations/20260925000000_assessment_results.sql`).
+- Vikriti page, results page with baseline and progression, retake reminders.
+- One shared Likert component (questionnaire drafts survive a reload) and one
+  shared tick component (fixed per-item option order, no hydration workaround).
+- Vedic function: exact nakshatra spans, Ketu from the unrounded longitude,
+  `moon_reliable` and `moon_range` for unknown birth times, HTTPS for
+  TimeZoneDB, WASM cached per worker.
+- `npm test`: 27 golden-vector tests (vitest).
+
+Open:
+
+1. Commit the live schema (`supabase db pull`); see roadblocks.
+2. Synthesis on top of the current and baseline views.
+3. Response-time capture as another quality signal.
+
+## 7. Roadblocks and things to do differently
+
+1. **Deploy order matters.** Apply the migration and set
+   `SUPABASE_SERVICE_ROLE_KEY` (server-only, never `NEXT_PUBLIC_`) in Vercel
+   **before** this reaches `main`. Otherwise every submit fails. Vercel preview
+   deployments of this branch point at the same Supabase project, so they fail
+   to save until then too.
+2. **Most of the schema isn't in the repo.** Run `supabase db pull` to capture
+   the legacy tables and `set_completed_at()`. Otherwise `supabase db push`
+   and fresh local databases don't match production. The new migration guards
+   the backfill so it still runs on a fresh database.
+3. **Health and birth data.** Vikriti answers are symptoms, and birth date and
+   place identify people. Under GDPR (EU users) symptom data is special-category
+   health data. That calls for explicit consent before the Vikriti check, a way
+   to export and delete one's data, and no symptom data in logs. Account
+   deletion already cascades.
+4. **The synthesis should never get only the labels.** Give it `norm`,
+   `margin`, `flags` and the baseline. The label alone loses the uncertainty
+   that makes the reading honest.
+5. **Retaking too soon.** People remember their answers for a few weeks, so
+   retakes inside that window mostly measure memory. The suggested intervals are
+   shown but not enforced. Enforce a minimum (e.g. 14 days) if retake data will
+   be analysed.
+6. **Next.js 16 renamed `middleware.ts` to `proxy.ts`.** The build warns about
+   it; migrate with `npx @next/codemod@canary middleware-to-proxy .`.
+7. **Timezones.** The UTC offset is resolved at noon UTC on the birth date, so
+   births on a DST-change day can be an hour off. TimeZoneDB's history before
+   1970 is patchy (relevant for older users and pre-1947 India).
+8. **Changing rules later.** Any change to `scoring.ts` or a mapping file needs
+   a `scoringVersion` bump in `src/lib/instruments.ts`, and any change to items
+   needs a new `instrumentVersion` (never reuse item ids). The tests catch a
+   label without a mapping entry but not a forgotten version bump.

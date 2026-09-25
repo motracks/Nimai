@@ -48,5 +48,5 @@
     { "id": "EC35", "text": "It's easy for me to be affectionate with my partner.", "dimension": "AVD", "reverse": true },
     { "id": "EC36", "text": "My partner really understands me and my needs.", "dimension": "AVD", "reverse": true }
   ],
-  "scoring_notes": "18 items per dimension. Reverse items: value = (7 - answered). Average per dimension gives a 1-6 score (no neutral midpoint, forced-choice). Attachment style categories are then derived by crossing the two dimensions: low ANX + low AVD = secure; high ANX + low AVD = anxious-preoccupied; low ANX + high AVD = dismissive-avoidant; high ANX + high AVD = fearful-avoidant. Cutoff is 4.0, the proportional equivalent of the original 1-7 scale's midpoint convention."
+  "scoring_notes": "18 items per dimension. Reverse items: value = (7 - answered). Average per dimension gives a 1-6 score (no neutral midpoint, forced-choice). Attachment style categories are then derived by crossing the two dimensions: low ANX + low AVD = secure; high ANX + low AVD = anxious-preoccupied; low ANX + high AVD = dismissive-avoidant; high ANX + high AVD = fearful-avoidant. Cutoff is 3.5, the original 1-7 midpoint (4) rescaled proportionally to 1-6; see ecrr_mapping.json rules."
 }

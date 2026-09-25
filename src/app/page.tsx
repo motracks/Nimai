@@ -44,7 +44,7 @@ export default async function Home() {
         {instruments.map((i) => (
           <Link
             key={i.key}
-            href={user && i.complete ? "/results" : i.testHref}
+            href={user && i.complete && !i.retakeDue ? "/results" : i.testHref}
             className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-lg border px-4 py-3 no-underline transition-colors"
             style={{
               borderColor: i.complete ? "var(--gold)" : "var(--ink-faint)",
@@ -55,7 +55,7 @@ export default async function Home() {
               <span style={{ color: "var(--ink)" }}>{i.label}</span>
               {i.complete && (
                 <span className="shrink-0 text-xs" style={{ color: "var(--green-text)" }}>
-                  Complete
+                  {i.retakeDue ? "Retake due" : "Complete"}
                 </span>
               )}
             </span>

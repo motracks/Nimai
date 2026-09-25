@@ -1,0 +1,10 @@
+{
+  "instrument": "Current State Check (Vikriti), 6 items, Govardhan School of Yoga workbook",
+  "note": "Ticks per dosha column, 0-6 each, for the last 4-6 weeks. Scored and stored separately from Prakriti; compared against the latest Prakriti result for interpretation. Thresholds follow prakriti.json vikriti_check.interpretation.",
+  "rules": { "attention_min": 3, "referral_min": 4, "referral_min_columns": 2 },
+  "patterns": [
+    { "key": "settled", "label": "No marked imbalance", "description": "No column reaches three ticks. Nothing currently stands out as disturbed." },
+    { "key": "elevated", "label": "{doshas} elevated", "description": "Three or more ticks in a column is worth attention. If it matches your Prakriti, your leading dosha has increased (the most common pattern). If it differs, season, travel, stress or lifestyle is pulling you away from your nature; address the current imbalance first." },
+    { "key": "referral", "label": "Several doshas strongly elevated", "description": "Four or more ticks in several columns, or anything persistent, warrants seeing a qualified Ayurvedic physician rather than self-treatment." }
+  ]
+}

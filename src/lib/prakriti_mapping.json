@@ -1,6 +1,6 @@
 {
   "instrument": "Prakriti Parikshan (Vata / Pitta / Kapha), 40-item Govardhan School of Yoga workbook",
-  "note": "Percentages are each dosha's points out of 80 (see prakriti.json scoring_notes: 2 pts per single tick, 1 pt each for a double tick). Dual-dosha combinations are the norm, not the exception — the synthesis prompt should default to checking for a blend before declaring a single dominant type. A separate short-term Vikriti check (prakriti.json vikriti_check) should be read alongside this result but scored and reported separately, never merged into these percentages.",
+  "note": "Percentages are each dosha's points out of 80 (see prakriti.json scoring_notes: 2 pts per single tick, 1 pt each for a double tick), so they always sum to 100. Classification follows the Govardhan workbook order, first match wins: Sama -> Ekadoshaja -> Dvandvaja. Results within boundary_window points of a rule threshold are flagged near_boundary and should be read against both candidate profiles, as the workbook asks. The Vikriti check (prakriti.json vikriti_check) is read alongside this result but scored and stored separately, never merged into these percentages.",
   "dimensions": {
     "VAT": {
       "label": "Vata",
@@ -16,8 +16,29 @@
     }
   },
   "dominance_patterns": [
-    { "condition": "one dosha >= 50%, other two both < 30%", "label": "{dosha}-dominant", "description": "A clear single constitutional tendency; the described traits and imbalance-patterns for that dosha apply fairly directly." },
-    { "condition": "two doshas each >= 30%, within 15 points of each other", "label": "{dosha_a}-{dosha_b} (dual)", "description": "The most common pattern — traits from both doshas show up, often in different contexts (e.g. one under stress, the other at rest)." },
-    { "condition": "all three within 10 points of 33%", "label": "Tridoshic", "description": "Rare and worth flagging as notable — no single dosha leads; likely to feel different from day to day depending on season, sleep, and stress." }
-  ]
+    {
+      "key": "sama",
+      "condition": "highest minus lowest dosha <= 10 points",
+      "label": "Sama (Tridoshaja)",
+      "description": "Rare — no single dosha leads. The workbook asks to re-check before accepting; likely to feel different from day to day depending on season, sleep, and stress."
+    },
+    {
+      "key": "ekadosha",
+      "condition": "highest dosha leads the second by >= 15 points",
+      "label": "{dosha}-dominant",
+      "description": "A clear single constitutional tendency (Ekadoshaja); the described traits and imbalance-patterns for that dosha apply fairly directly."
+    },
+    {
+      "key": "dvandva",
+      "condition": "otherwise",
+      "label": "{dosha_a}-{dosha_b} (dual)",
+      "description": "The most common pattern (Dvandvaja) — traits from both doshas show up, often in different contexts (e.g. one under stress, the other at rest). The higher dosha is named first."
+    }
+  ],
+  "rules": {
+    "sama_max_spread": 10,
+    "ekadosha_min_lead": 15,
+    "boundary_window": 3,
+    "double_tick_warning_share": 0.25
+  }
 }
