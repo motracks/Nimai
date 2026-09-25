@@ -30,18 +30,28 @@ export async function submitAssessment(instrument: unknown, answers: unknown): P
   }
 
   const meta = INSTRUMENTS[instrument];
-  const { error } = await createAdminClient().from("assessment_results").insert({
-    user_id: user.id,
-    instrument,
-    instrument_version: meta.instrumentVersion,
-    scoring_version: meta.scoringVersion,
-    answers: stored,
-    result,
-  });
+  try {
+    const { error } = await createAdminClient().from("assessment_results").insert({
+      user_id: user.id,
+      instrument,
+      instrument_version: meta.instrumentVersion,
+      scoring_version: meta.scoringVersion,
+      answers: stored,
+      result,
+    });
 
-  if (error) {
-    console.error("submitAssessment insert failed", error);
+    if (error) {
+      console.error("submitAssessment insert failed", error);
+      return { ok: false, error: "Could not save your answers. Please try again." };
+    }
+    return { ok: true };
+  } catch (err) {
+    // Covers createAdminClient() throwing (e.g. SUPABASE_SERVICE_ROLE_KEY missing
+    // in this environment) as well as a network failure on the insert itself.
+    // Always return rather than throw here: an uncaught error crossing the server
+    // action boundary becomes an unhandled rejection on the client, which leaves
+    // the UI stuck on "Saving…" forever with no feedback.
+    console.error("submitAssessment failed", err);
     return { ok: false, error: "Could not save your answers. Please try again." };
   }
-  return { ok: true };
 }

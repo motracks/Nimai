@@ -76,9 +76,18 @@ export default function LikertAssessment({ instrument, data, eyebrow, heading, t
 
   async function submit() {
     setStatus("saving");
-    const res = await submitAssessment(instrument, answers);
-    if (!res.ok) {
-      setErrorMsg(res.error);
+    try {
+      const res = await submitAssessment(instrument, answers);
+      if (!res.ok) {
+        setErrorMsg(res.error);
+        setStatus("error");
+        return;
+      }
+    } catch {
+      // submitAssessment shouldn't throw, but if it ever does (a network drop,
+      // a server action failing to even respond), show an error instead of
+      // leaving the button stuck on "Saving…" forever.
+      setErrorMsg("Save failed. Try again.");
       setStatus("error");
       return;
     }

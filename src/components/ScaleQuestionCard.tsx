@@ -45,7 +45,13 @@ export default function ScaleQuestionCard({
         </span>
       </div>
 
-      <p className="serif-italic mb-6 text-lg leading-relaxed" style={{ color: "var(--ink)" }}>
+      {/* Fixed height regardless of question length (longest item is ~96 chars,
+          wraps to at most 3 lines at this width), so the card doesn't resize
+          and the slider/button don't jump between questions. */}
+      <p
+        className="serif-italic mb-6 text-lg leading-relaxed"
+        style={{ color: "var(--ink)", minHeight: "5.6rem" }}
+      >
         {question}
       </p>
 
