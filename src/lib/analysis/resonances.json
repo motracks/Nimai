@@ -1,0 +1,110 @@
+{
+  "note": "Expected links between frameworks, used by the combined profile. A rule is read only when its anchor dimension is pronounced (level 'high'). If the other side is at the expected level the frameworks resonate; if it is at the opposite level they differ; a middle level says nothing. Neither side is treated as the truth: a difference is information about the person, not an error in one test. Levels: Likert dimensions use their bands; Guna and Prakriti use shares (high >= 40%, low <= 26%); Vikriti uses ticks (high >= 3, low <= 1).",
+  "rules": [
+    {
+      "id": "tamas_neu",
+      "anchor": { "instrument": "guna", "dim": "TAM" },
+      "other": { "instrument": "bigfive", "dim": "NEU", "expect": "high" },
+      "resonate": "The heaviness Guna picks up shows in your personality profile too, as emotional reactivity. Both point to the same thing: steadying the nervous system is where to begin.",
+      "differ": "Guna shows strong Tamas, yet your personality profile is emotionally steady. The heaviness may be more about energy and routine than mood."
+    },
+    {
+      "id": "tamas_con",
+      "anchor": { "instrument": "guna", "dim": "TAM" },
+      "other": { "instrument": "bigfive", "dim": "CON", "expect": "low" },
+      "resonate": "Tamas and a looser relationship with structure show up together. A small, fixed daily routine serves both.",
+      "differ": "Guna shows strong Tamas, but you are highly conscientious. You may be keeping everything running while feeling heavy inside, which is worth noticing before it becomes exhaustion."
+    },
+    {
+      "id": "sattva_con",
+      "anchor": { "instrument": "guna", "dim": "SAT" },
+      "other": { "instrument": "bigfive", "dim": "CON", "expect": "high" },
+      "resonate": "Sattva's discipline and your conscientiousness describe the same steady follow-through from two directions.",
+      "differ": "Sattva is strong, yet structure and routine aren't a strong pull in your personality. Your clarity may come more from inner contentment than from order."
+    },
+    {
+      "id": "sattva_neu",
+      "anchor": { "instrument": "guna", "dim": "SAT" },
+      "other": { "instrument": "bigfive", "dim": "NEU", "expect": "low" },
+      "resonate": "The equanimity of Sattva matches an emotionally steady personality.",
+      "differ": "Sattva is strong, and you also feel things intensely. Equanimity here may be something you practise and return to rather than a default, which is what practice is for."
+    },
+    {
+      "id": "rajas_ext",
+      "anchor": { "instrument": "guna", "dim": "RAJ" },
+      "other": { "instrument": "bigfive", "dim": "EXT", "expect": "high" },
+      "resonate": "Rajas' drive and your outgoing energy go together: you are fuelled by activity and people.",
+      "differ": "Rajas is strong, but you are reserved socially. The restlessness is probably inward (goals, thoughts, striving) rather than social."
+    },
+    {
+      "id": "vata_neu",
+      "anchor": { "instrument": "prakriti", "dim": "VAT" },
+      "other": { "instrument": "bigfive", "dim": "NEU", "expect": "high" },
+      "resonate": "Vata's mobility shows up in your personality as quick, strong reactions. Grounding (routine, warmth, slow breath) serves both.",
+      "differ": "Your constitution leans Vata, yet you are emotionally steady. Your Vata may express more through creativity and movement than through worry."
+    },
+    {
+      "id": "vata_opn",
+      "anchor": { "instrument": "prakriti", "dim": "VAT" },
+      "other": { "instrument": "bigfive", "dim": "OPN", "expect": "high" },
+      "resonate": "Vata's quick, creative mind and your openness to ideas describe the same imaginative streak.",
+      "differ": "Your constitution leans Vata, but you prefer the practical and proven. Your Vata may show more in the body and energy than in ideas."
+    },
+    {
+      "id": "pitta_con",
+      "anchor": { "instrument": "prakriti", "dim": "PIT" },
+      "other": { "instrument": "bigfive", "dim": "CON", "expect": "high" },
+      "resonate": "Pitta's focus and drive match your conscientiousness: sharp, goal-directed and thorough. Watch for perfectionism in both.",
+      "differ": "Your constitution leans Pitta, but structure isn't a strong pull for you. Pitta's intensity may go into passion and debate more than planning."
+    },
+    {
+      "id": "kapha_neu",
+      "anchor": { "instrument": "prakriti", "dim": "KAP" },
+      "other": { "instrument": "bigfive", "dim": "NEU", "expect": "low" },
+      "resonate": "Kapha's steadiness shows up as emotional stability in your personality: you are hard to knock off balance.",
+      "differ": "Your constitution leans Kapha, yet you feel stress strongly at the moment. Check your Vikriti: a current Vata or Pitta imbalance often explains this."
+    },
+    {
+      "id": "kapha_agr",
+      "anchor": { "instrument": "prakriti", "dim": "KAP" },
+      "other": { "instrument": "bigfive", "dim": "AGR", "expect": "high" },
+      "resonate": "Kapha's loyalty and patience match your warmth towards others.",
+      "differ": "Your constitution leans Kapha, but you are direct rather than accommodating. Your Kapha may show more as endurance than as softness."
+    },
+    {
+      "id": "anx_neu",
+      "anchor": { "instrument": "ecrr", "dim": "ANX" },
+      "other": { "instrument": "bigfive", "dim": "NEU", "expect": "high" },
+      "resonate": "The worry you feel in relationships is part of a wider sensitivity to stress, so general regulation practices help your relationships too.",
+      "differ": "You worry in close relationships but are steady elsewhere. The worry is specific to closeness, which makes it easier to work on directly."
+    },
+    {
+      "id": "avd_agr",
+      "anchor": { "instrument": "ecrr", "dim": "AVD" },
+      "other": { "instrument": "bigfive", "dim": "AGR", "expect": "low" },
+      "resonate": "Keeping distance in relationships fits your independent, direct style more generally.",
+      "differ": "You are warm towards people in general, yet keep partners at a distance. Closeness may feel safe in friendship but riskier in romance."
+    },
+    {
+      "id": "vikriti_kapha_tamas",
+      "anchor": { "instrument": "vikriti", "dim": "KAP" },
+      "other": { "instrument": "guna", "dim": "TAM", "expect": "high" },
+      "resonate": "Current Kapha imbalance and Tamas both point to heaviness right now. Energising practice and lighter food address both.",
+      "differ": "Kapha is raised in your body, but your mind isn't heavy. Address the physical side (movement, lighter food) before it spreads."
+    },
+    {
+      "id": "vikriti_pitta_rajas",
+      "anchor": { "instrument": "vikriti", "dim": "PIT" },
+      "other": { "instrument": "guna", "dim": "RAJ", "expect": "high" },
+      "resonate": "Current Pitta imbalance and Rajas both point to running hot: intensity, pressure and pushing. Cooling, non-competitive practice helps both.",
+      "differ": "Pitta is raised in your body, but your mind isn't especially driven. The heat may come from outside (season, food, workload) rather than ambition."
+    },
+    {
+      "id": "vikriti_vata_neu",
+      "anchor": { "instrument": "vikriti", "dim": "VAT" },
+      "other": { "instrument": "bigfive", "dim": "NEU", "expect": "high" },
+      "resonate": "Current Vata imbalance and emotional reactivity go hand in hand: grounding routine, warmth and slow breathing help both.",
+      "differ": "Vata is raised right now, though you are emotionally steady by nature. That makes it likely a passing imbalance: travel, irregular sleep or the season."
+    }
+  ]
+}

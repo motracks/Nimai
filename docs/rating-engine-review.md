@@ -277,11 +277,10 @@ value by putting them in dialogue:
   early results become the baseline. The legacy tables are left untouched.
 - On read, rows on the current item set are **re-scored with the current
   rules**, so the change between baseline and latest reflects the person, not a
-  rule change. Rows on an older item set keep their stored result and are shown
-  as "not comparable":
-  - `prakriti24`: the earlier 24-item Prakriti (answers were option text).
-  - `ipip50-scale-unverified`: Big Five rows from before 2026-09-24 without a
-    single 6 in them; they may come from the 1-5 scale used until 2026-09-21.
+  rule change. No stored results come from an older item set (confirmed: no
+  data from the 24-item Prakriti or the 1-5 Big Five). If items change in
+  future, older rows keep their stored result and are shown as "not
+  comparable".
 - The results page shows the latest result, the baseline, the change per
   dimension (under 5 points is shown as "steady"), a consistency note for
   Prakriti, Vikriti read against Prakriti, and a "Retake due" marker on the
@@ -309,11 +308,32 @@ Done on this branch:
   TimeZoneDB, WASM cached per worker.
 - `npm test`: 27 golden-vector tests (vitest).
 
+Also done:
+
+- **Per-test analysis** (`src/lib/analysis/`), shown under each result as
+  "Read the analysis". It is rule-based: every sentence comes from a content
+  file (`analysis/bigfive.json`, `ecrr.json`, `guna.json`, plus the existing
+  `prakriti_dosha_guide.json` and mapping files), selected by the scores. No
+  API call, so it is free, instant, the same every time, testable, and can't
+  invent claims. The Prakriti analysis follows the guide's display rules: only
+  the dosha(s) named in the result are shown.
+- **Combined profile** at `/profile` (`src/lib/profile.ts`): your nature
+  (Prakriti, Big Five, Vedic chart), right now (Guna, Vikriti), relationships
+  (ECR-R), where the frameworks meet and where they differ
+  (`analysis/resonances.json`), change since baseline, and what to practise
+  now (current Vikriti imbalance first, then constitution, Guna and
+  attachment).
+- `buildSynthesisInput()`: the same information as one versioned JSON
+  document, ready for an optional written narrative by a language model later.
+
 Open:
 
 1. Commit the live schema (`supabase db pull`); see roadblocks.
-2. Synthesis on top of the current and baseline views.
-3. Response-time capture as another quality signal.
+2. Content review: all interpretive text should be read by someone who teaches
+   these frameworks before launch.
+3. Nakshatra interpretations: the Vedic chart has no interpretive content yet,
+   so the profile shows chart facts only.
+4. Optional: an LLM-written narrative on top of `buildSynthesisInput()`.
 
 ## 7. Roadblocks and things to do differently
 

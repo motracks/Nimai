@@ -11,8 +11,9 @@ import { scoreInstrument, type ScoredResult } from "./scoring";
 //
 // Rows whose item set matches the current instrument are re-scored with the
 // current rules on read, so a change between baseline and latest reflects the
-// person, not a change in scoring rules. Rows from an older item set (e.g. the
-// 24-item Prakriti) keep their stored scores and are marked not comparable.
+// person, not a change in scoring rules. Rows from an older item set (none
+// exist yet; this is for future item changes) keep their stored scores and are
+// marked not comparable.
 
 export interface ResultRow {
   id: string;
@@ -42,11 +43,6 @@ export interface InstrumentHistory {
   delta: Record<string, number> | null; // latest.norm - baseline.norm, when both comparable
 }
 
-const VERSION_NOTES: Record<string, string> = {
-  prakriti24: "Taken on the earlier 24-item version, so it can't be compared point for point.",
-  "ipip50-scale-unverified": "Possibly taken on the earlier 1-5 answer scale, so it isn't compared.",
-};
-
 function legacyView(result: Record<string, unknown>): ResultSnapshot["legacy"] {
   const legacy = (result.legacy ?? {}) as Record<string, unknown>;
   const labels = legacy.labels as Record<string, string> | undefined;
@@ -71,7 +67,7 @@ export function snapshot(row: ResultRow): ResultSnapshot {
     comparable: false,
     scored: null,
     legacy: legacyView(row.result),
-    versionNote: VERSION_NOTES[row.instrument_version] ?? "Taken on an earlier version of this questionnaire.",
+    versionNote: "Taken on an earlier version of this questionnaire, so it can't be compared point for point.",
   };
 }
 

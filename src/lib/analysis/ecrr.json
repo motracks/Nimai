@@ -1,0 +1,38 @@
+{
+  "note": "Interpretive content for the attachment analysis, keyed by the pattern labels in ecrr_mapping.json combined_patterns.",
+  "patterns": {
+    "Secure": {
+      "in_practice": "You can let people close without losing yourself, and you can be apart without assuming the worst. Conflict tends to feel repairable rather than threatening.",
+      "growth": [
+        "Keep doing what works: saying what you need directly and trusting the answer.",
+        "Your steadiness can help a less secure partner feel safe; patience with their worry or distance goes a long way.",
+        "Security isn't fixed: long stress or a painful loss can shake it, and that is normal."
+      ]
+    },
+    "Anxious-preoccupied": {
+      "in_practice": "Closeness matters deeply to you, and when a partner seems distant your mind fills the gap with worry. You may seek reassurance, or read small signs as big ones.",
+      "growth": [
+        "Notice the moment worry starts telling a story, and check the facts with your partner before acting on it.",
+        "Ask for reassurance directly instead of testing for it.",
+        "Build steadiness outside the relationship too: friends, practice, routine and time that is just yours."
+      ]
+    },
+    "Dismissive-avoidant": {
+      "in_practice": "You value independence and handle things yourself. When someone wants more closeness than feels comfortable, you may pull back, go quiet or get busy.",
+      "growth": [
+        "Notice when you pull away as closeness grows, and name it rather than disappear.",
+        "Try sharing one small thing you would normally keep to yourself.",
+        "Letting someone help is a skill, not a weakness; independence and closeness can grow together."
+      ]
+    },
+    "Fearful-avoidant": {
+      "in_practice": "You want closeness and brace against it at the same time. Relationships can swing between reaching out and protecting yourself, which is tiring from the inside.",
+      "growth": [
+        "Both the wish for closeness and the caution make sense; notice which one is active in the moment.",
+        "Go slowly: small, consistent experiences of safety do more than big leaps.",
+        "This pattern often softens with a therapist's support, and it is worth considering."
+      ]
+    }
+  },
+  "near_boundary": "Your scores sit close to the line between patterns, so the neighbouring pattern ({runner_up}) may describe parts of your experience too."
+}

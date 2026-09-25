@@ -2,6 +2,9 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { INSTRUMENTS, type InstrumentKey } from "@/lib/instruments";
+import { analyse, type Analysis } from "@/lib/analysis";
+import AnalysisView from "@/components/AnalysisView";
+import type { ScoredResult } from "@/lib/scoring";
 import {
   FLAG_TEXT,
   KIND_TEXT,
@@ -50,7 +53,14 @@ export default async function ResultsPage() {
   return (
     <main className="vn-page">
       <p className="vn-eyebrow">Verdic Nimai</p>
-      <h1 className="vn-heading mb-8">Your results</h1>
+      <h1 className="vn-heading mb-4">Your results</h1>
+      {Object.keys(histories).length > 0 && (
+        <p className="mb-8 text-sm">
+          <Link href="/profile" style={{ color: "var(--green-text)" }}>
+            See your combined profile →
+          </Link>
+        </p>
+      )}
 
       {results.error && <p className="vn-error mb-4">{results.error.message}</p>}
 
@@ -65,6 +75,7 @@ export default async function ResultsPage() {
           {histories[key] ? (
             <InstrumentResult
               history={histories[key]!}
+              prakritiLatest={prakritiLatest}
               extra={
                 key === "vikriti" && histories.vikriti?.latest.scored
                   ? vikritiVsPrakriti(histories.vikriti.latest.scored, prakritiLatest)
@@ -141,9 +152,18 @@ export default async function ResultsPage() {
   );
 }
 
-function InstrumentResult({ history, extra }: { history: InstrumentHistory; extra: string | null }) {
+function InstrumentResult({
+  history,
+  extra,
+  prakritiLatest,
+}: {
+  history: InstrumentHistory;
+  extra: string | null;
+  prakritiLatest: ScoredResult | null;
+}) {
   const { key, latest, baseline, delta, count } = history;
   const meta = INSTRUMENTS[key];
+  const analysis: Analysis | null = analyse(history, prakritiLatest);
 
   return (
     <div className="flex flex-col gap-3">
@@ -163,6 +183,8 @@ function InstrumentResult({ history, extra }: { history: InstrumentHistory; extr
           <BaselineSummary instrument={key} baseline={baseline} latest={latest} />
         </div>
       )}
+
+      {analysis && <AnalysisView analysis={analysis} />}
 
       <p className="text-xs" style={{ color: "var(--ink-faint)" }}>
         Latest {formatDate(latest.completedAt)} · suggested retake every {meta.suggestedRetakeDays} days ·{" "}

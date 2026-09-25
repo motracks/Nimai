@@ -71,12 +71,14 @@ export default async function Home() {
 
       {user ? (
         completeCount > 0 && (
-          <Link
-            href="/results"
-            className="vn-btn inline-block no-underline"
-          >
-            View your results
-          </Link>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link href="/profile" className="vn-btn inline-block no-underline">
+              Your profile
+            </Link>
+            <Link href="/results" className="text-sm" style={{ color: "var(--green-text)" }}>
+              Results by test
+            </Link>
+          </div>
         )
       ) : (
         <Link href="/login" className="vn-btn inline-block no-underline">

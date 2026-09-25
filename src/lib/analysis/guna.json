@@ -1,0 +1,31 @@
+{
+  "note": "Interpretive content for the Guna analysis, drawing on Bhagavad-Gita chapters 14, 17 and 18. 'leads' applies to the guna with the largest share.",
+  "gunas": {
+    "SAT": {
+      "leads": "Clarity, contentment and steadiness colour most of your days. You tend to see situations as they are and act from a settled place.",
+      "supports": [
+        "Protect what feeds it: a regular routine, fresh and simple food, time in nature, study and service.",
+        "Keep it light. The Gita notes that even sattva binds, through attachment to happiness and knowledge (14.6). Let calm be a ground to act from, not a state to guard."
+      ]
+    },
+    "RAJ": {
+      "leads": "Drive and desire move you: you want more, reach for the next goal and find stillness hard. That energy gets things done and can also leave you restless and rarely satisfied.",
+      "supports": [
+        "Channel the drive rather than fight it: work done as an offering (karma yoga) keeps the energy and loosens the grip of results.",
+        "Set fixed times for rest and fewer inputs in the evening, so the mind can come down.",
+        "Notice the pattern of 'more, next, faster' and pause before the next goal."
+      ]
+    },
+    "TAM": {
+      "leads": "Heaviness, low energy or mental fog are showing up strongly right now. That's a state, not a verdict on who you are, and it tends to lift with the right rhythm.",
+      "supports": [
+        "Movement first, insight second: tamas lifts through activity (rajas) on the way to clarity (sattva).",
+        "A morning routine, getting outside, lighter meals and one small task finished each day all help.",
+        "Be kind about it. Harsh self-judgement adds weight; steady small steps remove it."
+      ]
+    }
+  },
+  "sattva_below_tamas": "Tamas currently outweighs Sattva. Traditionally that's the first thing to work on: small, regular acts of order and care build clarity faster than big resolutions.",
+  "sattva_rising": "Sattva has risen since your baseline, the direction practice aims for.",
+  "tamas_rising": "Tamas has risen since your baseline. Look at sleep, routine and what has changed in your circumstances."
+}

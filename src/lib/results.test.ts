@@ -43,7 +43,7 @@ describe("buildHistories", () => {
     const h = buildHistories([
       row({
         instrument: "prakriti",
-        instrument_version: "prakriti24",
+        instrument_version: "prakriti-older-version",
         answers: { P01: "Thin, light, hard to gain weight" },
         result: { legacy: { pattern: "Vata-leaning", scores: { VAT: 50, PIT: 30, KAP: 20 } } },
         completed_at: "2026-09-21T00:00:00Z",

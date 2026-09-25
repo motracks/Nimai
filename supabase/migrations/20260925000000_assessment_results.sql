@@ -71,21 +71,11 @@ begin
         r.user_id,
         %1$L,
         case %1$L
-          -- Big Five ran on a 1-5 scale until 2026-09-21. A 6 anywhere proves the
-          -- 6-point version; older rows without one can't be told apart.
-          when 'bigfive' then
-            case
-              when exists (select 1 from jsonb_each(r.answers) e where e.value = '6'::jsonb)
-                or coalesce((to_jsonb(r) ->> 'completed_at')::timestamptz, now()) >= '2026-09-24'
-                then 'ipip50-6pt'
-              else 'ipip50-scale-unverified'
-            end
-          when 'ecrr' then 'ecrr36-6pt'
-          when 'guna' then 'guna36-6pt'
-          -- The 24-item Prakriti stored the chosen option text; the 40-item one stores ticks.
-          when 'prakriti' then
-            case when jsonb_typeof(r.answers -> 'P01') = 'array' then 'govardhan40' else 'prakriti24' end
-          when 'vikriti' then 'govardhan-vk6'
+          when 'bigfive'  then 'ipip50-6pt'
+          when 'ecrr'     then 'ecrr36-6pt'
+          when 'guna'     then 'guna36-6pt'
+          when 'prakriti' then 'govardhan40'
+          when 'vikriti'  then 'govardhan-vk6'
         end,
         '1',
         r.answers,
