@@ -62,6 +62,10 @@ export default function TodayCard({ focus }: { focus: TodayFocus }) {
         General guidance from your results, not medical advice.{" "}
         <Link href={focus.href} className="vn-link">
           Why this?
+        </Link>{" "}
+        ·{" "}
+        <Link href="/checkin" className="vn-link">
+          Quick check-in
         </Link>
       </p>
     </section>
