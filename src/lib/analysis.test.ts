@@ -19,6 +19,7 @@ import nettleKb from "./knowledge/nettle.json";
 import svobodaKb from "./knowledge/svoboda.json";
 import attachedKb from "./knowledge/attached.json";
 import handbookKb from "./knowledge/handbook-attachment.json";
+import pooleHellerKb from "./knowledge/poole-heller.json";
 import { INSTRUMENTS, type InstrumentKey } from "./instruments";
 
 type Item = { id: string; dimension: string; reverse?: boolean };
@@ -109,6 +110,16 @@ describe("per-test analysis", () => {
     const changes = a.sections.find((s) => s.title === "It can change");
     expect(changes?.paragraphs?.[1]).toMatch(/\.90/);
     expect(changes?.paragraphs?.[1]).toMatch(/Handbook of Attachment, ch\.27/);
+  });
+
+  it("Fearful-avoidant's combined strategy note cites Poole Heller's window of tolerance", () => {
+    const fearful = buildHistories([row("ecrr", likert(ecrr.items, { ANX: 5, AVD: 5 }))]);
+    const a = analyse(fearful.ecrr!)!;
+    expect(a.headline).toBe("Fearful-avoidant");
+    const why = a.sections.find((s) => s.title === "Why it works this way");
+    expect(why?.paragraphs?.some((p) => p.includes("window of tolerance"))).toBe(true);
+    const growth = a.sections.find((s) => s.title === "Ways to grow");
+    expect(growth?.items?.some((i) => i.includes("Power of Attachment"))).toBe(true);
   });
 
   it("Prakriti shows only the named dosha's guide, plus the limits", () => {
@@ -224,7 +235,7 @@ describe("sourced content stays honest", () => {
   });
 
   it("every knowledge-file claim carries a page reference", () => {
-    for (const file of [harnessKb, mikulincerKb, frawleyKb, nettleKb, svobodaKb, attachedKb, handbookKb]) {
+    for (const file of [harnessKb, mikulincerKb, frawleyKb, nettleKb, svobodaKb, attachedKb, handbookKb, pooleHellerKb]) {
       const claims = "claims" in file ? file.claims : Object.values(file.entries);
       for (const c of claims as { pages?: string }[]) {
         expect(c.pages, JSON.stringify(c).slice(0, 60)).toMatch(/\d/);

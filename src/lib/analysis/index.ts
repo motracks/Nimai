@@ -159,6 +159,7 @@ function strategyNotes(scored: ScoredResult): string[] {
   const notes: string[] = [];
   if (scored.raw.ANX > cutoff) notes.push(ecrrContent.dimension_notes.ANX_high);
   if (scored.raw.AVD > cutoff) notes.push(ecrrContent.dimension_notes.AVD_high);
+  if (notes.length === 2) notes.push(ecrrContent.dimension_notes.both_high);
   return notes.length ? notes : [ecrrContent.dimension_notes.both_low];
 }
 
