@@ -1,5 +1,23 @@
 import Link from "next/link";
 import type { Analysis, AnalysisSection } from "@/lib/analysis";
+import { splitCitations } from "@/lib/citations";
+
+// Text with its book citations linked to their /sources entry.
+export function Cited({ text }: { text: string }) {
+  return (
+    <>
+      {splitCitations(text).map((seg, i) =>
+        seg.sourceId ? (
+          <Link key={i} href={`/sources#${seg.sourceId}`} className="vn-link">
+            {seg.text}
+          </Link>
+        ) : (
+          seg.text
+        ),
+      )}
+    </>
+  );
+}
 
 export function SectionView({ section }: { section: AnalysisSection }) {
   return (
@@ -9,13 +27,15 @@ export function SectionView({ section }: { section: AnalysisSection }) {
       </h3>
       {section.paragraphs?.map((p) => (
         <p key={p} className="text-sm leading-relaxed" style={{ color: "var(--ink-mid)" }}>
-          {p}
+          <Cited text={p} />
         </p>
       ))}
       {section.items && (
         <ul className="flex list-disc flex-col gap-1 pl-5 text-sm leading-relaxed" style={{ color: "var(--ink-mid)" }}>
           {section.items.map((i) => (
-            <li key={i}>{i}</li>
+            <li key={i}>
+              <Cited text={i} />
+            </li>
           ))}
         </ul>
       )}
