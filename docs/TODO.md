@@ -65,15 +65,17 @@ Open:
       Resend for email, VAPID keys for push) plus a scheduled job.
       **(you)** Pick the channel if the calendar file isn't enough.
 
-### [ ] Progress over months
-Results currently compare baseline with latest, two points only.
-- [ ] A timeline per test: every result as a point, one line per dimension
-      (Vata/Pitta/Kapha, Sattva/Rajas/Tamas, Big Five traits), on the stored
-      0-100 `norm` scores.
-- [ ] Mark changes too small to mean anything (under 5 points today; the
-      ECR-R test-retest data from Handbook ch.27 can set a per-test
-      threshold).
-- [ ] Short written trend: "Vata has come down over three checks since June."
+### [x] Progress over months
+Done: each result card shows an "Over time" section once there are two or
+more comparable results.
+- A line per dimension across every result, spaced by real dates. Guna and
+  Prakriti are plotted as shares (the balance), the rest as 0-100 scores.
+  Colours are fixed per dimension and checked for colour-blind separation.
+- A one-line trend ("Sattva has risen 12 points since June 2026, across 3
+  results"); movements under 5 points count as steady.
+- Hover, tap or arrow keys for a tooltip; a legend; end labels where
+  there's room; "Show as a table" for every value.
+- Later: a per-test "real change" threshold from test-retest data.
 
 ### [ ] Seasons and travel, compared year on year
 - [ ] Save **context** with every Vikriti and Guna result: the season
