@@ -72,26 +72,23 @@ change (and until that window closes). Everything further off is listed
 quietly under "Coming up" at the bottom, with the calendar file link. The
 calendar file still holds every date (`SOON_DAYS` in `src/lib/reminders.ts`).
 
-### [ ] Explain the Vedic chart
-Right now the chart shows positions with no reading.
-- What we have: Harness, *The Nakshatras* (1999), already paraphrased in
-  `src/lib/knowledge/harness-nakshatras.json` for all 27 nakshatras
-  (Moon traits and cautions). It isn't shown anywhere yet; it's only
-  checked by the tests. That's enough for a Moon-nakshatra reading now.
-- What's missing: a book for **signs (rashis), houses and planets**.
-  Candidates **(you)**: Frawley, *Astrology of the Seers*; Hart de Fouw &
-  Robert Svoboda, *Light on Life*; or Komilla Sutton, *The Essentials of
-  Vedic Astrology*. Upload one and I'll paraphrase it with page citations,
-  the same way as the other books.
-- [ ] **General analysis** on the chart page: ascendant (only when the
-      birth time is reliable), Moon sign, Moon nakshatra (Harness), and a
-      short overall reading. Same rules as elsewhere: no predictions of
-      timing, marriage or health.
-- [ ] **Click a sign → deeper page** for that sign: its element, quality
-      and ruler; what it means in this chart (which planets sit there,
-      which house it is); cited paraphrase.
-- [ ] Same for each nakshatra (Harness), so the Moon's nakshatra links to
-      its full entry.
+### [~] Explain the Vedic chart
+Done (nakshatras, from Harness, *The Nakshatras*, 1999):
+- [x] A **Reading** under the chart: what the Moon's nakshatra says about
+      the emotional nature, its ruler, deity, symbol and power, linked to its
+      own page. With no birth time, both possible nakshatras are linked
+      instead of guessing.
+- [x] `/vedic/nakshatras`: all 27 in order. `/vedic/nakshatras/<name>`: a page
+      per nakshatra (position, ruler, deity, symbol, shakti, motivation,
+      gana, animal, gunas; Moon traits and what to watch; page citation;
+      previous/next).
+Open:
+- [ ] **Signs, houses, planets** from de Fouw & Svoboda, *Light on Life*
+      **(you: upload it)**. Then: a general reading (ascendant only when the
+      birth time is reliable, Moon sign), and clicking a sign opens its own
+      page (element, quality, ruler; which planets sit there and which house
+      it is in this chart). Same rules: tendencies, no timing, marriage or
+      health predictions.
 - [ ] Add the chart to the needs model's Nature layer once it has content.
 
 ### [x] Progress over months
