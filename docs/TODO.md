@@ -92,17 +92,18 @@ Done (needs the migration below applied to record anything):
       (Supabase dashboard → SQL editor → paste → Run, or `supabase db push`).
       Until then results save without context, and nothing breaks.
 
-### [ ] Home screen "today" card: what to do, what to avoid
-One short card, rebuilt from:
-- the current Vikriti (strongest weight), then Prakriti
-- the season (temperate cycle, Svoboda ch.4)
-- the time of day (e.g. Vata hours pre-dawn and late afternoon)
-- the current Guna
-
-It gives a few do's and don'ts, each with a one-line reason and a link to the
-source. It stays rule-based and cited, not free-written. The data and
-priority order already exist in `profile.ts` (the "practice" section); this
-brings it to the front page.
+### [x] Home screen "today" card: what to do, what to avoid
+Done: a "Today" card at the top of the home page.
+- Picks the dosha that needs attention now: a raised Vikriti first, then
+  the season's dosha when it matches the constitution, then the
+  constitution, then the season alone (Svoboda ch.4; southern seasons when
+  the results were taken there).
+- Three things to do and three to go easy on. "Go easy on" restates the
+  workbook's "increased by" list; "Do" applies the classical rule that a
+  quality is settled by its opposite (Caraka Sarira 6.5-7). Fast breathing
+  techniques are left off on purpose.
+- The dosha of the current hour from the reader's own clock, and one Guna
+  line when a Guna result exists. "Why this?" links to the full reading.
 
 ---
 

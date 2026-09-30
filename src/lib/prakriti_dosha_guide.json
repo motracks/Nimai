@@ -39,7 +39,20 @@
           "id": "svobodalife1992",
           "claim": "age_cycle"
         }
-      ]
+      ],
+      "today": {
+        "do": [
+          "Keep meals and sleep at regular times.",
+          "Choose warm, cooked, moist food and warm drinks.",
+          "Slow, grounding practice with long holds, and long exhalations (Nadi Shodhana or Bhramari).",
+          "Stay warm and out of the wind."
+        ],
+        "avoid": [
+          "Cold, wind and dry air.",
+          "Skipped or irregular meals, fasting.",
+          "Rushing, travel days and too much input at once."
+        ]
+      }
     },
     "PIT": {
       "show_when": "prakriti_results.pattern includes Pitta as dominant or secondary. Never shown for a person whose result has no Pitta component.",
@@ -78,7 +91,20 @@
           "id": "svobodalife1992",
           "claim": "age_cycle"
         }
-      ]
+      ],
+      "today": {
+        "do": [
+          "Keep cool: shade at midday, no hot rooms.",
+          "Eat at regular times; don't skip meals.",
+          "Cooling, non-competitive practice at about 70-80% effort; Sheetali or Chandra Bhedana breathing.",
+          "Leave some ease in the day: less deadline pressure where you can."
+        ],
+        "avoid": [
+          "Midday sun and heat.",
+          "Very spicy, sour or fried food, and alcohol.",
+          "Competition and pushing to the limit."
+        ]
+      }
     },
     "KAP": {
       "show_when": "prakriti_results.pattern includes Kapha as dominant or secondary. Never shown for a person whose result has no Kapha component.",
@@ -117,7 +143,20 @@
           "id": "svobodalife1992",
           "claim": "age_cycle"
         }
-      ]
+      ],
+      "today": {
+        "do": [
+          "Get up early and move first thing.",
+          "Lighter, warm meals; less sweet and heavy food.",
+          "Energising practice at pace, such as Surya Namaskar, or a brisk walk.",
+          "Change something small: a new route, a new activity."
+        ],
+        "avoid": [
+          "Daytime sleep.",
+          "Heavy, sweet or cold food.",
+          "Long stretches of sitting still."
+        ]
+      }
     }
   },
   "dual_and_balanced_constitutions": {
@@ -209,5 +248,9 @@
     "status": "Svoboda (Prakriti): read. Svoboda (Life, Health and Longevity, ch.4 and ch.6): read. Lad (Textbook of Ayurveda, ch.2 attribute tables): read. Nothing pending."
   },
   "constitution_note": "Robert Svoboda is explicit on one point worth keeping in mind for retakes: the constitution itself doesn't change, but how accurately you can see your own doesn't stay fixed either. Someone can retake this test months later and get a more accurate answer, not because their nature shifted, but because their self-understanding did. Constitutional typing is meant to be a foundation for building self-understanding, not a label to be confined by.",
-  "vikriti_context": "Ayurvedic pathology describes every imbalance as following the same six-stage path: Accumulation, Aggravation, Overflow, Location, Manifestation and Specialization (Svoboda, Ayurveda: Life, Health and Longevity, ch.6). A dosha is easiest to correct at the first stage, simply built up in its home organ with only mild symptoms - which is exactly the window this Vikriti check aims for. Only from Location onward, once a dosha has travelled and settled somewhere weakened, does a specific illness begin to take shape. The same texts note that imbalance arises most at the junctions of cycles, above all the change of season, so checking in as each season turns is worthwhile (ch.4)."
+  "vikriti_context": "Ayurvedic pathology describes every imbalance as following the same six-stage path: Accumulation, Aggravation, Overflow, Location, Manifestation and Specialization (Svoboda, Ayurveda: Life, Health and Longevity, ch.6). A dosha is easiest to correct at the first stage, simply built up in its home organ with only mild symptoms - which is exactly the window this Vikriti check aims for. Only from Location onward, once a dosha has travelled and settled somewhere weakened, does a specific illness begin to take shape. The same texts note that imbalance arises most at the junctions of cycles, above all the change of season, so checking in as each season turns is worthwhile (ch.4).",
+  "today_note": {
+    "show_when": "The home-screen 'today' card, for whichever dosha needs attention now.",
+    "basis": "'Avoid' restates each dosha's increased_by list from the Govardhan workbook. 'Do' applies the classical rule that a raised quality is settled by its opposite (Caraka Samhita, Sarira Sthana 6.5-7; see charaka-sharira.json), using each dosha's qualities (Lad, Textbook of Ayurveda, Tables 5-7) and the workbook's own asana, pranayama and meditation guidance. Fast breathing techniques (Kapalabhati, Bhastrika) are left off the card on purpose: they have contraindications that belong with a teacher."
+  }
 }

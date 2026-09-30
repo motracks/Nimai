@@ -6,7 +6,7 @@
     "publisher": "Chowkhamba Sanskrit Series",
     "kind": "classical"
   },
-  "method": "Read ch.4 of the Sarira Sthana volume (paragraphs 34-40, its section on the doshas of body and mind and the classification of mental types), retrieved as a partial text extraction of a large scanned PDF - the extraction is real but has OCR noise throughout (garbled diacritics, occasional dropped words), so every claim below was checked against a passage clear enough to paraphrase confidently, and no Sanskrit terms are quoted verbatim from the noisy transliteration. This is the classical, primary-source origin of the sattva/rajas/tamas mental-type framework guna.json already uses via Frawley's (secondary, practitioner) treatment of it - the first primary classical text in Nimai's knowledge base for the guna content specifically.",
+  "method": "Read ch.4 of the Sarira Sthana volume (paragraphs 34-40, its section on the doshas of body and mind and the classification of mental types) and ch.6 (paragraphs 5-7, on keeping the body's elements in balance), retrieved as a partial text extraction of a large scanned PDF - the extraction is real but has OCR noise throughout (garbled diacritics, occasional dropped words), so every claim below was checked against a passage clear enough to paraphrase confidently, and no Sanskrit terms are quoted verbatim from the noisy transliteration. This is the classical, primary-source origin of the sattva/rajas/tamas mental-type framework guna.json already uses via Frawley's (secondary, practitioner) treatment of it - the first primary classical text in Nimai's knowledge base for the guna content specifically.",
   "claims": [
     {
       "id": "dosas_of_body_and_mind",
@@ -32,6 +32,16 @@
       "id": "three_tamasa_subtypes",
       "pages": "Sarira Sthana, ch.4, para 39",
       "paraphrase": "The tamasa type is further divided into three illustrative subtypes, named for animal, fish and plant life respectively. They share a lack of discrimination and intelligence, indulgence (food, sleep or passion) without restraint, and in the plant-associated type specifically, a marked deficiency across the intellectual faculties generally."
+    },
+    {
+      "id": "opposite_qualities",
+      "pages": "Sarira Sthana, ch.6, para 5-6",
+      "paraphrase": "Whatever increases one element of the body reduces the element with the opposite qualities, and it is the qualities that matter, not the substance: two liquids can have opposite effects if their qualities differ. Treatment therefore works by applying the opposite quality - reducing what has increased and building up what has decreased - and stops once balance is back, because continuing would push the balance the other way."
+    },
+    {
+      "id": "balance_in_daily_life",
+      "pages": "Sarira Sthana, ch.6, para 7",
+      "paraphrase": "Even healthy people should keep their balance through daily choices: after food dominated by one quality, follow it with a regimen of the opposite kind - for example, exercise after sweet, heavy food that raises kapha - but not to excess, since overdoing the correction creates its own imbalance."
     }
   ]
 }

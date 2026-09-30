@@ -3,6 +3,8 @@ import { createClient } from "@/lib/supabase/server";
 import { getInstrumentStatuses } from "@/lib/progress";
 import { buildReminders } from "@/lib/reminders";
 import RemindersCard from "@/components/RemindersCard";
+import TodayCard from "@/components/TodayCard";
+import { todayFocus } from "@/lib/today";
 import { INSTRUMENTS, type InstrumentKey } from "@/lib/instruments";
 import { InstrumentResultCard, VedicChartCard } from "@/components/ResultCards";
 import { KIND_TEXT, RESULT_COLUMNS, buildHistories, vikritiVsPrakriti, type ResultRow } from "@/lib/results";
@@ -18,6 +20,8 @@ const ORDER: { key: InstrumentKey; title: string }[] = [
 export default async function Home() {
   const { user, instruments, latestAt } = await getInstrumentStatuses();
   const completeCount = instruments.filter((i) => i.complete).length;
+  const data = user && completeCount > 0 ? await loadResults() : null;
+  const focus = data ? todayFocus(data.histories) : null;
 
   return (
     <main className="mx-auto max-w-xl px-8 py-16">
@@ -54,6 +58,7 @@ export default async function Home() {
         </div>
       )}
 
+      {focus && <TodayCard focus={focus} />}
       {user && completeCount > 0 && <RemindersCard reminders={buildReminders(latestAt)} />}
 
       <div className="mb-10 flex flex-col gap-2">
@@ -93,7 +98,7 @@ export default async function Home() {
         </Link>
       )}
 
-      {user && completeCount > 0 && <ResultsOverview />}
+      {data && <ResultsOverview {...data} />}
     </main>
   );
 }
@@ -102,23 +107,17 @@ export default async function Home() {
 // home page. Each card here is the same content as that test's own page at
 // /results/[instrument] — this is the "see everything at once" view, that
 // page is the "fixed, single-test" view.
-async function ResultsOverview() {
+// RLS scopes both queries to the signed-in user.
+async function loadResults() {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return null;
-
-  // RLS scopes both queries to the signed-in user.
   const [results, vedic] = await Promise.all([
-    supabase
-      .from("assessment_results")
-      .select(RESULT_COLUMNS)
-      .order("completed_at", { ascending: true }),
+    supabase.from("assessment_results").select(RESULT_COLUMNS).order("completed_at", { ascending: true }),
     supabase.from("vedic_charts").select("*").maybeSingle(),
   ]);
+  return { histories: buildHistories((results.data ?? []) as ResultRow[]), results, vedic };
+}
 
-  const histories = buildHistories((results.data ?? []) as ResultRow[]);
+function ResultsOverview({ histories, results, vedic }: Awaited<ReturnType<typeof loadResults>>) {
   const prakritiLatest = histories.prakriti?.latest.scored ?? null;
 
   return (
