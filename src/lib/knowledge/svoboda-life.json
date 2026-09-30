@@ -7,7 +7,7 @@
     "year": 1992,
     "kind": "practitioner"
   },
-  "method": "Read ch.6, 'Pathology', in full (epub, no fixed page numbers; cited by chapter and section heading). This is Svoboda's second book in Nimai's knowledge base (the first, Prakriti, already sources the app's dosha-temperament content); this one is a broader general-practice Ayurveda text, and only the pathology chapter's six-stage disease model was used — it's the classical justification for why catching a current imbalance (Vikriti) early matters, which the app's Vikriti check does but didn't previously explain.",
+  "method": "Read ch.4 'Routine' (the four cycles and seasonal routines) and ch.6 'Pathology' in full (epub, no fixed page numbers; cited by chapter and section heading). This is Svoboda's second book in Nimai's knowledge base (the first, Prakriti, already sources the dosha-temperament content). Ch.6's six-stage disease model is the classical reason the app's Vikriti check exists; ch.4's day, season and age cycles corroborate the Govardhan workbook's 'increased by' timings and translate its Indian-calendar seasons for temperate climates. Together they stand in for Lad's Ayurveda: The Science of Self-Healing, which was never available.",
   "claims": [
     {
       "id": "six_stage_model",
@@ -33,6 +33,26 @@
       "id": "weak_digestion_root_cause",
       "pages": "ch.6, Pathology, opening",
       "paraphrase": "The text names weak digestive fire as the root cause of disease in general, vata as the chief driver of how diseases develop and spread, and ama (the residue of incompletely digested food) as disease's principal nourishment — a framing that puts routine digestive care ahead of treating any single symptom."
+    },
+    {
+      "id": "day_night_cycle",
+      "pages": "ch.4, Routine (Day and night)",
+      "paraphrase": "Across the day, kapha predominates from dawn to mid-morning, pitta from mid-morning to mid-afternoon, and vata from mid-afternoon to dusk. The night repeats the pattern: kapha for roughly the first third after dusk, pitta through the midnight hours, and vata in the hours before dawn. Vata as a whole is strongest at the junctions of day and night."
+    },
+    {
+      "id": "seasonal_cycle_temperate",
+      "pages": "ch.4, Routine (The seasons of the year)",
+      "paraphrase": "Classical texts describe six Indian seasons, but for most temperate countries the pattern is: kapha builds up in winter and is aggravated in spring; pitta builds up in spring and is aggravated in summer; vata builds up in summer and predominates in autumn, settling again in winter unless the cold is extreme."
+    },
+    {
+      "id": "age_cycle",
+      "pages": "ch.4, Routine (Age)",
+      "paraphrase": "Kapha predominates strongly until about sixteen and remains dominant until about thirty; pitta predominates through middle age; vata predominates after about sixty, as the body dries and people feel the cold more."
+    },
+    {
+      "id": "seasonal_junctions",
+      "pages": "ch.4, Routine (Seasonal routines)",
+      "paraphrase": "Ayurveda holds that illness tends to arise at the junctions of cycles - the change from one season to the next, dawn and dusk, adolescence and menopause - because every adaptation a system has to make raises the chance of imbalance. Regular seasonal care at those junctions is the traditional protection."
     }
   ]
 }

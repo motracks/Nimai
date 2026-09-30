@@ -2,7 +2,8 @@
 
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { INSTRUMENTS, isInstrumentKey } from "@/lib/instruments";
+import { INSTRUMENTS, isInstrumentKey, retakeCheck } from "@/lib/instruments";
+import { formatDay, getLatestCompletedAt } from "@/lib/retake";
 import { AnswerError, normaliseAnswers, scoreInstrument } from "@/lib/scoring";
 
 export type SubmitResult = { ok: true } | { ok: false; error: string };
@@ -30,6 +31,12 @@ export async function submitAssessment(instrument: unknown, answers: unknown): P
   }
 
   const meta = INSTRUMENTS[instrument];
+  const latest = await getLatestCompletedAt(instrument);
+  const gate = retakeCheck(instrument, latest);
+  if (gate.status === "blocked") {
+    return { ok: false, error: `You took this ${gate.daysSince} days ago. You can retake it from ${formatDay(gate.availableOn)}.` };
+  }
+
   try {
     const { error } = await createAdminClient().from("assessment_results").insert({
       user_id: user.id,
