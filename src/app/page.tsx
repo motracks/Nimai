@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { getInstrumentStatuses } from "@/lib/progress";
-import { buildReminders } from "@/lib/reminders";
-import RemindersCard from "@/components/RemindersCard";
+import { buildReminders, splitReminders } from "@/lib/reminders";
+import RemindersCard, { ComingUp } from "@/components/RemindersCard";
 import TodayCard from "@/components/TodayCard";
 import { todayFocus } from "@/lib/today";
 import { recentCheckins } from "@/lib/checkin-server";
@@ -22,6 +22,7 @@ const ORDER: { key: InstrumentKey; title: string }[] = [
 export default async function Home() {
   const { user, instruments, latestAt } = await getInstrumentStatuses();
   const completeCount = instruments.filter((i) => i.complete).length;
+  const reminders = user && completeCount > 0 ? splitReminders(buildReminders(latestAt)) : null;
   const data = user && completeCount > 0 ? await loadResults() : null;
   const focus = data ? todayFocus(data.histories, new Date(), data.checkin) : null;
 
@@ -61,7 +62,7 @@ export default async function Home() {
       )}
 
       {focus && data && <TodayCard focus={focus} log={data.log} />}
-      {user && completeCount > 0 && <RemindersCard reminders={buildReminders(latestAt)} />}
+      {reminders && <RemindersCard reminders={reminders.top} />}
 
       <div className="mb-10 flex flex-col gap-2">
         {instruments.map((i) => (
@@ -101,6 +102,7 @@ export default async function Home() {
       )}
 
       {data && <ResultsOverview {...data} />}
+      {reminders && <ComingUp reminders={reminders.bottom} />}
     </main>
   );
 }

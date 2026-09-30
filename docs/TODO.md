@@ -65,20 +65,12 @@ Open:
       Resend for email, VAPID keys for push) plus a scheduled job.
       **(you)** Pick the channel if the calendar file isn't enough.
 
-### [ ] Reminders only when they matter
-Feedback: a reminder for a test that's a month away is noise.
-- [ ] Drop the "coming up in the next 30 days" reminders. Show a retake
-      only from **5 days before** it's due (`src/lib/reminders.ts`, now
-      `30 * DAY_MS`).
-- [ ] Placement by urgency on the home page (`src/app/page.tsx`):
-      - due, or 5 days or less away → a card **at the top**;
-      - anything further off → a quiet line **at the bottom**. Nothing
-        sits near the top before the 5-day mark.
-- [ ] Season-change Vikriti prompts follow the same rule: top only within
-      5 days of the equinox/solstice or while it's due, otherwise the
-      bottom.
-- [ ] The calendar file (`/reminders.ics`) keeps all dates; the alert
-      fires on the day.
+### [x] Reminders only when they matter
+Done: a "Reminders" card at the top of the home page appears only for a
+retake that's due or at most 5 days away, or within 5 days of a season
+change (and until that window closes). Everything further off is listed
+quietly under "Coming up" at the bottom, with the calendar file link. The
+calendar file still holds every date (`SOON_DAYS` in `src/lib/reminders.ts`).
 
 ### [ ] Explain the Vedic chart
 Right now the chart shows positions with no reading.

@@ -41,7 +41,7 @@ export function buildReminders(latestAt: LatestAt, now = Date.now()): Reminder[]
     if (!at) continue;
     const next = new Date(at).getTime() + INSTRUMENTS[key].suggestedRetakeDays * DAY_MS;
     if (next <= now) due.push({ kind: "retake_due", instrument: key, since: new Date(next) });
-    else if (next - now <= 30 * DAY_MS) upcoming.push({ kind: "upcoming", instrument: key, on: new Date(next) });
+    else upcoming.push({ kind: "upcoming", instrument: key, on: new Date(next) });
   }
 
   const [change] = seasonChangesAround(now, 1);
@@ -54,6 +54,25 @@ export function buildReminders(latestAt: LatestAt, now = Date.now()): Reminder[]
       : [];
 
   return [...due, ...season, ...upcoming.sort((a, b) => ("on" in a && "on" in b ? a.on.getTime() - b.on.getTime() : 0))];
+}
+
+// A reminder earns a place at the top of the home page only when it's due or
+// at most this many days away; anything further off sits quietly at the bottom.
+export const SOON_DAYS = 5;
+
+export function isSoon(r: Reminder, now = Date.now()): boolean {
+  switch (r.kind) {
+    case "retake_due":
+      return true;
+    case "upcoming":
+      return r.on.getTime() - now <= SOON_DAYS * DAY_MS;
+    case "season_check":
+      return r.seasonChange.getTime() - now <= SOON_DAYS * DAY_MS;
+  }
+}
+
+export function splitReminders(reminders: Reminder[], now = Date.now()): { top: Reminder[]; bottom: Reminder[] } {
+  return { top: reminders.filter((r) => isSoon(r, now)), bottom: reminders.filter((r) => !isSoon(r, now)) };
 }
 
 export interface CalendarEvent {
