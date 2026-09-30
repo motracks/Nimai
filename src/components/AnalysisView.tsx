@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Analysis, AnalysisSection } from "@/lib/analysis";
 
 export function SectionView({ section }: { section: AnalysisSection }) {
@@ -47,6 +48,11 @@ export default function AnalysisView({ analysis }: { analysis: Analysis }) {
         {analysis.caveats.length > 0 && (
           <SectionView section={{ title: "Keep in mind", items: analysis.caveats }} />
         )}
+        <p className="text-xs">
+          <Link href="/sources" className="vn-link">
+            Sources for this analysis
+          </Link>
+        </p>
       </div>
     </details>
   );
