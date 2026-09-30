@@ -15,7 +15,13 @@
       "asana": "Slow, grounding, warming. Standing poses, forward folds, hip openers, long holds with support. Keep flows gentle and repetitive. Long Shavasana, well covered",
       "pranayama": "Nadi Shodhana, slow Ujjayi, Bhramari. Long exhalations. Use fast techniques (Kapalabhati, Bhastrika) sparingly",
       "meditation": "Body-anchored practices: body scan, Yoga Nidra, mantra japa. A fixed time and seat every day matters more than duration",
-      "teaching_this_student": "Give clear structure and predictable sequences. Offer props for stability. Watch for hypermobile joints being pushed to end range. Keep the room warm and cues calm"
+      "teaching_this_student": "Give clear structure and predictable sequences. Offer props for stability. Watch for hypermobile joints being pushed to end range. Keep the room warm and cues calm",
+      "sources": [
+        {
+          "id": "svoboda",
+          "claim": "vata_temperament"
+        }
+      ]
     },
     "PIT": {
       "show_when": "prakriti_results.pattern includes Pitta as dominant or secondary. Never shown for a person whose result has no Pitta component.",
@@ -30,7 +36,13 @@
       "asana": "Cooling and non-competitive. Forward folds, twists, gentle backbends, Chandra Namaskar. Practise at 70-80% of capacity. Avoid hot rooms and peak-pose chasing",
       "pranayama": "Sheetali, Sheetkari, Chandra Bhedana, Nadi Shodhana. Cooling, soft breath. Avoid excess Bhastrika, especially in summer",
       "meditation": "Heart-centred practices: Maitri (loving-kindness), gratitude, open-awareness. Surrender over achievement",
-      "teaching_this_student": "Cue effortlessness and ease. Discourage comparison. Invite curiosity instead of goals. They will want the 'correct' alignment, so offer it, then teach them to soften"
+      "teaching_this_student": "Cue effortlessness and ease. Discourage comparison. Invite curiosity instead of goals. They will want the 'correct' alignment, so offer it, then teach them to soften",
+      "sources": [
+        {
+          "id": "svoboda",
+          "claim": "pitta_temperament"
+        }
+      ]
     },
     "KAP": {
       "show_when": "prakriti_results.pattern includes Kapha as dominant or secondary. Never shown for a person whose result has no Kapha component.",
@@ -45,24 +57,48 @@
       "asana": "Energising, warming and dynamic. Surya Namaskar at pace, standing poses, backbends, inversions, twists. Short holds, more repetitions. Practise early morning",
       "pranayama": "Kapalabhati, Bhastrika, Surya Bhedana, strong Ujjayi. Stimulating, heating breath",
       "meditation": "Active or eyes-open practices: Trataka, walking meditation, chanting. Keep the spine upright to prevent drowsiness",
-      "teaching_this_student": "Challenge them kindly, they can do more than they think. Keep energy and pace up. Short Shavasana. Give them a reason to show up: they thrive on routine once it is set"
+      "teaching_this_student": "Challenge them kindly, they can do more than they think. Keep energy and pace up. Short Shavasana. Give them a reason to show up: they thrive on routine once it is set",
+      "sources": [
+        {
+          "id": "svoboda",
+          "claim": "kapha_temperament"
+        }
+      ]
     }
   },
   "dual_and_balanced_constitutions": {
     "VAT_PIT": {
       "show_when": "prakriti_results.pattern is exactly the Vata-Pitta dual type (dvandvaja). Shown instead of, not in addition to, the single-dosha combination write-ups for a different pairing.",
       "label": "Vata-Pitta",
-      "description": "Quick, intense and creative, but prone to burnout. Both doshas are light and mobile, so grounding is the shared need. Balance the practice by season: cooling in summer, warming in winter."
+      "description": "Quick, intense and creative, but prone to burnout. Both doshas are light and mobile, so grounding is the shared need. Under stress the two can alternate rather than blend: Vata's fear one moment, Pitta's anger the next, which can look like bullying one moment and self-doubt the next. What steadies you is the quality neither dosha brings on its own: Kapha's grounded, steady quality. Balance the practice by season: cooling in summer, warming in winter.",
+      "sources": [
+        {
+          "id": "svoboda",
+          "claim": "dual_vata_pitta"
+        }
+      ]
     },
     "PIT_KAP": {
       "show_when": "prakriti_results.pattern is exactly the Pitta-Kapha dual type (dvandvaja).",
       "label": "Pitta-Kapha",
-      "description": "Strong, stable and driven: the most robust physical constitution. Can become stubborn or overly controlling. Needs lightness and variety without overheating."
+      "description": "Strong, stable and driven: often the constitution that does well in the world, Pitta's drive tempered by Kapha's steadiness. The real risk is that success breeds overconfidence and a smugness that deflects criticism while accepting only praise. What helps is deliberately bringing in what Vata would otherwise supply: introspection, and a bit of unpredictability, rather than more comfort.",
+      "sources": [
+        {
+          "id": "svoboda",
+          "claim": "dual_pitta_kapha"
+        }
+      ]
     },
     "VAT_KAP": {
       "show_when": "prakriti_results.pattern is exactly the Vata-Kapha dual type (dvandvaja).",
       "label": "Vata-Kapha",
-      "description": "Opposites in movement but both cold. Sensitive and gentle, with inconsistent energy. Warmth is the common need: warming food, heat-building practice and regular rhythm."
+      "description": "Opposites in movement but both cold. Without Pitta's fire to mediate, the two can feel like opposite pulls, light and airy versus deep and secretive, that are hard to integrate. Warmth is the common need, in food, in practice, in life generally, and emotional hurt here tends to go deep and linger, so give it time.",
+      "sources": [
+        {
+          "id": "svoboda",
+          "claim": "dual_vata_kapha"
+        }
+      ]
     },
     "SAMA": {
       "show_when": "prakriti_results.pattern is Sama/Tridoshaja (all three percentages within 10 points per prakriti.json scoring_notes). Genuinely rare — pair with the re-check prompt from scoring_notes rather than presenting it as a routine result.",
@@ -101,8 +137,9 @@
     ]
   },
   "further_sources": {
-    "mind_and_daily_life": "Robert Svoboda, Prakriti: Your Ayurvedic Constitution (revised 2nd ed.): how constitution shows in mind, relationships and daily life.",
+    "mind_and_daily_life": "Robert Svoboda, Prakriti: Your Ayurvedic Constitution (revised 2nd ed.): read in full for ch.2's constitutional summaries and dual-dosha temperament; see src/lib/knowledge/svoboda.json. Now sourcing the dosha and dual-constitution descriptions above.",
     "imbalance": "Vasant Lad, Ayurveda: The Science of Self-Healing (Lotus Press, 1984): how doshas go out of balance (Vikriti) and general principles for restoring it.",
-    "status": "The workbook remains the basis for all text shown. These books are recommended reading for extending it; no text from them has been added yet."
-  }
+    "status": "Svoboda: read. Lad (imbalance): still pending."
+  },
+  "constitution_note": "Robert Svoboda is explicit on one point worth keeping in mind for retakes: the constitution itself doesn't change, but how accurately you can see your own doesn't stay fixed either. Someone can retake this test months later and get a more accurate answer, not because their nature shifted, but because their self-understanding did. Constitutional typing is meant to be a foundation for building self-understanding, not a label to be confined by."
 }

@@ -16,6 +16,7 @@ import sourceRegistry from "./knowledge/sources.json";
 import mikulincerKb from "./knowledge/mikulincer-shaver.json";
 import frawleyKb from "./knowledge/frawley-mind.json";
 import nettleKb from "./knowledge/nettle.json";
+import svobodaKb from "./knowledge/svoboda.json";
 import { INSTRUMENTS, type InstrumentKey } from "./instruments";
 
 type Item = { id: string; dimension: string; reverse?: boolean };
@@ -208,7 +209,7 @@ describe("sourced content stays honest", () => {
   });
 
   it("every knowledge-file claim carries a page reference", () => {
-    for (const file of [harnessKb, mikulincerKb, frawleyKb, nettleKb]) {
+    for (const file of [harnessKb, mikulincerKb, frawleyKb, nettleKb, svobodaKb]) {
       const claims = "claims" in file ? file.claims : Object.values(file.entries);
       for (const c of claims as { pages?: string }[]) {
         expect(c.pages, JSON.stringify(c).slice(0, 60)).toMatch(/\d/);
