@@ -175,7 +175,7 @@ function analyseEcrr(scored: ScoredResult): Omit<Analysis, "instrument" | "progr
     },
     { title: "Why it works this way", paragraphs: strategyNotes(scored) },
     { title: "Ways to grow", items: content.growth },
-    { title: "It can change", paragraphs: [ecrrContent.can_change] },
+    { title: "It can change", paragraphs: ecrrContent.can_change },
   ];
 
   const caveats = qualityCaveats(scored).filter((c) => c !== FLAG_TEXT.near_boundary);

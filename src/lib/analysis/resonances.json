@@ -1,5 +1,9 @@
 {
   "note": "Expected links between frameworks, used by the combined profile. A rule is read only when its anchor dimension is pronounced (level 'high'). If the other side is at the expected level the frameworks resonate; if it is at the opposite level they differ; a middle level says nothing. Neither side is treated as the truth: a difference is information about the person, not an error in one test. Levels: Likert dimensions use their bands; Guna and Prakriti use shares (high >= 40%, low <= 26%); Vikriti uses ticks (high >= 3, low <= 1).",
+  "sources": {
+    "anx_neu": "Empirically grounded, not just theoretical: attachment anxiety correlates about .42 with Neuroticism across a large sample (Noftle & Shaver, 2006, cited in Crowell, Fraley & Roisman, Handbook of Attachment 3rd ed., ch.27). Moderate, not near-1.0 — the two stay distinct constructs, which is why 'differ' is a meaningful outcome and not just noise.",
+    "avd_agr": "Same source: attachment avoidance correlates about -.22 with Agreeableness (Noftle & Shaver, 2006, cited in Handbook of Attachment, ch.27) — real but modest, consistent with this rule being read as one signal among several rather than a strong claim."
+  },
   "rules": [
     {
       "id": "tamas_neu",
