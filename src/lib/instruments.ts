@@ -72,6 +72,27 @@ export const INSTRUMENTS: Record<InstrumentKey, InstrumentMeta> = {
 
 export const INSTRUMENT_KEYS = Object.keys(INSTRUMENTS) as InstrumentKey[];
 
+// Retaking soon after a result mostly measures memory of the previous answers.
+// Traits and the constitution are blocked inside this window; states are
+// expected to move, so they only get a warning.
+export const MIN_RETAKE_DAYS = 14;
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+export type RetakeCheck =
+  | { status: "ok" }
+  | { status: "blocked" | "warn"; daysSince: number; availableOn: Date };
+
+export function retakeCheck(key: InstrumentKey, lastCompletedAt: string | null, now = Date.now()): RetakeCheck {
+  if (!lastCompletedAt) return { status: "ok" };
+  const last = new Date(lastCompletedAt).getTime();
+  if (now - last >= MIN_RETAKE_DAYS * DAY_MS) return { status: "ok" };
+  return {
+    status: INSTRUMENTS[key].kind === "state" ? "warn" : "blocked",
+    daysSince: Math.floor((now - last) / DAY_MS),
+    availableOn: new Date(last + MIN_RETAKE_DAYS * DAY_MS),
+  };
+}
+
 export function isInstrumentKey(value: unknown): value is InstrumentKey {
   return typeof value === "string" && value in INSTRUMENTS;
 }
