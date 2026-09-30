@@ -1,0 +1,33 @@
+{
+  "source": {
+    "id": "johnson2008",
+    "author": "Sue Johnson",
+    "title": "Hold Me Tight: Seven Conversations for a Lifetime of Love",
+    "publisher": "Little, Brown Spark",
+    "year": 2008,
+    "kind": "practitioner"
+  },
+  "method": "Read the book's epub in full (no fixed page numbers; cited by chapter/'Conversation' title and section heading). Johnson is the developer of Emotionally Focused Therapy (EFT) and writes about couples, not individuals, so her book is used narrowly: the three recurring conflict cycles she calls 'Demon Dialogues' map cleanly onto how Nimai's ECR-R patterns tend to show up with a partner, and her core reframe — that the repeating pattern is the shared problem, not either partner — is a genuinely useful addition to growth content. Her broader therapeutic program (the full Seven Conversations) is not reproduced; Nimai isn't a couples tool.",
+  "claims": [
+    {
+      "id": "protest_polka",
+      "pages": "Conversation 1, Recognizing the Demon Dialogues",
+      "paraphrase": "The most common and most corrosive pattern Johnson sees in distressed couples is what she calls the Protest Polka (also known in the research literature as demand-withdraw): one partner becomes critical or pursuing, the other becomes defensive and distant, and each response intensifies the next round. She cites research finding that couples caught in this pattern early in a relationship have a high chance of separating within a few years if it isn't interrupted."
+    },
+    {
+      "id": "find_the_bad_guy",
+      "pages": "Conversation 1, Recognizing the Demon Dialogues",
+      "paraphrase": "A second pattern, Find the Bad Guy, is mutual blame: both partners attack or accuse, each trying to regain a sense of control by making the other the problem. Johnson notes it's usually a shorter-lived, more obviously hostile pattern than the Protest Polka, and often gives way to it once the mutual attack becomes too exhausting to sustain."
+    },
+    {
+      "id": "freeze_and_flee",
+      "pages": "Conversation 1, Recognizing the Demon Dialogues",
+      "paraphrase": "The third pattern, Freeze and Flee (or withdraw-withdraw), tends to emerge after a long run of the Protest Polka, once both partners have given up trying to get a response and instead go numb and distant. Johnson calls it the most dangerous of the three, since neither partner is actively reaching for the other anymore, and there's no longer a visible conflict left to point to and repair."
+    },
+    {
+      "id": "attachment_cry_beneath_blame",
+      "pages": "Conversation 1, Recognizing the Demon Dialogues",
+      "paraphrase": "Johnson's central reframe is that the criticism, withdrawal or blame on the surface of these patterns is almost always a distorted expression of an underlying attachment fear — of being unimportant, rejected or abandoned — rather than a true statement about the partner's character. Recognizing that the pattern itself, not either partner, is the real opponent is what lets couples stop trying to win the exchange and start noticing the cycle they're both caught in."
+    }
+  ]
+}

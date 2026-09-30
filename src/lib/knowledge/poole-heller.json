@@ -1,0 +1,38 @@
+{
+  "source": {
+    "id": "pooleheller2019",
+    "author": "Diane Poole Heller",
+    "title": "The Power of Attachment: How to Create Deep and Lasting Intimate Relationships",
+    "publisher": "Sounds True",
+    "year": 2019,
+    "kind": "practitioner"
+  },
+  "method": "Read the book's epub in full (no fixed page numbers; cited by chapter and section heading). Poole Heller uses four attachment labels (secure, avoidant, ambivalent, disorganized) rather than Mikulincer & Shaver's two continuous dimensions; her 'disorganized' maps to what Nimai calls Fearful-avoidant (high anxiety and high avoidance together), and her 'ambivalent'/'avoidant' map to Anxious-preoccupied/Dismissive-avoidant. Nimai keeps the dimensional model as primary and uses this book only for its body-based, somatic-therapy framing (the nervous-system 'window of tolerance', self-regulation vs. co-regulation, and a concrete grounding exercise) — a different, complementary angle from the cognitive/behavioral framing already sourced from Mikulincer & Shaver and Levine & Heller.",
+  "claims": [
+    {
+      "id": "window_of_tolerance",
+      "pages": "ch.4, Range of Resiliency",
+      "paraphrase": "Borrowing Dan Siegel's term, the author describes a 'window of tolerance' — a zone where a person feels alert but not overwhelmed, able to move between engaged energy and relaxed rest without losing their footing. People with an anxious/ambivalent pattern tend to leave this zone from the top, into anxiety, panic or anger; people with an avoidant pattern tend to leave it from the bottom, into shutdown, low affect and disconnection from others."
+    },
+    {
+      "id": "disorganized_as_oscillation",
+      "pages": "ch.4, Disorganized Attachment",
+      "paraphrase": "What the author calls disorganized attachment isn't a steady state but a swing between the anxious and avoidant extremes, often set off by specific situations (raised voices, a particular kind of conflict) rather than running constantly. Someone in this pattern can move between shutting down completely and becoming highly reactive, and outside of their triggers may function closer to secure, avoidant, or ambivalent."
+    },
+    {
+      "id": "self_regulation_co_regulation",
+      "pages": "ch.4, Disorganized Attachment (self-regulation and co-regulation)",
+      "paraphrase": "The author distinguishes self-regulation (calming yourself) from co-regulation (settling through connection with another person) and argues both are needed throughout life, not just in childhood. She frames the corrective work differently by pattern: someone avoidant benefits from letting a partner's steadiness in gradually, since they never got to practice co-regulation; someone anxious/ambivalent benefits from building self-regulation so they aren't solely dependent on a partner to feel calm; someone in the oscillating disorganized pattern benefits from practicing both."
+    },
+    {
+      "id": "investigating_discomfort_exercise",
+      "pages": "ch.5, Working with Your Own Attachment Style (Investigating Discomfort exercise)",
+      "paraphrase": "When relational discomfort starts to rise, the suggested practice is to locate it in the body first — where it sits, whether it moves, what it feels like — before reacting to it. The author suggests treating the feeling as more about one's attachment history surfacing than about what the partner just did, and staying with it briefly, with curiosity rather than immediately acting on it or suppressing it."
+    },
+    {
+      "id": "noting_the_positive",
+      "pages": "ch.5, Working with Your Own Attachment Style",
+      "paraphrase": "Because attention naturally skews toward threat, the author suggests deliberately pausing on good moments in a relationship — a longer look, a calm exchange — and staying with that feeling for 15 to 30 seconds rather than letting it pass unnoticed, on the reasoning that dwelling on the positive a little longer helps it register as strongly as the negative usually does."
+    }
+  ]
+}

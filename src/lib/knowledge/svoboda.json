@@ -1,0 +1,46 @@
+{
+  "source": {
+    "id": "svoboda",
+    "author": "Robert E. Svoboda",
+    "title": "Prakriti: Your Ayurvedic Constitution (revised, enlarged 2nd ed.)",
+    "kind": "practitioner"
+  },
+  "method": "Read the introduction and chapter 2 ('Constitutional Characteristics'), specifically the 'Summaries of Constitutional Types' section covering single-dosha and dual-dosha temperament. Cited by chapter/section name since the EPUB has no page numbers. Claims paraphrased; nothing quoted.",
+  "claims": [
+    {
+      "id": "vata_temperament",
+      "pages": "ch.2, Summaries of Constitutional Types",
+      "paraphrase": "Svoboda describes Vata as erratic by nature - real difficulty sustaining routine, energy that comes in bursts followed by crashes, a tendency to push through fatigue with stimulants rather than rest, and heightened sensitivity to pain and noise. He calls changeability the single clearest sign of Vata predominance."
+    },
+    {
+      "id": "pitta_temperament",
+      "pages": "ch.2, Summaries of Constitutional Types",
+      "paraphrase": "Svoboda describes Pitta as intense and sharp-minded, quick to become impatient with people who are slower or less focused, with a strong appetite for food and for confrontation alike. Pitta people usually sleep well unless work has taken hold of them, in which case the same intensity that makes them effective keeps them up."
+    },
+    {
+      "id": "kapha_temperament",
+      "pages": "ch.2, Summaries of Constitutional Types",
+      "paraphrase": "Svoboda describes Kapha as stable, unhurried and content with things as they are, which is a strength but can tip into resistance to change, stubbornness or complacency. Where Vata needs balance and rest and Pitta needs a real challenge, Svoboda says Kapha specifically needs motivation and stimulation to stay engaged."
+    },
+    {
+      "id": "dual_vata_pitta",
+      "pages": "ch.2, Dual Constitutions: Vata-Pitta",
+      "paraphrase": "Vata and Pitta share lightness and intensity. Svoboda notes that under stress the two can alternate rather than blend - fear (Vata) giving way to anger (Pitta) and back - which can look like bullying one moment and self-doubt the next. What steadies a Vata-Pitta person is the one quality neither dosha brings on its own: the grounding, steady quality of Kapha."
+    },
+    {
+      "id": "dual_pitta_kapha",
+      "pages": "ch.2, Dual Constitutions: Pitta-Kapha",
+      "paraphrase": "Pitta and Kapha share oiliness/wetness and, in Svoboda's account, often produce people who do well in the world - Pitta's drive tempered by Kapha's steadiness. The risk he names is that success itself breeds overconfidence and a smugness that deflects criticism while accepting only praise. What helps, in his framing, is deliberately introducing the dry, spare qualities Vata would otherwise bring: introspection, and exposure to some unpredictability."
+    },
+    {
+      "id": "dual_vata_kapha",
+      "pages": "ch.2, Dual Constitutions: Vata-Kapha",
+      "paraphrase": "Vata and Kapha share coldness, and Svoboda describes this pairing as needing warmth more than anything else - in food, in practice, in life generally. Without Pitta's fire to mediate between them, the two can feel like opposite pulls (light and airy vs. deep and secretive) that are hard to integrate, and emotional hurt in this constitution tends to go deep and linger."
+    },
+    {
+      "id": "constitution_fixed_perception_changes",
+      "pages": "ch.2, Perception and Evaluation",
+      "paraphrase": "Svoboda is explicit that the constitution itself doesn't change, but a person's ability to accurately perceive their own constitution does - someone may retake a self-assessment months later and get a different, more accurate answer as their self-understanding (not their nature) improves. He frames the whole exercise as a foundation for building self-understanding, not a label to be confined by."
+    }
+  ]
+}

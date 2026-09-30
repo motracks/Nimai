@@ -2,8 +2,10 @@
   "note": "Interpretive content for the Big Five analysis. Levels come from the bands in bigfive_mapping.json: low = first band, mid = second, high = third. Combinations fire when every listed dimension is at the listed level.",
   "sources": {
     "base_text": "Rewritten from the English domain texts in b5-result-text (MIT, github.com/Alheimsins/b5-result-text), which reproduce John A. Johnson's IPIP-NEO narrative report. Not copied: every sentence here is reworded, softened, and put in the second person.",
-    "inspiration": "Daniel Nettle, Personality: What Makes You the Way You Are (Oxford, 2007): the framing that every trait has costs and benefits and no level is simply better.",
-    "status": "Drafted without access to Nettle's text; the costs-and-benefits framing reflects the general research literature. Check against the book before launch."
+    "inspiration": "Daniel Nettle, Personality: What Makes You the Way You Are (Oxford, 2007). Read in full; see src/lib/knowledge/nettle.json. The costs-and-benefits framing, and the 'about' text below, are drawn from Nettle's own framing of each trait, cited by chapter and page.",
+    "free_traits": "Brian R. Little, Me, Myself, and Us (PublicAffairs, 2014), ch.3, 'Free Traits: On Acting Out of Character'. Read in full; see src/lib/knowledge/little.json. Used for the second nature_and_change paragraph: his free trait theory (acting against your measured disposition for something that matters, and the restorative niche needed to recover from doing it), cited by chapter section.",
+    "stability": "Robert R. McCrae & Paul T. Costa Jr., Personality in Adulthood (2nd ed., Guilford, 2003), ch.4 and ch.6. Read in full; see src/lib/knowledge/mccrae-costa.json. Used for the third nature_and_change paragraph: their own longitudinal stability data (retest coefficients over 12-30 years) and their direct rebuttal of aging stereotypes, cited by page.",
+    "status": "Nettle content now verified against the book. Big Five base text is still from b5-result-text/Johnson's IPIP-NEO report (see base_text above), not from Nettle - the two are blended: Johnson for the low/mid/high descriptions, Nettle for the 'about' framing and the trait combinations."
   },
   "dimensions": {
     "EXT": {
@@ -18,7 +20,7 @@
         "strength": "You listen well, think before you speak and are comfortable in your own company.",
         "watch": "Staying in the background can mean your ideas go unheard; choose a few moments to speak first."
       },
-      "about": "Extraversion is about how much you are drawn to people, activity and excitement. Higher scorers get energy from company and tend to say yes to new experiences; lower scorers need less stimulation and recharge alone. Being reserved isn't the same as being shy or unfriendly: it's a lower need for stimulation. Both ends have advantages: extraverts build wide networks and enjoy more upbeat moods, while introverts avoid many risks and are better at focused, solitary work."
+      "about": "Extraversion is about how responsive your brain's positive-emotion system is: desire, excitement and joy that activate when you pursue something you value, whether that's status, new relationships, mastery or plain resources (Nettle, ch.3). Sociability is a visible symptom of this, not the core of the trait. Being reserved isn't shyness: that's better predicted by Neuroticism, not low Extraversion. A low scorer isn't afraid of people, just gets less reward from company and needs less of it. Extraversion predicts how much you socialise and how fast you make contacts, but not how well those relationships go - that's Agreeableness. A highly extraverted, less agreeable person can enjoy friction rather than avoid it. Nettle names the trade-off plainly: the benefit is pursuing and capturing more of what you want; the cost, at the higher end, is physical risk and instability in close relationships (ch.7, Table 4)."
     },
     "AGR": {
       "high": {
@@ -32,7 +34,7 @@
         "strength": "You say what you think and hold your ground, which is valuable when honesty matters.",
         "watch": "Directness can land harder than you intend; a word of warmth first often helps it be heard."
       },
-      "about": "Agreeableness is about how much you orient toward others' needs and toward getting along. Higher scorers are considerate, generous and trusting, and are usually well liked. Lower scorers put their own judgement first and are more sceptical of others' motives, which helps where tough, objective decisions are needed. Neither end is better; they suit different situations."
+      "about": "Agreeableness comes down to 'other-regarding preferences' - caring about someone else's outcome, not only your own (Nettle, ch.6). It rests on theory of mind: mentalizing (working out what someone else believes or wants) and empathizing (feeling it with them). Higher scorers are considerate, generous and trusting, and are usually well liked; people who mentalize well tend to have larger, smoother social networks. Lower scorers put their own judgement first and are more sceptical of others' motives, which is genuinely useful where a tough, objective call is needed. Neither end is better; they suit different situations. Nettle's summary: the benefit is harmonious relationships; the cost, at the higher end, is not putting yourself first, which can mean losing out on status (ch.7, Table 4)."
     },
     "CON": {
       "high": {
@@ -46,7 +48,7 @@
         "strength": "You are flexible and spontaneous, and adapt quickly when plans change.",
         "watch": "Important but dull tasks can slip; a small routine for the essentials frees you for the rest."
       },
-      "about": "Conscientiousness is about planning, self-control and follow-through. Higher scorers set goals and pursue them persistently, which brings reliability and achievement, though it can tip into perfectionism or overwork. Lower scorers are more spontaneous and live more in the moment, which makes them flexible and fun but can let long-term plans slip."
+      "about": "Conscientiousness is about being able to give up a bigger reward right now for a better outcome later (Nettle, ch.5, drawing on the Iowa Gambling Task). Higher scorers set goals and pursue them persistently, which brings reliability and achievement, though it can tip into perfectionism or overwork. Lower scorers are drawn more strongly to the immediate payoff, which makes them flexible and spontaneous but can let long-term plans slip. Nettle notes that struggling to resist immediate reward is shared by people with gambling and substance-use difficulties - worth naming as a real vulnerability, not a character flaw, when it shows up strongly. Nettle's summary: the benefit is planning and self-control; the cost, at the higher end, is rigidity and a loss of spontaneity (ch.7, Table 4)."
     },
     "NEU": {
       "high": {
@@ -60,7 +62,7 @@
         "strength": "You stay even under pressure and recover quickly from setbacks.",
         "watch": "Calm can hide real problems from you or from others; check in on what you actually feel."
       },
-      "about": "Emotional reactivity (called neuroticism in research) is about how strongly and how long you feel negative emotions such as worry, anger or sadness. Higher scorers react quickly and intensely, which makes them alert to risk and often perceptive about feelings, but stress can linger and cloud thinking. Lower scorers stay calm under pressure but may miss warning signs. This trait responds well to practice: breathwork, movement, sleep and reflection all lower reactivity over time."
+      "about": "Emotional reactivity (what research calls neuroticism) is the mirror of Extraversion: how responsive your negative-emotion system is - fear, anxiety, shame, guilt, disgust, sadness (Nettle, ch.4). These emotions evolved to make you detect and avoid what was dangerous. Nettle applies the 'smoke detector principle' here: it's evolutionarily safer for a warning system to sound too often than to miss a real threat once. High reactivity is that detector set sensitively - it costs you frequent false alarms, but the alternative used to cost far more. This trait responds well to practice: breathwork, movement, sleep and reflection all lower reactivity over time. Nettle's own summary names the trade-off: the benefit is vigilance and striving; the cost, at the higher end, is anxiety and depression (ch.7, Table 4)."
     },
     "OPN": {
       "high": {
@@ -74,7 +76,7 @@
         "strength": "You are practical and grounded, and trust what has been tested.",
         "watch": "Unfamiliar approaches may get dismissed before they've had a fair look."
       },
-      "about": "Openness is about curiosity, imagination and appetite for new ideas, art and experiences. Higher scorers think in symbols and abstractions and like to question convention. Lower scorers prefer the concrete, familiar and proven. Openness is often presented as the more mature style, but both are useful: open thinking suits creative and academic work, while practical thinking does better in many hands-on and service roles."
+      "about": "Openness correlates with IQ (Nettle cites roughly r=0.3, stronger for verbal than spatial intelligence) but is its own trait, not intelligence under another name (ch.7). It's a broad pull toward engaging with complex ideas, art and experience across the board, not a preference for one activity over another. Nettle takes the poet or artist as the clearest real-world example: metaphorical thinking, a readiness to challenge convention, and often a pull toward spiritual or unusual experience. Lower scorers prefer the concrete and proven, which is its own kind of strength: less prone to chasing every new idea, more grounded in what's tested. Nettle's summary: the benefit is artistic sensibility; the cost, at the higher end, is unusual beliefs and, rarely, a higher likelihood of psychosis-spectrum conditions - one reason very high Openness deserves the same non-judgemental read as any other trait, not more (ch.7, Table 4)."
     }
   },
   "combinations": [
@@ -141,5 +143,10 @@
       },
       "text": "Very attuned to others' feelings, and inclined to take them on as your own. Clear boundaries protect that sensitivity."
     }
+  ],
+  "nature_and_change": [
+    "Twin and adoption studies put each trait's heritable component at roughly 50% (Nettle, ch.8, p.210-211). The rest isn't explained by upbringing either: shared family environment - the same parents, same household - has close to no measurable effect on adult personality once you compare identical twins raised together with identical twins raised apart, or adopted siblings with their biological ones. What shapes the other half is individual experience: things that happened to you and not to a sibling, which research still understands poorly (ch.8, p.213-216). Practically: there's no right or wrong level of any trait here, only a level that fits some situations better than others (ch.3, p.102-103). And your score today is not a life sentence from your childhood - your baseline and any retakes will show your own direction.",
+    "None of this means you're stuck acting in character all the time, either. Brian Little calls it a 'free trait': acting against your measured disposition - an introvert working a room, a reserved person being openly warm with someone who needs it - to advance a project or relationship that matters to you (Me, Myself, and Us, ch.3). It's real and valuable, but sustained free-trait behavior has a genuine cost, so it helps to have a 'restorative niche' - time or a place to recover your default disposition afterward - especially if you've been acting out of character for a while rather than just an evening.",
+    "It's also worth knowing what decades of follow-up on real adults actually show. After about age 30, average trait levels change very little, and - contrary to common aging stereotypes - there's no reliable personality decline with age either: people don't become more rigid, withdrawn or emotionally fragile just by getting older (McCrae & Costa, Personality in Adulthood, p.81-82). Stability isn't total, though: it does erode gradually over long stretches. The same researchers' own data put retest stability at .74 across 12 years and .65 across 24 (p.112-113) - still high, but a real, slow drift on top of a strongly stable core."
   ]
 }

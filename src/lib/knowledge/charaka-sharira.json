@@ -1,0 +1,37 @@
+{
+  "source": {
+    "id": "sharmadash",
+    "author": "Agnivesa's Caraka Samhita, trans. Ram Karan Sharma & Bhagwan Dash",
+    "title": "Caraka Samhita: Sarira Sthana, with English translation and commentary based on Cakrapani Datta's Ayurveda Dipika",
+    "publisher": "Chowkhamba Sanskrit Series",
+    "kind": "classical"
+  },
+  "method": "Read ch.4 of the Sarira Sthana volume (paragraphs 34-40, its section on the doshas of body and mind and the classification of mental types), retrieved as a partial text extraction of a large scanned PDF - the extraction is real but has OCR noise throughout (garbled diacritics, occasional dropped words), so every claim below was checked against a passage clear enough to paraphrase confidently, and no Sanskrit terms are quoted verbatim from the noisy transliteration. This is the classical, primary-source origin of the sattva/rajas/tamas mental-type framework guna.json already uses via Frawley's (secondary, practitioner) treatment of it - the first primary classical text in Nimai's knowledge base for the guna content specifically.",
+  "claims": [
+    {
+      "id": "dosas_of_body_and_mind",
+      "pages": "Sarira Sthana, ch.4, para 34",
+      "paraphrase": "The text names three physical doshas - vata, pitta and kapha - as what vitiates the body, and two mental doshas - rajas and tamas - as what vitiates the mind. Disease is described as arising from vitiation of one or the other; there is no disease, physical or mental, without it."
+    },
+    {
+      "id": "three_mental_types_overview",
+      "pages": "Sarira Sthana, ch.4, para 36",
+      "paraphrase": "Mental faculty is described as being of three types: sattvika, free of defect and marked by auspiciousness; rajasa, defective because it promotes a wrathful disposition; and tamasa, defective because it arises from ignorance. Each of the three is said to have innumerable further variation depending on the individual's body, circumstances and interactions, so what follows are illustrative categories, not an exhaustive list."
+    },
+    {
+      "id": "seven_sattvika_subtypes",
+      "pages": "Sarira Sthana, ch.4, para 37",
+      "paraphrase": "The sattvika type is further divided into seven illustrative subtypes, each named for and sharing traits with a different classical figure (among them Brahma, a sage-like Arsha type, and types associated with Indra, Varuna, Kubera and Gandharva). The Brahma-associated type is named as the purest of the seven, marked by purity, love of truth, self-control, discrimination, freedom from anger and jealousy, and goodwill extended equally to all beings."
+    },
+    {
+      "id": "six_rajasa_subtypes",
+      "pages": "Sarira Sthana, ch.4, para 38",
+      "paraphrase": "The rajasa type is further divided into six illustrative subtypes, similarly named for different figures. One, the Asura-associated type, combines real bravery with cruelty, envy and a tendency toward self-praise; another, the Rakshasa-associated type, shows intolerance, constant anger and cruelty toward those weaker than itself. The subtypes vary, but share the same underlying wrathful, self-focused quality."
+    },
+    {
+      "id": "three_tamasa_subtypes",
+      "pages": "Sarira Sthana, ch.4, para 39",
+      "paraphrase": "The tamasa type is further divided into three illustrative subtypes, named for animal, fish and plant life respectively. They share a lack of discrimination and intelligence, indulgence (food, sleep or passion) without restraint, and in the plant-associated type specifically, a marked deficiency across the intellectual faculties generally."
+    }
+  ]
+}

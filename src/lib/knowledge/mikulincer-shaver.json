@@ -1,0 +1,29 @@
+{
+  "source": {
+    "id": "mikulincershaver2016",
+    "author": "Mario Mikulincer & Phillip R. Shaver",
+    "title": "Attachment in Adulthood: Structure, Dynamics, and Change",
+    "edition": "2nd ed.",
+    "publisher": "Guilford Press",
+    "year": 2016,
+    "kind": "research"
+  },
+  "method": "Read in full (705 pages). Claims below are paraphrased from specific passages, cited by printed page. Deliberately excluded: the book's own assessment instruments (Appendices A-M, e.g. the ECR itself) beyond what Nimai's own ECR-R scoring already implements from the public instrument.",
+  "claims": [
+    {
+      "id": "secondary_strategies",
+      "pages": "19-20",
+      "paraphrase": "When an attachment figure isn't reliably available, the primary strategy (seeking proximity) fails, and one of two secondary strategies tends to take over: hyperactivation, a 'fight' response that intensifies proximity-seeking (protest, demands for attention) in the hope of finally getting a response; or deactivation, a 'flight' response that suppresses signs of need and pushes the attachment system down to avoid the pain of an unresponsive figure. Hyperactivation develops from a partner who is sometimes responsive and sometimes not (partial reinforcement keeps protest going); deactivation develops from a partner who disapproves of closeness or need."
+    },
+    {
+      "id": "earned_security",
+      "pages": "520",
+      "paraphrase": "Attachment-focused therapy rests on the idea of 'earned security' (Berlin et al., 2008): adults who grew up insecure can become secure. The authors note the field should pay more attention to how this happens later in life, not only in childhood."
+    },
+    {
+      "id": "insecurity_adaptive",
+      "pages": "520",
+      "paraphrase": "Citing Ainsworth (1991), the authors caution against treating anxious and avoidant attachment as simply 'bad': both are adaptive responses to the particular caregiving a person received, not flaws in the person."
+    }
+  ]
+}

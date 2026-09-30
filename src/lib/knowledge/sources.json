@@ -1,0 +1,126 @@
+{
+  "note": "Every source the app's interpretive content draws on. 'kind': classical (primary text), research (peer-reviewed or academic synthesis), practitioner (experienced teacher's book), workbook (course material). Books themselves are never stored in the repo.",
+  "sources": {
+    "harness1999": {
+      "author": "Dennis M. Harness",
+      "title": "The Nakshatras: The Lunar Mansions of Vedic Astrology",
+      "year": 1999,
+      "kind": "practitioner",
+      "status": "read in full"
+    },
+    "nettle2007": {
+      "author": "Daniel Nettle",
+      "title": "Personality: What Makes You the Way You Are",
+      "publisher": "Oxford University Press",
+      "year": 2007,
+      "kind": "research",
+      "status": "read (intro + trait chapter openings/synthesis)"
+    },
+    "levineheller2010": {
+      "author": "Amir Levine & Rachel Heller",
+      "title": "Attached",
+      "year": 2010,
+      "kind": "practitioner",
+      "status": "read in full (protest behavior, activating/deactivating strategies, dependency paradox, effective communication)"
+    },
+    "easwaran2007": {
+      "author": "Eknath Easwaran (trans.)",
+      "title": "The Bhagavad Gita",
+      "publisher": "Nilgiri Press",
+      "year": 2007,
+      "kind": "classical",
+      "status": "read ch.14, 17, 18 (the three gunas)"
+    },
+    "frawley1996": {
+      "author": "David Frawley",
+      "title": "Ayurveda and the Mind",
+      "publisher": "Lotus Press",
+      "year": 1996,
+      "kind": "practitioner",
+      "status": "read in full"
+    },
+    "svoboda": {
+      "author": "Robert E. Svoboda",
+      "title": "Prakriti: Your Ayurvedic Constitution (rev. 2nd ed.)",
+      "kind": "practitioner",
+      "status": "read (ch.2 constitutional summaries)"
+    },
+    "govardhan": {
+      "author": "Govardhan School of Yoga",
+      "title": "Prakriti Parikshan workbook (YTT)",
+      "kind": "workbook",
+      "status": "basis of prakriti.json and prakriti_dosha_guide.json"
+    },
+    "mikulincershaver2016": {
+      "author": "Mario Mikulincer & Phillip R. Shaver",
+      "title": "Attachment in Adulthood (2nd ed.)",
+      "publisher": "Guilford",
+      "year": 2016,
+      "kind": "research",
+      "status": "read in full"
+    },
+    "cassidyshaver2016": {
+      "author": "Jude Cassidy & Phillip R. Shaver (eds.)",
+      "title": "Handbook of Attachment: Theory, Research, and Clinical Applications (3rd ed.)",
+      "publisher": "Guilford",
+      "year": 2016,
+      "kind": "research",
+      "status": "read ch.27, Measurement of Individual Differences in Adult Attachment"
+    },
+    "pooleheller2019": {
+      "author": "Diane Poole Heller",
+      "title": "The Power of Attachment",
+      "publisher": "Sounds True",
+      "year": 2019,
+      "kind": "practitioner",
+      "status": "read in full"
+    },
+    "johnson2008": {
+      "author": "Sue Johnson",
+      "title": "Hold Me Tight: Seven Conversations for a Lifetime of Love",
+      "publisher": "Little, Brown Spark",
+      "year": 2008,
+      "kind": "practitioner",
+      "status": "read in full"
+    },
+    "little2014": {
+      "author": "Brian R. Little",
+      "title": "Me, Myself, and Us: The Science of Personality and the Art of Well-Being",
+      "publisher": "PublicAffairs",
+      "year": 2014,
+      "kind": "research",
+      "status": "read ch.3, Free Traits: On Acting Out of Character"
+    },
+    "svobodalife1992": {
+      "author": "Robert E. Svoboda",
+      "title": "Ayurveda: Life, Health and Longevity",
+      "publisher": "Arkana/Penguin",
+      "year": 1992,
+      "kind": "practitioner",
+      "status": "read ch.6, Pathology (the six-stage disease model)"
+    },
+    "mccraecosta2003": {
+      "author": "Robert R. McCrae & Paul T. Costa Jr.",
+      "title": "Personality in Adulthood: A Five-Factor Theory Perspective (2nd ed.)",
+      "publisher": "Guilford",
+      "year": 2003,
+      "kind": "research",
+      "status": "read ch.4, ch.6 (stability of personality across adulthood)"
+    },
+    "sharmadash": {
+      "author": "Agnivesa's Caraka Samhita, trans. Ram Karan Sharma & Bhagwan Dash",
+      "title": "Caraka Samhita: Sarira Sthana",
+      "publisher": "Chowkhamba Sanskrit Series",
+      "kind": "classical",
+      "status": "read Sarira Sthana ch.4, para 34-40 (doshas of body and mind, mental-type classification); large OCR scan, partial extraction"
+    },
+    "lad2002": {
+      "author": "Vasant Lad",
+      "title": "Textbook of Ayurveda, Volume One: Fundamental Principles",
+      "publisher": "The Ayurvedic Press",
+      "year": 2002,
+      "kind": "practitioner",
+      "status": "read ch.2, Universal Attributes and Doshic Theory (Tables 5-7); partial extraction of a large PDF"
+    }
+  }
+}

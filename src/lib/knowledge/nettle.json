@@ -1,0 +1,113 @@
+{
+  "source": {
+    "id": "nettle2007",
+    "author": "Daniel Nettle",
+    "title": "Personality: What Makes You the Way You Are",
+    "publisher": "Oxford University Press",
+    "year": 2007,
+    "kind": "research"
+  },
+  "method": "Read the introduction and the opening/synthesis sections of each trait chapter (ch. 3-7: Wanderers/Extraversion p.79, Worriers/Neuroticism p.104, Controllers/Conscientiousness p.131, Empathizers/Agreeableness p.155, Poets/Openness p.183). Page numbers are the printed book's own (no page markers survived EPUB conversion, so citations are chapter + opening page from the table of contents, not exact verified page numbers for every claim). Claims are paraphrased; Nettle's own case-study narratives (Erica, Susan, etc.) are deliberately not reproduced or used.",
+  "claims": [
+    {
+      "id": "ext_positive_emotion",
+      "pages": "ch.3, p.79ff",
+      "paraphrase": "Extraversion is fundamentally about the responsiveness of the brain's positive-emotion systems (desire, excitement, joy), which activate in pursuit of valued things: status, new relationships, mastery, resources. Sociability is a visible symptom of this, not the core of the trait."
+    },
+    {
+      "id": "ext_not_shyness",
+      "pages": "ch.3, p.82",
+      "paraphrase": "Low Extraversion is not the same as shyness. Shyness is better predicted by high Neuroticism/anxiety. A low scorer isn't afraid of people; they simply get less reward from social activity and so need less of it."
+    },
+    {
+      "id": "ext_agreeableness_interaction",
+      "pages": "ch.3, p.83",
+      "paraphrase": "Extraversion predicts how much time someone spends socialising and how easily they make new contacts, but not how well those relationships go — that's predicted by Agreeableness. A high-Extraversion, low-Agreeableness person can be socially combative, enjoying conflict rather than avoiding it."
+    },
+    {
+      "id": "neu_negative_emotion",
+      "pages": "ch.4, p.107ff",
+      "paraphrase": "Neuroticism is the mirror of Extraversion: the responsiveness of the negative-emotion systems (fear, anxiety, shame, guilt, disgust, sadness). These emotions exist to make us detect and avoid things that were dangerous in our evolutionary past."
+    },
+    {
+      "id": "neu_smoke_detector",
+      "pages": "ch.4, p.109",
+      "paraphrase": "Nettle applies the 'smoke detector principle' to Neuroticism: it's evolutionarily safer for a warning system to sound too often (false alarms) than to miss a real danger (a catastrophic false negative). High Neuroticism is that detector set sensitively — costly in false alarms, but the cost of the alternative was historically much higher."
+    },
+    {
+      "id": "con_deferred_reward",
+      "pages": "ch.5, p.131ff",
+      "paraphrase": "Nettle frames Conscientiousness (via the Iowa Gambling Task) as the capacity to forgo a larger immediate reward for a better outcome later. People and patients who struggle with this - including those with certain frontal-lobe injuries - keep choosing the option with the bigger up-front payoff despite larger losses down the line."
+    },
+    {
+      "id": "con_addiction_link",
+      "pages": "ch.5, p.135-137",
+      "paraphrase": "Difficulty resisting immediate reward (low performance on tasks like the Iowa task) is shared by problem gamblers and people with substance dependencies, and clusters in families. Nettle treats this as evidence that low Conscientiousness is a real vulnerability factor, not a moral failing."
+    },
+    {
+      "id": "agr_other_regarding",
+      "pages": "ch.6, p.155ff",
+      "paraphrase": "Agreeableness is rooted in 'other-regarding preferences' - caring about another person's outcome, not only your own. Nettle notes this is unusual evolutionarily (natural selection favours self-interest) and contrasts human behaviour in cooperation experiments with chimpanzees, who show little to no concern for a partner's payoff even when it costs them nothing to provide it."
+    },
+    {
+      "id": "agr_theory_of_mind",
+      "pages": "ch.6, p.158-161",
+      "paraphrase": "The capacity behind Agreeableness is theory of mind, split into mentalizing (representing what someone else believes or wants) and empathizing (feeling with them). People who mentalize well at a nested level ('X believes that Y thinks that Z wants...') tend to have larger, better-functioning social networks."
+    },
+    {
+      "id": "opn_not_just_iq",
+      "pages": "ch.7, p.183ff",
+      "paraphrase": "Openness correlates with IQ (Nettle cites about r=0.3, stronger for verbal than spatial intelligence) but is a distinct trait, not just intelligence by another name. It is a broad pull toward engaging with complex ideas, art and experience across the board, not preference for one activity over another."
+    },
+    {
+      "id": "opn_poet_exemplar",
+      "pages": "ch.7, p.185ff",
+      "paraphrase": "Nettle takes the poet/artist as the clearest real-world exemplar of high Openness: metaphorical, associative thinking; a readiness to challenge social convention; a pull toward spiritual or mystical experience; and, at the far end, features that overlap with psychosis-spectrum traits (using Allen Ginsberg's life and 'Howl' as his illustration, discussed here only in general terms, not quoted)."
+    },
+    {
+      "id": "trait_variation_evolution",
+      "pages": "ch.2, p.55-60",
+      "paraphrase": "Nettle opens with the Galapagos finches: beak size varies both between islands (different optimal beaks for different food sources) and within an island's population, because no single beak size is best in every micro-context. He argues personality traits work the same way - there's no single optimal level of any Big Five trait, because the right level has always depended on the surrounding social and physical environment, which keeps shifting. This is why natural selection hasn't converged on one 'best' personality."
+    },
+    {
+      "id": "heritability_fifty_fifty",
+      "pages": "ch.8, p.210-211",
+      "paraphrase": "Twin and adoption studies put the heritable component of each Big Five trait at roughly 50%. The other half is not explained by genes."
+    },
+    {
+      "id": "shared_family_environment_near_zero",
+      "pages": "ch.8, p.213-216",
+      "paraphrase": "Nettle summarises the twin/adoption evidence as showing that shared family environment - the same parents, the same household, the same parenting style - has close to zero measurable effect on adult personality. Identical twins raised apart are about as similar as identical twins raised together; adopted siblings raised in the same home are no more alike in personality than two strangers. He's explicit this doesn't mean parenting doesn't matter to the relationship within the family, only that it doesn't generalise to shape the adult personality that goes out into the wider world. The other (non-genetic) half of the variation comes from 'non-shared environment' - individual experiences one sibling has and another doesn't - which remains poorly understood."
+    },
+    {
+      "id": "table4_extraversion",
+      "pages": "ch.7, p.209 (Table 4)",
+      "paraphrase": "Nettle's own summary: Extraversion's core mechanism is the brain's reward-response system. Its benefit is pursuing and capturing more rewards; its cost is physical danger and family instability."
+    },
+    {
+      "id": "table4_neuroticism",
+      "pages": "ch.7, p.209 (Table 4)",
+      "paraphrase": "Neuroticism's core mechanism is the brain's threat-response system. Its benefit is vigilance and striving; its cost is anxiety and depression."
+    },
+    {
+      "id": "table4_conscientiousness",
+      "pages": "ch.7, p.209 (Table 4)",
+      "paraphrase": "Conscientiousness's core mechanism is response inhibition (impulse control). Its benefit is planning and self-control; its cost is rigidity and a lack of spontaneity."
+    },
+    {
+      "id": "table4_agreeableness",
+      "pages": "ch.7, p.209 (Table 4)",
+      "paraphrase": "Agreeableness's core mechanism is regard for others via theory of mind. Its benefit is harmonious relationships; its cost is not putting yourself first, which can mean lost status."
+    },
+    {
+      "id": "table4_openness",
+      "pages": "ch.7, p.209 (Table 4)",
+      "paraphrase": "Openness's core mechanism is the breadth of mental associations (divergent thought). Its benefit is artistic sensibility; its cost is unusual beliefs and, at the extreme, a higher likelihood of psychosis-spectrum conditions."
+    },
+    {
+      "id": "no_right_level",
+      "pages": "ch.3, p.102-103; ch.7, p.209",
+      "paraphrase": "Nettle's throughline: there is no intrinsically good or bad level of any trait. Each score is a fact about the environment you have to navigate, not a verdict on your worth. He extends this to relationships: if your partner scores very differently from you on a trait, what looks like a pointless or disappointing choice to one of you is often just the other person's wiring, not a character flaw."
+    }
+  ]
+}

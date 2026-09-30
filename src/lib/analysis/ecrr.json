@@ -1,9 +1,12 @@
 {
   "note": "Interpretive content for the attachment analysis, keyed by the pattern labels in ecrr_mapping.json combined_patterns.",
   "sources": {
-    "accuracy": "Mario Mikulincer & Phillip R. Shaver, Attachment in Adulthood (2nd ed., Guilford, 2016): the two-dimension model (anxiety and avoidance as continuous scores), the idea of hyperactivating (anxious) and deactivating (avoidant) strategies, and evidence that attachment can change through secure relationships and practice.",
-    "practical_tips": "Amir Levine & Rachel Heller, Attached (2010): practical relationship tips (e.g. effective communication of needs). Its fixed-type framing and its harsher treatment of avoidance are deliberately not used.",
-    "status": "Drafted from these works' widely published concepts, without the books at hand. Check wording against the books before launch."
+    "accuracy": "Mario Mikulincer & Phillip R. Shaver, Attachment in Adulthood (2nd ed., Guilford, 2016). Read in full (705 pages); see src/lib/knowledge/mikulincer-shaver.json. The two-dimension model, hyperactivating/deactivating strategies (pp. 19-20) and earned security (p. 520) are paraphrased from the book, cited by page.",
+    "practical_tips": "Amir Levine & Rachel Heller, Attached (2010). Read in full; see src/lib/knowledge/attached.json. Its fixed-type framing of the three styles and its harsher tone toward avoidance are deliberately not adopted — the dimensional, changeable model above stays primary. What's used is narrower: its vocabulary for concrete behaviors (protest behavior, activating/deactivating strategies, the dependency paradox) and its 'effective communication' practice, cited by chapter.",
+    "measurement": "Judith A. Crowell, R. Chris Fraley & Glenn I. Roisman, 'Measurement of Individual Differences in Adult Attachment', ch.27 in Cassidy & Shaver (eds.), Handbook of Attachment (3rd ed., Guilford, 2016). Read in full; see src/lib/knowledge/handbook-attachment.json. This is the field's own review of the ECR-R's psychometrics (test-retest stability, relation to the Big Five) — used for the measurement caveat below, cited by chapter section.",
+    "somatic": "Diane Poole Heller, The Power of Attachment (Sounds True, 2019). Read in full; see src/lib/knowledge/poole-heller.json. Her four-label model (secure/avoidant/ambivalent/disorganized) isn't adopted — the dimensional model stays primary, and her 'disorganized' is read as this app's Fearful-avoidant. What's used is her body-based framing (window of tolerance, self- vs. co-regulation) and a concrete grounding exercise, cited by chapter.",
+    "couples": "Sue Johnson, Hold Me Tight (Little, Brown Spark, 2008). Read in full; see src/lib/knowledge/johnson-hold-me-tight.json. This is a couples-therapy book, so only one thing is used from it: her 'Demon Dialogues' — the three recurring conflict cycles (Protest Polka, Find the Bad Guy, Freeze and Flee) — as a way of naming the interaction pattern each ECR-R style tends toward with a partner, and her reframe that the cycle, not either partner, is the real problem. Cited by Conversation and section.",
+    "status": "Verified against the full text."
   },
   "patterns": {
     "Secure": {
@@ -11,39 +14,47 @@
       "growth": [
         "Keep doing what works: saying what you need directly and trusting the answer.",
         "Your steadiness can help a less secure partner feel safe; patience with their worry or distance goes a long way.",
+        "If a fight starts to repeat itself, naming the pattern out loud together — 'we're doing this dance again' — usually works better than either of you trying to win the round (Sue Johnson, Hold Me Tight, Conversation 1).",
         "Security isn't fixed: long stress or a painful loss can shake it, and that is normal."
       ]
     },
     "Anxious-preoccupied": {
-      "in_practice": "Closeness matters deeply to you, and when a partner seems distant your mind fills the gap with worry. You may seek reassurance, or read small signs as big ones.",
+      "in_practice": "Closeness matters deeply to you, and when a partner seems distant your mind fills the gap with worry. You may seek reassurance, or read small signs as big ones. With a partner who tends to withdraw under pressure, this often becomes what therapist Sue Johnson calls the Protest Polka: you reach out more urgently, they retreat further, and each response confirms the other's fear (Hold Me Tight, Conversation 1).",
       "growth": [
         "Notice the moment worry starts telling a story, and check the facts with your partner before acting on it.",
-        "Ask for reassurance directly instead of testing for it.",
+        "When you catch yourself hinting, testing or calling one more time rather than just asking — that pull is what Levine & Heller call protest behavior (Attached, ch.1). Naming what you actually want plainly, in the moment, works better than the indirect version.",
+        "The criticism or urgency underneath is usually a fear of not mattering, not a verdict on your partner's character — and naming that fear directly tends to land better than the protest does (Hold Me Tight, Conversation 1).",
         "Build steadiness outside the relationship too: friends, practice, routine and time that is just yours."
       ]
     },
     "Dismissive-avoidant": {
-      "in_practice": "You value independence and handle things yourself. When someone wants more closeness than feels comfortable, you may pull back, go quiet or get busy.",
+      "in_practice": "You value independence and handle things yourself. When someone wants more closeness than feels comfortable, you may pull back, go quiet or get busy. With a partner who pursues when distance grows, this is often the other half of the Protest Polka: their pursuit can feel like pressure, so you withdraw further, which only makes them pursue harder (Hold Me Tight, Conversation 1).",
       "growth": [
         "Notice when you pull away as closeness grows, and name it rather than disappear.",
-        "Try sharing one small thing you would normally keep to yourself.",
+        "If you can feel a need for space building, say so as a fact about yourself before you act on it, rather than after — that one step tends to lower a partner's worry and the pursuit that follows (Attached, ch.11).",
         "Letting someone help is a skill, not a weakness; independence and closeness can grow together."
       ]
     },
     "Fearful-avoidant": {
-      "in_practice": "You want closeness and brace against it at the same time. Relationships can swing between reaching out and protecting yourself, which is tiring from the inside.",
+      "in_practice": "You want closeness and brace against it at the same time. Relationships can swing between reaching out and protecting yourself, which is tiring from the inside. This swing between the anxious and avoidant extremes is often situational — set off by particular triggers rather than constant — and outside of those moments you may feel closer to secure, avoidant or anxious (Poole Heller, The Power of Attachment, ch.4).",
       "growth": [
         "Both the wish for closeness and the caution make sense; notice which one is active in the moment.",
-        "Go slowly: small, consistent experiences of safety do more than big leaps.",
+        "When discomfort rises with a partner, try locating it in your body before reacting to it — where it sits, whether it moves — and consider that it may be your attachment history surfacing more than something about this moment (Power of Attachment, ch.5, Investigating Discomfort).",
+        "If a relationship has gone quiet on both sides — neither of you reaching out anymore — that's usually not calm but exhaustion; Sue Johnson calls it Freeze and Flee, and considers it the hardest of the recurring patterns to recover from precisely because it looks peaceful (Hold Me Tight, Conversation 1).",
+        "Go slowly: small, consistent experiences of safety do more than big leaps. Both learning to calm yourself and learning to be calmed by someone you trust matter here — this pattern often needs practice at both.",
         "This pattern often softens with a therapist's support, and it is worth considering."
       ]
     }
   },
   "dimension_notes": {
-    "ANX_high": "When closeness feels uncertain, your attachment system turns up the volume: you watch for signs of distance, seek contact, and find it hard to settle until you feel reassured. Researchers call these hyperactivating strategies. They are an understandable way of trying to keep someone close, not a flaw.",
-    "AVD_high": "When closeness or dependence starts to feel too much, your attachment system turns the volume down: you rely on yourself, keep feelings private and create some distance. Researchers call these deactivating strategies. They often began as a sensible way of coping when leaning on others didn't feel safe.",
-    "both_low": "Neither strategy dominates for you: you can reach for closeness when you need it and give space when others need it, without much alarm either way."
+    "ANX_high": "When closeness feels uncertain, your attachment system turns up the volume: you watch for signs of distance, seek contact, and find it hard to settle until you feel reassured. This is what researchers call a hyperactivating strategy, popularly known as an activating strategy — the 'fight' response to a partner who has sometimes been unavailable, so persistence has sometimes paid off (Mikulincer & Shaver, pp. 19-20; Attached, ch.3). It's an understandable way of trying to keep someone close, not a flaw.",
+    "AVD_high": "When closeness or dependence starts to feel like too much, your attachment system turns the volume down: you rely on yourself, keep feelings private and create some distance. Researchers call this a deactivating strategy — the 'flight' response that tends to develop when closeness or need wasn't welcomed (Mikulincer & Shaver, pp. 19-20; Attached, ch.4). It often began as a sensible way of coping when leaning on others didn't feel safe.",
+    "both_low": "Neither strategy dominates for you: you can reach for closeness when you need it and give space when others need it, without much alarm either way.",
+    "both_high": "When both are elevated, they tend to alternate rather than run together: reaching out one moment, shutting down the next, often set off by a specific trigger rather than being constant. Therapists sometimes describe this as leaving your nervous system's 'window of tolerance' from either end (Poole Heller, The Power of Attachment, ch.4) — the useful goal isn't picking one strategy over the other, but building both the ability to calm yourself and the ability to be calmed by someone you trust."
   },
-  "can_change": "Attachment isn't fixed. Scores move with new relationships, life events and deliberate practice, and people who start out insecure often become more secure over time (researchers call this earned security). Your baseline and retakes will show your own direction.",
+  "can_change": [
+    "Attachment isn't fixed. The authors describe 'earned security' (p. 520): adults who grew up insecure can become secure, and researchers caution against treating anxious or avoidant patterns as simply flaws — both are adaptive responses to the care a person actually received, not something wrong with them. Movement toward security usually isn't solo work, either: it tends to come through relationships where needs are actually met, which is why people who can depend effectively on each other end up more independent, not less — what Levine & Heller call the dependency paradox (Attached, ch.2). Your baseline and retakes will show your own direction.",
+    "The ECR-R itself has a real stable component: retaken after 3 weeks its scores correlate around .90 with the original, and that stability holds up similarly whether the gap is 6 months or a year (Crowell, Fraley & Roisman, Handbook of Attachment, ch.27) — so a real shift between your baseline and a later retake more likely reflects genuine change than noise. It's worth knowing, too, that this measure is related to but distinct from your Big Five result: attachment anxiety correlates only moderately with Neuroticism (about .42) and avoidance with low Agreeableness (about -.22), so it's a different lens on you, not a repeat of your personality profile."
+  ],
   "near_boundary": "Your scores sit close to the line between patterns, so the neighbouring pattern ({runner_up}) may describe parts of your experience too."
 }

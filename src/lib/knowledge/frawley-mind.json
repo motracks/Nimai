@@ -1,0 +1,33 @@
+{
+  "source": {
+    "id": "frawley1996",
+    "author": "David Frawley",
+    "title": "Ayurveda and the Mind: The Healing of Consciousness",
+    "publisher": "Lotus Press",
+    "year": 1996,
+    "kind": "practitioner"
+  },
+  "method": "Read in full (347 pages). Note: this book treats the three gunas (ch. 3) and the three doshas (ch. 2) as two separate, parallel frameworks, each with its own self-test — it does NOT cross them into a dosha-by-guna matrix ('Vata under Rajas' etc). Any such crossing in Nimai's content is Nimai's own synthesis, not Frawley's, and is labelled as such.",
+  "claims": [
+    {
+      "id": "guna_definitions",
+      "pages": "29-30",
+      "paraphrase": "Sattva is the quality of intelligence and balance: light, luminous, giving lasting happiness and contentment; the force of clarity and love. Rajas is the quality of change and activity: it introduces disequilibrium, is always seeking a goal, and while stimulating in the short term, its imbalance leads to pain. Tamas is the quality of dullness and inertia: heavy and obstructing, it causes ignorance, insensitivity and loss of awareness."
+    },
+    {
+      "id": "mental_types",
+      "pages": "34-35",
+      "paraphrase": "Sattvic people have a harmonious, adaptable nature, freedom from disease, and take responsibility for their own wellbeing; they see even difficulty as something to learn from. Rajasic people have good energy but burn themselves out through excess activity; their minds are rarely at peace, they seek power and control, and they tend to blame others for their problems. Tamasic people carry deep, stagnant psychological blockages, don't seek proper help, and let others or circumstance dominate them rather than taking responsibility."
+    },
+    {
+      "id": "three_stages",
+      "pages": "39-41",
+      "paraphrase": "Ayurvedic psychology moves the mind through three stages: (1) breaking up Tamas into Rajas - moving from inertia to self-motivated action, which requires 'fire': waking up, acting, breaking old patterns; (2) calming Rajas into Sattva - moving from self-motivated action to selfless service, which requires 'space': letting go of personal striving; (3) perfecting Sattva - moving from service to meditation, developing universal love and peace. Everyone has all three qualities and moves between them day to day; the aim is to notice which stage fits the moment, not to judge people by whichever quality is dominant when observed."
+    },
+    {
+      "id": "dosha_emotions",
+      "pages": "13-14",
+      "paraphrase": "Each dosha has a characteristic emotional disturbance when out of balance. Vata's is fear and anxiety, arising when one's sense of life-force or safety feels threatened. Pitta's is anger, a fiery response used to defend against a perceived attack. Kapha's is desire and attachment, a holding on to things that can overburden the mind."
+    }
+  ]
+}

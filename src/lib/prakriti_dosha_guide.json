@@ -15,7 +15,18 @@
       "asana": "Slow, grounding, warming. Standing poses, forward folds, hip openers, long holds with support. Keep flows gentle and repetitive. Long Shavasana, well covered",
       "pranayama": "Nadi Shodhana, slow Ujjayi, Bhramari. Long exhalations. Use fast techniques (Kapalabhati, Bhastrika) sparingly",
       "meditation": "Body-anchored practices: body scan, Yoga Nidra, mantra japa. A fixed time and seat every day matters more than duration",
-      "teaching_this_student": "Give clear structure and predictable sequences. Offer props for stability. Watch for hypermobile joints being pushed to end range. Keep the room warm and cues calm"
+      "teaching_this_student": "Give clear structure and predictable sequences. Offer props for stability. Watch for hypermobile joints being pushed to end range. Keep the room warm and cues calm",
+      "attribute_signature": "Two of Vata's qualities show up distinctively in the mind: clarity brings quick understanding paired with quick forgetting, and can tip into a feeling of inner emptiness or loneliness when out of balance; mobility brings a mind that moves fast between many things, with moods and faith that can feel shaky rather than settled (Lad, Textbook of Ayurveda, Table 5).",
+      "sources": [
+        {
+          "id": "svoboda",
+          "claim": "vata_temperament"
+        },
+        {
+          "id": "lad2002",
+          "claim": "vata_clear_and_mobile"
+        }
+      ]
     },
     "PIT": {
       "show_when": "prakriti_results.pattern includes Pitta as dominant or secondary. Never shown for a person whose result has no Pitta component.",
@@ -30,7 +41,18 @@
       "asana": "Cooling and non-competitive. Forward folds, twists, gentle backbends, Chandra Namaskar. Practise at 70-80% of capacity. Avoid hot rooms and peak-pose chasing",
       "pranayama": "Sheetali, Sheetkari, Chandra Bhedana, Nadi Shodhana. Cooling, soft breath. Avoid excess Bhastrika, especially in summer",
       "meditation": "Heart-centred practices: Maitri (loving-kindness), gratitude, open-awareness. Surrender over achievement",
-      "teaching_this_student": "Cue effortlessness and ease. Discourage comparison. Invite curiosity instead of goals. They will want the 'correct' alignment, so offer it, then teach them to soften"
+      "teaching_this_student": "Cue effortlessness and ease. Discourage comparison. Invite curiosity instead of goals. They will want the 'correct' alignment, so offer it, then teach them to soften",
+      "attribute_signature": "Two of Pitta's qualities show up distinctively in the mind: sharpness brings sharp memory and quick understanding paired with irritability and low tolerance for slow, tedious work; the same spreading quality that makes a Pitta rash spread across the skin shows up psychologically as wanting one's name and reputation to spread widely (Lad, Textbook of Ayurveda, Table 6).",
+      "sources": [
+        {
+          "id": "svoboda",
+          "claim": "pitta_temperament"
+        },
+        {
+          "id": "lad2002",
+          "claim": "pitta_sharp_and_spreading"
+        }
+      ]
     },
     "KAP": {
       "show_when": "prakriti_results.pattern includes Kapha as dominant or secondary. Never shown for a person whose result has no Kapha component.",
@@ -45,24 +67,53 @@
       "asana": "Energising, warming and dynamic. Surya Namaskar at pace, standing poses, backbends, inversions, twists. Short holds, more repetitions. Practise early morning",
       "pranayama": "Kapalabhati, Bhastrika, Surya Bhedana, strong Ujjayi. Stimulating, heating breath",
       "meditation": "Active or eyes-open practices: Trataka, walking meditation, chanting. Keep the spine upright to prevent drowsiness",
-      "teaching_this_student": "Challenge them kindly, they can do more than they think. Keep energy and pace up. Short Shavasana. Give them a reason to show up: they thrive on routine once it is set"
+      "teaching_this_student": "Challenge them kindly, they can do more than they think. Keep energy and pace up. Short Shavasana. Give them a reason to show up: they thrive on routine once it is set",
+      "attribute_signature": "Three of Kapha's qualities show up distinctively in the mind: softness brings love, care, compassion and forgiveness; stickiness brings the same cohesive quality that gives joints their compactness into a deep, lasting attachment in love and relationships; stillness brings a preference for sitting and resting over seeking activity (Lad, Textbook of Ayurveda, Table 7).",
+      "sources": [
+        {
+          "id": "svoboda",
+          "claim": "kapha_temperament"
+        },
+        {
+          "id": "lad2002",
+          "claim": "kapha_soft_sticky_static"
+        }
+      ]
     }
   },
   "dual_and_balanced_constitutions": {
     "VAT_PIT": {
       "show_when": "prakriti_results.pattern is exactly the Vata-Pitta dual type (dvandvaja). Shown instead of, not in addition to, the single-dosha combination write-ups for a different pairing.",
       "label": "Vata-Pitta",
-      "description": "Quick, intense and creative, but prone to burnout. Both doshas are light and mobile, so grounding is the shared need. Balance the practice by season: cooling in summer, warming in winter."
+      "description": "Quick, intense and creative, but prone to burnout. Both doshas are light and mobile, so grounding is the shared need. Under stress the two can alternate rather than blend: Vata's fear one moment, Pitta's anger the next, which can look like bullying one moment and self-doubt the next. What steadies you is the quality neither dosha brings on its own: Kapha's grounded, steady quality. Balance the practice by season: cooling in summer, warming in winter.",
+      "sources": [
+        {
+          "id": "svoboda",
+          "claim": "dual_vata_pitta"
+        }
+      ]
     },
     "PIT_KAP": {
       "show_when": "prakriti_results.pattern is exactly the Pitta-Kapha dual type (dvandvaja).",
       "label": "Pitta-Kapha",
-      "description": "Strong, stable and driven: the most robust physical constitution. Can become stubborn or overly controlling. Needs lightness and variety without overheating."
+      "description": "Strong, stable and driven: often the constitution that does well in the world, Pitta's drive tempered by Kapha's steadiness. The real risk is that success breeds overconfidence and a smugness that deflects criticism while accepting only praise. What helps is deliberately bringing in what Vata would otherwise supply: introspection, and a bit of unpredictability, rather than more comfort.",
+      "sources": [
+        {
+          "id": "svoboda",
+          "claim": "dual_pitta_kapha"
+        }
+      ]
     },
     "VAT_KAP": {
       "show_when": "prakriti_results.pattern is exactly the Vata-Kapha dual type (dvandvaja).",
       "label": "Vata-Kapha",
-      "description": "Opposites in movement but both cold. Sensitive and gentle, with inconsistent energy. Warmth is the common need: warming food, heat-building practice and regular rhythm."
+      "description": "Opposites in movement but both cold. Without Pitta's fire to mediate, the two can feel like opposite pulls, light and airy versus deep and secretive, that are hard to integrate. Warmth is the common need, in food, in practice, in life generally, and emotional hurt here tends to go deep and linger, so give it time.",
+      "sources": [
+        {
+          "id": "svoboda",
+          "claim": "dual_vata_kapha"
+        }
+      ]
     },
     "SAMA": {
       "show_when": "prakriti_results.pattern is Sama/Tridoshaja (all three percentages within 10 points per prakriti.json scoring_notes). Genuinely rare — pair with the re-check prompt from scoring_notes rather than presenting it as a routine result.",
@@ -101,8 +152,12 @@
     ]
   },
   "further_sources": {
-    "mind_and_daily_life": "Robert Svoboda, Prakriti: Your Ayurvedic Constitution (revised 2nd ed.): how constitution shows in mind, relationships and daily life.",
-    "imbalance": "Vasant Lad, Ayurveda: The Science of Self-Healing (Lotus Press, 1984): how doshas go out of balance (Vikriti) and general principles for restoring it.",
-    "status": "The workbook remains the basis for all text shown. These books are recommended reading for extending it; no text from them has been added yet."
-  }
+    "mind_and_daily_life": "Robert Svoboda, Prakriti: Your Ayurvedic Constitution (revised 2nd ed.): read in full for ch.2's constitutional summaries and dual-dosha temperament; see src/lib/knowledge/svoboda.json. Now sourcing the dosha and dual-constitution descriptions above.",
+    "imbalance": "Vasant Lad, Ayurveda: The Science of Self-Healing (Lotus Press, 1984): how doshas go out of balance (Vikriti) and general principles for restoring it. Still pending - a different Lad book (see lad_attributes below) was sourced instead this session; see svoboda_life for the classical staging of imbalance in the meantime.",
+    "svoboda_life": "Robert E. Svoboda, Ayurveda: Life, Health and Longevity (Arkana/Penguin, 1992), ch.6 'Pathology': read in full; see src/lib/knowledge/svoboda-life.json. Sources vikriti_context below - the classical six-stage model for how a dosha imbalance develops, and why catching it early (Accumulation) is easiest to correct.",
+    "lad_attributes": "Vasant Lad, Textbook of Ayurveda, Volume One: Fundamental Principles (The Ayurvedic Press, 2002), ch.2, Tables 5-7 (the Attributes of the Vata/Pitta/Kapha Individual): read in full; see src/lib/knowledge/lad-textbook.json. A different book from the 1984 one still pending above. Sources the new attribute_signature field on each dosha below, cited by claim id.",
+    "status": "Svoboda (Prakriti): read. Svoboda (Life, Health and Longevity, ch.6): read. Lad (Textbook of Ayurveda, ch.2 attribute tables): read. Lad (Science of Self-Healing, 1984, imbalance): still pending."
+  },
+  "constitution_note": "Robert Svoboda is explicit on one point worth keeping in mind for retakes: the constitution itself doesn't change, but how accurately you can see your own doesn't stay fixed either. Someone can retake this test months later and get a more accurate answer, not because their nature shifted, but because their self-understanding did. Constitutional typing is meant to be a foundation for building self-understanding, not a label to be confined by.",
+  "vikriti_context": "Ayurvedic pathology describes every imbalance as following the same six-stage path: Accumulation, Aggravation, Overflow, Location, Manifestation and Specialization (Svoboda, Ayurveda: Life, Health and Longevity, ch.6). A dosha is easiest to correct at the first stage, simply built up in its home organ with only mild symptoms - which is exactly the window this Vikriti check aims for. Only from Location onward, once a dosha has travelled and settled somewhere weakened, does a specific illness begin to take shape."
 }

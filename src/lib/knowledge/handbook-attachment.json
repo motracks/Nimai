@@ -1,0 +1,43 @@
+{
+  "source": {
+    "id": "cassidyshaver2016",
+    "author": "Jude Cassidy & Phillip R. Shaver (eds.)",
+    "title": "Handbook of Attachment: Theory, Research, and Clinical Applications (3rd ed.)",
+    "publisher": "Guilford Press",
+    "year": 2016,
+    "kind": "research"
+  },
+  "method": "Read Chapter 27, 'Measurement of Individual Differences in Adult Attachment' by Judith A. Crowell, R. Chris Fraley & Glenn I. Roisman, in full (epub, no fixed page numbers — cited by chapter and section heading). This chapter is the field's own review of the ECR-R, the instrument Nimai actually administers, so it was chosen over the handbook's other 36 chapters (mostly on infant/child attachment, neurobiology and clinical treatment, which Nimai's adult self-report screen doesn't use).",
+  "claims": [
+    {
+      "id": "ecrr_test_retest_stability",
+      "pages": "ch.27, Continuity and Change",
+      "paraphrase": "Test-retest reliability for the ECR-R's anxiety and avoidance scores runs about .90 over a 3-week interval (Sibley, Fisher, & Liu, 2005), and a derivative of the ECR-R shows similarly stable test-retest correlations whether the retest happens after 6 months or a year (Fraley, Vicary, Brumbaugh, & Roisman, 2011). This indicates there is a genuinely stable component to the measure beneath any occasion-to-occasion fluctuation."
+    },
+    {
+      "id": "global_vs_relationship_specific_stability",
+      "pages": "ch.27, Hierarchical Models",
+      "paraphrase": "A general, global score like the ECR-R's is more stable over time (test-retest around .90 over 3 weeks) than a version of the same questions aimed at one specific partner or relationship (around .65). Attachment representations are organized hierarchically, from broad style down to relationship-specific models, and the more specific a measure is, the more it moves with the particular relationship being asked about."
+    },
+    {
+      "id": "anxiety_neuroticism_correlation",
+      "pages": "ch.27, Discriminant Validity",
+      "paraphrase": "Across a large student sample, self-reported attachment anxiety correlated about .42 with Neuroticism, and attachment avoidance correlated about -.22 with Agreeableness (Noftle & Shaver, 2006). These are related but clearly distinct constructs — the correlations are moderate, not the near-1.0 that would suggest the two instruments are measuring the same thing twice."
+    },
+    {
+      "id": "attachment_predicts_beyond_bigfive",
+      "pages": "ch.27, Discriminant Validity",
+      "paraphrase": "In experimental and survey research alike, attachment anxiety and avoidance predict relationship-relevant behavior and outcomes even after controlling for the overlapping Big Five traits, and often predict relationship outcomes better than the Big Five traits do on their own (Noftle & Shaver, 2006). Self-reported attachment scores are also largely independent of verbal intelligence and the tendency to give socially desirable answers."
+    },
+    {
+      "id": "age_relationship_status_norms",
+      "pages": "ch.27, Continuity and Change",
+      "paraphrase": "In large cross-sectional research, attachment-related anxiety tends to run highest among younger adults and lowest among middle-aged and older adults; avoidance shows a smaller age gradient but is lowest among younger adults and highest in middle age (Chopik, Edelstein, & Fraley, 2013). Across ages, people currently in a romantic relationship report lower anxiety and avoidance, on average, than people who are single."
+    },
+    {
+      "id": "measures_dont_converge",
+      "pages": "ch.27, introduction",
+      "paraphrase": "Adult attachment is assessed by two largely separate traditions — narrative interview measures descended from the Adult Attachment Interview, and self-report questionnaires descended from Hazan & Shaver's original romantic-attachment work (which the ECR-R belongs to). Despite sharing a theoretical origin, scores from the two traditions do not necessarily agree with each other empirically, so a self-report result like this one speaks to how a person consciously experiences and describes their relationships, not to the same thing an interview-based assessment would measure."
+    }
+  ]
+}

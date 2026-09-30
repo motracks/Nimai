@@ -8,7 +8,25 @@ import { analyse } from "./analysis";
 import { buildHistories, type ResultRow } from "./results";
 import { buildProfile, buildSynthesisInput, findResonances, nakshatraMeaning } from "./profile";
 import guna_ from "./analysis/guna.json";
+const gunaContent = guna_;
 import chartNakshatras from "../../supabase/functions/vedic-chart/nakshatras.json";
+import nakshatraContent from "./analysis/nakshatras.json";
+import harnessKb from "./knowledge/harness-nakshatras.json";
+import sourceRegistry from "./knowledge/sources.json";
+import mikulincerKb from "./knowledge/mikulincer-shaver.json";
+import frawleyKb from "./knowledge/frawley-mind.json";
+import nettleKb from "./knowledge/nettle.json";
+import svobodaKb from "./knowledge/svoboda.json";
+import attachedKb from "./knowledge/attached.json";
+import handbookKb from "./knowledge/handbook-attachment.json";
+import pooleHellerKb from "./knowledge/poole-heller.json";
+import johnsonKb from "./knowledge/johnson-hold-me-tight.json";
+import gitaKb from "./knowledge/gita-easwaran.json";
+import littleKb from "./knowledge/little.json";
+import svobodaLifeKb from "./knowledge/svoboda-life.json";
+import mccraeCostaKb from "./knowledge/mccrae-costa.json";
+import charakaKb from "./knowledge/charaka-sharira.json";
+import ladKb from "./knowledge/lad-textbook.json";
 import { INSTRUMENTS, type InstrumentKey } from "./instruments";
 
 type Item = { id: string; dimension: string; reverse?: boolean };
@@ -48,6 +66,13 @@ describe("per-test analysis", () => {
     expect(a.sections.find((s) => s.title === "How your traits combine")?.paragraphs).toEqual(
       expect.arrayContaining([expect.stringMatching(/^You tend to process stress inwardly/)]),
     );
+    const change = a.sections.find((s) => s.title === "Nature, and how much it can change");
+    expect(change?.paragraphs?.[0]).toMatch(/roughly 50%/);
+    expect(change?.paragraphs?.[0]).toMatch(/ch\.8/);
+    expect(change?.paragraphs?.[1]).toMatch(/free trait/);
+    expect(change?.paragraphs?.[1]).toMatch(/Me, Myself, and Us, ch\.3/);
+    expect(change?.paragraphs?.[2]).toMatch(/age 30/);
+    expect(change?.paragraphs?.[2]).toMatch(/McCrae & Costa/);
   });
 
   it("ECR-R explains the pattern and offers growth steps", () => {
@@ -71,6 +96,65 @@ describe("per-test analysis", () => {
     expect(a.progression).toMatch(/Sattva has risen/);
   });
 
+  it("Guna's leading section cites the sourced mental-type description", () => {
+    const a = analyse(person.guna!)!;
+    expect(a.sections[0].paragraphs).toEqual([
+      gunaContent.gunas.TAM.leads,
+      gunaContent.gunas.TAM.mental_type,
+      gunaContent.gunas.TAM.classical_subtype,
+    ]);
+    expect(a.sections[2].items).toContain(gunaContent.three_stages.tamas_to_rajas);
+  });
+
+  it("Guna's classical_subtype cites the Caraka Samhita by chapter and verse", () => {
+    const a = analyse(person.guna!)!;
+    expect(a.sections[0].paragraphs?.[2]).toMatch(/Sarira Sthana 4\.39/);
+  });
+
+  it("Guna's Bhagavad Gita section includes the happiness-by-guna verse (ch.18)", () => {
+    const a = analyse(person.guna!)!;
+    const gita = a.sections.find((s) => s.title === "From the Bhagavad Gita");
+    expect(gita?.items?.some((i) => i.startsWith("18.39"))).toBe(true);
+  });
+
+  it("attachment growth notes cite Mikulincer & Shaver by page", () => {
+    const a = analyse(person.ecrr!)!;
+    const why = a.sections.find((s) => s.title === "Why it works this way");
+    expect(why?.paragraphs?.[0]).toMatch(/pp\. 19-20/);
+    const changes = a.sections.find((s) => s.title === "It can change");
+    expect(changes?.paragraphs?.[0]).toMatch(/p\. 520/);
+  });
+
+  it("anxious growth tips cite Levine & Heller's Attached by chapter", () => {
+    const a = analyse(person.ecrr!)!;
+    const growth = a.sections.find((s) => s.title === "Ways to grow");
+    expect(growth?.items?.some((i) => i.includes("Attached, ch."))).toBe(true);
+  });
+
+  it("It can change cites the ECR-R's own test-retest stability from the Handbook of Attachment", () => {
+    const a = analyse(person.ecrr!)!;
+    const changes = a.sections.find((s) => s.title === "It can change");
+    expect(changes?.paragraphs?.[1]).toMatch(/\.90/);
+    expect(changes?.paragraphs?.[1]).toMatch(/Handbook of Attachment, ch\.27/);
+  });
+
+  it("Anxious-preoccupied's in_practice cites Sue Johnson's Protest Polka", () => {
+    const a = analyse(person.ecrr!)!;
+    const inPractice = a.sections.find((s) => s.title === "In practice");
+    expect(inPractice?.paragraphs?.[0]).toMatch(/Protest Polka/);
+    expect(inPractice?.paragraphs?.[0]).toMatch(/Hold Me Tight, Conversation 1/);
+  });
+
+  it("Fearful-avoidant's combined strategy note cites Poole Heller's window of tolerance", () => {
+    const fearful = buildHistories([row("ecrr", likert(ecrr.items, { ANX: 5, AVD: 5 }))]);
+    const a = analyse(fearful.ecrr!)!;
+    expect(a.headline).toBe("Fearful-avoidant");
+    const why = a.sections.find((s) => s.title === "Why it works this way");
+    expect(why?.paragraphs?.some((p) => p.includes("window of tolerance"))).toBe(true);
+    const growth = a.sections.find((s) => s.title === "Ways to grow");
+    expect(growth?.items?.some((i) => i.includes("Power of Attachment"))).toBe(true);
+  });
+
   it("Prakriti shows only the named dosha's guide, plus the limits", () => {
     const a = analyse(person.prakriti!)!;
     expect(a.headline).toBe("Vata-dominant");
@@ -78,6 +162,8 @@ describe("per-test analysis", () => {
     expect(titles).toContain("Vata: Air and Space");
     expect(titles.some((t) => t.startsWith("Pitta") || t.startsWith("Kapha"))).toBe(false);
     expect(a.caveats.some((c) => c.startsWith("It is a self-report screen"))).toBe(true);
+    const vataSection = a.sections.find((s) => s.title === "Vata: Air and Space");
+    expect(vataSection?.paragraphs?.[1]).toMatch(/Lad, Textbook of Ayurveda, Table 5/);
   });
 
   it("Vikriti reads against Prakriti and suggests settling practice", () => {
@@ -86,6 +172,13 @@ describe("per-test analysis", () => {
     expect(a.sections.map((s) => s.title)).toEqual(
       expect.arrayContaining(["Compared with your Prakriti", "What raises Vata", "To settle Vata"]),
     );
+  });
+
+  it("Vikriti explains why catching it now matters, citing Svoboda's six-stage model", () => {
+    const a = analyse(person.vikriti!, person.prakriti!.latest.scored)!;
+    const why = a.sections.find((s) => s.title === "Why catch it now");
+    expect(why?.paragraphs?.[0]).toMatch(/Accumulation/);
+    expect(why?.paragraphs?.[0]).toMatch(/Life, Health and Longevity, ch\.6/);
   });
 });
 
@@ -114,7 +207,7 @@ describe("combined profile", () => {
     expect(p.missing).toEqual([]);
     expect(p.sections.map((s) => s.title)).toEqual(["Your nature", "Right now", "In relationships"]);
     expect(p.sections[0].items?.slice(0, 2)).toEqual(["Moon nakshatra: Rohini, pada 2", "Chandra Lagna: Taurus"]);
-    expect(p.sections[0].items?.[2]).toMatch(/^Rohini: ruled by Moon, deity Prajapati/);
+    expect(p.sections[0].items?.[2]).toMatch(/^Rohini: ruled by Moon, deity Brahma \/ Prajapati, symbol .*power growth\./);
     // Vata constitution read through Tamas
     expect(p.sections[1].paragraphs).toContain(guna_.with_dosha.VAT.TAM);
     expect(p.progression.map((x) => x.key)).toEqual(["guna"]);
@@ -133,6 +226,24 @@ describe("combined profile", () => {
 
   it("has nakshatra content for every nakshatra the chart can return", () => {
     for (const n of chartNakshatras.nakshatras) expect(nakshatraMeaning(n.name)).not.toBeNull();
+  });
+
+  it("cites a known source, with pages, for every nakshatra", () => {
+    const known = Object.keys(sourceRegistry.sources);
+    for (const [name, n] of Object.entries(nakshatraContent.nakshatras)) {
+      expect(n.sources.length, name).toBeGreaterThan(0);
+      for (const src of n.sources) {
+        expect(known, name).toContain(src.id);
+        expect(src.pages, name).toMatch(/\d/);
+      }
+    }
+    // App content uses the chart's spelling; the knowledge file keeps the book's.
+    const chartNames = chartNakshatras.nakshatras.map((n) => n.name).sort();
+    expect(Object.keys(nakshatraContent.nakshatras).sort()).toEqual(chartNames);
+    const bookNames = Object.entries(nakshatraContent.nakshatras)
+      .map(([name, n]) => ("source_spelling" in n ? (n.source_spelling as string) : name))
+      .sort();
+    expect(Object.keys(harnessKb.entries).sort()).toEqual(bookNames);
   });
 
   it("works with a single test and lists the rest as missing", () => {
@@ -155,6 +266,38 @@ describe("combined profile", () => {
         expect(Object.keys(INSTRUMENTS)).toContain(side.instrument);
       }
       expect(["high", "low"]).toContain(r.other.expect);
+    }
+  });
+});
+
+describe("sourced content stays honest", () => {
+  it("guna's dosha_link source note discloses that with_dosha is Nimai's synthesis, not Frawley's", () => {
+    expect(gunaContent.sources.dosha_link).toMatch(/Correction/);
+    expect(gunaContent.sources.dosha_link).toMatch(/own synthesis/);
+  });
+
+  it("every knowledge-file claim carries a page reference", () => {
+    for (const file of [
+      harnessKb,
+      mikulincerKb,
+      frawleyKb,
+      nettleKb,
+      svobodaKb,
+      attachedKb,
+      handbookKb,
+      pooleHellerKb,
+      johnsonKb,
+      gitaKb,
+      littleKb,
+      svobodaLifeKb,
+      mccraeCostaKb,
+      charakaKb,
+      ladKb,
+    ]) {
+      const claims = "claims" in file ? file.claims : Object.values(file.entries);
+      for (const c of claims as { pages?: string }[]) {
+        expect(c.pages, JSON.stringify(c).slice(0, 60)).toMatch(/\d/);
+      }
     }
   });
 });

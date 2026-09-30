@@ -80,7 +80,7 @@ export function findResonances(h: Histories): Finding[] {
 export function nakshatraMeaning(name: string): string | null {
   const n = nakshatraContent.nakshatras[name as keyof typeof nakshatraContent.nakshatras];
   if (!n) return null;
-  return `${name}: ruled by ${n.ruler}, deity ${n.deity}, symbol ${n.symbol}. ${n.tendency}`;
+  return `${name}: ruled by ${n.ruler}, deity ${n.deity}, symbol ${n.symbol.toLowerCase()}, power ${n.shakti.power}. ${n.tendency}`;
 }
 
 function vedicLines(chart: VedicChart | null): string[] {

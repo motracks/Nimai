@@ -1,0 +1,38 @@
+{
+  "source": {
+    "id": "svobodalife1992",
+    "author": "Robert E. Svoboda",
+    "title": "Ayurveda: Life, Health and Longevity",
+    "publisher": "Arkana/Penguin",
+    "year": 1992,
+    "kind": "practitioner"
+  },
+  "method": "Read ch.6, 'Pathology', in full (epub, no fixed page numbers; cited by chapter and section heading). This is Svoboda's second book in Nimai's knowledge base (the first, Prakriti, already sources the app's dosha-temperament content); this one is a broader general-practice Ayurveda text, and only the pathology chapter's six-stage disease model was used — it's the classical justification for why catching a current imbalance (Vikriti) early matters, which the app's Vikriti check does but didn't previously explain.",
+  "claims": [
+    {
+      "id": "six_stage_model",
+      "pages": "ch.6, Pathology",
+      "paraphrase": "Every illness, whatever the underlying dosha, is described as following the same six-stage progression: Accumulation, Aggravation, Overflow, Location, Manifestation and Specialization. The first three stages happen before a dosha has settled anywhere specific in the body; only from Location onward does a recognizable illness begin to take shape."
+    },
+    {
+      "id": "accumulation_easiest_to_treat",
+      "pages": "ch.6, Pathology (Accumulation)",
+      "paraphrase": "At the accumulation stage, a dosha has simply built up in its home organ — kapha in the stomach, pitta in the small intestine, vata in the colon — each producing its own mild, early symptoms (kapha: heaviness and dulled appetite; pitta: burning and irritability; vata: dryness, disturbed sleep, mild anxiety). The text is explicit that the doshas are easiest to correct at this stage, before they've gone anywhere or caused a specific illness, and that routine seasonal care is what normally clears this kind of accumulation before it can progress."
+    },
+    {
+      "id": "aggravation_still_treatable",
+      "pages": "ch.6, Pathology (Aggravation)",
+      "paraphrase": "If accumulation isn't addressed, the dosha intensifies where it sits (aggravation) — still fairly straightforward to treat at this stage, though by now the organ under pressure needs support too, not just the dosha itself."
+    },
+    {
+      "id": "location_premonitory_symptoms",
+      "pages": "ch.6, Pathology (Location)",
+      "paraphrase": "Only once a dosha has left its home organ, circulated, and settled somewhere already weakened does a specific illness begin to take shape — this stage is marked by 'premonitory symptoms', early warning signs specific to whatever is about to develop, which appear before the condition is fully recognizable or diagnosable."
+    },
+    {
+      "id": "weak_digestion_root_cause",
+      "pages": "ch.6, Pathology, opening",
+      "paraphrase": "The text names weak digestive fire as the root cause of disease in general, vata as the chief driver of how diseases develop and spread, and ama (the residue of incompletely digested food) as disease's principal nourishment — a framing that puts routine digestive care ahead of treating any single symptom."
+    }
+  ]
+}

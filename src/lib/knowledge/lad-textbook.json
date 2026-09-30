@@ -1,0 +1,28 @@
+{
+  "source": {
+    "id": "lad2002",
+    "author": "Vasant Lad",
+    "title": "Textbook of Ayurveda, Volume One: Fundamental Principles",
+    "publisher": "The Ayurvedic Press",
+    "year": 2002,
+    "kind": "practitioner"
+  },
+  "method": "Read ch.2 ('Universal Attributes and Doshic Theory') in full, including Tables 5-7 (the Attributes of the Vata/Pitta/Kapha Individual) - retrieved as a partial text extraction of a large PDF, clean digital text (not a scan) for the portion retrieved. This is the source the app's knowledge base flagged as 'still pending' for how doshas express psychologically, alongside Svoboda's temperament summaries (already sourced). Lad's tables map each classical Ayurvedic guna (universal attribute: dry, light, cold, sharp, sticky, etc.) to specific manifestations in body, mind and emotion together, which is more granular than Svoboda's prose temperament summaries and gives Nimai's dosha guide its first citation for the qualities_guna field, previously listed with no source.",
+  "claims": [
+    {
+      "id": "vata_clear_and_mobile",
+      "pages": "ch.2, Table 5: The Attributes of the Vata Individual",
+      "paraphrase": "Two of Vata's classical attributes translate distinctively into mind and emotion. 'Clear' shows up as quick understanding paired with quick forgetting, and, when out of balance, an experience of inner emptiness or loneliness. 'Mobile' shows up as a mind that moves fast between many things at once, restlessness, many dreams, swinging moods and a faith that can feel shaky rather than settled."
+    },
+    {
+      "id": "pitta_sharp_and_spreading",
+      "pages": "ch.2, Table 6: The Attributes of the Pitta Individual",
+      "paraphrase": "Two of Pitta's classical attributes translate distinctively into mind and emotion. 'Sharp' produces sharp memory and quick understanding alongside irritability and low tolerance for hard, tedious work. 'Spreading' (the same quality that makes pitta imbalance show up as a rash or inflammation that spreads across the skin) shows up psychologically as wanting one's name and reputation to spread and be known widely."
+    },
+    {
+      "id": "kapha_soft_sticky_static",
+      "pages": "ch.2, Table 7: The Attributes of the Kapha Individual",
+      "paraphrase": "Three of Kapha's classical attributes translate distinctively into mind and emotion. 'Soft' produces love, care, compassion, kindness and forgiveness. 'Sticky' produces a deep, cohesive attachment in love and relationships - the same quality that gives physical joints and tissues their compactness. 'Static' produces a preference for sitting, resting and doing nothing rather than seeking activity."
+    }
+  ]
+}

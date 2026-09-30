@@ -1,200 +1,639 @@
 {
-  "note": "Moon nakshatra content for the Vedic chart section of the profile. Deity, symbol, ruling planet (Vimshottari order) and gana are standard reference facts. 'tendency' is written as a tendency, never a prediction.",
-  "sources": {
-    "tone": "Dennis Harness, The Nakshatras: The Lunar Mansions of Vedic Astrology (1999): psychological, non-fatalistic tone.",
-    "traditional": "Varahamihira, Brihat Jataka: results of the Moon in each nakshatra (public-domain English translations from 1885-1919 on archive.org).",
-    "status": "DRAFT. Written without access to either book (archive.org is blocked from the build environment). Check every entry against the Brihat Jataka and Harness before launch."
-  },
+  "note": "Moon nakshatra content for the Vedic chart section of the profile. Every factual field and each 'tendency' is drawn from src/lib/knowledge/harness-nakshatras.json (Harness 1999), cited by page. 'tendency' is our own wording of the book's 'Moon in …' traits, framed as a tendency, never a prediction; timing, marriage and health predictions from the source are deliberately left out.",
   "reviewed": false,
   "nakshatras": {
     "Ashwini": {
       "ruler": "Ketu",
-      "deity": "the Ashvins, healers of the gods",
-      "symbol": "a horse's head",
+      "deity": "The Ashwini Kumaras (also Shiva, Surya)",
+      "symbol": "A horse's head",
       "gana": "Deva",
-      "tendency": "You tend to move quickly and like to start things. There is a healing, helping streak in you and an impatience with waiting."
+      "motivation": "Dharma",
+      "qualities": [
+        "Rajas",
+        "Rajas",
+        "Rajas"
+      ],
+      "shakti": {
+        "name": "shidhra vyapani",
+        "power": "to heal quickly and reach things"
+      },
+      "tendency": "You tend to have a bright, quick mind and an optimistic streak that lifts others. There's a natural healer in you, alongside a love of travel, the arts and the spiritual side of life.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "3–6"
+        }
+      ],
+      "source_checked": true
     },
     "Bharani": {
       "ruler": "Venus",
-      "deity": "Yama, lord of restraint and death",
-      "symbol": "the womb",
+      "deity": "Yama",
+      "symbol": "The yoni; a clay vessel",
       "gana": "Manushya",
-      "tendency": "You tend to carry things through to the end and can hold intensity that others avoid. Learning when to restrain yourself and when to let go is a lifelong theme."
+      "motivation": "Artha",
+      "qualities": [
+        "Rajas",
+        "Rajas",
+        "Tamas"
+      ],
+      "shakti": {
+        "name": "apabharani",
+        "power": "to cleanse and remove impurities"
+      },
+      "tendency": "You tend to be charismatic and dutiful, able to carry responsibility and shine in public. Hidden or deeper subjects draw you. Your challenge is restlessness and a pull toward extremes.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "7–10"
+        }
+      ],
+      "source_checked": true
     },
     "Krittika": {
       "ruler": "Sun",
-      "deity": "Agni, the fire",
-      "symbol": "a razor or flame",
+      "deity": "Agni",
+      "symbol": "A flame or razor",
       "gana": "Rakshasa",
-      "tendency": "You tend to be sharp, honest and purifying: you cut through what's false. Your fire can nourish or burn, depending on how you direct it."
+      "motivation": "Kama",
+      "qualities": [
+        "Rajas",
+        "Rajas",
+        "Sattwa"
+      ],
+      "shakti": {
+        "name": "dahana",
+        "power": "to burn and purify"
+      },
+      "tendency": "You tend to be determined and clear about your purpose, and people come to you for advice. Your mind is sharp but can be restless, and your honesty can turn combative.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "11–14"
+        }
+      ],
+      "source_checked": true
     },
     "Rohini": {
       "ruler": "Moon",
-      "deity": "Prajapati, the creator",
-      "symbol": "an ox cart",
+      "deity": "Brahma / Prajapati",
+      "symbol": "An ox-cart or chariot, a temple, a banyan tree",
       "gana": "Manushya",
-      "tendency": "You tend to be drawn to beauty, comfort and growth, and to make things flourish. Watch for holding on to what you love too tightly."
+      "motivation": "Moksha",
+      "qualities": [
+        "Rajas",
+        "Tamas",
+        "Rajas"
+      ],
+      "shakti": {
+        "name": "rohana",
+        "power": "growth"
+      },
+      "tendency": "You tend to have a balanced, creative mind, with a feel for music, dance or drama and for work that reaches people. Making up your mind can take a while.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "15–18"
+        }
+      ],
+      "source_checked": true
     },
     "Mrigashira": {
       "ruler": "Mars",
-      "deity": "Soma, the moon's nectar",
-      "symbol": "a deer's head",
+      "deity": "Soma",
+      "symbol": "An antelope's head",
       "gana": "Deva",
-      "tendency": "You tend to be curious and searching, always looking for the next thing to understand. Your gentleness pairs with restlessness."
+      "motivation": "Moksha",
+      "qualities": [
+        "Rajas",
+        "Tamas",
+        "Tamas"
+      ],
+      "shakti": {
+        "name": "prinana",
+        "power": "to give fulfillment"
+      },
+      "tendency": "You tend to be intelligent and gentle, a seeker with a way with words. You're sensitive, sometimes to the point of timidity.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "19–22"
+        }
+      ],
+      "source_checked": true
     },
     "Ardra": {
       "ruler": "Rahu",
-      "deity": "Rudra, the storm",
-      "symbol": "a teardrop",
+      "deity": "Rudra, lord of storms",
+      "symbol": "A human head; a teardrop",
       "gana": "Manushya",
-      "tendency": "You tend to feel deeply and grow through upheaval. Storms in your life often clear the way for something new."
+      "motivation": "Kama",
+      "qualities": [
+        "Rajas",
+        "Tamas",
+        "Sattwa"
+      ],
+      "shakti": {
+        "name": "yatna",
+        "power": "effort"
+      },
+      "tendency": "You tend to have a real thirst for knowledge and a strong voice for sharing it. Your growth often comes through effort and through life's storms.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "23–26"
+        }
+      ],
+      "source_checked": true
     },
     "Punarvasu": {
       "ruler": "Jupiter",
-      "deity": "Aditi, the boundless mother",
-      "symbol": "a quiver of arrows",
+      "deity": "Aditi",
+      "symbol": "A bow and quiver of arrows",
       "gana": "Deva",
-      "tendency": "You tend to return, renew and begin again after setbacks. You are generous and at home with simplicity."
+      "motivation": "Artha",
+      "qualities": [
+        "Rajas",
+        "Sattwa",
+        "Rajas"
+      ],
+      "shakti": {
+        "name": "vasutva prapana",
+        "power": "to gain wealth or substance"
+      },
+      "tendency": "You tend to be friendly, easily contented and self-controlled, happy with a simple life. You can be indecisive when too many options appeal.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "27–30"
+        }
+      ],
+      "source_checked": true
     },
     "Pushya": {
       "ruler": "Saturn",
-      "deity": "Brihaspati, teacher of the gods",
-      "symbol": "a cow's udder",
+      "deity": "Brihaspati",
+      "symbol": "The udder of a cow; a flower, circle and arrow",
       "gana": "Deva",
-      "tendency": "You tend to nourish and support others, and to feel most yourself when you're caring and being useful. Traditionally one of the most auspicious stars."
+      "motivation": "Dharma",
+      "qualities": null,
+      "shakti": {
+        "name": "brahmavarchasa",
+        "power": "to create spiritual energy"
+      },
+      "tendency": "You tend to be learned and composed, a nourishing presence that people like and trust. This is traditionally one of the most auspicious nakshatras for spiritual growth.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "31–34"
+        }
+      ],
+      "source_checked": true
     },
     "Ashlesha": {
       "ruler": "Mercury",
-      "deity": "the Nagas, serpent beings",
-      "symbol": "a coiled serpent",
+      "deity": "The Nagas",
+      "symbol": "A coiled serpent",
       "gana": "Rakshasa",
-      "tendency": "You tend to be perceptive and intuitive, and you see beneath the surface. Your insight is strong; use it to understand people, not to hold on to them."
+      "motivation": "Dharma",
+      "qualities": [
+        "Rajas",
+        "Sattwa",
+        "Sattwa"
+      ],
+      "shakti": {
+        "name": "visasleshana",
+        "power": "to inflict with venom"
+      },
+      "tendency": "You tend to be perceptive and intuitive, with gifts for words, research and organising. The work is using that insight openly, and not to hold on to people.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "35–38"
+        }
+      ],
+      "source_checked": true
     },
     "Magha": {
       "ruler": "Ketu",
-      "deity": "the Pitris, the ancestors",
-      "symbol": "a royal throne",
-      "gana": "Rakshasa",
-      "tendency": "You tend to feel connected to family, lineage and tradition, and carry a natural dignity. Respect matters to you."
+      "deity": "The Pitris (ancestors)",
+      "symbol": "A palanquin (royal seat)",
+      "gana": null,
+      "motivation": "Artha",
+      "qualities": null,
+      "shakti": {
+        "name": "tyage kshepani",
+        "power": "to leave the body"
+      },
+      "tendency": "You tend to feel connected to lineage and tradition, and to carry a natural dignity. You're enterprising and generous, and your temper can run hot.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "39–42"
+        }
+      ],
+      "source_checked": true
     },
     "Purva Phalguni": {
       "ruler": "Venus",
-      "deity": "Bhaga, god of delight",
-      "symbol": "the front legs of a bed",
-      "gana": "Manushya",
-      "tendency": "You tend to enjoy pleasure, creativity and rest, and bring warmth and charm to relationships. Balancing enjoyment with effort is the theme."
+      "deity": "Bhaga",
+      "symbol": "A swinging hammock; the Shiva lingam",
+      "gana": null,
+      "motivation": "Kama",
+      "qualities": null,
+      "shakti": {
+        "name": "prajanana",
+        "power": "creative procreation"
+      },
+      "tendency": "You tend to be creative, warm and generous, drawn to drama, travel and teaching. Your mind can be restless and your senses strong.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "43–46"
+        }
+      ],
+      "source_checked": true
     },
     "Uttara Phalguni": {
       "ruler": "Sun",
-      "deity": "Aryaman, god of contracts and friendship",
-      "symbol": "the back legs of a bed",
+      "deity": "Aryaman, god of patronage",
+      "symbol": "A bed or the legs of a cot",
       "gana": "Manushya",
-      "tendency": "You tend to be dependable and generous, and you keep your commitments. Partnership and helping others succeed are your strengths."
+      "motivation": "Moksha",
+      "qualities": [
+        "Tamas",
+        "Rajas",
+        "Sattwa"
+      ],
+      "shakti": {
+        "name": "chayani",
+        "power": "to give prosperity"
+      },
+      "tendency": "You tend to be stable, well liked and tactful, with an inventive mind and a clean heart. You're someone others can rely on.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "47–50"
+        }
+      ],
+      "source_checked": true
     },
     "Hasta": {
       "ruler": "Moon",
-      "deity": "Savitar, the sun's creative power",
-      "symbol": "an open hand",
+      "deity": "Savitar",
+      "symbol": "The palm of the hand",
       "gana": "Deva",
-      "tendency": "You tend to be skilful and practical, good with your hands and with details. You also have a light, humorous side."
+      "motivation": "Moksha",
+      "qualities": [
+        "Tamas",
+        "Tamas",
+        "Rajas"
+      ],
+      "shakti": {
+        "name": "hasta sthapaniya agama",
+        "power": "to manifest what we seek and place it in our hands"
+      },
+      "tendency": "You tend to be practical and industrious, skilled at turning ideas into something real. You make friends easily but keep your independence, and your moods can rise and fall.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "51–54"
+        }
+      ],
+      "source_checked": true
     },
     "Chitra": {
       "ruler": "Mars",
-      "deity": "Tvashtar, the divine craftsman",
-      "symbol": "a bright jewel",
+      "deity": "Tvashtar, the celestial architect",
+      "symbol": "A pearl or bright jewel",
       "gana": "Rakshasa",
-      "tendency": "You tend to create and design, and to care about beauty and form. You like to make things that are striking and well made."
+      "motivation": "Kama",
+      "qualities": [
+        "Tamas",
+        "Tamas",
+        "Tamas"
+      ],
+      "shakti": {
+        "name": "punya cayani",
+        "power": "to accumulate merit"
+      },
+      "tendency": "You tend to be artistic and intuitive, with strong passions and a way of standing out. Beauty and good design matter to you.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "55–58"
+        }
+      ],
+      "source_checked": true
     },
     "Swati": {
       "ruler": "Rahu",
-      "deity": "Vayu, the wind",
-      "symbol": "a young shoot swaying in the wind",
+      "deity": "Vayu (also Saraswati)",
+      "symbol": "Coral",
       "gana": "Deva",
-      "tendency": "You tend to value independence and move with change without breaking. Your flexibility is a strength; steady roots let you use it."
+      "motivation": "Artha",
+      "qualities": [
+        "Tamas",
+        "Tamas",
+        "Sattwa"
+      ],
+      "shakti": {
+        "name": "pradhvamsa",
+        "power": "to scatter like the wind"
+      },
+      "tendency": "You tend to be independent, truthful and compassionate, with clever speech and a generous heart. You can dig your heels in when pushed.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "59–62"
+        }
+      ],
+      "source_checked": true
     },
     "Vishakha": {
       "ruler": "Jupiter",
-      "deity": "Indra and Agni together",
-      "symbol": "a triumphal arch",
+      "deity": "Indra and Agni",
+      "symbol": "An archway; a potter's wheel",
       "gana": "Rakshasa",
-      "tendency": "You tend to be goal-focused and determined, and you pursue what you want with single-minded effort. Patience is the lesson."
+      "motivation": "Dharma",
+      "qualities": [
+        "Tamas",
+        "Sattwa",
+        "Rajas"
+      ],
+      "shakti": {
+        "name": "vyapani",
+        "power": "to achieve many and various fruits"
+      },
+      "tendency": "You tend to be highly intelligent and convincing, with a gift for leading and writing. You see many paths to the same truth, and you stay set on your goals.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "63–66"
+        }
+      ],
+      "source_checked": true
     },
     "Anuradha": {
       "ruler": "Saturn",
-      "deity": "Mitra, god of friendship",
-      "symbol": "a lotus",
+      "deity": "Mitra (also Radha)",
+      "symbol": "A lotus",
       "gana": "Deva",
-      "tendency": "You tend to build deep, loyal friendships and to cooperate well. You can flourish in difficult conditions, like a lotus in mud."
+      "motivation": "Dharma",
+      "qualities": null,
+      "shakti": {
+        "name": "radhana",
+        "power": "worship"
+      },
+      "tendency": "You tend to be wise, kind and brave, and to keep going whatever happens. You form deep friendships and handle difficult situations well.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "67–70"
+        }
+      ],
+      "source_checked": true
     },
     "Jyeshtha": {
       "ruler": "Mercury",
-      "deity": "Indra, king of the gods",
-      "symbol": "a circular earring",
+      "deity": "Indra",
+      "symbol": "An earring; an umbrella",
       "gana": "Rakshasa",
-      "tendency": "You tend to take responsibility and protect those around you. Seniority and authority come to you, and with them the need for humility."
+      "motivation": "Artha",
+      "qualities": [
+        "Tamas",
+        "Sattwa",
+        "Sattwa"
+      ],
+      "shakti": {
+        "name": "arohana",
+        "power": "to rise and conquer"
+      },
+      "tendency": "You tend to be virtuous and resilient, with good stamina and often a musical gift. You can be irritable or stubborn when pressed.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "71–74"
+        }
+      ],
+      "source_checked": true
     },
     "Mula": {
       "ruler": "Ketu",
-      "deity": "Nirriti, goddess of dissolution",
-      "symbol": "tied roots",
+      "deity": "Nirriti",
+      "symbol": "A tied bunch of roots",
       "gana": "Rakshasa",
-      "tendency": "You tend to go to the root of things and want the real truth. Sometimes that means pulling up what no longer serves."
+      "motivation": "Kama",
+      "qualities": [
+        "Sattwa",
+        "Rajas",
+        "Rajas"
+      ],
+      "shakti": {
+        "name": "barhana",
+        "power": "to break things apart"
+      },
+      "tendency": "You tend to go to the root of things, and you're peace-loving and generous with friends. You can hold on to a view very firmly.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "75–78"
+        }
+      ],
+      "source_checked": true
     },
     "Purva Ashadha": {
       "ruler": "Venus",
-      "deity": "Apas, the waters",
-      "symbol": "a winnowing fan",
+      "deity": "Apas (also Varuna)",
+      "symbol": "A fan; a winnowing basket",
       "gana": "Manushya",
-      "tendency": "You tend to be persuasive and full of conviction, and you don't give up easily. Your confidence can inspire others."
+      "motivation": "Moksha",
+      "qualities": [
+        "Sattwa",
+        "Rajas",
+        "Tamas"
+      ],
+      "shakti": {
+        "name": "varchograhana",
+        "power": "invigoration"
+      },
+      "tendency": "You tend to be philosophical and persuasive, a natural leader and communicator. Your conviction can become stubbornness.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "79–82"
+        }
+      ],
+      "source_checked": true
     },
     "Uttara Ashadha": {
       "ruler": "Sun",
-      "deity": "the Vishvadevas, the universal gods",
-      "symbol": "an elephant's tusk",
+      "deity": "The Vishvadevas",
+      "symbol": "An elephant's tusk; the planks of a bed",
       "gana": "Manushya",
-      "tendency": "You tend to value integrity and lasting achievement over quick wins. Once you commit, you see it through."
+      "motivation": "Moksha",
+      "qualities": [
+        "Sattwa",
+        "Rajas",
+        "Sattwa"
+      ],
+      "shakti": {
+        "name": "apradhrisya",
+        "power": "to grant an unchallengeable victory"
+      },
+      "tendency": "You tend to be virtuous, charming and well liked, a leader people trust. You value integrity and lasting achievement over quick wins.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "83–86"
+        }
+      ],
+      "source_checked": true
     },
     "Shravana": {
       "ruler": "Moon",
-      "deity": "Vishnu, the preserver",
-      "symbol": "an ear",
+      "deity": "Vishnu (also Saraswati)",
+      "symbol": "An ear; three footprints",
       "gana": "Deva",
-      "tendency": "You tend to listen and learn deeply, and you understand through hearing. You connect people and ideas."
+      "motivation": "Artha",
+      "qualities": [
+        "Sattwa",
+        "Tamas",
+        "Rajas"
+      ],
+      "shakti": {
+        "name": "samhanana",
+        "power": "to connect"
+      },
+      "tendency": "You tend to learn by listening, and you connect people and ideas. You're principled and a good host, with a perfectionist and sometimes zealous streak.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "87–90"
+        }
+      ],
+      "source_checked": true
     },
     "Dhanishta": {
       "ruler": "Mars",
-      "deity": "the eight Vasus, gods of abundance",
-      "symbol": "a drum",
+      "deity": "The eight Vasus",
+      "symbol": "A musical drum",
       "gana": "Rakshasa",
-      "tendency": "You tend to have a sense of rhythm and timing, in music, work or life, and to attract abundance. You work well in groups."
+      "motivation": "Dharma",
+      "qualities": [
+        "Sattwa",
+        "Tamas",
+        "Tamas"
+      ],
+      "shakti": {
+        "name": "khyapayitri",
+        "power": "to give abundance and fame"
+      },
+      "tendency": "You tend to be generous and musical, with a mystical side. You can act rashly, and you're hard to talk out of something.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "91–94"
+        }
+      ],
+      "source_checked": true,
+      "source_spelling": "Dhanishtha"
     },
     "Shatabhisha": {
       "ruler": "Rahu",
-      "deity": "Varuna, lord of cosmic waters",
-      "symbol": "an empty circle",
+      "deity": "Varuna",
+      "symbol": "An empty circle; a hundred physicians",
       "gana": "Rakshasa",
-      "tendency": "You tend to be independent and private, and drawn to healing and hidden knowledge. Solitude helps you see clearly."
+      "motivation": "Dharma",
+      "qualities": [
+        "Sattwa",
+        "Tamas",
+        "Sattwa"
+      ],
+      "shakti": {
+        "name": "bheshaja",
+        "power": "healing"
+      },
+      "tendency": "You tend to be truthful, independent and principled, with an excellent memory and an interest in healing, psychology or hidden knowledge. Your boldness can become opinionated.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "95–98"
+        }
+      ],
+      "source_checked": true
     },
     "Purva Bhadrapada": {
       "ruler": "Jupiter",
-      "deity": "Aja Ekapada, the one-footed goat",
-      "symbol": "a sword",
+      "deity": "Aja Ekapada",
+      "symbol": "A sword; two legs of a bed; a two-faced man",
       "gana": "Manushya",
-      "tendency": "You tend to be intense and idealistic, and ready to sacrifice for what you believe in. Your passion is transformative when grounded."
+      "motivation": "Artha",
+      "qualities": [
+        "Sattwa",
+        "Sattwa",
+        "Rajas"
+      ],
+      "shakti": {
+        "name": "yajamana udyamana",
+        "power": "to raise a spiritual person up in life"
+      },
+      "tendency": "You tend to have spiritual depth and a scholar's mind, with intuitive gifts and a sharp, sometimes cynical wit.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "99–102"
+        }
+      ],
+      "source_checked": true
     },
     "Uttara Bhadrapada": {
       "ruler": "Saturn",
-      "deity": "Ahir Budhnya, serpent of the deep",
-      "symbol": "the back legs of a funeral cot",
+      "deity": "Ahirbudhnya (also Lakshmi)",
+      "symbol": "Two legs of a bed; twins",
       "gana": "Manushya",
-      "tendency": "You tend to be deep, calm and self-controlled, with a wisdom that grows over time. Still waters run deep in you."
+      "motivation": "Kama",
+      "qualities": [
+        "Sattwa",
+        "Sattwa",
+        "Tamas"
+      ],
+      "shakti": {
+        "name": "varshodyamana",
+        "power": "to bring the cosmic rain"
+      },
+      "tendency": "You tend to be good-hearted, wise and service-oriented, with calm self-control. Still waters run deep in you.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "103–106"
+        }
+      ],
+      "source_checked": true
     },
     "Revati": {
       "ruler": "Mercury",
-      "deity": "Pushan, guardian of travellers",
-      "symbol": "a fish",
+      "deity": "Pushan, the nurturer",
+      "symbol": "A drum; a fish",
       "gana": "Deva",
-      "tendency": "You tend to nourish and guide others, especially on journeys and transitions. There is a gentle, compassionate completeness about you."
+      "motivation": "Moksha",
+      "qualities": [
+        "Sattwa",
+        "Sattwa",
+        "Sattwa"
+      ],
+      "shakti": {
+        "name": "kshiradyapani",
+        "power": "nourishment"
+      },
+      "tendency": "You tend to be independent and well liked, drawn to wisdom, mysticism and old cultures. You're protective of animals and those in your care.",
+      "sources": [
+        {
+          "id": "harness1999",
+          "pages": "107–110"
+        }
+      ],
+      "source_checked": true
     }
   }
 }

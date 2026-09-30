@@ -142,6 +142,7 @@ function analyseBigFive(scored: ScoredResult): Omit<Analysis, "instrument" | "pr
   if (watch.length) sections.push({ title: "Worth watching", items: watch });
   if (flexible.length) sections.push({ title: "Where you flex", items: flexible });
   if (combos.length) sections.push({ title: "How your traits combine", paragraphs: combos });
+  sections.push({ title: "Nature, and how much it can change", paragraphs: bigfiveContent.nature_and_change });
 
   return {
     headline: `Most distinctive: ${top.join(" and ")}`,
@@ -158,6 +159,7 @@ function strategyNotes(scored: ScoredResult): string[] {
   const notes: string[] = [];
   if (scored.raw.ANX > cutoff) notes.push(ecrrContent.dimension_notes.ANX_high);
   if (scored.raw.AVD > cutoff) notes.push(ecrrContent.dimension_notes.AVD_high);
+  if (notes.length === 2) notes.push(ecrrContent.dimension_notes.both_high);
   return notes.length ? notes : [ecrrContent.dimension_notes.both_low];
 }
 
@@ -174,7 +176,7 @@ function analyseEcrr(scored: ScoredResult): Omit<Analysis, "instrument" | "progr
     },
     { title: "Why it works this way", paragraphs: strategyNotes(scored) },
     { title: "Ways to grow", items: content.growth },
-    { title: "It can change", paragraphs: [ecrrContent.can_change] },
+    { title: "It can change", paragraphs: ecrrContent.can_change },
   ];
 
   const caveats = qualityCaveats(scored).filter((c) => c !== FLAG_TEXT.near_boundary);
@@ -202,15 +204,20 @@ function analyseGuna(scored: ScoredResult): Omit<Analysis, "instrument" | "progr
   const lead = gunaContent.gunas[first];
   const shares = scored.shares!;
 
+  const stage =
+    first === "TAM" ? gunaContent.three_stages.tamas_to_rajas
+    : first === "RAJ" ? gunaContent.three_stages.rajas_to_sattva
+    : gunaContent.three_stages.sattva_deepening;
+
   const sections: AnalysisSection[] = [
-    { title: `${dimensionName("guna", first)} leads`, paragraphs: [lead.leads] },
+    { title: `${dimensionName("guna", first)} leads`, paragraphs: [lead.leads, lead.mental_type, lead.classical_subtype] },
     {
       title: "The three together",
       items: (["SAT", "RAJ", "TAM"] as const).map(
         (d) => `${dimensionName("guna", d)}: ${Math.round(shares[d])}% · ${scored.classification.dimensionLabels![d]}`,
       ),
     },
-    { title: "What supports you now", items: [...lead.supports, lead.food] },
+    { title: "What supports you now", items: [...lead.supports, lead.food, stage] },
     { title: "From the Bhagavad Gita", items: lead.gita },
   ];
   if (first !== "TAM" && scored.norm.TAM > scored.norm.SAT) {
@@ -229,7 +236,7 @@ function doshaSection(dosha: Dosha): AnalysisSection {
   const g: DoshaGuideEntry = doshaGuide.doshas[dosha];
   return {
     title: `${g.label}: ${g.element}`,
-    paragraphs: [g.principle],
+    paragraphs: [g.principle, g.attribute_signature],
     items: [`In balance: ${g.in_balance}`, `Out of balance: ${g.out_of_balance}`, `Increased by: ${g.increased_by}`],
   };
 }
@@ -300,6 +307,7 @@ function analyseVikriti(
       items: (["VAT", "PIT", "KAP"] as const).map((d) => `${dimensionName("vikriti", d)}: ${scored.raw[d]} of 6`),
     },
   ];
+  if (elevated.length) sections.push({ title: "Why catch it now", paragraphs: [doshaGuide.vikriti_context] });
 
   const relation = vikritiVsPrakriti(scored, prakritiLatest);
   if (relation) sections.push({ title: "Compared with your Prakriti", paragraphs: [relation] });
