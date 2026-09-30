@@ -262,7 +262,7 @@ export default function RotaryNav({ items }: { items: DialItem[] }) {
           </g>
 
           {/* Labels stay upright and travel along the arc */}
-          {positioned.map(({ item, i, d, focus, opacity, x, y }) => (
+          {positioned.map(({ item, i, focus, opacity, x, y }) => (
             <g
               key={item.key}
               role="button"
@@ -288,19 +288,6 @@ export default function RotaryNav({ items }: { items: DialItem[] }) {
               >
                 {item.label}
               </text>
-              {item.complete && (
-                <text
-                  x={x}
-                  y={y + 22}
-                  textAnchor="middle"
-                  fill="var(--green-text)"
-                  fontSize={9.5}
-                  letterSpacing={1.8}
-                  style={{ fontFamily: '"Jost", sans-serif', opacity: Math.max(0, 1 - 2 * d) }}
-                >
-                  COMPLETE
-                </text>
-              )}
             </g>
           ))}
 
