@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { nakshatraByName, slugOf } from "@/lib/nakshatras";
 import { INSTRUMENTS, type InstrumentKey } from "@/lib/instruments";
 import { analyse, type Analysis } from "@/lib/analysis";
 import AnalysisView from "@/components/AnalysisView";
@@ -232,9 +233,13 @@ export function VedicChartCard({ vedic }: { vedic: Record<string, unknown> | nul
     <div className="flex flex-col gap-3">
       <p style={{ color: "var(--night-text)" }}>
         Moon in{" "}
-        <span className="serif-italic" style={{ color: "var(--gold-bright)" }}>
+        <Link
+          href={`/vedic/nakshatras/${slugOf(chart.moon_nakshatra.name)}`}
+          className="serif-italic"
+          style={{ color: "var(--gold-bright)" }}
+        >
           {chart.moon_nakshatra.name}
-        </span>
+        </Link>
         , pada {chart.moon_nakshatra.pada}
       </p>
       {chart.moon_reliable === false && (
@@ -269,6 +274,62 @@ export function VedicChartCard({ vedic }: { vedic: Record<string, unknown> | nul
           </div>
         ))}
       </dl>
+      <VedicReading chart={chart} />
+    </div>
+  );
+}
+
+// The general reading under the chart. Only the Moon's nakshatra is
+// interpreted so far (Harness, The Nakshatras); signs, houses and planets wait
+// for a source that covers them.
+function VedicReading({ chart }: { chart: { moon_nakshatra: { name: string }; moon_reliable?: boolean; moon_range?: { nakshatras: string[] } } }) {
+  const certain = chart.moon_reliable !== false;
+  const moon = certain ? nakshatraByName(chart.moon_nakshatra.name) : null;
+  const candidates = certain ? [] : (chart.moon_range?.nakshatras ?? []).map(nakshatraByName).filter((n) => n != null);
+  return (
+    <div className="mt-2 flex flex-col gap-2 text-sm leading-relaxed" style={{ color: "var(--night-text)" }}>
+      <h3 className="text-xs uppercase" style={{ letterSpacing: "0.06em", color: "var(--gold-bright)" }}>
+        Reading
+      </h3>
+      {moon ? (
+        <>
+          <p>
+            The Moon stands for the mind and feelings, so its nakshatra says most about your emotional nature.{" "}
+            {moon.tendency}
+          </p>
+          <p style={{ color: "var(--night-text-dim)" }}>
+            {moon.name} is ruled by {moon.ruler}; its deity is {moon.deity}, its symbol {moon.symbol.toLowerCase()}, and its
+            power is {moon.shakti.power}.{" "}
+            <Link href={`/vedic/nakshatras/${moon.slug}`} style={{ color: "var(--gold-bright)" }}>
+              More about {moon.name} →
+            </Link>
+          </p>
+        </>
+      ) : (
+        <p>
+          Without a birth time the Moon could be in either of two nakshatras, so there&rsquo;s no single reading. Read
+          both and see which fits:{" "}
+          {candidates.map((n, i) => (
+            <span key={n.slug}>
+              {i > 0 && " or "}
+              <Link href={`/vedic/nakshatras/${n.slug}`} style={{ color: "var(--gold-bright)" }}>
+                {n.name}
+              </Link>
+            </span>
+          ))}
+          .
+        </p>
+      )}
+      <p className="text-xs" style={{ color: "var(--night-text-dim)" }}>
+        Readings for signs, the ascendant and the planets are coming. Based on{" "}
+        <Link href="/sources#harness1999" style={{ color: "var(--night-text)" }}>
+          Harness, The Nakshatras
+        </Link>
+        ; tendencies, not predictions.{" "}
+        <Link href="/vedic/nakshatras" style={{ color: "var(--night-text)" }}>
+          All 27 nakshatras
+        </Link>
+      </p>
     </div>
   );
 }
