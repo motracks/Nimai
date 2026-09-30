@@ -52,6 +52,6 @@ describe("today card", () => {
   });
 
   it("keeps fast breathing techniques off the card", () => {
-    for (const d of ["VAT", "PIT", "KAP"] as const) expect(guide.doshas[d].today.do.join(" ")).not.toMatch(/Kapalabhati|Bhastrika/);
+    for (const d of ["VAT", "PIT", "KAP"] as const) expect(guide.doshas[d].today.do.map((p) => p.text).join(" ")).not.toMatch(/Kapalabhati|Bhastrika/);
   });
 });

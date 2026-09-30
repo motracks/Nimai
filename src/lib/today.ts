@@ -18,7 +18,7 @@ export interface TodayFocus {
   dosha: Dosha;
   name: string;
   reason: string;
-  do: string[];
+  do: { id: string; text: string }[];
   avoid: string[];
   guna: string | null;
   href: string; // where the fuller reading lives

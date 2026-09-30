@@ -143,7 +143,13 @@ applied; until then the page says it isn't set up yet.
 
 ## Later: from static tests to a tool that helps
 
-### [ ] Needs model
+### [x] Needs model
+Done: `src/lib/needs.ts`, shown as "What needs attention now" at the top of
+the profile (top four). Each item names its layer, a confidence (lowered by
+quality flags and by age: state results older than 6 weeks, trait results
+older than a year) and the result it came from. The Response layer uses the
+practice log below; the Vedic chart and place/age aren't in it yet.
+
 Combine all the data into a ranked answer to "what does this person need
 now?":
 
@@ -161,12 +167,14 @@ Rules:
   result is.
 - Every recommendation says which layer drove it and cites its source.
 
-### [ ] Practice log and feedback loop
-- [ ] Record what you actually did (a sequence, a routine change, a food
-      change).
-- [ ] Later, show what tended to come before an improvement ("Vikriti Vata
-      eased in the weeks you kept the morning routine"). Word it as a
-      pattern, never as proof.
+### [x] Practice log and feedback loop
+- [x] Tick the Today card's practices; stored per local day in
+      `practice_log` (needs the migration). `/practice` shows the last 4 weeks.
+- [x] Show what a raised dosha did between two Vikriti checks alongside the
+      days you practised for it, worded as a pattern, never as proof.
+- [ ] Use the `helped` column (1-5 rating per practice); it exists but has
+      no UI yet.
+- [ ] Log sequences and food changes once the asana library exists.
 
 ### [ ] Optional written narrative
 An LLM-written summary on top of `buildSynthesisInput()`. It must only use
