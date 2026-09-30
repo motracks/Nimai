@@ -25,6 +25,7 @@ import gitaKb from "./knowledge/gita-easwaran.json";
 import littleKb from "./knowledge/little.json";
 import svobodaLifeKb from "./knowledge/svoboda-life.json";
 import mccraeCostaKb from "./knowledge/mccrae-costa.json";
+import charakaKb from "./knowledge/charaka-sharira.json";
 import { INSTRUMENTS, type InstrumentKey } from "./instruments";
 
 type Item = { id: string; dimension: string; reverse?: boolean };
@@ -96,8 +97,17 @@ describe("per-test analysis", () => {
 
   it("Guna's leading section cites the sourced mental-type description", () => {
     const a = analyse(person.guna!)!;
-    expect(a.sections[0].paragraphs).toEqual([gunaContent.gunas.TAM.leads, gunaContent.gunas.TAM.mental_type]);
+    expect(a.sections[0].paragraphs).toEqual([
+      gunaContent.gunas.TAM.leads,
+      gunaContent.gunas.TAM.mental_type,
+      gunaContent.gunas.TAM.classical_subtype,
+    ]);
     expect(a.sections[2].items).toContain(gunaContent.three_stages.tamas_to_rajas);
+  });
+
+  it("Guna's classical_subtype cites the Caraka Samhita by chapter and verse", () => {
+    const a = analyse(person.guna!)!;
+    expect(a.sections[0].paragraphs?.[2]).toMatch(/Sarira Sthana 4\.39/);
   });
 
   it("Guna's Bhagavad Gita section includes the happiness-by-guna verse (ch.18)", () => {
@@ -278,6 +288,7 @@ describe("sourced content stays honest", () => {
       littleKb,
       svobodaLifeKb,
       mccraeCostaKb,
+      charakaKb,
     ]) {
       const claims = "claims" in file ? file.claims : Object.values(file.entries);
       for (const c of claims as { pages?: string }[]) {

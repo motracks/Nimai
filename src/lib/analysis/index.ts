@@ -210,7 +210,7 @@ function analyseGuna(scored: ScoredResult): Omit<Analysis, "instrument" | "progr
     : gunaContent.three_stages.sattva_deepening;
 
   const sections: AnalysisSection[] = [
-    { title: `${dimensionName("guna", first)} leads`, paragraphs: [lead.leads, lead.mental_type] },
+    { title: `${dimensionName("guna", first)} leads`, paragraphs: [lead.leads, lead.mental_type, lead.classical_subtype] },
     {
       title: "The three together",
       items: (["SAT", "RAJ", "TAM"] as const).map(
