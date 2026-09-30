@@ -180,6 +180,13 @@ describe("per-test analysis", () => {
     expect(why?.paragraphs?.[0]).toMatch(/Accumulation/);
     expect(why?.paragraphs?.[0]).toMatch(/Life, Health and Longevity, ch\.6/);
   });
+
+  it("Vikriti's 'What raises' section adds Svoboda's cycles, with temperate-climate seasons", () => {
+    const a = analyse(person.vikriti!, person.prakriti!.latest.scored)!;
+    const raises = a.sections.find((s) => s.title === "What raises Vata");
+    expect(raises?.paragraphs?.[1]).toMatch(/temperate climate/);
+    expect(raises?.paragraphs?.[1]).toMatch(/Life, Health and Longevity, ch\.4/);
+  });
 });
 
 describe("combined profile", () => {

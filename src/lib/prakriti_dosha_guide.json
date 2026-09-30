@@ -12,6 +12,7 @@
       "in_balance": "Creative, quick, enthusiastic, adaptable, light on their feet, inspiring communicators",
       "out_of_balance": "Anxiety, insomnia, constipation, dryness, joint pain, scattered attention, fatigue, feeling ungrounded",
       "increased_by": "Cold, wind, dry weather; travel; irregular meals and sleep; overstimulation; fasting. Vata time: 2-6 a.m. and p.m. Life stage: later years. Season: monsoon onset and early winter",
+      "cycles": "Vata is strongest at the junctions: the hours before dawn, mid-afternoon to dusk, and life after about sixty. The seasons above follow India's calendar; in a temperate climate Vata builds up through summer and peaks in autumn, settling in winter unless it is very cold (Svoboda, Ayurveda: Life, Health and Longevity, ch.4).",
       "asana": "Slow, grounding, warming. Standing poses, forward folds, hip openers, long holds with support. Keep flows gentle and repetitive. Long Shavasana, well covered",
       "pranayama": "Nadi Shodhana, slow Ujjayi, Bhramari. Long exhalations. Use fast techniques (Kapalabhati, Bhastrika) sparingly",
       "meditation": "Body-anchored practices: body scan, Yoga Nidra, mantra japa. A fixed time and seat every day matters more than duration",
@@ -25,6 +26,18 @@
         {
           "id": "lad2002",
           "claim": "vata_clear_and_mobile"
+        },
+        {
+          "id": "svobodalife1992",
+          "claim": "day_night_cycle"
+        },
+        {
+          "id": "svobodalife1992",
+          "claim": "seasonal_cycle_temperate"
+        },
+        {
+          "id": "svobodalife1992",
+          "claim": "age_cycle"
         }
       ]
     },
@@ -38,6 +51,7 @@
       "in_balance": "Focused, intelligent, courageous, articulate, natural leaders, strong digestion and warmth",
       "out_of_balance": "Anger, criticism, perfectionism, acidity, inflammation, rashes, burnout, competitiveness",
       "increased_by": "Heat, sun, spicy, sour or fried food, alcohol, skipped meals, deadlines and competition. Pitta time: 10 a.m.-2 p.m. and 10 p.m.-2 a.m. Life stage: adulthood. Season: late summer and autumn (Sharad)",
+      "cycles": "Pitta is strongest from mid-morning to mid-afternoon and through the midnight hours, and in middle age. The seasons above follow India's calendar; in a temperate climate Pitta builds up in spring and flares in summer, calming as autumn arrives (Svoboda, Ayurveda: Life, Health and Longevity, ch.4).",
       "asana": "Cooling and non-competitive. Forward folds, twists, gentle backbends, Chandra Namaskar. Practise at 70-80% of capacity. Avoid hot rooms and peak-pose chasing",
       "pranayama": "Sheetali, Sheetkari, Chandra Bhedana, Nadi Shodhana. Cooling, soft breath. Avoid excess Bhastrika, especially in summer",
       "meditation": "Heart-centred practices: Maitri (loving-kindness), gratitude, open-awareness. Surrender over achievement",
@@ -51,6 +65,18 @@
         {
           "id": "lad2002",
           "claim": "pitta_sharp_and_spreading"
+        },
+        {
+          "id": "svobodalife1992",
+          "claim": "day_night_cycle"
+        },
+        {
+          "id": "svobodalife1992",
+          "claim": "seasonal_cycle_temperate"
+        },
+        {
+          "id": "svobodalife1992",
+          "claim": "age_cycle"
         }
       ]
     },
@@ -64,6 +90,7 @@
       "in_balance": "Calm, loving, patient, loyal, strong, steady, excellent memory, great endurance",
       "out_of_balance": "Lethargy, oversleeping, weight gain, congestion, possessiveness, resistance to change, low mood",
       "increased_by": "Cold and damp weather, heavy or sweet food, daytime sleep, inactivity. Kapha time: 6-10 a.m. and p.m. Life stage: childhood. Season: late winter and spring (Vasanta)",
+      "cycles": "Kapha is strongest from dawn to mid-morning and in the first hours after dusk, and from childhood until about thirty. In a temperate climate Kapha builds up through winter and is aggravated in spring, matching the timing above (Svoboda, Ayurveda: Life, Health and Longevity, ch.4).",
       "asana": "Energising, warming and dynamic. Surya Namaskar at pace, standing poses, backbends, inversions, twists. Short holds, more repetitions. Practise early morning",
       "pranayama": "Kapalabhati, Bhastrika, Surya Bhedana, strong Ujjayi. Stimulating, heating breath",
       "meditation": "Active or eyes-open practices: Trataka, walking meditation, chanting. Keep the spine upright to prevent drowsiness",
@@ -77,6 +104,18 @@
         {
           "id": "lad2002",
           "claim": "kapha_soft_sticky_static"
+        },
+        {
+          "id": "svobodalife1992",
+          "claim": "day_night_cycle"
+        },
+        {
+          "id": "svobodalife1992",
+          "claim": "seasonal_cycle_temperate"
+        },
+        {
+          "id": "svobodalife1992",
+          "claim": "age_cycle"
         }
       ]
     }
@@ -153,11 +192,11 @@
   },
   "further_sources": {
     "mind_and_daily_life": "Robert Svoboda, Prakriti: Your Ayurvedic Constitution (revised 2nd ed.): read in full for ch.2's constitutional summaries and dual-dosha temperament; see src/lib/knowledge/svoboda.json. Now sourcing the dosha and dual-constitution descriptions above.",
-    "imbalance": "Vasant Lad, Ayurveda: The Science of Self-Healing (Lotus Press, 1984): how doshas go out of balance (Vikriti) and general principles for restoring it. Still pending - a different Lad book (see lad_attributes below) was sourced instead this session; see svoboda_life for the classical staging of imbalance in the meantime.",
-    "svoboda_life": "Robert E. Svoboda, Ayurveda: Life, Health and Longevity (Arkana/Penguin, 1992), ch.6 'Pathology': read in full; see src/lib/knowledge/svoboda-life.json. Sources vikriti_context below - the classical six-stage model for how a dosha imbalance develops, and why catching it early (Accumulation) is easiest to correct.",
+    "imbalance": "Vasant Lad, Ayurveda: The Science of Self-Healing (Lotus Press, 1984) was the original pick for how doshas go out of balance and how balance is restored. It was never available, and is no longer needed: Svoboda's Ayurveda: Life, Health and Longevity covers the same ground (ch.6 for how imbalance develops, ch.4 for the daily, seasonal and age cycles) - see svoboda_life.",
+    "svoboda_life": "Robert E. Svoboda, Ayurveda: Life, Health and Longevity (Arkana/Penguin, 1992), ch.4 'Routine' and ch.6 'Pathology': read in full; see src/lib/knowledge/svoboda-life.json. Sources vikriti_context (the six-stage model, and seasonal junctions) and each dosha's 'cycles' text, which corroborates the workbook's increased_by timings and gives the temperate-climate seasons. The asana, pranayama and meditation suggestions remain the workbook's own: they are yoga-teaching guidance, which no Ayurveda text here covers.",
     "lad_attributes": "Vasant Lad, Textbook of Ayurveda, Volume One: Fundamental Principles (The Ayurvedic Press, 2002), ch.2, Tables 5-7 (the Attributes of the Vata/Pitta/Kapha Individual): read in full; see src/lib/knowledge/lad-textbook.json. A different book from the 1984 one still pending above. Sources the new attribute_signature field on each dosha below, cited by claim id.",
-    "status": "Svoboda (Prakriti): read. Svoboda (Life, Health and Longevity, ch.6): read. Lad (Textbook of Ayurveda, ch.2 attribute tables): read. Lad (Science of Self-Healing, 1984, imbalance): still pending."
+    "status": "Svoboda (Prakriti): read. Svoboda (Life, Health and Longevity, ch.4 and ch.6): read. Lad (Textbook of Ayurveda, ch.2 attribute tables): read. Nothing pending."
   },
   "constitution_note": "Robert Svoboda is explicit on one point worth keeping in mind for retakes: the constitution itself doesn't change, but how accurately you can see your own doesn't stay fixed either. Someone can retake this test months later and get a more accurate answer, not because their nature shifted, but because their self-understanding did. Constitutional typing is meant to be a foundation for building self-understanding, not a label to be confined by.",
-  "vikriti_context": "Ayurvedic pathology describes every imbalance as following the same six-stage path: Accumulation, Aggravation, Overflow, Location, Manifestation and Specialization (Svoboda, Ayurveda: Life, Health and Longevity, ch.6). A dosha is easiest to correct at the first stage, simply built up in its home organ with only mild symptoms - which is exactly the window this Vikriti check aims for. Only from Location onward, once a dosha has travelled and settled somewhere weakened, does a specific illness begin to take shape."
+  "vikriti_context": "Ayurvedic pathology describes every imbalance as following the same six-stage path: Accumulation, Aggravation, Overflow, Location, Manifestation and Specialization (Svoboda, Ayurveda: Life, Health and Longevity, ch.6). A dosha is easiest to correct at the first stage, simply built up in its home organ with only mild symptoms - which is exactly the window this Vikriti check aims for. Only from Location onward, once a dosha has travelled and settled somewhere weakened, does a specific illness begin to take shape. The same texts note that imbalance arises most at the junctions of cycles, above all the change of season, so checking in as each season turns is worthwhile (ch.4)."
 }

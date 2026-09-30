@@ -319,7 +319,7 @@ function analyseVikriti(
 
   for (const d of elevated) {
     const g: DoshaGuideEntry = doshaGuide.doshas[d];
-    sections.push({ title: `What raises ${g.label}`, paragraphs: [g.increased_by] });
+    sections.push({ title: `What raises ${g.label}`, paragraphs: [g.increased_by, g.cycles] });
     sections.push(practiceSection(d, `To settle ${g.label}`));
   }
 
