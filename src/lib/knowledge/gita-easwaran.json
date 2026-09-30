@@ -1,0 +1,38 @@
+{
+  "source": {
+    "id": "easwaran2007",
+    "author": "Eknath Easwaran (trans.)",
+    "title": "The Bhagavad Gita",
+    "publisher": "Nilgiri Press",
+    "year": 2007,
+    "kind": "classical"
+  },
+  "method": "Read chapters 14 ('The Forces of Evolution'), 17 ('The Power of Faith') and 18 ('Freedom & Renunciation') in full, including Easwaran's chapter introductions (PDF with page numbers, cited by page). These are the chapters that define and apply the three gunas; the rest of the Gita's eighteen chapters weren't needed for Nimai's guna content, which is the only place in the app that draws on this text. Guna.json already carried a paraphrase of chapters 14 and 17 written before this translation was in hand — that paraphrase is confirmed accurate against the real text (see guna.json's sources.status) and chapter 18's happiness-by-guna passage is added as new content.",
+  "claims": [
+    {
+      "id": "gunas_defined",
+      "pages": "ch.14, p.224-225 (14.5-14.9)",
+      "paraphrase": "The three gunas — sattva, rajas and tamas — arise from prakriti (nature/matter) and are what bind the eternal Self to the body. Sattva, pure and luminous, binds through attachment to happiness and to wisdom itself. Rajas, born of craving and attachment, binds through compulsive action. Tamas, born of ignorance, binds through heedlessness, indolence and sleep. Taken together: sattva binds to happiness, rajas to action, and tamas — by distorting understanding — to delusion."
+    },
+    {
+      "id": "gunas_qualities",
+      "pages": "ch.14, p.225-226 (14.10-14.18)",
+      "paraphrase": "No mixture of the three gunas is fixed — one predominates only as the others are temporarily suppressed, and the balance keeps shifting. When sattva predominates, understanding and clarity show through every part of a person. When rajas predominates, a person runs after selfish and greedy ends, driven by restlessness and desire. When tamas predominates, a person lives in darkness — slothful, confused, easily deluded. Sattva's fruit is understanding, rajas's is greed, tamas's is confusion and ignorance; those who live mostly in sattva rise, those in rajas stay where they are, and those immersed in tamas sink."
+    },
+    {
+      "id": "transcending_the_gunas",
+      "pages": "ch.14, p.226-227 (14.19-14.26)",
+      "paraphrase": "Whoever sees clearly that all action is the work of the gunas, and knows what stands above them, moves beyond their hold entirely. Such a person is unmoved by sattva's harmony, rajas's activity or tamas's delusion — not craving these states when they're active, not averse to their absence — and remains steady through pleasure and pain, praise and blame alike. The text frames this not as suppressing the gunas but as no longer being identified with whichever one happens to be active."
+    },
+    {
+      "id": "food_by_guna",
+      "pages": "ch.17, p.247 (17.8-17.10)",
+      "paraphrase": "Sattvic people are drawn to food that is mild, flavorful, substantial and nourishing — food that supports health, strength, cheerfulness and longevity. Rajasic people are drawn to food that is salty, bitter, hot, sour or spicy — food that tends toward pain, discomfort and disease. Tamasic people are drawn to food that is overcooked, stale, left over or otherwise impure — food that has lost its taste and nutritional value."
+    },
+    {
+      "id": "happiness_by_guna",
+      "pages": "ch.18, p.260-261 (18.36-18.39)",
+      "paraphrase": "The text also describes three kinds of happiness. Sattvic happiness feels like poison at first and nectar in the end — it's the fruit of sustained effort and comes from a mind that has settled into peace with itself. Rajasic happiness is the reverse: pleasure from the senses that feels like nectar at first but turns bitter in the end. Tamasic happiness comes from sleep, indolence and intoxication, and is described as a delusion from beginning to end."
+    }
+  ]
+}

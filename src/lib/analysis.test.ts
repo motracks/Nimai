@@ -21,6 +21,7 @@ import attachedKb from "./knowledge/attached.json";
 import handbookKb from "./knowledge/handbook-attachment.json";
 import pooleHellerKb from "./knowledge/poole-heller.json";
 import johnsonKb from "./knowledge/johnson-hold-me-tight.json";
+import gitaKb from "./knowledge/gita-easwaran.json";
 import { INSTRUMENTS, type InstrumentKey } from "./instruments";
 
 type Item = { id: string; dimension: string; reverse?: boolean };
@@ -90,6 +91,12 @@ describe("per-test analysis", () => {
     const a = analyse(person.guna!)!;
     expect(a.sections[0].paragraphs).toEqual([gunaContent.gunas.TAM.leads, gunaContent.gunas.TAM.mental_type]);
     expect(a.sections[2].items).toContain(gunaContent.three_stages.tamas_to_rajas);
+  });
+
+  it("Guna's Bhagavad Gita section includes the happiness-by-guna verse (ch.18)", () => {
+    const a = analyse(person.guna!)!;
+    const gita = a.sections.find((s) => s.title === "From the Bhagavad Gita");
+    expect(gita?.items?.some((i) => i.startsWith("18.39"))).toBe(true);
   });
 
   it("attachment growth notes cite Mikulincer & Shaver by page", () => {
@@ -243,7 +250,7 @@ describe("sourced content stays honest", () => {
   });
 
   it("every knowledge-file claim carries a page reference", () => {
-    for (const file of [harnessKb, mikulincerKb, frawleyKb, nettleKb, svobodaKb, attachedKb, handbookKb, pooleHellerKb, johnsonKb]) {
+    for (const file of [harnessKb, mikulincerKb, frawleyKb, nettleKb, svobodaKb, attachedKb, handbookKb, pooleHellerKb, johnsonKb, gitaKb]) {
       const claims = "claims" in file ? file.claims : Object.values(file.entries);
       for (const c of claims as { pages?: string }[]) {
         expect(c.pages, JSON.stringify(c).slice(0, 60)).toMatch(/\d/);
