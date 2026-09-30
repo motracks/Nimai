@@ -74,6 +74,14 @@
       "year": 2019,
       "kind": "practitioner",
       "status": "read in full"
+    },
+    "johnson2008": {
+      "author": "Sue Johnson",
+      "title": "Hold Me Tight: Seven Conversations for a Lifetime of Love",
+      "publisher": "Little, Brown Spark",
+      "year": 2008,
+      "kind": "practitioner",
+      "status": "read in full"
     }
   }
 }

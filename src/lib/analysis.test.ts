@@ -20,6 +20,7 @@ import svobodaKb from "./knowledge/svoboda.json";
 import attachedKb from "./knowledge/attached.json";
 import handbookKb from "./knowledge/handbook-attachment.json";
 import pooleHellerKb from "./knowledge/poole-heller.json";
+import johnsonKb from "./knowledge/johnson-hold-me-tight.json";
 import { INSTRUMENTS, type InstrumentKey } from "./instruments";
 
 type Item = { id: string; dimension: string; reverse?: boolean };
@@ -110,6 +111,13 @@ describe("per-test analysis", () => {
     const changes = a.sections.find((s) => s.title === "It can change");
     expect(changes?.paragraphs?.[1]).toMatch(/\.90/);
     expect(changes?.paragraphs?.[1]).toMatch(/Handbook of Attachment, ch\.27/);
+  });
+
+  it("Anxious-preoccupied's in_practice cites Sue Johnson's Protest Polka", () => {
+    const a = analyse(person.ecrr!)!;
+    const inPractice = a.sections.find((s) => s.title === "In practice");
+    expect(inPractice?.paragraphs?.[0]).toMatch(/Protest Polka/);
+    expect(inPractice?.paragraphs?.[0]).toMatch(/Hold Me Tight, Conversation 1/);
   });
 
   it("Fearful-avoidant's combined strategy note cites Poole Heller's window of tolerance", () => {
@@ -235,7 +243,7 @@ describe("sourced content stays honest", () => {
   });
 
   it("every knowledge-file claim carries a page reference", () => {
-    for (const file of [harnessKb, mikulincerKb, frawleyKb, nettleKb, svobodaKb, attachedKb, handbookKb, pooleHellerKb]) {
+    for (const file of [harnessKb, mikulincerKb, frawleyKb, nettleKb, svobodaKb, attachedKb, handbookKb, pooleHellerKb, johnsonKb]) {
       const claims = "claims" in file ? file.claims : Object.values(file.entries);
       for (const c of claims as { pages?: string }[]) {
         expect(c.pages, JSON.stringify(c).slice(0, 60)).toMatch(/\d/);

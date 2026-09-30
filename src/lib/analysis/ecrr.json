@@ -5,6 +5,7 @@
     "practical_tips": "Amir Levine & Rachel Heller, Attached (2010). Read in full; see src/lib/knowledge/attached.json. Its fixed-type framing of the three styles and its harsher tone toward avoidance are deliberately not adopted — the dimensional, changeable model above stays primary. What's used is narrower: its vocabulary for concrete behaviors (protest behavior, activating/deactivating strategies, the dependency paradox) and its 'effective communication' practice, cited by chapter.",
     "measurement": "Judith A. Crowell, R. Chris Fraley & Glenn I. Roisman, 'Measurement of Individual Differences in Adult Attachment', ch.27 in Cassidy & Shaver (eds.), Handbook of Attachment (3rd ed., Guilford, 2016). Read in full; see src/lib/knowledge/handbook-attachment.json. This is the field's own review of the ECR-R's psychometrics (test-retest stability, relation to the Big Five) — used for the measurement caveat below, cited by chapter section.",
     "somatic": "Diane Poole Heller, The Power of Attachment (Sounds True, 2019). Read in full; see src/lib/knowledge/poole-heller.json. Her four-label model (secure/avoidant/ambivalent/disorganized) isn't adopted — the dimensional model stays primary, and her 'disorganized' is read as this app's Fearful-avoidant. What's used is her body-based framing (window of tolerance, self- vs. co-regulation) and a concrete grounding exercise, cited by chapter.",
+    "couples": "Sue Johnson, Hold Me Tight (Little, Brown Spark, 2008). Read in full; see src/lib/knowledge/johnson-hold-me-tight.json. This is a couples-therapy book, so only one thing is used from it: her 'Demon Dialogues' — the three recurring conflict cycles (Protest Polka, Find the Bad Guy, Freeze and Flee) — as a way of naming the interaction pattern each ECR-R style tends toward with a partner, and her reframe that the cycle, not either partner, is the real problem. Cited by Conversation and section.",
     "status": "Verified against the full text."
   },
   "patterns": {
@@ -13,19 +14,21 @@
       "growth": [
         "Keep doing what works: saying what you need directly and trusting the answer.",
         "Your steadiness can help a less secure partner feel safe; patience with their worry or distance goes a long way.",
+        "If a fight starts to repeat itself, naming the pattern out loud together — 'we're doing this dance again' — usually works better than either of you trying to win the round (Sue Johnson, Hold Me Tight, Conversation 1).",
         "Security isn't fixed: long stress or a painful loss can shake it, and that is normal."
       ]
     },
     "Anxious-preoccupied": {
-      "in_practice": "Closeness matters deeply to you, and when a partner seems distant your mind fills the gap with worry. You may seek reassurance, or read small signs as big ones.",
+      "in_practice": "Closeness matters deeply to you, and when a partner seems distant your mind fills the gap with worry. You may seek reassurance, or read small signs as big ones. With a partner who tends to withdraw under pressure, this often becomes what therapist Sue Johnson calls the Protest Polka: you reach out more urgently, they retreat further, and each response confirms the other's fear (Hold Me Tight, Conversation 1).",
       "growth": [
         "Notice the moment worry starts telling a story, and check the facts with your partner before acting on it.",
         "When you catch yourself hinting, testing or calling one more time rather than just asking — that pull is what Levine & Heller call protest behavior (Attached, ch.1). Naming what you actually want plainly, in the moment, works better than the indirect version.",
+        "The criticism or urgency underneath is usually a fear of not mattering, not a verdict on your partner's character — and naming that fear directly tends to land better than the protest does (Hold Me Tight, Conversation 1).",
         "Build steadiness outside the relationship too: friends, practice, routine and time that is just yours."
       ]
     },
     "Dismissive-avoidant": {
-      "in_practice": "You value independence and handle things yourself. When someone wants more closeness than feels comfortable, you may pull back, go quiet or get busy.",
+      "in_practice": "You value independence and handle things yourself. When someone wants more closeness than feels comfortable, you may pull back, go quiet or get busy. With a partner who pursues when distance grows, this is often the other half of the Protest Polka: their pursuit can feel like pressure, so you withdraw further, which only makes them pursue harder (Hold Me Tight, Conversation 1).",
       "growth": [
         "Notice when you pull away as closeness grows, and name it rather than disappear.",
         "If you can feel a need for space building, say so as a fact about yourself before you act on it, rather than after — that one step tends to lower a partner's worry and the pursuit that follows (Attached, ch.11).",
@@ -37,6 +40,7 @@
       "growth": [
         "Both the wish for closeness and the caution make sense; notice which one is active in the moment.",
         "When discomfort rises with a partner, try locating it in your body before reacting to it — where it sits, whether it moves — and consider that it may be your attachment history surfacing more than something about this moment (Power of Attachment, ch.5, Investigating Discomfort).",
+        "If a relationship has gone quiet on both sides — neither of you reaching out anymore — that's usually not calm but exhaustion; Sue Johnson calls it Freeze and Flee, and considers it the hardest of the recurring patterns to recover from precisely because it looks peaceful (Hold Me Tight, Conversation 1).",
         "Go slowly: small, consistent experiences of safety do more than big leaps. Both learning to calm yourself and learning to be calmed by someone you trust matter here — this pattern often needs practice at both.",
         "This pattern often softens with a therapist's support, and it is worth considering."
       ]
