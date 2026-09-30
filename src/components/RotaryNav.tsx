@@ -8,13 +8,15 @@ interface DialItem {
   label: string;
   fullLabel: string;
   href: string;
+  paths: string[];
   complete: boolean;
 }
 
 // A rotating compass dial. Only the upper half of the ring is shown. The items
-// are spaced evenly around the full circle, so with five items exactly three
-// (previous / current / next) are always on the visible half and the dial wraps
-// around forever. The terracotta needle at 12 o'clock is fixed; the lotus is
+// are spaced evenly around the full circle, so exactly three (previous /
+// current / next) are always on the visible half and the dial wraps around
+// forever. Tapping an item turns it under the needle and opens its page; the
+// dial also turns to follow whatever page is open. The terracotta needle at 12 o'clock is fixed; the lotus is
 // the hub and the home button.
 const NAV_HEIGHT = 210;
 const VB_W = 400;
@@ -43,10 +45,13 @@ export default function RotaryNav({ items }: { items: DialItem[] }) {
   const n = items.length;
   const STEP = 360 / n;
 
-  const activeIndex = items.findIndex((item) => item.href === pathname);
+  const activeIndex = items.findIndex((item) => item.href === pathname || item.paths.includes(pathname));
   const initialIndex = activeIndex >= 0 ? activeIndex : Math.floor(n / 2);
   const [rot, setRot] = useState(-initialIndex * STEP);
   const rotRef = useRef(rot);
+  // Where the dial is heading (equals rotRef when at rest), so a route change
+  // arriving mid-turn doesn't restart the turn from a half-way position.
+  const targetRef = useRef(rot);
   const raf = useRef<number | null>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const gesture = useRef<{ startX: number; startRot: number; moved: boolean } | null>(null);
@@ -62,14 +67,9 @@ export default function RotaryNav({ items }: { items: DialItem[] }) {
 
   useEffect(() => {
     if (activeIndex < 0) return;
-    const liveIndexNow = Math.round(-rotRef.current / STEP);
-    const currentNow = mod(liveIndexNow, n);
-    if (currentNow === activeIndex) return;
-    let delta = mod(activeIndex - currentNow, n);
-    if (delta > n / 2) delta -= n;
-    animateTo(-(liveIndexNow + delta) * STEP);
+    turnTo(activeIndex);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname]);
+  }, [pathname, activeIndex]);
 
   function stopAnimation() {
     if (raf.current !== null) cancelAnimationFrame(raf.current);
@@ -81,8 +81,18 @@ export default function RotaryNav({ items }: { items: DialItem[] }) {
     setRot(value);
   }
 
+  // Turn the shortest way round until item i sits under the needle.
+  function turnTo(i: number) {
+    const targetIndex = Math.round(-targetRef.current / STEP);
+    let delta = mod(i - mod(targetIndex, n), n);
+    if (delta > n / 2) delta -= n;
+    if (delta === 0 && raf.current === null && rotRef.current === targetRef.current) return;
+    animateTo(-(targetIndex + delta) * STEP);
+  }
+
   function animateTo(target: number) {
     stopAnimation();
+    targetRef.current = target;
     const tick = () => {
       const diff = target - rotRef.current;
       if (Math.abs(diff) < 0.05) {
@@ -101,14 +111,8 @@ export default function RotaryNav({ items }: { items: DialItem[] }) {
 
   function select(i: number) {
     if (suppressClick.current) return;
-    if (i === current) {
-      router.push(items[i].href);
-      return;
-    }
-    // Shortest way round to reach item i.
-    let delta = mod(i - current, n);
-    if (delta > n / 2) delta -= n;
-    animateTo(-(liveIndex + delta) * STEP);
+    turnTo(i);
+    router.push(items[i].href);
   }
 
   function step(delta: number) {
@@ -117,6 +121,7 @@ export default function RotaryNav({ items }: { items: DialItem[] }) {
 
   function onPointerDown(e: React.PointerEvent<HTMLDivElement>) {
     stopAnimation();
+    targetRef.current = rotRef.current;
     gesture.current = { startX: e.clientX, startRot: rotRef.current, moved: false };
   }
 
@@ -139,7 +144,12 @@ export default function RotaryNav({ items }: { items: DialItem[] }) {
   function endGesture(e: React.PointerEvent<HTMLDivElement>) {
     const g = gesture.current;
     gesture.current = null;
-    if (!g?.moved) return;
+    if (!g?.moved) {
+      // A tap: settle on the nearest item in case it interrupted a turn. A tap
+      // on a label then turns on to that label from here.
+      animateTo(-Math.round(-rotRef.current / STEP) * STEP);
+      return;
+    }
     if (e.currentTarget.hasPointerCapture(e.pointerId)) e.currentTarget.releasePointerCapture(e.pointerId);
     suppressClick.current = true;
     setTimeout(() => (suppressClick.current = false), 0);
@@ -257,7 +267,7 @@ export default function RotaryNav({ items }: { items: DialItem[] }) {
               key={item.key}
               role="button"
               tabIndex={opacity > 0.1 ? 0 : -1}
-              aria-label={i === current ? `Open ${item.fullLabel}` : `Turn to ${item.fullLabel}`}
+              aria-label={`Open ${item.fullLabel}`}
               aria-current={i === current ? "true" : undefined}
               style={{ cursor: "pointer", outline: "none", opacity, pointerEvents: opacity > 0.1 ? "auto" : "none" }}
               onClick={() => select(i)}
@@ -278,17 +288,19 @@ export default function RotaryNav({ items }: { items: DialItem[] }) {
               >
                 {item.label}
               </text>
-              <text
-                x={x}
-                y={y + 22}
-                textAnchor="middle"
-                fill={item.complete ? "var(--green-text)" : "var(--ink-dim)"}
-                fontSize={9.5}
-                letterSpacing={1.8}
-                style={{ fontFamily: '"Jost", sans-serif', opacity: Math.max(0, 1 - 2 * d) }}
-              >
-                {item.complete ? "COMPLETE" : "NOT STARTED"}
-              </text>
+              {item.complete && (
+                <text
+                  x={x}
+                  y={y + 22}
+                  textAnchor="middle"
+                  fill="var(--green-text)"
+                  fontSize={9.5}
+                  letterSpacing={1.8}
+                  style={{ fontFamily: '"Jost", sans-serif', opacity: Math.max(0, 1 - 2 * d) }}
+                >
+                  COMPLETE
+                </text>
+              )}
             </g>
           ))}
 
