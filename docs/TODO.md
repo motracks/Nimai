@@ -65,6 +65,43 @@ Open:
       Resend for email, VAPID keys for push) plus a scheduled job.
       **(you)** Pick the channel if the calendar file isn't enough.
 
+### [ ] Reminders only when they matter
+Feedback: a reminder for a test that's a month away is noise.
+- [ ] Drop the "coming up in the next 30 days" reminders. Show a retake
+      only from **5 days before** it's due (`src/lib/reminders.ts`, now
+      `30 * DAY_MS`).
+- [ ] Placement by urgency on the home page (`src/app/page.tsx`):
+      - due, or 5 days or less away → a card **at the top**;
+      - anything further off → a quiet line **at the bottom**. Nothing
+        sits near the top before the 5-day mark.
+- [ ] Season-change Vikriti prompts follow the same rule: top only within
+      5 days of the equinox/solstice or while it's due, otherwise the
+      bottom.
+- [ ] The calendar file (`/reminders.ics`) keeps all dates; the alert
+      fires on the day.
+
+### [ ] Explain the Vedic chart
+Right now the chart shows positions with no reading.
+- What we have: Harness, *The Nakshatras* (1999), already paraphrased in
+  `src/lib/knowledge/harness-nakshatras.json` for all 27 nakshatras
+  (Moon traits and cautions). It isn't shown anywhere yet; it's only
+  checked by the tests. That's enough for a Moon-nakshatra reading now.
+- What's missing: a book for **signs (rashis), houses and planets**.
+  Candidates **(you)**: Frawley, *Astrology of the Seers*; Hart de Fouw &
+  Robert Svoboda, *Light on Life*; or Komilla Sutton, *The Essentials of
+  Vedic Astrology*. Upload one and I'll paraphrase it with page citations,
+  the same way as the other books.
+- [ ] **General analysis** on the chart page: ascendant (only when the
+      birth time is reliable), Moon sign, Moon nakshatra (Harness), and a
+      short overall reading. Same rules as elsewhere: no predictions of
+      timing, marriage or health.
+- [ ] **Click a sign → deeper page** for that sign: its element, quality
+      and ruler; what it means in this chart (which planets sit there,
+      which house it is); cited paraphrase.
+- [ ] Same for each nakshatra (Harness), so the Moon's nakshatra links to
+      its full entry.
+- [ ] Add the chart to the needs model's Nature layer once it has content.
+
 ### [x] Progress over months
 Done: each result card shows an "Over time" section once there are two or
 more comparable results.
