@@ -98,6 +98,14 @@
       "year": 1992,
       "kind": "practitioner",
       "status": "read ch.6, Pathology (the six-stage disease model)"
+    },
+    "mccraecosta2003": {
+      "author": "Robert R. McCrae & Paul T. Costa Jr.",
+      "title": "Personality in Adulthood: A Five-Factor Theory Perspective (2nd ed.)",
+      "publisher": "Guilford",
+      "year": 2003,
+      "kind": "research",
+      "status": "read ch.4, ch.6 (stability of personality across adulthood)"
     }
   }
 }

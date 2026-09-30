@@ -24,6 +24,7 @@ import johnsonKb from "./knowledge/johnson-hold-me-tight.json";
 import gitaKb from "./knowledge/gita-easwaran.json";
 import littleKb from "./knowledge/little.json";
 import svobodaLifeKb from "./knowledge/svoboda-life.json";
+import mccraeCostaKb from "./knowledge/mccrae-costa.json";
 import { INSTRUMENTS, type InstrumentKey } from "./instruments";
 
 type Item = { id: string; dimension: string; reverse?: boolean };
@@ -68,6 +69,8 @@ describe("per-test analysis", () => {
     expect(change?.paragraphs?.[0]).toMatch(/ch\.8/);
     expect(change?.paragraphs?.[1]).toMatch(/free trait/);
     expect(change?.paragraphs?.[1]).toMatch(/Me, Myself, and Us, ch\.3/);
+    expect(change?.paragraphs?.[2]).toMatch(/age 30/);
+    expect(change?.paragraphs?.[2]).toMatch(/McCrae & Costa/);
   });
 
   it("ECR-R explains the pattern and offers growth steps", () => {
@@ -274,6 +277,7 @@ describe("sourced content stays honest", () => {
       gitaKb,
       littleKb,
       svobodaLifeKb,
+      mccraeCostaKb,
     ]) {
       const claims = "claims" in file ? file.claims : Object.values(file.entries);
       for (const c of claims as { pages?: string }[]) {

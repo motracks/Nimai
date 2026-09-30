@@ -1,0 +1,28 @@
+{
+  "source": {
+    "id": "mccraecosta2003",
+    "author": "Robert R. McCrae & Paul T. Costa Jr.",
+    "title": "Personality in Adulthood: A Five-Factor Theory Perspective (2nd ed.)",
+    "publisher": "Guilford Press",
+    "year": 2003,
+    "kind": "research"
+  },
+  "method": "Read ch.4 ('The Search for Growth or Decline in Personality') and ch.6 ('The Course of Personality Development in the Individual') in full (PDF with page numbers, cited by the book's own printed page number). McCrae and Costa are the creators of the NEO-PI and the Five-Factor Model instrument Nettle's book (already sourced) discusses from an evolutionary angle; this book is their own decades-long empirical case for trait stability across adulthood, which adds hard numbers and a direct rebuttal of aging stereotypes that Nettle's book doesn't cover.",
+  "claims": [
+    {
+      "id": "stability_after_30",
+      "pages": "ch.4, p.81 (Implications: Debunking Some Myths of Aging)",
+      "paraphrase": "The authors' headline finding across their research program is that, after age 30, mean levels of personality traits change very little. They're explicit that this isn't only a neutral finding: since there's no significant average decline in personality with age either, it counts as reassuring news about aging, not just an absence of growth."
+    },
+    {
+      "id": "debunking_aging_myths",
+      "pages": "ch.4, p.81-82 (Implications: Debunking Some Myths of Aging)",
+      "paraphrase": "The authors push back directly on common aging stereotypes: there's no evidence that people become more rigid, more socially withdrawn, more emotionally fragile, or more fearful as they age. Real declines do occur with age in physical strength, sexual interest and certain intellectual abilities, but personality itself isn't one of the things that reliably declines — older adults are, on average, not much different in personality from any other adults."
+    },
+    {
+      "id": "long_term_stability_coefficients",
+      "pages": "ch.6, p.112-113 (The Time Course of Stability)",
+      "paraphrase": "Retest stability is strong but not perfect, and it erodes gradually the longer the gap between tests. In the authors' own longitudinal data, the median 12-year stability coefficient was .74, declining to .65 across 24 years — still described as 'amazingly high' but clearly lower than over a shorter interval. A separate study found similar erosion: a median coefficient of .50 across 13 years, dropping to .40 across a full 30 years. The pattern holds across traits: real, if gradual, drift over long stretches of adult life, layered on top of a strongly stable core."
+    }
+  ]
+}
