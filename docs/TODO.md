@@ -131,11 +131,13 @@ Done: a "Today" card at the top of the home page.
 - [ ] Always show the contraindications and a "not a substitute for a
       teacher" note.
 
-### [ ] Short daily or weekly check-in
-Three or four quick questions (sleep, digestion, energy, mood) between full
-retakes. More data points, little effort, and it feeds the "today" card and
-the trends. It must not be mistaken for a Vikriti result: store it
-separately and label it clearly.
+### [x] Short check-in between retakes
+Done: `/checkin`, four quick questions (sleep, digestion, mood, energy) in the
+Vikriti check's own wording plus a "fine" option each. Stored in its own
+`checkins` table and never scored as a Vikriti. A check-in under a week old
+and newer than the last Vikriti feeds the Today card (below a raised
+Vikriti). Recent check-ins are listed on the page. Needs the migration
+applied; until then the page says it isn't set up yet.
 
 ---
 

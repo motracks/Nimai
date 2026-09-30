@@ -4,6 +4,7 @@ import { levelOf } from "@/lib/analysis";
 import { seasonFor, SEASON_LABEL, type Hemisphere, type Season } from "@/lib/context";
 import type { InstrumentHistory } from "@/lib/results";
 import type { InstrumentKey } from "@/lib/instruments";
+import { checkinLean, type CheckinAnswers } from "@/lib/checkin";
 
 type Dosha = "VAT" | "PIT" | "KAP";
 const NAME: Record<Dosha, string> = { VAT: "Vata", PIT: "Pitta", KAP: "Kapha" };
@@ -32,7 +33,14 @@ function leading(scores: Record<string, number>): Dosha {
 // Current state outranks nature: a raised Vikriti comes first, then the
 // season's dosha when it matches the constitution, then the constitution,
 // then the season alone.
-export function todayFocus(h: Histories, now = new Date()): TodayFocus | null {
+// A check-in counts for a week, and only when it's newer than the last Vikriti.
+const CHECKIN_DAYS = 7;
+
+export function todayFocus(
+  h: Histories,
+  now = new Date(),
+  checkin: { completedAt: string; answers: CheckinAnswers } | null = null,
+): TodayFocus | null {
   const vikriti = h.vikriti?.latest.scored ?? null;
   const prakriti = h.prakriti?.latest.scored ?? null;
   const hemisphere: Hemisphere =
@@ -46,9 +54,18 @@ export function todayFocus(h: Histories, now = new Date()): TodayFocus | null {
   const raised = vikriti
     ? (["VAT", "PIT", "KAP"] as Dosha[]).filter((d) => levelOf("vikriti", vikriti, d) === "high").sort((a, b) => vikriti.raw[b] - vikriti.raw[a])
     : [];
+  const checkinAt = checkin ? new Date(checkin.completedAt).getTime() : 0;
+  const vikritiAt = h.vikriti ? new Date(h.vikriti.latest.completedAt).getTime() : 0;
+  const lean =
+    checkin && checkinAt > vikritiAt && now.getTime() - checkinAt <= CHECKIN_DAYS * 24 * 60 * 60 * 1000
+      ? checkinLean(checkin.answers)
+      : null;
   if (raised.length) {
     dosha = raised[0];
     reason = `Your latest Vikriti check shows ${NAME[dosha]} raised, so settling it comes first.`;
+  } else if (lean) {
+    dosha = lean.dosha;
+    reason = `Your check-in this week leans ${lean.name} (${lean.count} of 4 answers). It's a lighter signal than a full Vikriti check, but it points here.`;
   } else if (constitution && constitution === seasonDosha) {
     dosha = constitution;
     reason = `It's ${SEASON_LABEL[season].toLowerCase()}, ${NAME[dosha]}'s season, and your constitution leans ${NAME[dosha]}: a good time to keep it steady.`;

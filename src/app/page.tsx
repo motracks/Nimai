@@ -5,6 +5,7 @@ import { buildReminders } from "@/lib/reminders";
 import RemindersCard from "@/components/RemindersCard";
 import TodayCard from "@/components/TodayCard";
 import { todayFocus } from "@/lib/today";
+import { recentCheckins } from "@/lib/checkin-server";
 import { INSTRUMENTS, type InstrumentKey } from "@/lib/instruments";
 import { InstrumentResultCard, VedicChartCard } from "@/components/ResultCards";
 import { KIND_TEXT, RESULT_COLUMNS, buildHistories, vikritiVsPrakriti, type ResultRow } from "@/lib/results";
@@ -21,7 +22,7 @@ export default async function Home() {
   const { user, instruments, latestAt } = await getInstrumentStatuses();
   const completeCount = instruments.filter((i) => i.complete).length;
   const data = user && completeCount > 0 ? await loadResults() : null;
-  const focus = data ? todayFocus(data.histories) : null;
+  const focus = data ? todayFocus(data.histories, new Date(), data.checkin) : null;
 
   return (
     <main className="mx-auto max-w-xl px-8 py-16">
@@ -110,11 +111,12 @@ export default async function Home() {
 // RLS scopes both queries to the signed-in user.
 async function loadResults() {
   const supabase = await createClient();
-  const [results, vedic] = await Promise.all([
+  const [results, vedic, checkins] = await Promise.all([
     supabase.from("assessment_results").select(RESULT_COLUMNS).order("completed_at", { ascending: true }),
     supabase.from("vedic_charts").select("*").maybeSingle(),
+    recentCheckins(1),
   ]);
-  return { histories: buildHistories((results.data ?? []) as ResultRow[]), results, vedic };
+  return { histories: buildHistories((results.data ?? []) as ResultRow[]), results, vedic, checkin: checkins.rows[0] ?? null };
 }
 
 function ResultsOverview({ histories, results, vedic }: Awaited<ReturnType<typeof loadResults>>) {
