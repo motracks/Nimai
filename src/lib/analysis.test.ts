@@ -11,6 +11,7 @@ import guna_ from "./analysis/guna.json";
 const gunaContent = guna_;
 import chartNakshatras from "../../supabase/functions/vedic-chart/nakshatras.json";
 import nakshatraContent from "./analysis/nakshatras.json";
+import doshaGuideContent from "./prakriti_dosha_guide.json";
 import harnessKb from "./knowledge/harness-nakshatras.json";
 import sourceRegistry from "./knowledge/sources.json";
 import mikulincerKb from "./knowledge/mikulincer-shaver.json";
@@ -161,7 +162,8 @@ describe("per-test analysis", () => {
     const titles = a.sections.map((s) => s.title);
     expect(titles).toContain("Vata: Air and Space");
     expect(titles.some((t) => t.startsWith("Pitta") || t.startsWith("Kapha"))).toBe(false);
-    expect(a.caveats.some((c) => c.startsWith("It is a self-report screen"))).toBe(true);
+    expect(a.caveats.some((c) => c.startsWith("This is a self-report questionnaire"))).toBe(true);
+    expect(a.caveats.join(" ")).not.toMatch(/yoga teacher|student/i);
     const vataSection = a.sections.find((s) => s.title === "Vata: Air and Space");
     expect(vataSection?.paragraphs?.[1]).toMatch(/Lad, Textbook of Ayurveda, Table 5/);
   });
@@ -172,6 +174,20 @@ describe("per-test analysis", () => {
     expect(a.sections.map((s) => s.title)).toEqual(
       expect.arrayContaining(["Compared with your Prakriti", "What raises Vata", "To settle Vata"]),
     );
+  });
+
+  it("Keep in mind speaks to the reader, not a teacher, and never repeats itself", () => {
+    const v = analyse(person.vikriti!, person.prakriti!.latest.scored)!;
+    expect(v.caveats).toEqual(doshaGuideContent.keep_in_mind.vikriti);
+    const heavy = buildHistories([row("vikriti", vikriti((i) => (i < 5 ? ["VAT", "PIT"] : [])))]);
+    const r = analyse(heavy.vikriti!)!;
+    expect(r.caveats[0]).toMatch(/^Several areas are strongly elevated/);
+    expect(r.caveats.filter((c) => /doctor/.test(c))).toHaveLength(1);
+    const e = analyse(person.ecrr!)!;
+    expect(e.caveats.at(-1)).toMatch(/Handbook of Attachment, ch\.27/);
+    for (const a of [v, r, e, analyse(person.prakriti!)!]) {
+      expect(a.caveats.join(" ")).not.toMatch(/yoga teacher|student|workbook/i);
+    }
   });
 
   it("Vikriti explains why catching it now matters, citing Svoboda's six-stage model", () => {

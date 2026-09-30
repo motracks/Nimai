@@ -14,36 +14,26 @@ Status key: `[ ]` open · `[~]` partly there · `[x]` done. Items marked
 
 ## Now (small, high value)
 
-### [ ] Rework the "Keep in mind" section
-It shows every result's `caveats` (`AnalysisView.tsx`). Today that means:
-- the quality flags (fine), and
-- for Prakriti and Vikriti, all four `know_the_limits` points from the
-  Govardhan workbook. Two of them are written for **yoga teachers** ("Stay
-  within your scope. As a yoga teacher…", "Never use it to label or limit a
-  student"). They are the wrong voice for an end user, and the guide's own
-  `display_rules` say that teacher material belongs in the YTT context only.
+### [x] Rework the "Keep in mind" section
+Done: two points per test in the reader's voice (Prakriti also shows
+Svoboda's note on what a changed retake means; ECR-R gets the
+self-report vs. interview caveat from Handbook ch.27). The workbook's
+teacher points stay in the guide, marked teacher-only. The duplicate
+near-boundary note on Prakriti and the repeated "see a doctor" line on a
+Vikriti referral are gone.
 
-To do:
-- Rewrite the points for the person reading their own result. Move the
-  teacher points to a teacher-only block.
-- Show only what's relevant: quality flags first, then at most two limits for
-  this result, e.g. "a retake that differs may reflect clearer
-  self-perception" (Svoboda, `constitution_note`) for Prakriti, or
-  "self-report, not an interview-based assessment" (Handbook ch.27) for ECR-R.
-- Keep the physician-referral line wherever the Vikriti referral flag is set.
-
-### [ ] Bibliography page (long-form Quellenverzeichnis)
-Add a `/sources` page listing every book the content draws on. For each book:
-- author or translator, full title, edition, publisher, year and ISBN
-- type (classical, research, practitioner or workbook)
-- which chapters or pages were read
-- which part of the app it supports
-
-In-text citations then link to their entry. Most of this is already in
-`src/lib/knowledge/sources.json` and the `knowledge/*.json` files. Edition and
-ISBN still need filling in from each book's title page, and must not be
-guessed. The page should also explain the copyright policy: paraphrase only,
-cited by page or chapter.
+### [~] Bibliography page (long-form Quellenverzeichnis)
+Done: `/sources` lists all 16 sources grouped as classical, research,
+practitioner and course material. Each entry shows the full citation,
+the version used (PDF, epub or scan), what was read, what it's used for,
+how many cited points come from it, and where the edition details were
+read. A separate section covers the questionnaires and the chart
+calculation. Every analysis links to the page.
+- [ ] In-text citations (e.g. "Svoboda, ch.4") link to their entry.
+- [ ] **(you)** Charaka Saṃhitā (Sharma & Dash): publisher, year and ISBN
+      aren't on the scanned pages. Check the physical copy.
+- [ ] **(you)** *Attached*: only the ISBN is in our copy; confirm the
+      publisher and year from a print copy.
 
 ### [ ] Refresh `docs/rating-engine-review.md`
 Its "Status", "Open" and "Content sources" sections predate the

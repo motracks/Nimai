@@ -1,126 +1,280 @@
 {
-  "note": "Every source the app's interpretive content draws on. 'kind': classical (primary text), research (peer-reviewed or academic synthesis), practitioner (experienced teacher's book), workbook (course material). Books themselves are never stored in the repo.",
+  "note": "Every source Nimai's content draws on, and the exact version used. 'kind': classical (primary text), research (academic), practitioner (experienced teacher's book), workbook (course material). 'verified' says where the edition details came from; nothing here is guessed. The books themselves are never stored in the repo, and all content drawn from them is paraphrased and cited, never quoted.",
   "sources": {
-    "harness1999": {
-      "author": "Dennis M. Harness",
-      "title": "The Nakshatras: The Lunar Mansions of Vedic Astrology",
-      "year": 1999,
-      "kind": "practitioner",
-      "status": "read in full"
+    "easwaran2007": {
+      "author": "Eknath Easwaran (trans.)",
+      "title": "The Bhagavad Gita",
+      "edition": "2nd ed.",
+      "publisher": "Nilgiri Press, Tomales CA",
+      "year": 2007,
+      "isbn": "978-1-58638-019-9",
+      "format": "PDF",
+      "kind": "classical",
+      "read": "Ch.14 The Forces of Evolution, ch.17 The Power of Faith, ch.18 Freedom & Renunciation, with Easwaran's chapter introductions",
+      "used_for": [
+        "Guna: the three gunas, food and happiness by guna"
+      ],
+      "verified": "copyright page"
+    },
+    "sharmadash": {
+      "author": "Agniveśa; Ram Karan Sharma & Vaidya Bhagwan Dash (trans.), with commentary after Cakrapāṇi Datta's Āyurveda Dīpikā",
+      "title": "Caraka Saṃhitā: Śārīra Sthāna",
+      "edition": "standalone Śārīra Sthāna volume",
+      "publisher": null,
+      "year": null,
+      "isbn": null,
+      "format": "scanned PDF, partial OCR text",
+      "kind": "classical",
+      "read": "Śārīra Sthāna ch.4, para 34-40: doshas of body and mind, the classification of mental types",
+      "used_for": [
+        "Guna: the classical subtypes of each mental type"
+      ],
+      "verified": "publisher, year and ISBN are not on the scanned pages we have; check the physical copy"
+    },
+    "mikulincershaver2016": {
+      "author": "Mario Mikulincer & Phillip R. Shaver",
+      "title": "Attachment in Adulthood: Structure, Dynamics, and Change",
+      "edition": "2nd ed.",
+      "publisher": "Guilford Press, New York",
+      "year": 2016,
+      "isbn": "978-1-4625-2554-6",
+      "format": "PDF",
+      "kind": "research",
+      "read": "In full (705 pages)",
+      "used_for": [
+        "Attachment: the two dimensions, hyperactivating and deactivating strategies, earned security"
+      ],
+      "verified": "copyright page"
+    },
+    "cassidyshaver2016": {
+      "author": "Jude Cassidy & Phillip R. Shaver (eds.)",
+      "title": "Handbook of Attachment: Theory, Research, and Clinical Applications",
+      "edition": "3rd ed.",
+      "publisher": "Guilford Press, New York",
+      "year": 2016,
+      "isbn": "978-1-4625-2531-7 (epub)",
+      "format": "epub",
+      "kind": "research",
+      "read": "Ch.27, Crowell, Fraley & Roisman, 'Measurement of Individual Differences in Adult Attachment'",
+      "used_for": [
+        "Attachment: the ECR-R's test-retest stability, its relation to the Big Five, self-report vs. interview measures",
+        "Combined profile: evidence behind the anxiety-Neuroticism and avoidance-Agreeableness links"
+      ],
+      "verified": "copyright page"
     },
     "nettle2007": {
       "author": "Daniel Nettle",
       "title": "Personality: What Makes You the Way You Are",
-      "publisher": "Oxford University Press",
+      "edition": "1st ed.",
+      "publisher": "Oxford University Press, Oxford",
       "year": 2007,
+      "isbn": "978-0-19-921142-5",
+      "format": "PDF",
       "kind": "research",
-      "status": "read (intro + trait chapter openings/synthesis)"
+      "read": "Ch.1-8: each trait chapter, Table 4 (ch.7), and ch.8 'The Other Half' on heritability",
+      "used_for": [
+        "Big Five: what each trait is about, its costs and benefits, nature and change"
+      ],
+      "verified": "copyright page"
     },
-    "levineheller2010": {
-      "author": "Amir Levine & Rachel Heller",
-      "title": "Attached",
-      "year": 2010,
-      "kind": "practitioner",
-      "status": "read in full (protest behavior, activating/deactivating strategies, dependency paradox, effective communication)"
-    },
-    "easwaran2007": {
-      "author": "Eknath Easwaran (trans.)",
-      "title": "The Bhagavad Gita",
-      "publisher": "Nilgiri Press",
-      "year": 2007,
-      "kind": "classical",
-      "status": "read ch.14, 17, 18 (the three gunas)"
-    },
-    "frawley1996": {
-      "author": "David Frawley",
-      "title": "Ayurveda and the Mind",
-      "publisher": "Lotus Press",
-      "year": 1996,
-      "kind": "practitioner",
-      "status": "read in full"
-    },
-    "svoboda": {
-      "author": "Robert E. Svoboda",
-      "title": "Prakriti: Your Ayurvedic Constitution (rev. 2nd ed.)",
-      "kind": "practitioner",
-      "status": "read (ch.2 constitutional summaries)"
-    },
-    "govardhan": {
-      "author": "Govardhan School of Yoga",
-      "title": "Prakriti Parikshan workbook (YTT)",
-      "kind": "workbook",
-      "status": "basis of prakriti.json and prakriti_dosha_guide.json"
-    },
-    "mikulincershaver2016": {
-      "author": "Mario Mikulincer & Phillip R. Shaver",
-      "title": "Attachment in Adulthood (2nd ed.)",
-      "publisher": "Guilford",
-      "year": 2016,
+    "mccraecosta2003": {
+      "author": "Robert R. McCrae & Paul T. Costa Jr.",
+      "title": "Personality in Adulthood: A Five-Factor Theory Perspective",
+      "edition": "2nd ed.",
+      "publisher": "Guilford Press, New York",
+      "year": 2003,
+      "isbn": "1-57230-827-3 (hardcover); 1-59385-260-6 (paperback)",
+      "format": "PDF",
       "kind": "research",
-      "status": "read in full"
-    },
-    "cassidyshaver2016": {
-      "author": "Jude Cassidy & Phillip R. Shaver (eds.)",
-      "title": "Handbook of Attachment: Theory, Research, and Clinical Applications (3rd ed.)",
-      "publisher": "Guilford",
-      "year": 2016,
-      "kind": "research",
-      "status": "read ch.27, Measurement of Individual Differences in Adult Attachment"
-    },
-    "pooleheller2019": {
-      "author": "Diane Poole Heller",
-      "title": "The Power of Attachment",
-      "publisher": "Sounds True",
-      "year": 2019,
-      "kind": "practitioner",
-      "status": "read in full"
-    },
-    "johnson2008": {
-      "author": "Sue Johnson",
-      "title": "Hold Me Tight: Seven Conversations for a Lifetime of Love",
-      "publisher": "Little, Brown Spark",
-      "year": 2008,
-      "kind": "practitioner",
-      "status": "read in full"
+      "read": "Ch.4 'The Search for Growth or Decline in Personality' and ch.6 'The Course of Personality Development in the Individual'",
+      "used_for": [
+        "Big Five: stability after age 30, no decline with age, long-term retest figures"
+      ],
+      "verified": "copyright page"
     },
     "little2014": {
       "author": "Brian R. Little",
       "title": "Me, Myself, and Us: The Science of Personality and the Art of Well-Being",
-      "publisher": "PublicAffairs",
+      "edition": "1st ed.",
+      "publisher": "PublicAffairs, New York",
       "year": 2014,
+      "isbn": "978-1-58648-968-7 (e-book)",
+      "format": "epub",
       "kind": "research",
-      "status": "read ch.3, Free Traits: On Acting Out of Character"
+      "read": "Ch.3 'Free Traits: On Acting Out of Character'",
+      "used_for": [
+        "Big Five: free traits and restorative niches"
+      ],
+      "verified": "copyright page"
+    },
+    "frawley1996": {
+      "author": "David Frawley",
+      "title": "Ayurveda and the Mind: The Healing of Consciousness",
+      "edition": "1st ed. (1997 printing)",
+      "publisher": "Lotus Press, Twin Lakes WI",
+      "year": 1996,
+      "isbn": "0-914955-36-5",
+      "format": "PDF",
+      "kind": "practitioner",
+      "read": "In full",
+      "used_for": [
+        "Guna: sattvic, rajasic and tamasic mental types, the three-stage model"
+      ],
+      "verified": "copyright page"
+    },
+    "svoboda": {
+      "author": "Robert E. Svoboda",
+      "title": "Prakriti: Your Ayurvedic Constitution",
+      "edition": "2nd ed., revised and enlarged",
+      "publisher": "Sadhana Publications, Bellingham WA (distributed by Lotus Press)",
+      "year": 1998,
+      "isbn": "0-9656208-3-2",
+      "format": "epub",
+      "kind": "practitioner",
+      "read": "Ch.2 'Constitutional Characteristics': summaries of the constitutional types, dual constitutions, perception and evaluation",
+      "used_for": [
+        "Prakriti: dosha temperaments, the three dual constitutions, what a changed retake means"
+      ],
+      "verified": "copyright page"
     },
     "svobodalife1992": {
       "author": "Robert E. Svoboda",
       "title": "Ayurveda: Life, Health and Longevity",
-      "publisher": "Arkana/Penguin",
+      "edition": "1st ed. (Penguin ebook)",
+      "publisher": "Arkana / Penguin Books, London",
       "year": 1992,
+      "isbn": "978-0-14-019322-0",
+      "format": "epub",
       "kind": "practitioner",
-      "status": "read ch.4, Routine (daily, seasonal and age cycles) and ch.6, Pathology (the six-stage disease model)"
-    },
-    "mccraecosta2003": {
-      "author": "Robert R. McCrae & Paul T. Costa Jr.",
-      "title": "Personality in Adulthood: A Five-Factor Theory Perspective (2nd ed.)",
-      "publisher": "Guilford",
-      "year": 2003,
-      "kind": "research",
-      "status": "read ch.4, ch.6 (stability of personality across adulthood)"
-    },
-    "sharmadash": {
-      "author": "Agnivesa's Caraka Samhita, trans. Ram Karan Sharma & Bhagwan Dash",
-      "title": "Caraka Samhita: Sarira Sthana",
-      "publisher": "Chowkhamba Sanskrit Series",
-      "kind": "classical",
-      "status": "read Sarira Sthana ch.4, para 34-40 (doshas of body and mind, mental-type classification); large OCR scan, partial extraction"
+      "read": "Ch.4 'Routine' (daily, seasonal and age cycles) and ch.6 'Pathology' (the six-stage disease model)",
+      "used_for": [
+        "Vikriti: why catching an imbalance early matters, seasonal junctions",
+        "Prakriti/Vikriti: each dosha's daily, seasonal and age cycle"
+      ],
+      "verified": "copyright page"
     },
     "lad2002": {
       "author": "Vasant Lad",
       "title": "Textbook of Ayurveda, Volume One: Fundamental Principles",
-      "publisher": "The Ayurvedic Press",
+      "edition": "1st ed.",
+      "publisher": "The Ayurvedic Press, Albuquerque NM",
       "year": 2002,
+      "isbn": "1-883725-07-0",
+      "format": "PDF, partial text extraction",
       "kind": "practitioner",
-      "status": "read ch.2, Universal Attributes and Doshic Theory (Tables 5-7); partial extraction of a large PDF"
+      "read": "Ch.2 'Universal Attributes and Doshic Theory', Tables 5-7",
+      "used_for": [
+        "Prakriti: how each dosha's qualities show up in mind and emotion"
+      ],
+      "verified": "copyright page"
+    },
+    "harness1999": {
+      "author": "Dennis M. Harness",
+      "title": "The Nakshatras: The Lunar Mansions of Vedic Astrology",
+      "edition": "1st ed.",
+      "publisher": "Lotus Press, Twin Lakes WI",
+      "year": 1999,
+      "isbn": "0-914955-83-7",
+      "format": "PDF",
+      "kind": "practitioner",
+      "read": "In full",
+      "used_for": [
+        "Vedic chart: the meaning of each of the 27 nakshatras"
+      ],
+      "verified": "copyright page"
+    },
+    "levineheller2010": {
+      "author": "Amir Levine & Rachel S. F. Heller",
+      "title": "Attached: The New Science of Adult Attachment and How It Can Help You Find - and Keep - Love",
+      "edition": "1st ed.",
+      "publisher": "Tarcher/Penguin, New York",
+      "year": 2010,
+      "isbn": "978-1-58542-848-9",
+      "format": "epub",
+      "kind": "practitioner",
+      "read": "In full; used narrowly (protest behavior, activating/deactivating strategies, the dependency paradox, effective communication). Its fixed-type framing is not adopted.",
+      "used_for": [
+        "Attachment: growth tips and vocabulary for everyday behavior"
+      ],
+      "verified": "ISBN from the ebook's metadata; the copyright page is not in our copy"
+    },
+    "pooleheller2019": {
+      "author": "Diane Poole Heller",
+      "title": "The Power of Attachment: How to Create Deep and Lasting Intimate Relationships",
+      "edition": "1st ed.",
+      "publisher": "Sounds True, Boulder CO",
+      "year": 2019,
+      "isbn": "978-1-62203-826-8 (ebook)",
+      "format": "epub",
+      "kind": "practitioner",
+      "read": "In full; used for the window of tolerance, self- and co-regulation, and one grounding exercise",
+      "used_for": [
+        "Attachment: the fearful-avoidant pattern and what helps"
+      ],
+      "verified": "copyright page"
+    },
+    "johnson2008": {
+      "author": "Sue Johnson",
+      "title": "Hold Me Tight: Seven Conversations for a Lifetime of Love",
+      "edition": "1st ed.",
+      "publisher": "Little, Brown and Company, New York",
+      "year": 2008,
+      "isbn": "978-0-316-03199-8",
+      "format": "epub",
+      "kind": "practitioner",
+      "read": "In full; used for the three 'Demon Dialogues' only",
+      "used_for": [
+        "Attachment: the pursue-withdraw pattern (Protest Polka) and related cycles"
+      ],
+      "verified": "copyright page"
+    },
+    "govardhan": {
+      "author": "Govardhan School of Yoga",
+      "title": "Prakriti Parikshan: Ayurvedic Constitution Self-Assessment (Yoga Teacher Training workbook)",
+      "edition": null,
+      "publisher": "Govardhan School of Yoga (course material, not published)",
+      "year": null,
+      "isbn": null,
+      "format": "workbook",
+      "kind": "workbook",
+      "read": "In full",
+      "used_for": [
+        "Prakriti and Vikriti questionnaires and scoring",
+        "Dosha guide: balance, imbalance, what raises each dosha, asana, pranayama and meditation"
+      ],
+      "verified": "course material, no ISBN"
     }
-  }
+  },
+  "instruments": [
+    {
+      "name": "IPIP-50 Big Five Factor Markers",
+      "citation": "Goldberg, L. R. (1992). The development of markers for the Big-Five factor structure. Psychological Assessment, 4, 26-42. Items from the International Personality Item Pool (ipip.ori.org), public domain.",
+      "used_for": "Big Five questionnaire"
+    },
+    {
+      "name": "Experiences in Close Relationships - Revised (ECR-R)",
+      "citation": "Fraley, R. C., Waller, N. G., & Brennan, K. A. (2000). An item response theory analysis of self-report measures of adult attachment. Journal of Personality and Social Psychology, 78, 350-365.",
+      "used_for": "Attachment questionnaire"
+    },
+    {
+      "name": "Guna self-assessment",
+      "citation": "Original items written for Nimai against the Bhagavad Gita's description of the gunas (ch.14, 17, 18), with Dasa, D. G. (1999), 'The Vedic Personality Inventory', as a structural reference. Not a reproduction of any published scale.",
+      "used_for": "Guna questionnaire"
+    },
+    {
+      "name": "Prakriti Parikshan and Vikriti check",
+      "citation": "Adapted from the Govardhan School of Yoga teacher-training workbook (see above). Not a reproduction of the CCRAS Prakriti Assessment Scale.",
+      "used_for": "Prakriti and Vikriti questionnaires"
+    },
+    {
+      "name": "Big Five result texts",
+      "citation": "b5-result-text (MIT licence, github.com/Alheimsins/b5-result-text), which reproduces John A. Johnson's IPIP-NEO narrative report. Reworded throughout, not copied.",
+      "used_for": "Big Five low/mid/high descriptions"
+    },
+    {
+      "name": "Vedic chart calculation",
+      "citation": "Swiss Ephemeris (Moshier ephemeris), Lahiri ayanamsa, whole-sign houses.",
+      "used_for": "Moon nakshatra and Chandra Lagna"
+    }
+  ]
 }

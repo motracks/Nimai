@@ -141,10 +141,10 @@ export const FLAG_TEXT: Record<string, string> = {
   low_variance: "Answers barely moved across the scale, so differences between dimensions are small.",
   acquiescence: "Some answers agree with both a statement and its opposite, so read this result loosely.",
   near_boundary: "This result sits close to a boundary. Read it against the neighbouring pattern too.",
-  recheck_sama: "Sama is rare. The workbook suggests re-checking before accepting it.",
+  recheck_sama: "All three doshas came out nearly equal (Sama). That's rare, so it's worth retaking to confirm.",
   many_double_ticks: "Many questions had two ticks, which blurs the result. Ticking one where you can sharpens it.",
   referral:
-    "Several columns are strongly elevated. The workbook recommends seeing a qualified Ayurvedic physician rather than self-treating.",
+    "Several areas are strongly elevated. See a qualified Ayurvedic doctor or your GP rather than treating this yourself.",
 };
 
 export const KIND_TEXT: Record<string, string> = {
