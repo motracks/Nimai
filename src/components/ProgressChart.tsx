@@ -67,6 +67,12 @@ export default function ProgressChart({ data, title }: { data: Timeline; title: 
             {s.label}
           </li>
         ))}
+        {data.away.some(Boolean) && (
+          <li className="flex items-center gap-1.5">
+            <span aria-hidden className="inline-block h-2 w-2 rounded-full border" style={{ borderColor: "var(--ink-mid)" }} />
+            away from home
+          </li>
+        )}
       </ul>
 
       <div ref={wrapRef} className="relative">
@@ -114,7 +120,15 @@ export default function ProgressChart({ data, title }: { data: Timeline; title: 
                 strokeLinecap="round"
               />
               {s.values.map((v, i) => (
-                <circle key={i} cx={x(i)} cy={y(v)} r={hover === i ? 5 : 4} fill={s.color} stroke="var(--card)" strokeWidth={2} />
+                <circle
+                  key={i}
+                  cx={x(i)}
+                  cy={y(v)}
+                  r={hover === i ? 5 : 4}
+                  fill={data.away[i] ? "var(--card)" : s.color}
+                  stroke={data.away[i] ? s.color : "var(--card)"}
+                  strokeWidth={2}
+                />
               ))}
             </g>
           ))}
@@ -142,6 +156,7 @@ export default function ProgressChart({ data, title }: { data: Timeline; title: 
           >
             <p className="mb-1" style={{ color: "var(--ink-mid)" }}>
               {fmt(data.dates[hover])}
+              {data.notes[hover] && <span className="block">{data.notes[hover]}</span>}
             </p>
             {data.series.map((s) => (
               <p key={s.dim} className="flex items-center justify-between gap-3">

@@ -10,6 +10,8 @@ import { createAdminClient } from "@/lib/supabase/admin";
 // do, not a failure, so export/delete still work on a fresh database.
 const TABLES = [
   "assessment_results",
+  "checkins",
+  "practice_log",
   "bigfive_results",
   "ecrr_results",
   "guna_results",

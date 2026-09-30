@@ -11,6 +11,7 @@ export default function GunaPage() {
         eyebrow="Guna"
         heading="Sattva · Rajas · Tamas"
         tag="Guna"
+        askContext
       />
     </RetakeGate>
   );

@@ -5,7 +5,7 @@ import { buildReminders } from "@/lib/reminders";
 import RemindersCard from "@/components/RemindersCard";
 import { INSTRUMENTS, type InstrumentKey } from "@/lib/instruments";
 import { InstrumentResultCard, VedicChartCard } from "@/components/ResultCards";
-import { KIND_TEXT, buildHistories, vikritiVsPrakriti, type ResultRow } from "@/lib/results";
+import { KIND_TEXT, RESULT_COLUMNS, buildHistories, vikritiVsPrakriti, type ResultRow } from "@/lib/results";
 
 const ORDER: { key: InstrumentKey; title: string }[] = [
   { key: "bigfive", title: "Personality" },
@@ -113,7 +113,7 @@ async function ResultsOverview() {
   const [results, vedic] = await Promise.all([
     supabase
       .from("assessment_results")
-      .select("id, instrument, instrument_version, scoring_version, answers, result, source, completed_at")
+      .select(RESULT_COLUMNS)
       .order("completed_at", { ascending: true }),
     supabase.from("vedic_charts").select("*").maybeSingle(),
   ]);
