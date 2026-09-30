@@ -11,6 +11,9 @@ export default async function NavBar() {
     // A completed, current result opens its own fixed page. Not taken yet,
     // or due for a retake, opens the questionnaire.
     href: i.complete && !i.retakeDue ? `/results/${i.key}` : i.testHref,
+    // Every page that belongs to this item, so the dial lines up with it
+    // however it was reached (home page link, compass, bookmark).
+    paths: [i.testHref, `/results/${i.key}`],
     complete: i.complete,
   }));
 

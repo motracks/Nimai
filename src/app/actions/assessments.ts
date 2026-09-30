@@ -1,5 +1,6 @@
 "use server";
 
+import { refresh } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { INSTRUMENTS, isInstrumentKey, retakeCheck } from "@/lib/instruments";
@@ -61,6 +62,9 @@ export async function submitAssessment(instrument: unknown, answers: unknown, co
       console.error("submitAssessment insert failed", error);
       return { ok: false, error: "Could not save your answers. Please try again." };
     }
+    // The compass lives in the root layout, which a client navigation doesn't
+    // re-render; refresh so it picks up this completion (and its new link).
+    refresh();
     return { ok: true };
   } catch (err) {
     // Covers createAdminClient() throwing (e.g. SUPABASE_SERVICE_ROLE_KEY missing

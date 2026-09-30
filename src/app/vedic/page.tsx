@@ -102,6 +102,8 @@ export default function VedicPage() {
       if (chartError) throw chartError;
 
       router.push("/results");
+      // Re-render the root layout so the compass shows the chart as done.
+      router.refresh();
     } catch (err) {
       console.error(err);
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong");
