@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { getInstrumentStatuses } from "@/lib/progress";
+import { buildReminders } from "@/lib/reminders";
+import RemindersCard from "@/components/RemindersCard";
 import { INSTRUMENTS, type InstrumentKey } from "@/lib/instruments";
 import { InstrumentResultCard, VedicChartCard } from "@/components/ResultCards";
 import { KIND_TEXT, buildHistories, vikritiVsPrakriti, type ResultRow } from "@/lib/results";
@@ -14,7 +16,7 @@ const ORDER: { key: InstrumentKey; title: string }[] = [
 ];
 
 export default async function Home() {
-  const { user, instruments } = await getInstrumentStatuses();
+  const { user, instruments, latestAt } = await getInstrumentStatuses();
   const completeCount = instruments.filter((i) => i.complete).length;
 
   return (
@@ -51,6 +53,8 @@ export default async function Home() {
           </span>
         </div>
       )}
+
+      {user && completeCount > 0 && <RemindersCard reminders={buildReminders(latestAt)} />}
 
       <div className="mb-10 flex flex-col gap-2">
         {instruments.map((i) => (

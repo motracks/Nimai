@@ -50,14 +50,20 @@ production.
 ## Next
 
 ### [~] Retake reminders
-Today the home page shows a "Retake due" marker once the suggested interval
-has passed, and the 14-day minimum is in place.
-- [ ] Reminders outside the app, by email (e.g. Supabase + Resend) or web
-      push, with opt-in per test and an easy way to stop them.
-- [ ] Season-change reminders: prompt a Vikriti check about two weeks either
-      side of each equinox and solstice. Svoboda (ch.4) says imbalance arises
-      most at seasonal junctions.
-- **(you)** Pick the channel: email, push, or both.
+Done:
+- [x] A "Reminders" card on the home page: retakes that are due, retakes
+      coming up in the next 30 days, and a Vikriti prompt within two weeks
+      either side of each equinox and solstice (Svoboda ch.4: imbalance
+      arises most at seasonal junctions). The prompt disappears once a
+      Vikriti has been taken in that window.
+- [x] "Add these to your calendar": `/reminders.ics` gives the next retake
+      dates and the next season changes, each with an alert on the day.
+      Imported into a phone calendar, it reminds without Nimai sending
+      anything.
+Open:
+- [ ] Email or push reminders. They need a sending service and keys (e.g.
+      Resend for email, VAPID keys for push) plus a scheduled job.
+      **(you)** Pick the channel if the calendar file isn't enough.
 
 ### [ ] Progress over months
 Results currently compare baseline with latest, two points only.

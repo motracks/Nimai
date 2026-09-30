@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { INSTRUMENTS, type InstrumentKey } from "@/lib/instruments";
+import type { LatestAt } from "@/lib/reminders";
 
 export interface InstrumentStatus {
   key: string;
@@ -26,6 +27,7 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 export async function getInstrumentStatuses(): Promise<{
   user: { id: string } | null;
   instruments: InstrumentStatus[];
+  latestAt: LatestAt;
 }> {
   const supabase = await createClient();
 
@@ -37,6 +39,7 @@ export async function getInstrumentStatuses(): Promise<{
     return {
       user: null,
       instruments: NAV.map((i) => ({ ...i, complete: false, retakeDue: false })),
+      latestAt: {},
     };
   }
 
@@ -51,6 +54,7 @@ export async function getInstrumentStatuses(): Promise<{
 
   return {
     user,
+    latestAt: Object.fromEntries(latestAt) as LatestAt,
     instruments: NAV.map((i) => {
       if (i.key === "vedic") return { ...i, complete: Boolean(vedic.data), retakeDue: false };
       const at = latestAt.get(i.key);
