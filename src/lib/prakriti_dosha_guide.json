@@ -42,10 +42,22 @@
       ],
       "today": {
         "do": [
-          "Keep meals and sleep at regular times.",
-          "Choose warm, cooked, moist food and warm drinks.",
-          "Slow, grounding practice with long holds, and long exhalations (Nadi Shodhana or Bhramari).",
-          "Stay warm and out of the wind."
+          {
+            "id": "vat-regular-routine",
+            "text": "Keep meals and sleep at regular times."
+          },
+          {
+            "id": "vat-warm-food",
+            "text": "Choose warm, cooked, moist food and warm drinks."
+          },
+          {
+            "id": "vat-grounding-practice",
+            "text": "Slow, grounding practice with long holds, and long exhalations (Nadi Shodhana or Bhramari)."
+          },
+          {
+            "id": "vat-stay-warm",
+            "text": "Stay warm and out of the wind."
+          }
         ],
         "avoid": [
           "Cold, wind and dry air.",
@@ -94,10 +106,22 @@
       ],
       "today": {
         "do": [
-          "Keep cool: shade at midday, no hot rooms.",
-          "Eat at regular times; don't skip meals.",
-          "Cooling, non-competitive practice at about 70-80% effort; Sheetali or Chandra Bhedana breathing.",
-          "Leave some ease in the day: less deadline pressure where you can."
+          {
+            "id": "pit-keep-cool",
+            "text": "Keep cool: shade at midday, no hot rooms."
+          },
+          {
+            "id": "pit-regular-meals",
+            "text": "Eat at regular times; don't skip meals."
+          },
+          {
+            "id": "pit-cooling-practice",
+            "text": "Cooling, non-competitive practice at about 70-80% effort; Sheetali or Chandra Bhedana breathing."
+          },
+          {
+            "id": "pit-ease",
+            "text": "Leave some ease in the day: less deadline pressure where you can."
+          }
         ],
         "avoid": [
           "Midday sun and heat.",
@@ -146,10 +170,22 @@
       ],
       "today": {
         "do": [
-          "Get up early and move first thing.",
-          "Lighter, warm meals; less sweet and heavy food.",
-          "Energising practice at pace, such as Surya Namaskar, or a brisk walk.",
-          "Change something small: a new route, a new activity."
+          {
+            "id": "kap-early-movement",
+            "text": "Get up early and move first thing."
+          },
+          {
+            "id": "kap-lighter-meals",
+            "text": "Lighter, warm meals; less sweet and heavy food."
+          },
+          {
+            "id": "kap-energising-practice",
+            "text": "Energising practice at pace, such as Surya Namaskar, or a brisk walk."
+          },
+          {
+            "id": "kap-variety",
+            "text": "Change something small: a new route, a new activity."
+          }
         ],
         "avoid": [
           "Daytime sleep.",

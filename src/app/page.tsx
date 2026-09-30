@@ -6,6 +6,7 @@ import RemindersCard from "@/components/RemindersCard";
 import TodayCard from "@/components/TodayCard";
 import { todayFocus } from "@/lib/today";
 import { recentCheckins } from "@/lib/checkin-server";
+import { practiceLog } from "@/lib/practice-server";
 import { INSTRUMENTS, type InstrumentKey } from "@/lib/instruments";
 import { InstrumentResultCard, VedicChartCard } from "@/components/ResultCards";
 import { KIND_TEXT, RESULT_COLUMNS, buildHistories, vikritiVsPrakriti, type ResultRow } from "@/lib/results";
@@ -59,7 +60,7 @@ export default async function Home() {
         </div>
       )}
 
-      {focus && <TodayCard focus={focus} />}
+      {focus && data && <TodayCard focus={focus} log={data.log} />}
       {user && completeCount > 0 && <RemindersCard reminders={buildReminders(latestAt)} />}
 
       <div className="mb-10 flex flex-col gap-2">
@@ -111,12 +112,13 @@ export default async function Home() {
 // RLS scopes both queries to the signed-in user.
 async function loadResults() {
   const supabase = await createClient();
-  const [results, vedic, checkins] = await Promise.all([
+  const [results, vedic, checkins, log] = await Promise.all([
     supabase.from("assessment_results").select(RESULT_COLUMNS).order("completed_at", { ascending: true }),
     supabase.from("vedic_charts").select("*").maybeSingle(),
     recentCheckins(1),
+    practiceLog(2),
   ]);
-  return { histories: buildHistories((results.data ?? []) as ResultRow[]), results, vedic, checkin: checkins.rows[0] ?? null };
+  return { histories: buildHistories((results.data ?? []) as ResultRow[]), results, vedic, checkin: checkins.rows[0] ?? null, log };
 }
 
 function ResultsOverview({ histories, results, vedic }: Awaited<ReturnType<typeof loadResults>>) {

@@ -5,6 +5,9 @@ import { INSTRUMENTS } from "@/lib/instruments";
 import { RESULT_COLUMNS, buildHistories, type ResultRow } from "@/lib/results";
 import { buildProfile, type Finding, type VedicChart } from "@/lib/profile";
 import { SectionView } from "@/components/AnalysisView";
+import NeedsCard from "@/components/NeedsCard";
+import { recentCheckins } from "@/lib/checkin-server";
+import { needs } from "@/lib/needs";
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
@@ -19,16 +22,18 @@ export default async function ProfilePage() {
   if (!user) redirect("/login");
 
   // RLS scopes both queries to the signed-in user.
-  const [results, vedic] = await Promise.all([
+  const [results, vedic, checkins] = await Promise.all([
     supabase
       .from("assessment_results")
       .select(RESULT_COLUMNS)
       .order("completed_at", { ascending: true }),
     supabase.from("vedic_charts").select("chart").maybeSingle(),
+    recentCheckins(1),
   ]);
 
   const histories = buildHistories((results.data ?? []) as ResultRow[]);
   const profile = buildProfile(histories, (vedic.data?.chart as VedicChart | undefined) ?? null);
+  const attention = needs(histories, new Date(), checkins.rows[0] ?? null);
 
   return (
     <main className="vn-page">
@@ -52,6 +57,7 @@ export default async function ProfilePage() {
         </section>
       ) : (
         <>
+          <NeedsCard items={attention} />
           {profile.sections.map((s) => (
             <section key={s.title} className="vn-card mb-4">
               <SectionView section={s} />
