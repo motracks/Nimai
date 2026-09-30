@@ -23,6 +23,7 @@ import pooleHellerKb from "./knowledge/poole-heller.json";
 import johnsonKb from "./knowledge/johnson-hold-me-tight.json";
 import gitaKb from "./knowledge/gita-easwaran.json";
 import littleKb from "./knowledge/little.json";
+import svobodaLifeKb from "./knowledge/svoboda-life.json";
 import { INSTRUMENTS, type InstrumentKey } from "./instruments";
 
 type Item = { id: string; dimension: string; reverse?: boolean };
@@ -156,6 +157,13 @@ describe("per-test analysis", () => {
       expect.arrayContaining(["Compared with your Prakriti", "What raises Vata", "To settle Vata"]),
     );
   });
+
+  it("Vikriti explains why catching it now matters, citing Svoboda's six-stage model", () => {
+    const a = analyse(person.vikriti!, person.prakriti!.latest.scored)!;
+    const why = a.sections.find((s) => s.title === "Why catch it now");
+    expect(why?.paragraphs?.[0]).toMatch(/Accumulation/);
+    expect(why?.paragraphs?.[0]).toMatch(/Life, Health and Longevity, ch\.6/);
+  });
 });
 
 describe("combined profile", () => {
@@ -253,7 +261,20 @@ describe("sourced content stays honest", () => {
   });
 
   it("every knowledge-file claim carries a page reference", () => {
-    for (const file of [harnessKb, mikulincerKb, frawleyKb, nettleKb, svobodaKb, attachedKb, handbookKb, pooleHellerKb, johnsonKb, gitaKb, littleKb]) {
+    for (const file of [
+      harnessKb,
+      mikulincerKb,
+      frawleyKb,
+      nettleKb,
+      svobodaKb,
+      attachedKb,
+      handbookKb,
+      pooleHellerKb,
+      johnsonKb,
+      gitaKb,
+      littleKb,
+      svobodaLifeKb,
+    ]) {
       const claims = "claims" in file ? file.claims : Object.values(file.entries);
       for (const c of claims as { pages?: string }[]) {
         expect(c.pages, JSON.stringify(c).slice(0, 60)).toMatch(/\d/);

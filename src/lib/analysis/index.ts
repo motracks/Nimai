@@ -307,6 +307,7 @@ function analyseVikriti(
       items: (["VAT", "PIT", "KAP"] as const).map((d) => `${dimensionName("vikriti", d)}: ${scored.raw[d]} of 6`),
     },
   ];
+  if (elevated.length) sections.push({ title: "Why catch it now", paragraphs: [doshaGuide.vikriti_context] });
 
   const relation = vikritiVsPrakriti(scored, prakritiLatest);
   if (relation) sections.push({ title: "Compared with your Prakriti", paragraphs: [relation] });
