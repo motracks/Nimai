@@ -29,13 +29,13 @@ the version used (PDF, epub or scan), what was read, what it's used for,
 how many cited points come from it, and where the edition details were
 read. A separate section covers the questionnaires and the chart
 calculation. Every analysis links to the page.
-- [ ] In-text citations (e.g. "Svoboda, ch.4") link to their entry.
+- [x] In-text citations (e.g. "Svoboda, ch.4") link to their entry.
 - [ ] **(you)** Charaka Saṃhitā (Sharma & Dash): publisher, year and ISBN
       aren't on the scanned pages. Check the physical copy.
 - [ ] **(you)** *Attached*: only the ISBN is in our copy; confirm the
       publisher and year from a print copy.
 
-### [ ] Refresh `docs/rating-engine-review.md`
+### [x] Refresh `docs/rating-engine-review.md`
 Its "Status", "Open" and "Content sources" sections predate the
 book-sourcing work. For example, it still says nakshatras have no content and
 several books are still needed. Point it at this file for open work.

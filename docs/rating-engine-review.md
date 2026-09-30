@@ -1,6 +1,6 @@
 # Rating engine review & best-practice plan
 
-Status: draft · Scope: `src/lib/scoring.ts`, `src/lib/*_mapping.json`, the five
+Status: implemented (history kept below; open work in `docs/TODO.md`) · Scope: `src/lib/scoring.ts`, `src/lib/*_mapping.json`, the five
 assessment pages, `src/app/results/page.tsx`, `supabase/functions/vedic-chart`,
 `supabase/migrations`.
 
@@ -326,32 +326,24 @@ Also done:
 - `buildSynthesisInput()`: the same information as one versioned JSON
   document, ready for an optional written narrative by a language model later.
 
-Open:
+Since then:
 
-1. Commit the live schema (`supabase db pull`); see roadblocks.
-2. Content review: all interpretive text should be read by someone who teaches
-   these frameworks before launch.
-3. Nakshatra interpretations: the Vedic chart has no interpretive content yet,
-   so the profile shows chart facts only.
-4. Optional: an LLM-written narrative on top of `buildSynthesisInput()`.
+- **Book-sourced content.** 16 sources (classical texts, research and
+  practitioner books), all paraphrased and cited by page or chapter, in
+  `src/lib/knowledge/`. The full list, with the exact edition used, is on the
+  `/sources` page, and citations in the analyses link to it.
+- **Retake rule.** Within 14 days, Big Five, attachment and Prakriti are
+  blocked and Guna and Vikriti warn (`retakeCheck` in `src/lib/instruments.ts`).
+- **"Keep in mind"** rewritten for the person reading their own result; the
+  workbook's teacher-facing points are kept for teacher training only.
+- `middleware.ts` renamed to `proxy.ts` for Next 16.
+
+Open work now lives in [`docs/TODO.md`](TODO.md).
 
 ## 6b. Content sources
 
-Each content file carries a `sources` block with its basis and review status.
-
-| Test | Basis | Inspiration / further reading | What's been done | Needs the book |
-|---|---|---|---|---|
-| Big Five | b5-result-text (MIT), itself reproducing John A. Johnson's IPIP-NEO report | Nettle, *Personality* | Trait overviews rewritten from the base text; costs-and-benefits framing throughout | Check framing against Nettle |
-| Attachment | Research model | Mikulincer & Shaver, *Attachment in Adulthood*; practical tips from Levine & Heller, *Attached* (not its fixed types) | Added hyperactivating/deactivating explanation and "it can change" (earned security) | Check wording against both |
-| Guna | Bhagavad Gita 14, 17 | Easwaran's translation; Frawley, *Ayurveda and the Mind* | Own paraphrase with verse numbers (14.6-8, 14.11-13, 17.8-10); dosha-through-guna reading in the profile | Check paraphrases against Easwaran, dosha-guna text against Frawley |
-| Prakriti / Vikriti | Govardhan workbook (unchanged) | Svoboda, *Prakriti*; Lad, *Science of Self-Healing* | Sources recorded only | Extend from the books |
-| Nakshatras | Standard facts: deity, symbol, ruler, gana | Harness, *The Nakshatras*; *Brihat Jataka* | 27 draft entries, `reviewed: false`, shown only when the Moon's nakshatra is certain | Check every entry against *Brihat Jataka* and Harness |
-
-Nothing in these files is copied from a copyrighted book: the books couldn't be
-accessed from the build environment, so the content reflects their widely
-published concepts. archive.org (for the public-domain *Brihat Jataka* and old
-Gita translations) is blocked by the environment's network policy; allowing it
-would let the classical texts be checked directly.
+Superseded: see `/sources` and `src/lib/knowledge/sources.json`. Every
+content file's `sources` block names the knowledge file its text comes from.
 
 ## 7. Roadblocks and things to do differently
 
