@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { INSTRUMENTS } from "@/lib/instruments";
-import { buildHistories, type ResultRow } from "@/lib/results";
+import { RESULT_COLUMNS, buildHistories, type ResultRow } from "@/lib/results";
 import { buildProfile, type Finding, type VedicChart } from "@/lib/profile";
 import { SectionView } from "@/components/AnalysisView";
 
@@ -22,7 +22,7 @@ export default async function ProfilePage() {
   const [results, vedic] = await Promise.all([
     supabase
       .from("assessment_results")
-      .select("id, instrument, instrument_version, scoring_version, answers, result, source, completed_at")
+      .select(RESULT_COLUMNS)
       .order("completed_at", { ascending: true }),
     supabase.from("vedic_charts").select("chart").maybeSingle(),
   ]);

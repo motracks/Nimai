@@ -77,17 +77,20 @@ more comparable results.
   there's room; "Show as a table" for every value.
 - Later: a per-test "real change" threshold from test-retest data.
 
-### [ ] Seasons and travel, compared year on year
-- [ ] Save **context** with every Vikriti and Guna result: the season
-      (worked out from date and hemisphere), a coarse location (country or
-      climate zone only, since precise location is personal data), and
-      whether you're travelling or away from home.
-- [ ] Compare the same season across years ("autumn 2026 vs autumn 2027"),
-      separately from month-to-month change.
-- [ ] Flag results taken while travelling or in another climate so they
-      don't distort the trend, but still show them.
-- Needs a hemisphere or location setting on the profile, plus a "Where are
-  you right now?" question on the state tests.
+### [~] Seasons and travel, compared year on year
+Done (needs the migration below applied to record anything):
+- [x] Vikriti and Guna end with "Where are you taking this?": at home or
+      away, and if away, the climate compared with home. The hemisphere
+      is guessed from the device's time zone and can be switched; the
+      season is worked out on the server. No location is stored.
+- [x] The progress chart draws results taken away from home as hollow
+      dots, the tooltip shows season and place, and the trend sentence
+      leaves away results out when at least two home results remain.
+- [x] "Same season in 2025 (Autumn): Vata 4 → 2 …" on the result card once
+      there's an earlier year to compare with.
+- [ ] **(you)** Apply `supabase/migrations/20261001000000_context_checkins_practice.sql`
+      (Supabase dashboard → SQL editor → paste → Run, or `supabase db push`).
+      Until then results save without context, and nothing breaks.
 
 ### [ ] Home screen "today" card: what to do, what to avoid
 One short card, rebuilt from:

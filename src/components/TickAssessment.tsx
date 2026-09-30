@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { submitAssessment } from "@/app/actions/assessments";
+import ContextQuestions, { DEFAULT_CONTEXT, type ContextAnswer } from "@/components/ContextQuestions";
 import type { InstrumentKey } from "@/lib/instruments";
 
 type Dimension = "VAT" | "PIT" | "KAP";
@@ -19,6 +20,7 @@ interface Props {
   items: TickItem[];
   minTicks: number; // per item
   maxTicks: number; // per item
+  askContext?: boolean; // season and travel, for the state tests
   eyebrow: string;
   heading: string;
   intro?: string;
@@ -43,11 +45,12 @@ function seededOrder<T>(arr: T[], seed: string): T[] {
   return a;
 }
 
-export default function TickAssessment({ instrument, items, minTicks, maxTicks, eyebrow, heading, intro }: Props) {
+export default function TickAssessment({ instrument, items, minTicks, maxTicks, askContext, eyebrow, heading, intro }: Props) {
   const router = useRouter();
   const [answers, setAnswers] = useState<Record<string, Dimension[]>>({});
   const [status, setStatus] = useState<"idle" | "saving" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [context, setContext] = useState<ContextAnswer>(DEFAULT_CONTEXT);
 
   useEffect(() => {
     createClient()
@@ -71,7 +74,7 @@ export default function TickAssessment({ instrument, items, minTicks, maxTicks, 
   async function submit() {
     setStatus("saving");
     try {
-      const res = await submitAssessment(instrument, answers);
+      const res = await submitAssessment(instrument, answers, askContext ? context : undefined);
       if (!res.ok) {
         setErrorMsg(res.error);
         setStatus("error");
@@ -123,6 +126,12 @@ export default function TickAssessment({ instrument, items, minTicks, maxTicks, 
           </fieldset>
         ))}
       </div>
+
+      {askContext && (
+        <div className="mt-8">
+          <ContextQuestions value={context} onChange={setContext} />
+        </div>
+      )}
 
       <button disabled={!complete || status === "saving"} onClick={submit} className="vn-btn mt-8">
         {status === "saving" ? "Saving…" : "Submit"}

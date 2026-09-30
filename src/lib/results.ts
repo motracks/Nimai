@@ -1,3 +1,4 @@
+import type { ResultContext } from "@/lib/context";
 import bigfiveMapping from "./bigfive_mapping.json";
 import ecrrMapping from "./ecrr_mapping.json";
 import gunaMapping from "./guna_mapping.json";
@@ -24,11 +25,17 @@ export interface ResultRow {
   result: Record<string, unknown>;
   source: string;
   completed_at: string;
+  context?: unknown; // present once the context migration is applied
 }
+
+// "*" rather than a column list, so pages keep working whether or not a newer
+// migration (e.g. the context column) has been applied yet.
+export const RESULT_COLUMNS = "*";
 
 export interface ResultSnapshot {
   id: string;
   completedAt: string;
+  context: ResultContext | null;
   comparable: boolean; // same item set as today, re-scored with current rules
   scored: ScoredResult | null;
   legacy: { label: string | null; scores: Record<string, number> } | null;
@@ -53,9 +60,17 @@ function legacyView(result: Record<string, unknown>): ResultSnapshot["legacy"] {
   };
 }
 
+function storedContext(c: unknown): ResultContext | null {
+  if (!c || typeof c !== "object") return null;
+  const o = c as Partial<ResultContext>;
+  return o.season && o.hemisphere && typeof o.away === "boolean"
+    ? { season: o.season, hemisphere: o.hemisphere, away: o.away, climate: o.climate ?? null }
+    : null;
+}
+
 export function snapshot(row: ResultRow): ResultSnapshot {
   const key = row.instrument as InstrumentKey;
-  const base = { id: row.id, completedAt: row.completed_at };
+  const base = { id: row.id, completedAt: row.completed_at, context: storedContext(row.context) };
   if (row.instrument_version === INSTRUMENTS[key].instrumentVersion) {
     try {
       return { ...base, comparable: true, scored: scoreInstrument(key, row.answers), legacy: null, versionNote: null };

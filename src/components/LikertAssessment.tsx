@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/client";
 import { submitAssessment } from "@/app/actions/assessments";
 import type { InstrumentKey } from "@/lib/instruments";
 import ScaleQuestionCard from "@/components/ScaleQuestionCard";
+import ContextQuestions, { DEFAULT_CONTEXT, type ContextAnswer } from "@/components/ContextQuestions";
 
 interface LikertInstrument {
   items: { id: string; text: string }[];
@@ -18,6 +19,7 @@ interface Props {
   eyebrow: string;
   heading: string;
   tag: string;
+  askContext?: boolean; // season and travel, for the state tests
 }
 
 // Drafts live in the browser only, so a reload mid-questionnaire doesn't lose
@@ -33,12 +35,14 @@ function readDraft(instrument: string): Record<string, number> {
   }
 }
 
-export default function LikertAssessment({ instrument, data, eyebrow, heading, tag }: Props) {
+export default function LikertAssessment({ instrument, data, eyebrow, heading, tag, askContext }: Props) {
   const router = useRouter();
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [current, setCurrent] = useState(0);
   const [status, setStatus] = useState<"idle" | "saving" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [context, setContext] = useState<ContextAnswer>(DEFAULT_CONTEXT);
+  const [atContext, setAtContext] = useState(false);
 
   const steps = data.response_scale.values.length;
   const labelLow = data.response_scale.labels[0];
@@ -77,7 +81,7 @@ export default function LikertAssessment({ instrument, data, eyebrow, heading, t
   async function submit() {
     setStatus("saving");
     try {
-      const res = await submitAssessment(instrument, answers);
+      const res = await submitAssessment(instrument, answers, askContext ? context : undefined);
       if (!res.ok) {
         setErrorMsg(res.error);
         setStatus("error");
@@ -100,6 +104,31 @@ export default function LikertAssessment({ instrument, data, eyebrow, heading, t
   const item = data.items[current];
   const sliderValue = answers[item.id] != null ? answers[item.id] - 1 : null;
 
+  if (atContext) {
+    return (
+      <main className="vn-page" style={{ maxWidth: "42rem" }}>
+        <p className="vn-eyebrow">{eyebrow}</p>
+        <h1 className="vn-heading mb-8">One last thing</h1>
+        <ContextQuestions value={context} onChange={setContext} />
+        <div className="mt-6 flex items-center gap-4">
+          <button className="vn-btn" disabled={status === "saving"} onClick={submit}>
+            {status === "saving" ? "Saving…" : "Save"}
+          </button>
+          {status !== "saving" && (
+            <button
+              onClick={() => setAtContext(false)}
+              className="text-xs uppercase"
+              style={{ letterSpacing: "0.06em", color: "var(--ink-dim)" }}
+            >
+              Back
+            </button>
+          )}
+        </div>
+        {status === "error" && <p className="vn-error mt-4">{errorMsg || "Save failed. Try again."}</p>}
+      </main>
+    );
+  }
+
   return (
     <main className="vn-page" style={{ maxWidth: "42rem" }}>
       <p className="vn-eyebrow">{eyebrow}</p>
@@ -115,7 +144,7 @@ export default function LikertAssessment({ instrument, data, eyebrow, heading, t
         steps={steps}
         value={sliderValue}
         onChange={(v) => answer(item.id, v + 1)}
-        onNext={() => (current < total - 1 ? setCurrent((c) => c + 1) : submit())}
+        onNext={() => (current < total - 1 ? setCurrent((c) => c + 1) : askContext ? setAtContext(true) : submit())}
         isLast={current === total - 1}
       />
 

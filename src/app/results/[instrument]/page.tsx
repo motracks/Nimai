@@ -3,14 +3,13 @@ import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { INSTRUMENTS, isInstrumentKey } from "@/lib/instruments";
 import { InstrumentResultCard, VedicChartCard } from "@/components/ResultCards";
-import { KIND_TEXT, buildHistories, vikritiVsPrakriti, type ResultRow } from "@/lib/results";
+import { KIND_TEXT, RESULT_COLUMNS, buildHistories, vikritiVsPrakriti, type ResultRow } from "@/lib/results";
 
 // A fixed, single-test view: same content as its card on the home page
 // overview, but its own stable URL, so a compass tap or a bookmark always
 // lands on exactly this test's result rather than scrolling a shared page.
 // "vedic" is handled alongside the five scored instruments; anything else 404s.
 
-const COLUMNS = "id, instrument, instrument_version, scoring_version, answers, result, source, completed_at";
 
 export default async function InstrumentResultPage({
   params,
@@ -45,7 +44,7 @@ export default async function InstrumentResultPage({
   const meta = INSTRUMENTS[instrument];
   const { data: rows, error } = await supabase
     .from("assessment_results")
-    .select(COLUMNS)
+    .select(RESULT_COLUMNS)
     .eq("instrument", instrument)
     .order("completed_at", { ascending: true });
 
@@ -56,7 +55,7 @@ export default async function InstrumentResultPage({
   if (instrument === "vikriti") {
     const { data: prakritiRows } = await supabase
       .from("assessment_results")
-      .select(COLUMNS)
+      .select(RESULT_COLUMNS)
       .eq("instrument", "prakriti")
       .order("completed_at", { ascending: true });
     prakritiLatest = buildHistories((prakritiRows ?? []) as ResultRow[]).prakriti?.latest.scored ?? null;
