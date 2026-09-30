@@ -17,6 +17,7 @@ import mikulincerKb from "./knowledge/mikulincer-shaver.json";
 import frawleyKb from "./knowledge/frawley-mind.json";
 import nettleKb from "./knowledge/nettle.json";
 import svobodaKb from "./knowledge/svoboda.json";
+import attachedKb from "./knowledge/attached.json";
 import { INSTRUMENTS, type InstrumentKey } from "./instruments";
 
 type Item = { id: string; dimension: string; reverse?: boolean };
@@ -94,6 +95,12 @@ describe("per-test analysis", () => {
     expect(why?.paragraphs?.[0]).toMatch(/pp\. 19-20/);
     const changes = a.sections.find((s) => s.title === "It can change");
     expect(changes?.paragraphs?.[0]).toMatch(/p\. 520/);
+  });
+
+  it("anxious growth tips cite Levine & Heller's Attached by chapter", () => {
+    const a = analyse(person.ecrr!)!;
+    const growth = a.sections.find((s) => s.title === "Ways to grow");
+    expect(growth?.items?.some((i) => i.includes("Attached, ch."))).toBe(true);
   });
 
   it("Prakriti shows only the named dosha's guide, plus the limits", () => {
@@ -209,7 +216,7 @@ describe("sourced content stays honest", () => {
   });
 
   it("every knowledge-file claim carries a page reference", () => {
-    for (const file of [harnessKb, mikulincerKb, frawleyKb, nettleKb, svobodaKb]) {
+    for (const file of [harnessKb, mikulincerKb, frawleyKb, nettleKb, svobodaKb, attachedKb]) {
       const claims = "claims" in file ? file.claims : Object.values(file.entries);
       for (const c of claims as { pages?: string }[]) {
         expect(c.pages, JSON.stringify(c).slice(0, 60)).toMatch(/\d/);

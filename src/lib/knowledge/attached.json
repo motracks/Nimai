@@ -1,0 +1,48 @@
+{
+  "source": {
+    "id": "levineheller2010",
+    "author": "Amir Levine & Rachel S. F. Heller",
+    "title": "Attached: The New Science of Adult Attachment and How It Can Help You Find—and Keep—Love",
+    "publisher": "TarcherPerigee",
+    "year": 2010,
+    "kind": "practitioner"
+  },
+  "method": "Read the book's epub in full (no fixed page numbers; cited by chapter and section heading). Nimai already builds its attachment content primarily on Mikulincer & Shaver's academic text (see mikulincer-shaver.json), which frames attachment as two continuous dimensions that can shift over time. Levine & Heller popularize the same research but sometimes write about the three styles as fixed categories and are more critical in tone toward avoidance; Nimai deliberately does not adopt either of those framings. What's used here is narrower: their vocabulary for concrete relationship behaviors (protest behavior, activating/deactivating strategies, the dependency paradox) and their 'effective communication' practice, all of which sit comfortably inside the dimensional, changeable model Nimai already uses.",
+  "claims": [
+    {
+      "id": "protest_behavior",
+      "pages": "ch.1, Decoding Relationship Behavior",
+      "paraphrase": "When a person senses their partner has become unreachable or is at risk, their attachment system pushes them to act in ways aimed at reestablishing contact — repeated calls, guilt-tripping, trying to provoke jealousy. This made evolutionary sense when losing touch with a partner was genuinely dangerous, but in an ordinary modern disagreement the same bids for attention often read as ways to reconnect."
+    },
+    {
+      "id": "activating_strategies",
+      "pages": "ch.3, Living with a Sixth Sense for Danger: The Anxious Attachment Style",
+      "paraphrase": "For someone with an anxious style, feeling a partner is even slightly less available can switch the attachment system on almost continuously, producing a cycle of worry, checking and preoccupation aimed at restoring closeness. A partner who responds consistently interrupts this cycle quickly; a partner who is only sometimes available can keep it running for a long time, since intermittent reassurance is what makes the pattern hardest to let go of."
+    },
+    {
+      "id": "deactivating_strategies",
+      "pages": "ch.4, Together but Apart: The Compromise That Satisfies No One (Deactivating Strategies)",
+      "paraphrase": "For someone with an avoidant style, small everyday habits — dwelling on a partner's flaws, pulling back after a particularly good moment, keeping plans and feelings vague, avoiding routine physical closeness — work to keep intimacy at a manageable distance. The more these habits get used, the lonelier and less satisfying the relationship tends to feel, even when nothing about the relationship itself is actually wrong."
+    },
+    {
+      "id": "dependency_paradox",
+      "pages": "ch.2, Dependency Is Not a Bad Word",
+      "paraphrase": "People whose emotional needs are reliably met by their partner tend to become more independent and more able to turn their attention outward, not less — because they are no longer spending energy managing an unmet need. The authors call this the dependency paradox: effective dependence on each other is what produces independence, rather than the two being opposites."
+    },
+    {
+      "id": "effective_communication_core",
+      "pages": "ch.11, Effective Communication: Getting the Message Across",
+      "paraphrase": "The book's central practical suggestion is to state a need or concern plainly and without blame, then watch how the other person actually responds, rather than dropping hints or waiting to be read correctly. A partner's genuine reaction to a direct, calmly stated need reveals more about whether the relationship can work than months of guessing would."
+    },
+    {
+      "id": "effective_communication_anxious",
+      "pages": "ch.11, Effective Communication: Getting the Message Across (If You're Anxious)",
+      "paraphrase": "For someone anxious, the harder step is naming the need itself — 'I'd like to spend the holiday together' — before getting flooded with worry and either lashing out or resorting to indirect protest behavior. The suggestion is to say what is wanted plainly and early, rather than test for it through hints or hold back for fear of seeming needy."
+    },
+    {
+      "id": "effective_communication_avoidant",
+      "pages": "ch.11, Effective Communication: Getting the Message Across (If You Are Avoidant)",
+      "paraphrase": "For someone avoidant, the useful move is naming a need for space or time alone in advance, framed as a fact about oneself rather than a comment on the partner or the relationship. Explaining this ahead of time tends to lower a partner's worry and reduce the pursuit that otherwise follows when a partner withdraws without explanation."
+    }
+  ]
+}
