@@ -55,6 +55,9 @@ describe("per-test analysis", () => {
     expect(a.sections.find((s) => s.title === "How your traits combine")?.paragraphs).toEqual(
       expect.arrayContaining([expect.stringMatching(/^You tend to process stress inwardly/)]),
     );
+    const change = a.sections.find((s) => s.title === "Nature, and how much it can change");
+    expect(change?.paragraphs?.[0]).toMatch(/roughly 50%/);
+    expect(change?.paragraphs?.[0]).toMatch(/ch\.8/);
   });
 
   it("ECR-R explains the pattern and offers growth steps", () => {

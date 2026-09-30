@@ -63,6 +63,51 @@
       "id": "opn_poet_exemplar",
       "pages": "ch.7, p.185ff",
       "paraphrase": "Nettle takes the poet/artist as the clearest real-world exemplar of high Openness: metaphorical, associative thinking; a readiness to challenge social convention; a pull toward spiritual or mystical experience; and, at the far end, features that overlap with psychosis-spectrum traits (using Allen Ginsberg's life and 'Howl' as his illustration, discussed here only in general terms, not quoted)."
+    },
+    {
+      "id": "trait_variation_evolution",
+      "pages": "ch.2, p.55-60",
+      "paraphrase": "Nettle opens with the Galapagos finches: beak size varies both between islands (different optimal beaks for different food sources) and within an island's population, because no single beak size is best in every micro-context. He argues personality traits work the same way - there's no single optimal level of any Big Five trait, because the right level has always depended on the surrounding social and physical environment, which keeps shifting. This is why natural selection hasn't converged on one 'best' personality."
+    },
+    {
+      "id": "heritability_fifty_fifty",
+      "pages": "ch.8, p.210-211",
+      "paraphrase": "Twin and adoption studies put the heritable component of each Big Five trait at roughly 50%. The other half is not explained by genes."
+    },
+    {
+      "id": "shared_family_environment_near_zero",
+      "pages": "ch.8, p.213-216",
+      "paraphrase": "Nettle summarises the twin/adoption evidence as showing that shared family environment - the same parents, the same household, the same parenting style - has close to zero measurable effect on adult personality. Identical twins raised apart are about as similar as identical twins raised together; adopted siblings raised in the same home are no more alike in personality than two strangers. He's explicit this doesn't mean parenting doesn't matter to the relationship within the family, only that it doesn't generalise to shape the adult personality that goes out into the wider world. The other (non-genetic) half of the variation comes from 'non-shared environment' - individual experiences one sibling has and another doesn't - which remains poorly understood."
+    },
+    {
+      "id": "table4_extraversion",
+      "pages": "ch.7, p.209 (Table 4)",
+      "paraphrase": "Nettle's own summary: Extraversion's core mechanism is the brain's reward-response system. Its benefit is pursuing and capturing more rewards; its cost is physical danger and family instability."
+    },
+    {
+      "id": "table4_neuroticism",
+      "pages": "ch.7, p.209 (Table 4)",
+      "paraphrase": "Neuroticism's core mechanism is the brain's threat-response system. Its benefit is vigilance and striving; its cost is anxiety and depression."
+    },
+    {
+      "id": "table4_conscientiousness",
+      "pages": "ch.7, p.209 (Table 4)",
+      "paraphrase": "Conscientiousness's core mechanism is response inhibition (impulse control). Its benefit is planning and self-control; its cost is rigidity and a lack of spontaneity."
+    },
+    {
+      "id": "table4_agreeableness",
+      "pages": "ch.7, p.209 (Table 4)",
+      "paraphrase": "Agreeableness's core mechanism is regard for others via theory of mind. Its benefit is harmonious relationships; its cost is not putting yourself first, which can mean lost status."
+    },
+    {
+      "id": "table4_openness",
+      "pages": "ch.7, p.209 (Table 4)",
+      "paraphrase": "Openness's core mechanism is the breadth of mental associations (divergent thought). Its benefit is artistic sensibility; its cost is unusual beliefs and, at the extreme, a higher likelihood of psychosis-spectrum conditions."
+    },
+    {
+      "id": "no_right_level",
+      "pages": "ch.3, p.102-103; ch.7, p.209",
+      "paraphrase": "Nettle's throughline: there is no intrinsically good or bad level of any trait. Each score is a fact about the environment you have to navigate, not a verdict on your worth. He extends this to relationships: if your partner scores very differently from you on a trait, what looks like a pointless or disappointing choice to one of you is often just the other person's wiring, not a character flaw."
     }
   ]
 }

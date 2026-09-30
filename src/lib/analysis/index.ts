@@ -142,6 +142,7 @@ function analyseBigFive(scored: ScoredResult): Omit<Analysis, "instrument" | "pr
   if (watch.length) sections.push({ title: "Worth watching", items: watch });
   if (flexible.length) sections.push({ title: "Where you flex", items: flexible });
   if (combos.length) sections.push({ title: "How your traits combine", paragraphs: combos });
+  sections.push({ title: "Nature, and how much it can change", paragraphs: [bigfiveContent.nature_and_change] });
 
   return {
     headline: `Most distinctive: ${top.join(" and ")}`,
