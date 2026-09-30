@@ -170,12 +170,23 @@
     ]
   },
   "know_the_limits": {
-    "show_when": "Always alongside any Prakriti or Vikriti result — this is a standing disclaimer, not tied to a specific dosha outcome.",
+    "show_when": "Teacher-facing (yoga teacher training) only - these points are addressed to a teacher using Prakriti with students. End users see keep_in_mind instead.",
     "points": [
       "It is a self-report screen, not a diagnosis. Classical assessment (Dashavidha Pariksha) includes pulse (nadi), tongue, eyes and physical examination by a trained physician.",
       "Current state leaks into answers. Someone anxious and sleepless this year will score more Vata than they are. Age, season and illness all shift results.",
       "Stay within your scope. As a yoga teacher you can use Prakriti to adapt practice, pace, pranayama and meditation. Diet prescriptions, herbs and treatment of disease belong to a qualified Ayurvedic doctor (BAMS). Refer when symptoms are persistent.",
       "Never use it to label or limit a student. 'You are Kapha, so you cannot do fast flows' is a misuse. Prakriti describes tendencies, not destiny."
+    ]
+  },
+  "keep_in_mind": {
+    "show_when": "Under 'Keep in mind' on the person's own Prakriti or Vikriti result, after any answer-quality notes.",
+    "prakriti": [
+      "This is a self-report questionnaire, not a diagnosis. A traditional assessment also includes pulse, tongue and a physical examination by a trained practitioner.",
+      "How you've been lately can colour your answers: a stressful, sleepless year can make you score more Vata than you are. Your constitution itself doesn't change, but how clearly you see it does, so a different result on a later retake usually means clearer self-perception, not a new nature (Svoboda, Prakriti, ch.2)."
+    ],
+    "vikriti": [
+      "This covers the last 4-6 weeks only. Season, travel, illness and stress all move it, which is why it's worth retaking as the seasons change.",
+      "It's a self-report screen, not a diagnosis. For strong or lasting symptoms, see a qualified Ayurvedic doctor or your GP rather than treating yourself."
     ]
   },
   "standardised_tools_note": {

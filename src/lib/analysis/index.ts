@@ -195,7 +195,7 @@ function analyseEcrr(scored: ScoredResult): Omit<Analysis, "instrument" | "progr
     headline: label,
     summary: classificationDescription("ecrr", scored) ?? "",
     sections,
-    caveats,
+    caveats: [...caveats, ecrrContent.keep_in_mind],
   };
 }
 
@@ -281,10 +281,10 @@ function analysePrakriti(scored: ScoredResult): Omit<Analysis, "instrument" | "p
     items: byShare(scored).map((d) => `${dimensionName("prakriti", d)}: ${Math.round(scored.shares![d])}%`),
   });
 
-  const caveats = qualityCaveats(scored);
+  const caveats = qualityCaveats(scored).filter((c) => c !== FLAG_TEXT.near_boundary);
   if (scored.quality.flags.includes("near_boundary") && scored.classification.runnerUp) {
     caveats.unshift(
-      `This result is close to a boundary. Read the ${scored.classification.runnerUp} description as well, as the workbook suggests.`,
+      `This result sits close to ${scored.classification.runnerUp}, so read that description as well: parts of it may fit you too.`,
     );
   }
 
@@ -292,7 +292,7 @@ function analysePrakriti(scored: ScoredResult): Omit<Analysis, "instrument" | "p
     headline: scored.classification.label!,
     summary: classificationDescription("prakriti", scored) ?? "",
     sections,
-    caveats: [...caveats, ...doshaGuide.know_the_limits.points],
+    caveats: [...caveats, ...doshaGuide.keep_in_mind.prakriti],
   };
 }
 
@@ -323,13 +323,15 @@ function analyseVikriti(
     sections.push(practiceSection(d, `To settle ${g.label}`));
   }
 
-  const caveats: string[] = [];
-  if (scored.quality.flags.includes("referral")) caveats.push(FLAG_TEXT.referral);
+  // With a referral the flag already says to see a practitioner, so the
+  // standing "not a diagnosis" point would repeat it.
+  const referral = scored.quality.flags.includes("referral");
+  const caveats = referral ? [FLAG_TEXT.referral, doshaGuide.keep_in_mind.vikriti[0]] : doshaGuide.keep_in_mind.vikriti;
   return {
     headline: scored.classification.label!,
     summary: classificationDescription("vikriti", scored) ?? "",
     sections,
-    caveats: [...caveats, ...doshaGuide.know_the_limits.points],
+    caveats,
   };
 }
 
