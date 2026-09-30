@@ -82,6 +82,14 @@
       "year": 2008,
       "kind": "practitioner",
       "status": "read in full"
+    },
+    "little2014": {
+      "author": "Brian R. Little",
+      "title": "Me, Myself, and Us: The Science of Personality and the Art of Well-Being",
+      "publisher": "PublicAffairs",
+      "year": 2014,
+      "kind": "research",
+      "status": "read ch.3, Free Traits: On Acting Out of Character"
     }
   }
 }

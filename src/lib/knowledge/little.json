@@ -1,0 +1,38 @@
+{
+  "source": {
+    "id": "little2014",
+    "author": "Brian R. Little",
+    "title": "Me, Myself, and Us: The Science of Personality and the Art of Well-Being",
+    "publisher": "PublicAffairs",
+    "year": 2014,
+    "kind": "research"
+  },
+  "method": "Read ch.3, 'Free Traits: On Acting Out of Character', in full (epub, no fixed page numbers; cited by chapter and section heading). Little is a personality researcher (originator of Personal Projects Analysis) writing for a general audience; his 'free trait theory' — that people routinely act against their measured Big Five scores for things that matter to them, at a real but manageable cost — is a natural complement to Nettle's heritability/change content already in bigfive.json, and adds something Nettle doesn't: a concrete account of why and how someone might act out of character, and what to do about the cost of doing so.",
+  "claims": [
+    {
+      "id": "free_traits_defined",
+      "pages": "ch.3, Idiogenic Sources: Personal Projects and Free Traits",
+      "paraphrase": "A 'free trait' is behavior that runs counter to someone's biogenic (measured, trait-level) disposition, adopted to advance a personal project that matters to them — an introvert working a room at a conference, a disagreeable person being deliberately gentle with a grieving relative. Little argues people do this mainly for two reasons: out of professionalism (a role requires it) or out of love (a relationship or commitment calls for it), not because the trait score was wrong."
+    },
+    {
+      "id": "costs_of_free_traits",
+      "pages": "ch.3, Free Trait Dynamics: Getting Fit, Sucking It Up, Letting It Out",
+      "paraphrase": "Sustained free-trait behavior — acting counter to your disposition for an extended stretch — has a real physiological cost. Research on suppression more broadly (e.g. suppressing something emotionally significant) links it to raised autonomic arousal and, if chronic, to more health problems. Little suggests the same mechanism applies when someone maintains an out-of-character role for a long period without any relief."
+    },
+    {
+      "id": "restorative_niches",
+      "pages": "ch.3, Restorative Niches: Reducing the Costs of Acting Out of Character",
+      "paraphrase": "A 'restorative niche' is a place, routine or stretch of time set aside to recover from sustained free-trait behavior and return to one's biogenic disposition — a quiet walk or a few minutes alone for an introvert who has spent hours performing extraversion, or, conversely, something lively and social for an extravert who has had to be quiet and controlled. What restores one person can be exactly the wrong thing for someone with the opposite disposition."
+    },
+    {
+      "id": "free_trait_agreement",
+      "pages": "ch.3, Toward a Free Trait Agreement",
+      "paraphrase": "Little proposes an informal 'free trait agreement' between people who live or work closely together: an understanding that everyone gets room to find their own restorative niche without it being read as rejection or a lack of commitment — the partner who needs a quiet weekend alone after two intense weeks of socializing isn't withdrawing from the relationship, they're recovering so they can keep showing up for it."
+    },
+    {
+      "id": "dont_be_caged_by_scores",
+      "pages": "ch.3, closing",
+      "paraphrase": "Little's closing point is not to take a trait score as the whole truth of who someone is or a limit on what they can do. He suggests focusing less on the number itself and more on the personal projects, commitments and aspirations someone is actually pursuing — once those are in view, a fixed trait score looks less like a cage and more like one starting point among several, since free traits give a person real room to act beyond it when something they care about calls for it."
+    }
+  ]
+}

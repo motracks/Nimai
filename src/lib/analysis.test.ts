@@ -22,6 +22,7 @@ import handbookKb from "./knowledge/handbook-attachment.json";
 import pooleHellerKb from "./knowledge/poole-heller.json";
 import johnsonKb from "./knowledge/johnson-hold-me-tight.json";
 import gitaKb from "./knowledge/gita-easwaran.json";
+import littleKb from "./knowledge/little.json";
 import { INSTRUMENTS, type InstrumentKey } from "./instruments";
 
 type Item = { id: string; dimension: string; reverse?: boolean };
@@ -64,6 +65,8 @@ describe("per-test analysis", () => {
     const change = a.sections.find((s) => s.title === "Nature, and how much it can change");
     expect(change?.paragraphs?.[0]).toMatch(/roughly 50%/);
     expect(change?.paragraphs?.[0]).toMatch(/ch\.8/);
+    expect(change?.paragraphs?.[1]).toMatch(/free trait/);
+    expect(change?.paragraphs?.[1]).toMatch(/Me, Myself, and Us, ch\.3/);
   });
 
   it("ECR-R explains the pattern and offers growth steps", () => {
@@ -250,7 +253,7 @@ describe("sourced content stays honest", () => {
   });
 
   it("every knowledge-file claim carries a page reference", () => {
-    for (const file of [harnessKb, mikulincerKb, frawleyKb, nettleKb, svobodaKb, attachedKb, handbookKb, pooleHellerKb, johnsonKb, gitaKb]) {
+    for (const file of [harnessKb, mikulincerKb, frawleyKb, nettleKb, svobodaKb, attachedKb, handbookKb, pooleHellerKb, johnsonKb, gitaKb, littleKb]) {
       const claims = "claims" in file ? file.claims : Object.values(file.entries);
       for (const c of claims as { pages?: string }[]) {
         expect(c.pages, JSON.stringify(c).slice(0, 60)).toMatch(/\d/);
