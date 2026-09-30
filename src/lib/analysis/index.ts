@@ -236,7 +236,7 @@ function doshaSection(dosha: Dosha): AnalysisSection {
   const g: DoshaGuideEntry = doshaGuide.doshas[dosha];
   return {
     title: `${g.label}: ${g.element}`,
-    paragraphs: [g.principle],
+    paragraphs: [g.principle, g.attribute_signature],
     items: [`In balance: ${g.in_balance}`, `Out of balance: ${g.out_of_balance}`, `Increased by: ${g.increased_by}`],
   };
 }

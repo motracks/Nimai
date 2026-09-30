@@ -16,10 +16,15 @@
       "pranayama": "Nadi Shodhana, slow Ujjayi, Bhramari. Long exhalations. Use fast techniques (Kapalabhati, Bhastrika) sparingly",
       "meditation": "Body-anchored practices: body scan, Yoga Nidra, mantra japa. A fixed time and seat every day matters more than duration",
       "teaching_this_student": "Give clear structure and predictable sequences. Offer props for stability. Watch for hypermobile joints being pushed to end range. Keep the room warm and cues calm",
+      "attribute_signature": "Two of Vata's qualities show up distinctively in the mind: clarity brings quick understanding paired with quick forgetting, and can tip into a feeling of inner emptiness or loneliness when out of balance; mobility brings a mind that moves fast between many things, with moods and faith that can feel shaky rather than settled (Lad, Textbook of Ayurveda, Table 5).",
       "sources": [
         {
           "id": "svoboda",
           "claim": "vata_temperament"
+        },
+        {
+          "id": "lad2002",
+          "claim": "vata_clear_and_mobile"
         }
       ]
     },
@@ -37,10 +42,15 @@
       "pranayama": "Sheetali, Sheetkari, Chandra Bhedana, Nadi Shodhana. Cooling, soft breath. Avoid excess Bhastrika, especially in summer",
       "meditation": "Heart-centred practices: Maitri (loving-kindness), gratitude, open-awareness. Surrender over achievement",
       "teaching_this_student": "Cue effortlessness and ease. Discourage comparison. Invite curiosity instead of goals. They will want the 'correct' alignment, so offer it, then teach them to soften",
+      "attribute_signature": "Two of Pitta's qualities show up distinctively in the mind: sharpness brings sharp memory and quick understanding paired with irritability and low tolerance for slow, tedious work; the same spreading quality that makes a Pitta rash spread across the skin shows up psychologically as wanting one's name and reputation to spread widely (Lad, Textbook of Ayurveda, Table 6).",
       "sources": [
         {
           "id": "svoboda",
           "claim": "pitta_temperament"
+        },
+        {
+          "id": "lad2002",
+          "claim": "pitta_sharp_and_spreading"
         }
       ]
     },
@@ -58,10 +68,15 @@
       "pranayama": "Kapalabhati, Bhastrika, Surya Bhedana, strong Ujjayi. Stimulating, heating breath",
       "meditation": "Active or eyes-open practices: Trataka, walking meditation, chanting. Keep the spine upright to prevent drowsiness",
       "teaching_this_student": "Challenge them kindly, they can do more than they think. Keep energy and pace up. Short Shavasana. Give them a reason to show up: they thrive on routine once it is set",
+      "attribute_signature": "Three of Kapha's qualities show up distinctively in the mind: softness brings love, care, compassion and forgiveness; stickiness brings the same cohesive quality that gives joints their compactness into a deep, lasting attachment in love and relationships; stillness brings a preference for sitting and resting over seeking activity (Lad, Textbook of Ayurveda, Table 7).",
       "sources": [
         {
           "id": "svoboda",
           "claim": "kapha_temperament"
+        },
+        {
+          "id": "lad2002",
+          "claim": "kapha_soft_sticky_static"
         }
       ]
     }
@@ -138,9 +153,10 @@
   },
   "further_sources": {
     "mind_and_daily_life": "Robert Svoboda, Prakriti: Your Ayurvedic Constitution (revised 2nd ed.): read in full for ch.2's constitutional summaries and dual-dosha temperament; see src/lib/knowledge/svoboda.json. Now sourcing the dosha and dual-constitution descriptions above.",
-    "imbalance": "Vasant Lad, Ayurveda: The Science of Self-Healing (Lotus Press, 1984): how doshas go out of balance (Vikriti) and general principles for restoring it. Still pending - see svoboda_life below for the classical staging of that process in the meantime.",
+    "imbalance": "Vasant Lad, Ayurveda: The Science of Self-Healing (Lotus Press, 1984): how doshas go out of balance (Vikriti) and general principles for restoring it. Still pending - a different Lad book (see lad_attributes below) was sourced instead this session; see svoboda_life for the classical staging of imbalance in the meantime.",
     "svoboda_life": "Robert E. Svoboda, Ayurveda: Life, Health and Longevity (Arkana/Penguin, 1992), ch.6 'Pathology': read in full; see src/lib/knowledge/svoboda-life.json. Sources vikriti_context below - the classical six-stage model for how a dosha imbalance develops, and why catching it early (Accumulation) is easiest to correct.",
-    "status": "Svoboda (Prakriti): read. Svoboda (Life, Health and Longevity, ch.6): read. Lad (imbalance): still pending."
+    "lad_attributes": "Vasant Lad, Textbook of Ayurveda, Volume One: Fundamental Principles (The Ayurvedic Press, 2002), ch.2, Tables 5-7 (the Attributes of the Vata/Pitta/Kapha Individual): read in full; see src/lib/knowledge/lad-textbook.json. A different book from the 1984 one still pending above. Sources the new attribute_signature field on each dosha below, cited by claim id.",
+    "status": "Svoboda (Prakriti): read. Svoboda (Life, Health and Longevity, ch.6): read. Lad (Textbook of Ayurveda, ch.2 attribute tables): read. Lad (Science of Self-Healing, 1984, imbalance): still pending."
   },
   "constitution_note": "Robert Svoboda is explicit on one point worth keeping in mind for retakes: the constitution itself doesn't change, but how accurately you can see your own doesn't stay fixed either. Someone can retake this test months later and get a more accurate answer, not because their nature shifted, but because their self-understanding did. Constitutional typing is meant to be a foundation for building self-understanding, not a label to be confined by.",
   "vikriti_context": "Ayurvedic pathology describes every imbalance as following the same six-stage path: Accumulation, Aggravation, Overflow, Location, Manifestation and Specialization (Svoboda, Ayurveda: Life, Health and Longevity, ch.6). A dosha is easiest to correct at the first stage, simply built up in its home organ with only mild symptoms - which is exactly the window this Vikriti check aims for. Only from Location onward, once a dosha has travelled and settled somewhere weakened, does a specific illness begin to take shape."

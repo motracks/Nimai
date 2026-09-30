@@ -26,6 +26,7 @@ import littleKb from "./knowledge/little.json";
 import svobodaLifeKb from "./knowledge/svoboda-life.json";
 import mccraeCostaKb from "./knowledge/mccrae-costa.json";
 import charakaKb from "./knowledge/charaka-sharira.json";
+import ladKb from "./knowledge/lad-textbook.json";
 import { INSTRUMENTS, type InstrumentKey } from "./instruments";
 
 type Item = { id: string; dimension: string; reverse?: boolean };
@@ -161,6 +162,8 @@ describe("per-test analysis", () => {
     expect(titles).toContain("Vata: Air and Space");
     expect(titles.some((t) => t.startsWith("Pitta") || t.startsWith("Kapha"))).toBe(false);
     expect(a.caveats.some((c) => c.startsWith("It is a self-report screen"))).toBe(true);
+    const vataSection = a.sections.find((s) => s.title === "Vata: Air and Space");
+    expect(vataSection?.paragraphs?.[1]).toMatch(/Lad, Textbook of Ayurveda, Table 5/);
   });
 
   it("Vikriti reads against Prakriti and suggests settling practice", () => {
@@ -289,6 +292,7 @@ describe("sourced content stays honest", () => {
       svobodaLifeKb,
       mccraeCostaKb,
       charakaKb,
+      ladKb,
     ]) {
       const claims = "claims" in file ? file.claims : Object.values(file.entries);
       for (const c of claims as { pages?: string }[]) {

@@ -113,6 +113,14 @@
       "publisher": "Chowkhamba Sanskrit Series",
       "kind": "classical",
       "status": "read Sarira Sthana ch.4, para 34-40 (doshas of body and mind, mental-type classification); large OCR scan, partial extraction"
+    },
+    "lad2002": {
+      "author": "Vasant Lad",
+      "title": "Textbook of Ayurveda, Volume One: Fundamental Principles",
+      "publisher": "The Ayurvedic Press",
+      "year": 2002,
+      "kind": "practitioner",
+      "status": "read ch.2, Universal Attributes and Doshic Theory (Tables 5-7); partial extraction of a large PDF"
     }
   }
 }
