@@ -2,6 +2,8 @@ import Link from "next/link";
 import { INSTRUMENTS, type InstrumentKey } from "@/lib/instruments";
 import { analyse, type Analysis } from "@/lib/analysis";
 import AnalysisView from "@/components/AnalysisView";
+import ProgressChart from "@/components/ProgressChart";
+import { timeline, trendSentence } from "@/lib/timeline";
 import type { ScoredResult } from "@/lib/scoring";
 import {
   FLAG_TEXT,
@@ -32,6 +34,7 @@ export function InstrumentResultCard({
   const { key, latest, baseline, delta, count } = history;
   const meta = INSTRUMENTS[key];
   const analysis: Analysis | null = analyse(history, prakritiLatest);
+  const overTime = timeline(history);
 
   return (
     <div className="flex flex-col gap-3">
@@ -49,6 +52,18 @@ export function InstrumentResultCard({
             Baseline · {formatDate(baseline.completedAt)} · {count} results so far
           </p>
           <BaselineSummary instrument={key} baseline={baseline} latest={latest} />
+        </div>
+      )}
+
+      {overTime && (
+        <div className="pt-2" style={{ borderTop: "1px solid var(--sand-dim)" }}>
+          <p className="mb-1 text-xs uppercase" style={{ letterSpacing: "0.06em", color: "var(--ink-dim)" }}>
+            Over time
+          </p>
+          <p className="mb-2 text-sm" style={{ color: "var(--ink-mid)" }}>
+            {trendSentence(overTime)}
+          </p>
+          <ProgressChart data={overTime} title={`${meta.label} over time`} />
         </div>
       )}
 

@@ -41,6 +41,7 @@ export interface InstrumentHistory {
   latest: ResultSnapshot;
   baseline: ResultSnapshot | null; // first result, when there is more than one
   delta: Record<string, number> | null; // latest.norm - baseline.norm, when both comparable
+  all: ResultSnapshot[]; // every result, oldest first
 }
 
 function legacyView(result: Record<string, unknown>): ResultSnapshot["legacy"] {
@@ -80,8 +81,9 @@ export function buildHistories(rows: ResultRow[]): Partial<Record<InstrumentKey,
       .sort((a, b) => a.completed_at.localeCompare(b.completed_at));
     if (own.length === 0) continue;
 
-    const latest = snapshot(own[own.length - 1]);
-    const baseline = own.length > 1 ? snapshot(own[0]) : null;
+    const all = own.map(snapshot);
+    const latest = all[all.length - 1];
+    const baseline = all.length > 1 ? all[0] : null;
     let delta: Record<string, number> | null = null;
     if (baseline?.scored && latest.scored) {
       delta = Object.fromEntries(
@@ -91,7 +93,7 @@ export function buildHistories(rows: ResultRow[]): Partial<Record<InstrumentKey,
         ]),
       );
     }
-    out[key] = { key, count: own.length, latest, baseline, delta };
+    out[key] = { key, count: own.length, latest, baseline, delta, all };
   }
   return out;
 }
